@@ -12,10 +12,11 @@
     <style>
         :root {
             --primary: #1e3a8a; /* Azul confianza */
-            --accent: #ff6b6b;  /* Coral Travelyn (llamativo) */
+            --accent: #ff6b6b;  /* Coral Travelyn */
             --text: #0f172a;    /* Oscuro elegante */
             --bg: #f8fafc;      /* Fondo limpio */
             --white: #ffffff;
+            --whatsapp: #25d366; /* Verde WhatsApp */
         }
 
         * {
@@ -23,6 +24,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -60,8 +62,9 @@
             text-decoration: none;
             color: var(--text);
             font-weight: 500;
-            margin-left: 2rem;
+            margin-left: 1.5rem;
             transition: color 0.3s;
+            font-size: 0.95rem;
         }
 
         nav a:hover {
@@ -72,12 +75,12 @@
         .hero {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 5rem 5% 8rem 5%;
+            padding: 3rem 5% 5rem 5%;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 1.5rem;
@@ -91,13 +94,13 @@
         }
 
         .hero p {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             color: #64748b;
             max-width: 600px;
-            margin: 0 auto 3rem auto;
+            margin: 0 auto 2.5rem auto;
         }
 
-        /* Buscador Minimalista */
+        /* Buscador */
         .search-container {
             background: var(--white);
             padding: 1.5rem;
@@ -123,7 +126,7 @@
         }
 
         .input-group label {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 700;
             color: #94a3b8;
             text-transform: uppercase;
@@ -137,6 +140,7 @@
             font-weight: 500;
             color: var(--text);
             background: transparent;
+            width: 100%;
         }
 
         .btn-search {
@@ -156,43 +160,135 @@
             transform: translateY(-2px);
         }
 
-        /* Sección de Valores */
-        .features {
-            background-color: var(--white);
-            padding: 6rem 5%;
-        }
-
-        .features-grid {
+        /* Nueva Sección: Ofertas de Vuelos Destacados */
+        .flights-section {
             max-width: 1200px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+            padding: 4rem 5%;
+            text-align: center;
         }
 
-        .feature-card {
-            text-align: left;
-        }
-
-        .feature-card .icon {
+        .section-title {
             font-size: 2rem;
-            margin-bottom: 1rem;
-            display: inline-block;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
             color: var(--primary);
+            margin-bottom: 2rem;
         }
 
-        .feature-card p {
+        .flights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .flight-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.03);
+            text-align: left;
+            border: 1px solid #f1f5f9;
+            transition: transform 0.3s;
+        }
+
+        .flight-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .flight-route {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .flight-type {
+            font-size: 0.85rem;
             color: #64748b;
+            background: #f1f5f9;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .flight-price-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 1rem;
+        }
+
+        .flight-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .btn-book-flight {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Sección de Contacto Directo */
+        .contact-section {
+            background-color: var(--white);
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            padding: 1.2rem;
+            border-radius: 16px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform 0.2s;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-wa {
+            background-color: var(--whatsapp);
+            color: var(--white);
+        }
+
+        .btn-mail {
+            background-color: #e2e8f0;
+            color: var(--text);
         }
 
         /* Responsivo para móviles */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
+            .hero h1 { font-size: 2.2rem; }
             .search-container {
                 grid-template-columns: 1fr;
                 border-radius: 16px;
@@ -202,8 +298,8 @@
                 border-bottom: 1px solid #e2e8f0;
                 padding-bottom: 1rem;
             }
-            header { flex-direction: column; gap: 1rem; }
-            nav a { margin: 0 1rem; }
+            header { flex-direction: column; gap: 1rem; padding: 1.5rem 5%; }
+            nav a { margin: 0 0.7rem; }
         }
     </style>
 </head>
@@ -212,58 +308,126 @@
     <header>
         <a href="#" class="logo">✈️ Travel<span>yn</span></a>
         <nav>
-            <a href="#beneficios">Beneficios</a>
-            <a href="#soporte">Soporte Humano</a>
+            <a href="#vuelos">Vuelos Populares</a>
+            <a href="#contacto">Contacto Humano</a>
         </nav>
     </header>
 
     <main>
+        <!-- Hero & Buscador -->
         <section class="hero">
             <h1>Tu próximo viaje, <span>con la tranquilidad de Travelyn.</span></h1>
-            <p>Dinos tu destino y tus preferencias. Nosotros nos encargamos de buscar las mejores opciones de vuelos y trenes mientras te acompañamos en cada paso.</p>
+            <p>Dinos tu destino y tus preferencias. Nosotros buscamos las mejores opciones por ti y te atendemos de forma 100% personalizada.</p>
             
-            <!-- Buscador Intuitivo -->
             <div class="search-container">
                 <div class="input-group">
                     <label>¿A dónde vas?</label>
-                    <input type="text" placeholder="Ciudad o destino..." required>
+                    <input type="text" id="destination" placeholder="Ej. Madrid, Cancún, Nueva York..." required>
                 </div>
                 <div class="input-group">
                     <label>¿Cuándo?</label>
-                    <input type="date" required>
+                    <input type="date" id="travel-date" required>
                 </div>
                 <div class="input-group">
                     <label>Preferencia</label>
-                    <select>
-                        <option>Más rápido</option>
-                        <option>Más económico</option>
-                        <option>Equipaje incluido</option>
+                    <select id="preference">
+                        <option value="Más rápido">Más rápido</option>
+                        <option value="Más económico">Más económico</option>
+                        <option value="Equipaje incluido">Equipaje incluido</option>
                     </select>
                 </div>
-                <button class="btn-search" onclick="alert('En Travelyn ya estamos buscando las mejores opciones para ti. ¡Prepárate para viajar!')">Buscar viaje</button>
+                <button class="btn-search" onclick="sendToWhatsApp()">Buscar viaje</button>
             </div>
         </section>
 
-        <section class="features" id="beneficios">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <span class="icon">✨</span>
-                    <h3>Todo en un solo lugar</h3>
-                    <p>Olvídate de saltar entre decenas de webs. En Travelyn unificamos vuelos, trenes y transportes para ofrecerte la ruta perfecta sin enredos.</p>
+        <!-- Nueva Sección: Muestra de Vuelos Simulados -->
+        <section class="flights-section" id="vuelos">
+            <h2 class="section-title">Rutas más cotizadas de la semana</h2>
+            <div class="flights-grid">
+                
+                <!-- Tarjeta 1 -->
+                <div class="flight-card">
+                    <div class="flight-route">
+                        <span>Bogotá ➔ Miami</span>
+                        <span>✈️</span>
+                    </div>
+                    <span class="flight-type">Ida y vuelta • Incluye maleta</span>
+                    <div class="flight-price-container">
+                        <span class="flight-price">$299 USD</span>
+                        <a href="https://wa.me/573000000000?text=Hola%20Travelyn!%20Me%20interesa%20la%20ruta%20Bogota%20-%20Miami" target="_blank" class="btn-book-flight">Cotizar</a>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <span class="icon">🤝</span>
-                    <h3>Atención Humana Real</h3>
-                    <p>Nada de respuestas automatizadas que no resuelven nada. Te asistimos de forma cercana con tu check-in, maletas y documentación.</p>
+
+                <!-- Tarjeta 2 -->
+                <div class="flight-card">
+                    <div class="flight-route">
+                        <span>Ciudad de México ➔ Madrid</span>
+                        <span>✈️</span>
+                    </div>
+                    <span class="flight-type">Vuelo Directo</span>
+                    <div class="flight-price-container">
+                        <span class="flight-price">$640 USD</span>
+                        <a href="https://wa.me/573000000000?text=Hola%20Travelyn!%20Me%20interesa%20la%20ruta%20Mexico%20-%20Madrid" target="_blank" class="btn-book-flight">Cotizar</a>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <span class="icon">🔒</span>
-                    <h3>Experiencia sin Estrés</h3>
-                    <p>Procesos claros, transparentes y seguros. Nos aseguramos de que tu única preocupación sea disfrutar del destino.</p>
+
+                <!-- Tarjeta 3 -->
+                <div class="flight-card">
+                    <div class="flight-route">
+                        <span>Lima ➔ Buenos Aires</span>
+                        <span>✈️</span>
+                    </div>
+                    <span class="flight-type">Ida y vuelta</span>
+                    <div class="flight-price-container">
+                        <span class="flight-price">$380 USD</span>
+                        <a href="https://wa.me/573000000000?text=Hola%20Travelyn!%20Me%20interesa%20la%20ruta%20Lima%20-%20Buenos%20Aires" target="_blank" class="btn-book-flight">Cotizar</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Nueva Sección: Información de Contacto Directo -->
+        <section class="contact-section" id="contacto">
+            <div class="contact-container">
+                <h2 class="section-title">¿Tienes dudas? Habla con un asesor humano</h2>
+                <p style="color: #64748b;">En Travelyn no te atienden máquinas. Escríbenos directamente para resolver dudas sobre equipajes, documentación, check-in o itinerarios a medida.</p>
+                
+                <div class="contact-buttons">
+                    <!-- BOTÓN WHATSAPP: Recuerda cambiar el número abajo -->
+                    <a href="https://wa.me/573000000000?text=Hola%20Travelyn,%20necesito%20asesoria%20con%20un%20viaje" target="_blank" class="contact-btn btn-wa">
+                        💬 Chatear por WhatsApp
+                    </a>
+                    <!-- BOTÓN CORREO: Recuerda cambiar el correo abajo -->
+                    <a href="mailto:contacto@travelyn.com?subject=Consulta%20de%20Viaje%20-%20Travelyn" class="contact-btn btn-mail">
+                        ✉️ Correo: contacto@travelyn.com
+                    </a>
                 </div>
             </div>
         </section>
     </main>
+
+    <script>
+        function sendToWhatsApp() {
+            const dest = document.getElementById('destination').value;
+            const date = document.getElementById('travel-date').value;
+            const pref = document.getElementById('preference').value;
+
+            if (!dest) {
+                alert('Por favor, indica a dónde te gustaría viajar para poder ayudarte.');
+                return;
+            }
+
+            // REEMPLAZA EL NÚMERO ABAJO: pon tu código de país y tu número móvil sin espacios (Ej: 573001234567)
+            const myPhoneNumber = "573000000000"; 
+            
+            const baseText = `¡Hola Travelyn! Me gustaría cotizar un viaje:\n\n📍 *Destino:* ${dest}\n📅 *Fecha tentativa:* ${date || 'Por definir'}\n✨ *Preferencia:* ${pref}`;
+            const encodedText = encodeURIComponent(baseText);
+            
+            // Abre WhatsApp en otra pestaña
+            window.open(`https://wa.me/${myPhoneNumber}?text=${encodedText}`, '_blank');
+        }
+    </script>
 
 </body>
 </html>
