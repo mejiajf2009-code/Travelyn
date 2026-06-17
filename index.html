@@ -37,7 +37,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Títulos Serif inspirados en el Logo */
         h1, h2, h3, .brand-logo {
             font-family: 'Playfair Display', serif;
         }
@@ -89,7 +88,6 @@
 
         nav a:hover { color: var(--text-main); }
 
-        /* Hero Split Section: Contenido + Imagen Curada */
         .hero-section {
             max-width: 1400px;
             margin: 0 auto;
@@ -100,9 +98,7 @@
             align-items: center;
         }
 
-        .hero-text {
-            animation: fadeIn 1s ease-out;
-        }
+        .hero-text animation: fadeIn 1s ease-out;
 
         .hero-text h1 {
             font-size: 3.8rem;
@@ -141,7 +137,6 @@
             box-shadow: var(--shadow-premium);
         }
 
-        /* Flotante de Imagen Estilo Editorial */
         .floating-badge {
             position: absolute;
             bottom: -25px;
@@ -179,7 +174,7 @@
             justify-content: flex-start;
             flex-wrap: wrap;
             gap: 0.5rem;
-            max-width: 900px;
+            max-width: 1100px;
             margin-bottom: -1px;
         }
 
@@ -195,9 +190,6 @@
             transition: all 0.3s;
             letter-spacing: 1px;
             text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
         }
 
         .type-btn.active {
@@ -212,16 +204,29 @@
             padding: 3.5rem;
             border-radius: 0 24px 24px 24px;
             border: 1px solid rgba(0, 0, 0, 0.04);
-            max-width: 900px;
+            max-width: 1100px;
             width: 100%;
             box-shadow: var(--shadow-premium);
         }
+
+        /* Secciones de Formulario */
+        .form-section-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin: 2rem 0 1rem 0;
+            border-bottom: 1px solid rgba(179, 143, 68, 0.2);
+            padding-bottom: 0.5rem;
+        }
+        .form-section-title:first-child { margin-top: 0; }
 
         .form-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.8rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1rem;
         }
 
         .input-group { display: flex; flex-direction: column; }
@@ -266,6 +271,7 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             transition: all 0.3s;
+            margin-top: 1.5rem;
         }
 
         .btn-search:hover {
@@ -328,7 +334,7 @@
 
         .ai-chat-header p {
             font-size: 0.7rem;
-            color: var(--gold-light);
+            color: var(--gold);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -396,7 +402,6 @@
 
         .ai-send-btn:hover { background: var(--gold); }
 
-        /* Editorial Destinos */
         .editorial-text h2 {
             font-size: 2.8rem;
             font-weight: 400;
@@ -450,11 +455,10 @@
             font-weight: 400;
         }
 
-        /* Adaptabilidad Móvil Extrema */
         @media (max-width: 1024px) {
             .hero-section { grid-template-columns: 1fr; text-align: center; }
             .hero-text p { margin-left: auto; margin-right: auto; }
-            .hero-gallery { height: 380px; display: none; }
+            .hero-gallery { display: none; }
             .experience-layout { grid-template-columns: 1fr; gap: 4rem; }
             .search-container { border-radius: 24px; }
             .transport-selector { justify-content: center; }
@@ -483,7 +487,7 @@
     </header>
 
     <main>
-        <!-- Hero Section con Imagen Curada de un Jet de Lujo y Arquitectura Limpia -->
+        <!-- Hero Section -->
         <section class="hero-section">
             <div class="hero-text">
                 <h1>Logística de Viajes <span>Elegantes</span> Continentales</h1>
@@ -491,7 +495,6 @@
                 <a href="#reserva" class="btn-search" style="text-decoration:none; display:inline-block; width:auto; padding:1.2rem 2.5rem;">Configurar Itinerario</a>
             </div>
             <div class="hero-gallery">
-                <!-- Imagen Profesional Exclusiva: Unsplash Premium Travel Architecture -->
                 <img src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=800&q=80" alt="Traveling Luxury Experience" class="main-img">
                 <div class="floating-badge">
                     <p>Viaja sin Límites</p>
@@ -500,50 +503,98 @@
             </div>
         </section>
 
-        <!-- Consola de Reserva Multimodal -->
+        <!-- Consola de Reserva Avanzada -->
         <section class="search-area" id="reserva">
             <div class="transport-selector">
-                <button class="type-btn active" onclick="setTransport('Ruta Multimodal Combinada', this)">Combinado</button>
+                <button class="type-btn active" onclick="setTransport('Vuelo Comercial / Privado', this)">Vuelos</button>
+                <button class="type-btn" onclick="setTransport('Ruta Multimodal Combinada', this)">Combinado</button>
                 <button class="type-btn" onclick="setTransport('Alta Velocidad Ferroviaria', this)">Trenes</button>
                 <button class="type-btn" onclick="setTransport('Línea Ejecutiva de Autobús', this)">Autobuses</button>
-                <button class="type-btn" onclick="setTransport('Vuelo Comercial / Privado', this)">Vuelos</button>
             </div>
 
             <div class="search-container">
+                
+                <!-- SECCIÓN 1: DATOS PERSONALES -->
+                <div class="form-section-title">1. Información del Pasajero</div>
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Nombre y Apellidos</label>
+                        <input type="text" id="passenger-name" placeholder="Ej: Juan Pérez García" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Documento de Identidad / Pasaporte</label>
+                        <input type="text" id="passenger-id" placeholder="Ej: X1234567P / DNI" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Teléfono Móvil</label>
+                        <input type="tel" id="passenger-phone" placeholder="Ej: +34 600 000 000" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Correo Electrónico</label>
+                        <input type="email" id="passenger-email" placeholder="Ej: juan@example.com" required>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN 2: DETALLES DEL VUELO -->
+                <div class="form-section-title">2. Detalles del Itinerario</div>
                 <div class="form-grid">
                     <div class="input-group">
                         <label>Origen</label>
-                        <input type="text" id="origin" placeholder="Ciudad o terminal de salida...">
+                        <input type="text" id="origin" placeholder="Ciudad o aeropuerto de salida...">
                     </div>
                     <div class="input-group">
-                        <label>Destino de Llegada</label>
-                        <input type="text" id="destination" placeholder="Ciudad o terminal de llegada...">
+                        <label>Destino</label>
+                        <input type="text" id="destination" placeholder="Ciudad o aeropuerto de llegada...">
                     </div>
                     <div class="input-group">
-                        <label>Salida</label>
+                        <label>Fecha de Salida</label>
                         <input type="date" id="depart-date">
                     </div>
                     <div class="input-group">
-                        <label>Regreso</label>
+                        <label>Fecha de Regreso (Opcional)</label>
                         <input type="date" id="return-date">
                     </div>
+                </div>
+
+                <!-- SECCIÓN 3: PREFERENCIAS DE VUELO -->
+                <div class="form-section-title">3. Configuración de Cabina y Equipaje</div>
+                <div class="form-grid">
                     <div class="input-group">
-                        <label>Preferencia de Ruta</label>
-                        <select id="preference">
-                            <option value="Ruta Express Directa">Ruta Express más veloz</option>
-                            <option value="Tarifa Corporativa Optimizada">Tarifa de alta eficiencia</option>
+                        <label>Clase de Cabina</label>
+                        <select id="flight-class">
+                            <option value="Clase Business">Clase Business (Preferente)</option>
+                            <option value="Primera Clase (First Class)">Primera Clase Exclusive</option>
+                            <option value="Jet Privado (Charter)">Vuelo Charter / Jet Privado</option>
+                            <option value="Clase Turista Optimizada">Clase Turista Estándar</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Preferencia de Asiento</label>
+                        <select id="seat-preference">
+                            <option value="Ventanilla">Asiento en Ventanilla</option>
+                            <option value="Pasillo">Asiento en Pasillo</option>
+                            <option value="Sin preferencia">Cualquier ubicación</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Equipaje Adicional</label>
+                        <select id="baggage-option">
+                            <option value="Solo equipaje de mano">Solo equipaje de mano de cabina</option>
+                            <option value="1 Maleta facturada (23kg)">1 Maleta grande facturada en bodega</option>
+                            <option value="Equipaje ilimitado premium">Equipaje múltiple premium</option>
                         </select>
                     </div>
                     <div class="input-group full-width">
-                        <label>Peticiones Especiales de Confort</label>
-                        <textarea id="additional-details" rows="2" placeholder="Ej. Preferencia por operadores específicos (AVE, iryo), accesos VIP..."></textarea>
+                        <label>Notas Médicas, Alergias o Requerimientos Especiales</label>
+                        <textarea id="additional-details" rows="2" placeholder="Ej. Menú vegetariano a bordo, asistencia de movilidad, etc..."></textarea>
                     </div>
                 </div>
-                <button class="btn-search" onclick="sendToWhatsApp()">Procesar Itinerario Exclusivo</button>
+
+                <button class="btn-search" onclick="sendToWhatsApp()">Confirmar y Solicitar Reserva con Mis Datos</button>
             </div>
         </section>
 
-        <!-- Sección de Experiencia: Chatbot IA Activo + Muestra de Imágenes Destacadas -->
+        <!-- Sección de Experiencia: Chatbot IA Activo + Destinos -->
         <section class="experience-zone" id="ia-concierge">
             <div class="experience-layout">
                 
@@ -574,14 +625,12 @@
                     
                     <div class="destination-showcase">
                         <div class="dest-card" onclick="autoFill('Madrid', 'París')">
-                            <!-- Tren de Alta velocidad en un entorno natural y pulcro -->
                             <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=500&q=80" alt="Eje París">
                             <div class="dest-overlay">
                                 <h4>Madrid — París</h4>
                             </div>
                         </div>
                         <div class="dest-card" onclick="autoFill('Barcelona', 'Milán')">
-                            <!-- Destino Premium Urbano de Vanguardia -->
                             <img src="https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?auto=format&fit=crop&w=500&q=80" alt="Eje Milán">
                             <div class="dest-overlay">
                                 <h4>Barcelona — Milán</h4>
@@ -595,7 +644,7 @@
     </main>
 
     <script>
-        let selectedTransport = "Ruta Multimodal Combinada";
+        let selectedTransport = "Vuelo Comercial / Privado";
 
         function setTransport(type, element) {
             selectedTransport = type;
@@ -609,7 +658,6 @@
             document.getElementById('reserva').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Simulación Inteligente del Chatbot IA
         function handleChatKey(event) {
             if (event.key === 'Enter') triggerAiResponse();
         }
@@ -621,17 +669,14 @@
 
             const chatBox = document.getElementById('chat-box');
 
-            // 1. Mensaje del usuario
             const userDiv = document.createElement('div');
             userDiv.className = 'msg user';
             userDiv.innerText = messageText;
             chatBox.appendChild(userDiv);
             inputField.value = '';
 
-            // Scroll automático
             chatBox.scrollTop = chatBox.scrollHeight;
 
-            // 2. Respuesta simulada de la IA adaptativa tras breve pausa
             setTimeout(() => {
                 const aiDiv = document.createElement('div');
                 aiDiv.className = 'msg system';
@@ -651,31 +696,50 @@
             }, 800);
         }
 
-        // Enlace oficial de salida a tu WhatsApp de Gestión
+        // Sistema unificado para empaquetar Datos Personales + Vuelo a WhatsApp
         function sendToWhatsApp() {
-            const origin = document.getElementById('origin').value;
-            const dest = document.getElementById('destination').value;
+            // Datos personales
+            const name = document.getElementById('passenger-name').value.trim();
+            const idDoc = document.getElementById('passenger-id').value.trim();
+            const phonePass = document.getElementById('passenger-phone').value.trim();
+            const email = document.getElementById('passenger-email').value.trim();
+
+            // Detalles del vuelo
+            const origin = document.getElementById('origin').value.trim();
+            const dest = document.getElementById('destination').value.trim();
             const depart = document.getElementById('depart-date').value;
             const ret = document.getElementById('return-date').value;
-            const pref = document.getElementById('preference').value;
-            const details = document.getElementById('additional-details').value;
+            
+            // Preferencias
+            const fClass = document.getElementById('flight-class').value;
+            const seat = document.getElementById('seat-preference').value;
+            const baggage = document.getElementById('baggage-option').value;
+            const details = document.getElementById('additional-details').value.trim();
 
-            if (!origin || !dest) {
-                alert('Por favor introduzca el origen y destino para activar el despacho de rutas.');
+            if (!name || !idDoc || !phonePass || !origin || !dest) {
+                alert('Por favor complete los campos obligatorios del pasajero, origen y destino para procesar su reserva.');
                 return;
             }
 
-            const phone = "34639077423";
-            let txt = `TRAVELING | VIAJA SIN LÍMITES\n\nSolicitud de Concierge Multimodal:\n`;
-            txt += `▪ Tipo: ${selectedTransport}\n`;
-            txt += `▪ Origen: ${origin}\n`;
-            txt += `▪ Destino: ${dest}\n`;
-            txt += `▪ Salida: ${depart || 'Pendiente de asignación'}\n`;
+            const phoneMaster = "34639077423";
+            let txt = `📋 NUEVA SOLICITUD DE RESERVA\n`;
+            txt += `=========================\n\n`;
+            txt += `👤 DATOS DEL PASAJERO:\n`;
+            txt += `▪ Nombre: ${name}\n`;
+            txt += `▪ Identificación/Pasaporte: ${idDoc}\n`;
+            txt += `▪ Teléfono: ${phonePass}\n`;
+            txt += `▪ Email: ${email || 'No provisto'}\n\n`;
+            txt += `✈️ DETALLES DE LOGÍSTICA:\n`;
+            txt += `▪ Tipo de Transporte: ${selectedTransport}\n`;
+            txt += `▪ Ruta: ${origin} ➔ ${dest}\n`;
+            txt += `▪ Salida: ${depart || 'Pendiente'}\n`;
             if (ret) txt += `▪ Regreso: ${ret}\n`;
-            txt += `▪ Preferencia: ${pref}\n`;
-            if (details) txt += `▪ Confort/Notas: ${details}\n`;
+            txt += `▪ Clase: ${fClass}\n`;
+            txt += `▪ Asiento: ${seat}\n`;
+            txt += `▪ Equipaje: ${baggage}\n`;
+            if (details) txt += `\n📝 REQUERIMIENTOS ADICIONALES:\n"${details}"`;
 
-            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(txt)}`, '_blank');
+            window.open(`https://wa.me/${phoneMaster}?text=${encodeURIComponent(txt)}`, '_blank');
         }
     </script>
 </body>
