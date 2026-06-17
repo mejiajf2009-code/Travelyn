@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travelyn - Viajar nunca fue tan simple</title>
+    <title>Travelyn - Plataforma Integral de Viajes en España y Europa</title>
     <!-- Fuentes modernas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #1e3a8a; /* Azul confianza */
-            --accent: #ff6b6b;  /* Coral Travelyn */
-            --text: #0f172a;    /* Oscuro elegante */
-            --bg: #f8fafc;      /* Fondo limpio */
+            --primary: #0f172a;   /* Azul oscuro noche, muy moderno */
+            --brand: #1e40af;     /* Azul corporativo de confianza */
+            --accent: #ff6b6b;    /* Coral característico de Travelyn */
+            --text: #334155;      /* Gris elegante para lectura */
+            --bg: #f8fafc;        /* Fondo limpio e industrial */
             --white: #ffffff;
-            --whatsapp: #25d366; /* Verde WhatsApp */
+            --whatsapp: #25d366;  /* Verde oficial WhatsApp */
         }
 
         * {
@@ -38,20 +39,21 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 2rem 5%;
+            padding: 1.5rem 5%;
             max-width: 1400px;
             margin: 0 auto;
+            background: transparent;
         }
 
         .logo {
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             font-weight: 700;
             color: var(--primary);
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.8px;
         }
 
         .logo span {
@@ -60,9 +62,9 @@
 
         nav a {
             text-decoration: none;
-            color: var(--text);
-            font-weight: 500;
-            margin-left: 1.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-left: 1.8rem;
             transition: color 0.3s;
             font-size: 0.95rem;
         }
@@ -75,40 +77,78 @@
         .hero {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 3rem 5% 4rem 5%;
+            padding: 4rem 5% 3rem 5%;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 3.2rem;
             font-weight: 700;
-            line-height: 1.2;
+            line-height: 1.15;
             margin-bottom: 1.5rem;
             color: var(--primary);
+            letter-spacing: -1px;
         }
 
         .hero h1 span {
-            background: linear-gradient(to right, var(--primary), var(--accent));
+            background: linear-gradient(to right, var(--brand), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #64748b;
-            max-width: 600px;
-            margin: 0 auto 2.5rem auto;
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
         }
 
-        /* Formulario Detallado Minimalista */
+        /* Selector de Tipo de Transporte (Multimodal) */
+        .transport-selector {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: -1px;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .type-btn {
+            background: #e2e8f0;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 12px 12px 0 0;
+            cursor: pointer;
+            color: #64748b;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .type-btn.active {
+            background: var(--white);
+            color: var(--brand);
+            box-shadow: 0 -4px 12px rgba(15, 23, 42, 0.03);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Contenedor del Formulario Multimodal */
         .search-container {
             background: var(--white);
             padding: 2.5rem;
             border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
-            max-width: 800px;
-            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+            max-width: 850px;
+            margin: 0 auto 5rem auto;
             text-align: left;
+            position: relative;
+            z-index: 1;
+            border: 1px solid #e2e8f0;
         }
 
         .form-grid {
@@ -124,29 +164,31 @@
         }
 
         .input-group label {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 700;
             color: #94a3b8;
             text-transform: uppercase;
             margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
         }
 
         .input-group input, .input-group select, .input-group textarea {
-            border: 1px solid #e2e8f0;
+            border: 1px solid #cbd5e1;
             outline: none;
             font-size: 1rem;
             font-weight: 500;
-            color: var(--text);
+            color: var(--primary);
             background: #f8fafc;
-            padding: 0.8rem 1rem;
+            padding: 0.85rem 1rem;
             border-radius: 12px;
             width: 100%;
-            transition: border-color 0.2s;
+            transition: all 0.2s;
         }
 
         .input-group input:focus, .input-group select:focus, .input-group textarea:focus {
-            border-color: var(--accent);
+            border-color: var(--brand);
             background: var(--white);
+            box-shadow: 0 0 0 4px rgba(30, 64, 175, 0.1);
         }
 
         .full-width {
@@ -167,73 +209,123 @@
             justify-content: center;
             align-items: center;
             gap: 0.5rem;
-            transition: transform 0.2s, background-color 0.2s;
+            transition: all 0.2s;
+            box-shadow: 0 4px 14px rgba(255, 107, 107, 0.3);
         }
 
         .btn-search:hover {
             background-color: #ff5252;
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
         }
 
-        /* Sección de Destinos Libres */
-        .destinations-info {
+        /* Marcas / Partners Integrados de Confianza */
+        .partners-section {
+            text-align: center;
+            padding: 2rem 5%;
+            background: #f1f5f9;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .partners-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .partners-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .partner-tag {
+            background: var(--white);
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #475569;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Características de Plataforma Líder */
+        .features {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 5rem 5%;
+            padding: 6rem 5%;
             text-align: center;
         }
 
         .section-title {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--primary);
             margin-bottom: 1rem;
+            letter-spacing: -0.5px;
         }
 
         .section-subtitle {
             color: #64748b;
-            max-width: 600px;
-            margin: 0 auto 3rem auto;
+            max-width: 650px;
+            margin: 0 auto 4rem auto;
+            font-size: 1.1rem;
         }
 
-        .destinations-grid {
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
         }
 
-        .dest-card {
+        .feature-card {
             background: var(--white);
-            padding: 2.5rem 2rem;
-            border-radius: 20px;
-            border: 1px solid #f1f5f9;
-            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.02);
+            padding: 3rem 2rem;
+            border-radius: 24px;
+            border: 1px solid #e2e8f0;
+            text-align: left;
+            transition: all 0.3s;
         }
 
-        .dest-card .icon {
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(15, 23, 42, 0.04);
+        }
+
+        .feature-card .icon {
             font-size: 2.5rem;
-            margin-bottom: 1rem;
-            display: block;
+            margin-bottom: 1.5rem;
+            display: inline-block;
         }
 
-        .dest-card h3 {
+        .feature-card h3 {
+            font-size: 1.35rem;
             color: var(--primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
         }
 
-        .dest-card p {
+        .feature-card p {
             color: #64748b;
             font-size: 0.95rem;
         }
 
-        /* Sección de Contacto */
+        /* Sección de Contacto Directo */
         .contact-section {
             background-color: var(--white);
-            padding: 5rem 5%;
+            padding: 6rem 5%;
             text-align: center;
+            border-top: 1px solid #e2e8f0;
         }
 
         .contact-container {
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
         }
 
@@ -241,7 +333,7 @@
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
         }
 
         .contact-btn {
@@ -264,108 +356,130 @@
         .btn-wa {
             background-color: var(--whatsapp);
             color: var(--white);
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
         }
 
         .btn-mail {
-            background-color: #e2e8f0;
-            color: var(--text);
+            background-color: #f1f5f9;
+            color: var(--primary);
+            border: 1px solid #cbd5e1;
         }
 
-        /* Responsivo */
+        /* Adaptabilidad Móvil */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
+            .hero h1 { font-size: 2.3rem; }
             .search-container { padding: 1.5rem; border-radius: 20px; }
-            header { flex-direction: column; gap: 1rem; padding: 1.5rem 5%; }
-            nav a { margin: 0 0.7rem; }
+            header { flex-direction: column; gap: 1rem; text-align: center; }
+            nav a { margin: 0 0.6rem; }
+            .transport-selector { width: 100%; overflow-x: auto; justify-content: flex-start; padding: 0 5%; }
+            .type-btn { border-radius: 12px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="logo">✈️ Travel<span>yn</span></a>
+        <a href="#" class="logo">🇪🇺 Travel<span>yn</span></a>
         <nav>
-            <a href="#buscador">Planear Viaje</a>
-            <a href="#servicios">¿Cómo funcionamos?</a>
-            <a href="#contacto">Contacto Directo</a>
+            <a href="#buscador">Plataforma</a>
+            <a href="#operadores">Conectividad</a>
+            <a href="#contacto">Asistencia Premium</a>
         </nav>
     </header>
 
     <main>
         <!-- Hero Section -->
         <section class="hero">
-            <h1>Tu próximo viaje, <span>con la tranquilidad de Travelyn.</span></h1>
-            <p>No busques en cientos de páginas. Dinos cuál es tu destino ideal y tus preferencias; nosotros diseñamos el itinerario perfecto a tu medida.</p>
+            <h1>Toda Europa conectada <span>en un solo lugar.</span></h1>
+            <p>Compara y reserva trenes de alta velocidad, autobuses y vuelos en España y todo el continente. Procesos simplificados combinados con asistencia humana de confianza.</p>
             
-            <!-- Buscador Avanzado Detallado -->
+            <!-- Selector Inteligente de Transporte -->
+            <div class="transport-selector">
+                <button class="type-btn active" onclick="setTransport('Combinado (Tren/Bus/Vuelo)', this)">🌍 Todo Combinado</button>
+                <button class="type-btn" onclick="setTransport('Tren de Alta Velocidad', this)">🚄 Trenes</button>
+                <button class="type-btn" onclick="setTransport('Autobús de Larga Distancia', this)">🚌 Autobuses</button>
+                <button class="type-btn" onclick="setTransport('Vuelo Comercial', this)">✈️ Vuelos</button>
+            </div>
+
+            <!-- Formulario Integral Unificado -->
             <div class="search-container" id="buscador">
                 <div class="form-grid">
                     <div class="input-group">
-                        <label>¿A dónde quieres viajar?</label>
-                        <input type="text" id="destination" placeholder="Cualquier ciudad, país o playa..." required>
+                        <label>Origen</label>
+                        <input type="text" id="origin" placeholder="Ciudad de salida (Ej: Madrid, Barcelona...)" required>
                     </div>
                     <div class="input-group">
-                        <label>Tipo de Viaje</label>
-                        <select id="trip-type">
-                            <option value="Ida y vuelta">Ida y vuelta</option>
-                            <option value="Solo ida">Solo ida</option>
-                            <option value="Múltiples destinos">Múltiples destinos</option>
-                        </select>
+                        <label>Destino en España o Europa</label>
+                        <input type="text" id="destination" placeholder="Ciudad de llegada (Ej: París, Sevilla...)" required>
                     </div>
                     <div class="input-group">
-                        <label>Fecha de Salida</label>
+                        <label>Fecha de Ida</label>
                         <input type="date" id="depart-date">
                     </div>
                     <div class="input-group">
-                        <label>Fecha de Regreso</label>
+                        <label>Fecha de Regreso (Opcional)</label>
                         <input type="date" id="return-date">
                     </div>
                     <div class="input-group">
-                        <label>Número de Pasajeros</label>
+                        <label>Viajeros</label>
                         <select id="passengers">
-                            <option value="1 pasajero">1 pasajero</option>
-                            <option value="2 pasajeros">2 pasajeros</option>
-                            <option value="3 pasajeros">3 pasajeros</option>
-                            <option value="4+ pasajeros">4 o más pasajeros</option>
+                            <option value="1 viajero">1 viajero</option>
+                            <option value="2 viajeros">2 viajeros</option>
+                            <option value="3 viajeros">3 viajeros</option>
+                            <option value="4+ viajeros">4 o más viajeros</option>
                         </select>
                     </div>
                     <div class="input-group">
-                        <label>Preferencia de Equipaje</label>
-                        <select id="baggage">
-                            <option value="Solo mochila de mano">Solo mochila de mano</option>
-                            <option value="Maleta de cabina (10kg)">Maleta de cabina (10kg)</option>
-                            <option value="Maleta facturada (23kg)">Maleta facturada en bodega (23kg)</option>
+                        <label>Preferencia de Itinerario</label>
+                        <select id="preference">
+                            <option value="Ruta más rápida (Alta Velocidad / Directo)">Ruta más rápida</option>
+                            <option value="Opción más económica (Low-cost)">Opción más económica</option>
+                            <option value="Horarios flexibles">Horarios flexibles</option>
                         </select>
                     </div>
                     <div class="input-group full-width">
-                        <label>Detalles adicionales (Hoteles, presupuesto, dudas...)</label>
-                        <textarea id="additional-details" rows="3" placeholder="Ej: Necesito hotel céntrico, prefiero viajar de mañana, vuelo directo si es posible..."></textarea>
+                        <label>Especificaciones adicionales (Compañía de preferencia, equipajes extra, transbordos, hoteles...)</label>
+                        <textarea id="additional-details" rows="3" placeholder="Ej: Prefiero viajar con iryo o AVE, viajo con maleta grande de 23kg, necesito asistencia especial..."></textarea>
                     </div>
                 </div>
-                <button class="btn-search" onclick="sendToWhatsApp()">🚀 Enviar detalles a un asesor</button>
+                <button class="btn-search" onclick="sendToWhatsApp()">🚀 Comparar opciones y reservar</button>
             </div>
         </section>
 
-        <!-- Sección Informativa de Destinos Globales -->
-        <section class="destinations-info" id="servicios">
-            <h2 class="section-title">Diseñamos tu viaje a cualquier rincón del mundo</h2>
-            <p class="section-subtitle">Tú pones la idea y el destino, nosotros nos encargamos de toda la complejidad técnica y operativa.</p>
+        <!-- Sección de Operadores Oficiales -->
+        <section class="partners-section" id="operadores">
+            <h2 class="partners-title">Integrando las principales redes de transporte de Europa</h2>
+            <div class="partners-tags">
+                <span class="partner-tag" style="border-left: 4px solid #8b5cf6;">Renfe AVE</span>
+                <span class="partner-tag" style="border-left: 4px solid #ec4899;">iryo</span>
+                <span class="partner-tag" style="border-left: 4px solid #3b82f6;">Ouigo España</span>
+                <span class="partner-tag" style="border-left: 4px solid #ef4444;">Avlo</span>
+                <span class="partner-tag" style="border-left: 4px solid #10b981;">Alsa Autobuses</span>
+                <span class="partner-tag" style="border-left: 4px solid #f59e0b;">FlixBus</span>
+                <span class="partner-tag" style="border-left: 4px solid #06b6d4;">Eurostar & Rutas Europeas</span>
+            </div>
+        </section>
+
+        <!-- Propuesta de Valor de la Plataforma -->
+        <section class="features">
+            <h2 class="section-title">La evolución en la gestión de tus viajes</h2>
+            <p class="section-subtitle">Combinamos algoritmos y potentes búsquedas multimodales con atención humana impecable para erradicar el estrés del viajero.</p>
             
-            <div class="destinations-grid">
-                <div class="dest-card">
-                    <span class="icon">🌍</span>
-                    <h3>Destinos Globales</h3>
-                    <p>No importa si buscas una capital europea, un tour por Asia o una playa en el Caribe. Buscamos en todas las plataformas globales.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="icon">🔄</span>
+                    <h3>Comparación Multimodal</h3>
+                    <p>Evaluamos instantáneamente si te conviene más realizar tu trayecto en un tren de alta velocidad, en autobús de larga distancia o en avión según tus tiempos y presupuesto.</p>
                 </div>
-                <div class="dest-card">
-                    <span class="icon">💼</span>
-                    <h3>Gestión de Equipaje</h3>
-                    <p>Te ayudamos a elegir e incluir exactamente las maletas que necesitas para evitar sorpresas o cobros sorpresas en el aeropuerto.</p>
+                <div class="feature-card">
+                    <span class="icon">🇪🇺</span>
+                    <h3>Conectividad Europea Absoluta</h3>
+                    <p>Cruzamos fronteras de forma sencilla. Diseñamos rutas integrales conectando operadores nacionales e internacionales en una única interfaz unificada.</p>
                 </div>
-                <div class="dest-card">
-                    <span class="icon">📑</span>
-                    <h3>Check-in y Documentos</h3>
-                    <p>Hacemos tus check-ins y te asesoramos minuciosamente sobre visados, pasaportes y requisitos del país de destino.</p>
+                <div class="feature-card">
+                    <span class="icon">🛡️</span>
+                    <h3>Procesos Simplificados y Seguros</h3>
+                    <p>Olvídate de registrarte en diez plataformas de trenes o lidiar con sistemas de check-in complejos. Centralizamos toda tu documentación de viaje con máxima garantía.</p>
                 </div>
             </div>
         </section>
@@ -373,15 +487,15 @@
         <!-- Sección de Contacto -->
         <section class="contact-section" id="contacto">
             <div class="contact-container">
-                <h2 class="section-title">Atención Humana y Cercana</h2>
-                <p style="color: #64748b;">¿Prefieres consultarnos algo antes de rellenar el formulario? Estamos listos para escucharte de inmediato a través de nuestros canales oficiales.</p>
+                <h2 class="section-title">Asistencia en Ruta y Dudas</h2>
+                <p style="color: #64748b;">¿Necesitas asesoría con visados, políticas de equipaje o cambios de billete? Nuestro equipo experto te acompaña en tiempo real, garantizándote un viaje cómodo y sin fricciones.</p>
                 
                 <div class="contact-buttons">
-                    <a href="https://wa.me/34639077423?text=Hola%20Travelyn!%20Me%20gustaria%20recibir%20asesoria%20personalizada%20para%20un%20viaje." target="_blank" class="contact-btn btn-wa">
-                        💬 Escríbenos por WhatsApp (+34 639 07 74 23)
+                    <a href="https://wa.me/34639077423?text=Hola%20Travelyn!%20Deseo%20hacer%20una%20consulta%20sobre%20un%20itinerario%20por%20Europa." target="_blank" class="contact-btn btn-wa">
+                        💬 Soporte Humano Vía WhatsApp
                     </a>
-                    <a href="mailto:mejiajf2009@gmail.com?subject=Consulta%20de%20Viaje%20-%20Travelyn" class="contact-btn btn-mail">
-                        ✉️ Correo: mejiajf2009@gmail.com
+                    <a href="mailto:mejiajf2009@gmail.com?subject=Plataforma%20Travelyn%20-%20Consulta%20Multimodal" class="contact-btn btn-mail">
+                        ✉️ Correo Oficial: mejiajf2009@gmail.com
                     </a>
                 </div>
             </div>
@@ -389,40 +503,53 @@
     </main>
 
     <script>
+        // Variable global que rastrea la pestaña de transporte seleccionada
+        let selectedTransport = "Combinado (Tren/Bus/Vuelo)";
+
+        function setTransport(type, element) {
+            selectedTransport = type;
+            // Remover estado activo de los otros botones
+            const buttons = document.querySelectorAll('.type-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            // Agregar activo al seleccionado
+            element.classList.add('active');
+        }
+
         function sendToWhatsApp() {
+            const origin = document.getElementById('origin').value;
             const dest = document.getElementById('destination').value;
-            const tripType = document.getElementById('trip-type').value;
             const departDate = document.getElementById('depart-date').value;
             const returnDate = document.getElementById('return-date').value;
             const passengers = document.getElementById('passengers').value;
-            const baggage = document.getElementById('baggage').value;
+            const preference = document.getElementById('preference').value;
             const details = document.getElementById('additional-details').value;
 
-            if (!dest) {
-                alert('Por favor, dinos a dónde te gustaría viajar para poder estructurar tu solicitud.');
+            if (!origin || !dest) {
+                alert('Por favor, indica tanto el origen como el destino para poder diseñar tu ruta.');
                 return;
             }
 
-            // TU NÚMERO DE WHATSAPP REAL ACTUALIZADO CORRECTAMENTE
+            // Tus datos reales validados
             const myPhoneNumber = "34639077423"; 
             
-            // Construcción estructurada del mensaje de texto para WhatsApp
-            let baseText = `¡Hola *Travelyn*! ✈️\n\nHe rellenado mi solicitud de viaje en la web y me gustaría recibir una cotización personalizada:\n\n`;
-            baseText += `📍 *Destino:* ${dest}\n`;
-            baseText += `🔄 *Tipo:* ${tripType}\n`;
+            // Construcción del mensaje para la plataforma europea integral
+            let baseText = `¡Hola *Travelyn Europa*! 🇪🇺✈️\n\nHe configurado una solicitud de viaje en la plataforma integral:\n\n`;
+            baseText += `💺 *Medio Preferido:* ${selectedTransport}\n`;
+            baseText += `🛫 *Origen:* ${origin}\n`;
+            baseText += `🛬 *Destino:* ${dest}\n`;
             baseText += `📅 *Salida:* ${departDate || 'Por definir'}\n`;
-            if(tripType === "Ida y vuelta") {
-                baseText += `📅 *Regreso:* ${returnDate || 'Por definir'}\n`;
+            if(returnDate) {
+                baseText += `📅 *Regreso:* ${returnDate}\n`;
             }
-            baseText += `👥 *Pasajeros:* ${passengers}\n`;
-            baseText += `🧳 *Equipaje:* ${baggage}\n`;
+            baseText += `👥 *Volumen:* ${passengers}\n`;
+            baseText += `⚙️ *Prioridad:* ${preference}\n`;
             if (details.trim() !== "") {
-                baseText += `📝 *Detalles Adicionales:* ${details}\n`;
+                baseText += `📝 *Peticiones Especiales:* ${details}\n`;
             }
             
             const encodedText = encodeURIComponent(baseText);
             
-            // Abre WhatsApp con tus datos reales instalados
+            // Redirección directa y limpia a tu WhatsApp
             window.open(`https://wa.me/${myPhoneNumber}?text=${encodedText}`, '_blank');
         }
     </script>
