@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CÓDIGO DE VERIFICACIÓN DE GOOGLE -->
+    <meta name="google-site-verification" content="google818f64064221881a" />
+    
     <title>Traveling | Viaja sin Límites</title>
+    <meta name="description" content="Traveling - Planificación inteligente de viajes globales. Gestiona tus vuelos corporativos, rutas multimodales y traslados de alta gama sin límites.">
+
     <!-- Tipografías: Elegancia Serif para Títulos y Sans para Interfaz -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -98,7 +104,9 @@
             align-items: center;
         }
 
-        .hero-text animation: fadeIn 1s ease-out;
+        .hero-text {
+            animation: fadeIn 1s ease-out;
+        }
 
         .hero-text h1 {
             font-size: 3.8rem;
@@ -162,7 +170,6 @@
             color: var(--text-muted);
         }
 
-        /* Buscador Consistente e Inclusivo */
         .search-area {
             max-width: 1400px;
             margin: 0 auto;
@@ -209,7 +216,6 @@
             box-shadow: var(--shadow-premium);
         }
 
-        /* Secciones de Formulario */
         .form-section-title {
             font-size: 0.8rem;
             font-weight: 700;
@@ -279,7 +285,6 @@
             box-shadow: 0 15px 30px rgba(179, 143, 68, 0.2);
         }
 
-        /* Ecosistema Experiencial: Grid de Secciones Avanzadas e IA */
         .experience-zone {
             background: var(--bg-surface);
             padding: 6rem 5%;
@@ -295,7 +300,6 @@
             align-items: start;
         }
 
-        /* Consola Inteligente del Chatbot IA */
         .ai-chat-console {
             background: #ffffff;
             border-radius: 24px;
@@ -696,21 +700,17 @@
             }, 800);
         }
 
-        // Sistema unificado para empaquetar Datos Personales + Vuelo a WhatsApp
         function sendToWhatsApp() {
-            // Datos personales
             const name = document.getElementById('passenger-name').value.trim();
             const idDoc = document.getElementById('passenger-id').value.trim();
             const phonePass = document.getElementById('passenger-phone').value.trim();
             const email = document.getElementById('passenger-email').value.trim();
 
-            // Detalles del vuelo
             const origin = document.getElementById('origin').value.trim();
             const dest = document.getElementById('destination').value.trim();
             const depart = document.getElementById('depart-date').value;
             const ret = document.getElementById('return-date').value;
             
-            // Preferencias
             const fClass = document.getElementById('flight-class').value;
             const seat = document.getElementById('seat-preference').value;
             const baggage = document.getElementById('baggage-option').value;
