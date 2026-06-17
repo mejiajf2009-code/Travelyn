@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VuelaFácil - Viajar nunca fue tan simple</title>
+    <title>Travelyn - Viajar nunca fue tan simple</title>
+    <!-- Fuentes modernas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -11,7 +12,7 @@
     <style>
         :root {
             --primary: #1e3a8a; /* Azul confianza */
-            --accent: #ff6b6b;  /* Coral llamativo */
+            --accent: #ff6b6b;  /* Coral Travelyn (llamativo) */
             --text: #0f172a;    /* Oscuro elegante */
             --bg: #f8fafc;      /* Fondo limpio */
             --white: #ffffff;
@@ -41,13 +42,14 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: var(--primary);
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            letter-spacing: -0.5px;
         }
 
         .logo span {
@@ -66,7 +68,7 @@
             color: var(--accent);
         }
 
-        /* Hero Section (Llamativa y minimalista) */
+        /* Hero Section */
         .hero {
             max-width: 1400px;
             margin: 0 auto;
@@ -148,3 +150,120 @@
             cursor: pointer;
             transition: transform 0.2s, background-color 0.2s;
         }
+
+        .btn-search:hover {
+            background-color: #ff5252;
+            transform: translateY(-2px);
+        }
+
+        /* Sección de Valores */
+        .features {
+            background-color: var(--white);
+            padding: 6rem 5%;
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .feature-card {
+            text-align: left;
+        }
+
+        .feature-card .icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .feature-card p {
+            color: #64748b;
+        }
+
+        /* Responsivo para móviles */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .search-container {
+                grid-template-columns: 1fr;
+                border-radius: 16px;
+            }
+            .input-group:not(:last-child) {
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
+                padding-bottom: 1rem;
+            }
+            header { flex-direction: column; gap: 1rem; }
+            nav a { margin: 0 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">✈️ Travel<span>yn</span></a>
+        <nav>
+            <a href="#beneficios">Beneficios</a>
+            <a href="#soporte">Soporte Humano</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Tu próximo viaje, <span>con la tranquilidad de Travelyn.</span></h1>
+            <p>Dinos tu destino y tus preferencias. Nosotros nos encargamos de buscar las mejores opciones de vuelos y trenes mientras te acompañamos en cada paso.</p>
+            
+            <!-- Buscador Intuitivo -->
+            <div class="search-container">
+                <div class="input-group">
+                    <label>¿A dónde vas?</label>
+                    <input type="text" placeholder="Ciudad o destino..." required>
+                </div>
+                <div class="input-group">
+                    <label>¿Cuándo?</label>
+                    <input type="date" required>
+                </div>
+                <div class="input-group">
+                    <label>Preferencia</label>
+                    <select>
+                        <option>Más rápido</option>
+                        <option>Más económico</option>
+                        <option>Equipaje incluido</option>
+                    </select>
+                </div>
+                <button class="btn-search" onclick="alert('En Travelyn ya estamos buscando las mejores opciones para ti. ¡Prepárate para viajar!')">Buscar viaje</button>
+            </div>
+        </section>
+
+        <section class="features" id="beneficios">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="icon">✨</span>
+                    <h3>Todo en un solo lugar</h3>
+                    <p>Olvídate de saltar entre decenas de webs. En Travelyn unificamos vuelos, trenes y transportes para ofrecerte la ruta perfecta sin enredos.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="icon">🤝</span>
+                    <h3>Atención Humana Real</h3>
+                    <p>Nada de respuestas automatizadas que no resuelven nada. Te asistimos de forma cercana con tu check-in, maletas y documentación.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="icon">🔒</span>
+                    <h3>Experiencia sin Estrés</h3>
+                    <p>Procesos claros, transparentes y seguros. Nos aseguramos de que tu única preocupación sea disfrutar del destino.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
