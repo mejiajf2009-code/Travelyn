@@ -1,610 +1,682 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveling | Viaja sin Límites</title>
+    <!-- Tipografías: Elegancia Serif para Títulos y Sans para Interfaz -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-pure: #ffffff;
+            --bg-surface: #f9fbfd;
+            --bg-input: #ffffff;
+            --text-main: #0b0b0d;
+            --text-muted: #64748b;
+            --gold: #b38f44;
+            --gold-gradient: linear-gradient(135deg, #dfc48c 0%, #b38f44 100%);
+            --shadow-premium: 0 30px 60px rgba(0, 0, 0, 0.04);
+            --shadow-chat: 0 10px 30px rgba(179, 143, 68, 0.1);
+        }
 
-        .hero h1 span {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-pure);
+            color: var(--text-main);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Títulos Serif inspirados en el Logo */
+        h1, h2, h3, .brand-logo {
+            font-family: 'Playfair Display', serif;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2.5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .brand-logo {
+            font-size: 1.8rem;
             font-weight: 600;
+            color: var(--text-main);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .brand-logo span {
+            color: var(--gold);
+            font-weight: 300;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.8rem;
+            display: block;
+            letter-spacing: 3px;
+            margin-top: -2px;
+            text-transform: uppercase;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--text-main); }
+
+        /* Hero Split Section: Contenido + Imagen Curada */
+        .hero-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 5% 5rem 5%;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero-text h1 {
+            font-size: 3.8rem;
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-text h1 span {
+            font-style: italic;
             background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .hero p {
+        .hero-text p {
             font-size: 1.1rem;
             color: var(--text-muted);
-            max-width: 650px;
-            margin: 0 auto 3.5rem auto;
+            margin-bottom: 2.5rem;
             font-weight: 300;
+            max-width: 580px;
         }
 
-        /* Selector de Modalidad Ajustado y Centrado */
+        .hero-gallery {
+            position: relative;
+            height: 550px;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        .main-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: var(--shadow-premium);
+        }
+
+        /* Flotante de Imagen Estilo Editorial */
+        .floating-badge {
+            position: absolute;
+            bottom: -25px;
+            left: -25px;
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+            border-left: 4px solid var(--gold);
+            max-width: 240px;
+        }
+
+        .floating-badge p {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.2rem;
+        }
+
+        .floating-badge span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Buscador Consistente e Inclusivo */
+        .search-area {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5% 6rem 5%;
+        }
+
         .transport-selector {
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap; /* Evita que se salgan de la pantalla en móvil */
+            justify-content: flex-start;
+            flex-wrap: wrap;
             gap: 0.5rem;
             max-width: 900px;
-            width: 100%;
-            margin: 0 auto -1px auto;
-            padding: 0 1rem;
+            margin-bottom: -1px;
         }
 
         .type-btn {
             background: #ffffff;
             border: 1px solid rgba(0, 0, 0, 0.06);
-            padding: 0.8rem 1.5rem;
+            padding: 1rem 2rem;
             font-size: 0.75rem;
-            font-weight: 600;
-            border-radius: 12px 12px 0 0;
+            font-weight: 700;
+            border-radius: 14px 14px 0 0;
             cursor: pointer;
             color: var(--text-muted);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s;
             letter-spacing: 1px;
             text-transform: uppercase;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            flex: 1 1 auto; /* Se auto-ajustan simétricamente */
-            justify-content: center;
-        }
-
-        @media (max-width: 480px) {
-            .type-btn {
-                border-radius: 8px; /* Diseño más limpio en rejilla móvil */
-            }
-        }
-
-        .type-btn svg {
-            width: 15px;
-            height: 15px;
-            fill: currentColor;
+            gap: 0.6rem;
         }
 
         .type-btn.active {
             background: var(--bg-surface);
             color: var(--text-main);
             border-bottom: 1px solid var(--bg-surface);
-            border-top: 2px solid var(--text-main);
+            border-top: 2px solid var(--gold);
         }
 
-        /* Consola de Búsqueda Corregida (Fija el error de corte lateral) */
         .search-container {
             background: var(--bg-surface);
             padding: 3.5rem;
-            border-radius: 24px;
+            border-radius: 0 24px 24px 24px;
             border: 1px solid rgba(0, 0, 0, 0.04);
             max-width: 900px;
-            width: calc(100% - 2rem); /* Garantiza margen idéntico a los lados en móvil */
-            margin: 0 auto 6rem auto;
-            text-align: left;
+            width: 100%;
             box-shadow: var(--shadow-premium);
-            animation: fadeIn 1.2s ease-out;
         }
 
         .form-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.8rem;
             margin-bottom: 2.5rem;
         }
 
-        .input-group {
-            display: flex;
-            flex-direction: column;
-        }
+        .input-group { display: flex; flex-direction: column; }
 
         .input-group label {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 700;
             color: var(--text-main);
             text-transform: uppercase;
             margin-bottom: 0.6rem;
-            letter-spacing: 1.2px;
+            letter-spacing: 1.5px;
         }
 
         .input-group input, .input-group select, .input-group textarea {
             border: 1px solid rgba(0, 0, 0, 0.08);
             outline: none;
-            font-size: 0.95rem;
-            font-weight: 400;
+            font-size: 0.9rem;
             color: var(--text-main);
             background: var(--bg-input);
             padding: 1rem 1.2rem;
-            border-radius: 10px;
-            width: 100%;
-            transition: all 0.3s ease;
+            border-radius: 12px;
+            transition: all 0.3s;
         }
 
         .input-group input:focus, .input-group select:focus, .input-group textarea:focus {
             border-color: var(--gold);
-            box-shadow: 0 0 12px rgba(179, 143, 68, 0.15);
+            box-shadow: 0 0 12px rgba(179, 143, 68, 0.12);
         }
 
-        .full-width {
-            grid-column: 1 / -1;
-        }
+        .full-width { grid-column: 1 / -1; }
 
-        /* Botón de Acción Principal */
         .btn-search {
             background: var(--text-main);
             color: #ffffff;
             border: none;
             padding: 1.3rem;
             border-radius: 12px;
-            font-size: 0.9rem;
-            font-weight: 600;
+            font-size: 0.85rem;
+            font-weight: 700;
             cursor: pointer;
             width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             text-transform: uppercase;
+            transition: all 0.3s;
         }
 
         .btn-search:hover {
             background: var(--gold);
-            transform: translateY(-1px);
-            box-shadow: 0 10px 25px rgba(179, 143, 68, 0.25);
+            box-shadow: 0 15px 30px rgba(179, 143, 68, 0.2);
         }
 
-        /* Sección de Conectividad Continental */
-        .exploration-section {
-            max-width: 1300px;
+        /* Ecosistema Experiencial: Grid de Secciones Avanzadas e IA */
+        .experience-zone {
+            background: var(--bg-surface);
+            padding: 6rem 5%;
+            border-top: 1px solid rgba(0,0,0,0.02);
+        }
+
+        .experience-layout {
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 2rem 5% 6rem 5%;
-        }
-
-        .explore-layout {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 4rem;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 5rem;
             align-items: start;
         }
 
-        /* Tarjetas de Recomendación de Alta Gama */
-        .cards-panel {
+        /* Consola Inteligente del Chatbot IA */
+        .ai-chat-console {
+            background: #ffffff;
+            border-radius: 24px;
+            border: 1px solid rgba(179, 143, 68, 0.15);
+            box-shadow: var(--shadow-chat);
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            height: 520px;
         }
 
-        .interactive-card {
-            background: #ffffff;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            border-left: 3px solid var(--gold);
-            border-radius: 14px;
-            padding: 1.5rem 1.8rem;
-            cursor: pointer;
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.01);
-        }
-
-        .interactive-card:hover {
-            border-color: rgba(0, 0, 0, 0.1);
-            border-left-color: var(--text-main);
-            transform: translateX(4px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
-        }
-
-        .card-details h4 {
-            font-size: 1.1rem;
-            color: var(--text-main);
-            margin-bottom: 0.3rem;
-            font-weight: 600;
-        }
-
-        .card-details p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-weight: 300;
-        }
-
-        .badge-luxury {
-            border: 1px solid var(--text-main);
-            color: var(--text-main);
-            padding: 0.4rem 1.2rem;
-            font-size: 0.7rem;
-            border-radius: 6px;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-        }
-
-        .interactive-card:hover .badge-luxury {
+        .ai-chat-header {
             background: var(--text-main);
+            color: #ffffff;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .ai-avatar {
+            width: 10px;
+            height: 10px;
+            background: #10b981;
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 0 10px #10b981;
+        }
+
+        .ai-chat-header h3 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
             color: #ffffff;
         }
 
-        /* Simulador Cartográfico Minimalista */
-        .map-simulator {
-            background: var(--bg-surface);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            border-radius: 24px;
-            height: 460px;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .map-bg-grid {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(rgba(179, 143, 68, 0.15) 1px, transparent 1px);
-            background-size: 25px 25px;
-        }
-
-        .radar-ring {
-            position: absolute;
-            border: 1px dashed rgba(0, 0, 0, 0.05);
-            border-radius: 50%;
-            width: 300px;
-            height: 300px;
-            animation: radarPulse 4s infinite linear;
-        }
-
-        .map-node {
-            position: absolute;
-            width: 7px;
-            height: 7px;
-            background: var(--text-main);
-            border-radius: 50%;
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .map-node::after {
-            content: attr(data-label);
-            position: absolute;
-            color: var(--text-main);
-            font-size: 0.65rem;
-            font-weight: 700;
+        .ai-chat-header p {
+            font-size: 0.7rem;
+            color: var(--gold-light);
+            text-transform: uppercase;
             letter-spacing: 1px;
-            top: -20px;
-            left: -15px;
-            white-space: nowrap;
-            text-transform: uppercase;
         }
 
-        /* Ecosistema de Operadores */
-        .network-section {
-            background: var(--bg-surface);
-            padding: 3.5rem 5%;
-            text-align: center;
-            border-top: 1px solid rgba(0,0,0,0.02);
-            border-bottom: 1px solid rgba(0,0,0,0.02);
-        }
-
-        .network-container {
+        .ai-messages-box {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            flex-direction: column;
+            gap: 1rem;
         }
 
-        .network-pill {
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            color: var(--text-muted);
-            text-transform: uppercase;
+        .msg {
+            max-width: 80%;
+            padding: 1rem 1.2rem;
+            border-radius: 14px;
+            font-size: 0.9rem;
+            line-height: 1.4;
         }
 
-        /* Conserjería de Alto Nivel */
-        .concierge-section {
-            padding: 7rem 5%;
-            text-align: center;
+        .msg.system {
+            background: var(--bg-surface);
+            color: var(--text-main);
+            align-self: flex-start;
+            border-left: 3px solid var(--gold);
+        }
+
+        .msg.user {
+            background: var(--gold-gradient);
+            color: #ffffff;
+            align-self: flex-end;
+        }
+
+        .ai-input-area {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            gap: 0.8rem;
             background: #ffffff;
         }
 
-        .concierge-box {
-            max-width: 700px;
-            margin: 0 auto;
+        .ai-input-area input {
+            flex: 1;
+            border: 1px solid rgba(0,0,0,0.08);
+            padding: 0.8rem 1.2rem;
+            border-radius: 10px;
+            outline: none;
+            font-size: 0.9rem;
         }
 
-        .concierge-box h2 {
-            font-size: 2.2rem;
-            font-weight: 300;
+        .ai-send-btn {
+            background: var(--text-main);
+            color: #ffffff;
+            border: none;
+            padding: 0 1.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+        }
+
+        .ai-send-btn:hover { background: var(--gold); }
+
+        /* Editorial Destinos */
+        .editorial-text h2 {
+            font-size: 2.8rem;
+            font-weight: 400;
             margin-bottom: 1.5rem;
             letter-spacing: -0.5px;
         }
 
-        .concierge-box h2 span {
-            font-weight: 700;
-            color: var(--text-main);
-        }
-
-        .concierge-box p {
+        .editorial-text p {
             color: var(--text-muted);
             font-weight: 300;
-            font-size: 1rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
         }
 
-        .luxury-buttons {
+        .destination-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .dest-card {
+            position: relative;
+            height: 260px;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .dest-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .dest-card:hover img { transform: scale(1.05); }
+
+        .dest-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 60%);
             display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            max-width: 450px;
-            margin: 0 auto;
+            align-items: flex-end;
+            padding: 1.5rem;
         }
 
-        .luxury-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.8rem;
-            padding: 1.2rem;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: all 0.3s ease;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-        .luxury-btn svg {
-            width: 16px;
-            height: 16px;
-            fill: currentColor;
-        }
-
-        .luxury-btn-wa {
-            background: var(--text-main);
+        .dest-overlay h4 {
             color: #ffffff;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 400;
         }
 
-        .luxury-btn-wa:hover {
-            background: var(--gold);
-            transform: translateY(-1px);
-            box-shadow: 0 10px 20px rgba(179, 143, 68, 0.2);
+        /* Adaptabilidad Móvil Extrema */
+        @media (max-width: 1024px) {
+            .hero-section { grid-template-columns: 1fr; text-align: center; }
+            .hero-text p { margin-left: auto; margin-right: auto; }
+            .hero-gallery { height: 380px; display: none; }
+            .experience-layout { grid-template-columns: 1fr; gap: 4rem; }
+            .search-container { border-radius: 24px; }
+            .transport-selector { justify-content: center; }
         }
 
-        .luxury-btn-mail {
-            background: #ffffff;
-            color: var(--text-main);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .luxury-btn-mail:hover {
-            background: var(--bg-surface);
-            border-color: var(--text-main);
-        }
-
-        /* Adaptabilidad Móvil Avanzada */
-        @media (max-width: 968px) {
-            .explore-layout { grid-template-columns: 1fr; gap: 3rem; }
-            .map-simulator { height: 320px; }
-            .hero h1 { font-size: 2.3rem; }
-            .search-container { padding: 2rem; }
+        @media (max-width: 768px) {
+            .hero-text h1 { font-size: 2.5rem; }
             header { flex-direction: column; gap: 1.5rem; text-align: center; }
-            nav { justify-content: center; flex-wrap: wrap; gap: 1rem; }
+            nav a { margin: 0 0.8rem; }
+            .search-container { padding: 2rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="logo">TRAVEL<span>YN</span></a>
+        <a href="#" class="brand-logo">
+            TRAVELING
+            <span>Viaja Sin Límites</span>
+        </a>
         <nav>
-            <a href="#buscador">Consola</a>
-            <a href="#explorar">Conectividad</a>
-            <a href="#soporte">Atención</a>
+            <a href="#reserva">Consola</a>
+            <a href="#ia-concierge">Chat IA</a>
+            <a href="#destinos">Explorar</a>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <h1>Planificación Inteligente de Viajes <span>Globales</span></h1>
-            <p>Acceda de forma centralizada a redes ferroviarias de alta velocidad, líneas continentales de autobús y operaciones de vuelo mundiales mediante una arquitectura tecnológica refinada.</p>
-            
-            <!-- Selector de Transporte Corregido y En Cuadrícula Adaptable -->
+        <!-- Hero Section con Imagen Curada de un Jet de Lujo y Arquitectura Limpia -->
+        <section class="hero-section">
+            <div class="hero-text">
+                <h1>Logística de Viajes <span>Elegantes</span> Continentales</h1>
+                <p>Cruzar fronteras demanda precisión absoluta. Centralizamos la gestión de rutas multimodales unificando la alta velocidad ferroviaria, flotas de autobuses ejecutivos y aviación privada.</p>
+                <a href="#reserva" class="btn-search" style="text-decoration:none; display:inline-block; width:auto; padding:1.2rem 2.5rem;">Configurar Itinerario</a>
+            </div>
+            <div class="hero-gallery">
+                <!-- Imagen Profesional Exclusiva: Unsplash Premium Travel Architecture -->
+                <img src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=800&q=80" alt="Traveling Luxury Experience" class="main-img">
+                <div class="floating-badge">
+                    <p>Viaja sin Límites</p>
+                    <span>Soporte Global Operativo 24/7</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consola de Reserva Multimodal -->
+        <section class="search-area" id="reserva">
             <div class="transport-selector">
-                <button class="type-btn active" onclick="setTransport('Ruta Integrada Multimodal', this)">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                    Combinado
-                </button>
-                <button class="type-btn" onclick="setTransport('Alta Velocidad Ferroviaria', this)">
-                    <svg viewBox="0 0 24 24"><path d="M12 2c-4 0-7 2.08-7 6v9c0 2.21 1.79 4 4 4l-1 1v1h8v-1l-1-1c2.21 0 4-1.79 4-4V8c0-3.92-3-6-7-6zm5 14H7v-4h10v4zm0-6H7V8h10v2z"/></svg>
-                    Trenes
-                </button>
-                <button class="type-btn" onclick="setTransport('Línea de Autobús Ejecutiva', this)">
-                    <svg viewBox="0 0 24 24"><path d="M4 16c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h10v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-3.5c0-2.97-2.42-5.4-5.4-5.4H7.4C4.42 7.1 4 9.53 4 12.5V16zm3.5-6.5c.83 0 1.5.67 1.5 1.5S8.33 12.5 7.5 12.5 16 11.83 16 11s-.67-1.5-1.5-1.5h-7zm9 0c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5z"/></svg>
-                    Autobuses
-                </button>
-                <button class="type-btn" onclick="setTransport('Aviación Comercial', this)">
-                    <svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L14 19v-5.5l8 2.5z"/></svg>
-                    Vuelos
-                </button>
+                <button class="type-btn active" onclick="setTransport('Ruta Multimodal Combinada', this)">Combinado</button>
+                <button class="type-btn" onclick="setTransport('Alta Velocidad Ferroviaria', this)">Trenes</button>
+                <button class="type-btn" onclick="setTransport('Línea Ejecutiva de Autobús', this)">Autobuses</button>
+                <button class="type-btn" onclick="setTransport('Vuelo Comercial / Privado', this)">Vuelos</button>
             </div>
 
-            <!-- Consola de Búsqueda Corregida (Firme y Centrada en Pantallas de Móvil) -->
-            <div class="search-container" id="buscador">
+            <div class="search-container">
                 <div class="form-grid">
                     <div class="input-group">
-                        <label>Origen Internacional</label>
-                        <input type="text" id="origin" placeholder="Terminal o ciudad de salida..." required>
+                        <label>Origen</label>
+                        <input type="text" id="origin" placeholder="Ciudad o terminal de salida...">
                     </div>
                     <div class="input-group">
-                        <label>Destino Global</label>
-                        <input type="text" id="destination" placeholder="Terminal o ciudad de llegada..." required>
+                        <label>Destino de Llegada</label>
+                        <input type="text" id="destination" placeholder="Ciudad o terminal de llegada...">
                     </div>
                     <div class="input-group">
-                        <label>Fecha de Salida</label>
+                        <label>Salida</label>
                         <input type="date" id="depart-date">
                     </div>
                     <div class="input-group">
-                        <label>Fecha de Regreso</label>
+                        <label>Regreso</label>
                         <input type="date" id="return-date">
                     </div>
                     <div class="input-group">
-                        <label>Configuración de Cabina</label>
-                        <select id="passengers">
-                            <option value="1 Pasajero">1 Pasajero</option>
-                            <option value="2 Pasajeros">2 Pasajeros</option>
-                            <option value="3 Pasajeros">3 Pasajeros</option>
-                            <option value="4+ Pasajeros">Grupo Corporativo / Familiar</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label>Filtro de Optimización</label>
+                        <label>Preferencia de Ruta</label>
                         <select id="preference">
-                            <option value="Ruta Express más rápida">Ruta más rápida e inteligente</option>
-                            <option value="Tarifa optimizada (Eficiencia global)">Eficiencia de presupuesto</option>
-                            <option value="Flexibilidad total de horarios">Máxima flexibilidad</option>
+                            <option value="Ruta Express Directa">Ruta Express más veloz</option>
+                            <option value="Tarifa Corporativa Optimizada">Tarifa de alta eficiencia</option>
                         </select>
                     </div>
                     <div class="input-group full-width">
-                        <label>Especificaciones de Logística y Confort</label>
-                        <textarea id="additional-details" rows="3" placeholder="Indique preferencias específicas (ej. Operadores preferidos como iryo o AVE, conexiones aéreas, equipaje especial)..."></textarea>
+                        <label>Peticiones Especiales de Confort</label>
+                        <textarea id="additional-details" rows="2" placeholder="Ej. Preferencia por operadores específicos (AVE, iryo), accesos VIP..."></textarea>
                     </div>
                 </div>
-                <button class="btn-search" onclick="sendToWhatsApp()">
-                    Procesar Solicitud de Reserva
-                </button>
+                <button class="btn-search" onclick="sendToWhatsApp()">Procesar Itinerario Exclusivo</button>
             </div>
         </section>
 
-        <!-- Módulo de Exploración Global Dinámica -->
-        <section class="exploration-section" id="explorar">
-            <div class="explore-layout">
+        <!-- Sección de Experiencia: Chatbot IA Activo + Muestra de Imágenes Destacadas -->
+        <section class="experience-zone" id="ia-concierge">
+            <div class="experience-layout">
                 
-                <!-- Tarjetas Interactivas Modernas -->
-                <div class="cards-panel">
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0.3rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Ejes Europeos Destacados</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem; font-weight: 300;">Seleccione un destino sugerido para configurar los parámetros automáticamente.</p>
+                <!-- Chatbot IA Interactivo -->
+                <div class="ai-chat-console">
+                    <div class="ai-chat-header">
+                        <div class="ai-avatar"></div>
+                        <div>
+                            <h3>Concierge Inteligente</h3>
+                            <p>Traveling AI Agent</p>
+                        </div>
+                    </div>
+                    <div class="ai-messages-box" id="chat-box">
+                        <div class="msg system">
+                            Bienvenido a Traveling. Soy su asesor de Inteligencia Artificial para el diseño de itinerarios complejos. ¿Qué destino internacional desea planificar hoy?
+                        </div>
+                    </div>
+                    <div class="ai-input-area">
+                        <input type="text" id="ai-input" placeholder="Escriba aquí (ej: Planifica ruta Madrid a París)..." onkeypress="handleChatKey(event)">
+                        <button class="ai-send-btn" onclick="triggerAiResponse()">Consultar</button>
+                    </div>
+                </div>
+
+                <!-- Editorial Visual de Destinos -->
+                <div class="editorial-text" id="destinos">
+                    <h2>Ejes de Conexión de Alta Gama</h2>
+                    <p>Diseñamos conexiones directas fluidas combinando confort terrestre y aéreo en los principales núcleos de negocios e interés del mundo.</p>
                     
-                    <div class="interactive-card" onclick="autoFillRoute('Madrid', 'París', 'Red de Alta Velocidad Integrada')">
-                        <div class="card-details">
-                            <h4>Madrid — París</h4>
-                            <p>Enlace directo ferroviario transfronterizo • Confort Preferente</p>
+                    <div class="destination-showcase">
+                        <div class="dest-card" onclick="autoFill('Madrid', 'París')">
+                            <!-- Tren de Alta velocidad en un entorno natural y pulcro -->
+                            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=500&q=80" alt="Eje París">
+                            <div class="dest-overlay">
+                                <h4>Madrid — París</h4>
+                            </div>
                         </div>
-                        <span class="badge-luxury">Configurar</span>
-                    </div>
-
-                    <div class="interactive-card" onclick="autoFillRoute('Barcelona', 'Milán', 'Enlace Aéreo Comercial')">
-                        <div class="card-details">
-                            <h4>Barcelona — Milán</h4>
-                            <p>Optimización de tiempos con acceso a salas VIP continentales</p>
+                        <div class="dest-card" onclick="autoFill('Barcelona', 'Milán')">
+                            <!-- Destino Premium Urbano de Vanguardia -->
+                            <img src="https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?auto=format&fit=crop&w=500&q=80" alt="Eje Milán">
+                            <div class="dest-overlay">
+                                <h4>Barcelona — Milán</h4>
+                            </div>
                         </div>
-                        <span class="badge-luxury">Configurar</span>
-                    </div>
-
-                    <div class="interactive-card" onclick="autoFillRoute('Sevilla', 'Lisboa', 'Flota Terrestre de Alta Gama')">
-                        <div class="card-details">
-                            <h4>Sevilla — Lisboa</h4>
-                            <p>Conectividad terrestre ejecutiva directa sin interrupciones</p>
-                        </div>
-                        <span class="badge-luxury">Configurar</span>
                     </div>
                 </div>
 
-                <!-- Radar Cartográfico CSS -->
-                <div class="map-simulator">
-                    <div class="map-bg-grid"></div>
-                    <div class="radar-ring"></div>
-                    <div class="map-node" data-label="Madrid" style="top: 60%; left: 35%;"></div>
-                    <div class="map-node" data-label="París" style="top: 32%; left: 55%;"></div>
-                    <div class="map-node" data-label="Milán" style="top: 44%; left: 72%;"></div>
-                    <div class="map-node" data-label="Lisboa" style="top: 62%; left: 18%;"></div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Red de Cobertura Global -->
-        <section class="network-section">
-            <div class="network-container">
-                <span class="network-pill">Renfe AVE</span>
-                <span class="network-pill">iryo</span>
-                <span class="network-pill">Ouigo</span>
-                <span class="network-pill">Avlo</span>
-                <span class="network-pill">Alsa Executive</span>
-                <span class="network-pill">Eurostar Network</span>
-                <span class="network-pill">Global Air Carriers</span>
-            </div>
-        </section>
-
-        <!-- Soporte y Conserjería Oficial -->
-        <section class="concierge-section" id="soporte">
-            <div class="concierge-box">
-                <h2>Asistencia Global <span>Travelyn Concierge</span></h2>
-                <p>Nuestra división internacional ofrece supervisión experta sobre sus reservas. Centralizamos la emisión de billetes, coordinamos documentación compleja y resolvemos incidencias en ruta en tiempo real, garantizando tranquilidad absoluta.</p>
-                
-                <div class="luxury-buttons">
-                    <a href="https://wa.me/34639077423?text=Hola%20Travelyn.%20Solicito%20asistencia%20profesional%20para%20la%20coordinacion%20de%20un%20itinerario%20internacional." target="_blank" class="luxury-btn luxury-btn-wa">
-                        <svg viewBox="0 0 24 24"><path d="M20.22 3.72a11.82 11.82 0 0 0-8.38-3.47 11.84 11.84 0 0 0-8.4 11.84c0 2.27.59 4.49 1.72 6.45L3.3 24l5.69-1.49a11.75 11.75 0 0 0 5.63 1.43h.01c6.54 0 11.86-5.31 11.86-11.85a11.77 11.77 0 0 0-3.48-8.37zm-8.38 18.23h-.01c-1.93 0-3.82-.52-5.47-1.5l-.39-.23-4.07 1.07 1.09-3.97-.26-.41A9.83 9.83 0 0 1 1.94 12.1c0-5.43 4.42-9.85 9.87-9.85a9.81 9.81 0 0 1 6.97 2.89 9.82 9.82 0 0 1 2.89 6.98c0 5.43-4.42 9.85-9.83 9.85zm5.39-7.36c-.3-.15-1.74-.86-2.01-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07a8.27 8.27 0 0 1-2.42-1.49 9.13 9.13 0 0 1-1.67-2.08c-.18-.3-.02-.46.13-.61.14-.13.3-.35.45-.53.15-.17.2-.3.3-.5.1-.2.05-.38-.02-.53-.07-.15-.67-1.62-.92-2.22-.25-.6-.5-0.51-.67-.52l-.58-.01c-.2 0-.53.07-.81.38-.28.3-1.07 1.05-1.07 2.56s1.09 2.97 1.25 3.17c.15.2 2.15 3.28 5.21 4.6 1.15.5 1.84.67 2.47.77.73.12 1.39.09 1.92.01.59-.09 1.74-.71 1.98-1.4.25-.69.25-1.28.17-1.4-.07-.13-.27-.22-.57-.37z"/></svg>
-                        Canal Especializado de Gestión
-                    </a>
-                    <a href="mailto:mejiajf2009@gmail.com?subject=Travelyn%20Global%20-%20Solicitud%20de%20Servicio" class="luxury-btn luxury-btn-mail">
-                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        Despacho de Reservas Internacionales
-                    </a>
-                </div>
             </div>
         </section>
     </main>
 
     <script>
-        let selectedTransport = "Ruta Integrada Multimodal";
+        let selectedTransport = "Ruta Multimodal Combinada";
 
         function setTransport(type, element) {
             selectedTransport = type;
-            const buttons = document.querySelectorAll('.type-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.type-btn').forEach(btn => btn.classList.remove('active'));
             element.classList.add('active');
         }
 
-        function autoFillRoute(origen, destino, tipo) {
+        function autoFill(origen, destino) {
             document.getElementById('origin').value = origen;
             document.getElementById('destination').value = destino;
-            document.getElementById('additional-details').value = `Interés en eje de conexión sugerido: ${origen} a ${destino} (${tipo}).`;
-            document.getElementById('buscador').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('reserva').scrollIntoView({ behavior: 'smooth' });
         }
 
+        // Simulación Inteligente del Chatbot IA
+        function handleChatKey(event) {
+            if (event.key === 'Enter') triggerAiResponse();
+        }
+
+        function triggerAiResponse() {
+            const inputField = document.getElementById('ai-input');
+            const messageText = inputField.value.trim();
+            if (!messageText) return;
+
+            const chatBox = document.getElementById('chat-box');
+
+            // 1. Mensaje del usuario
+            const userDiv = document.createElement('div');
+            userDiv.className = 'msg user';
+            userDiv.innerText = messageText;
+            chatBox.appendChild(userDiv);
+            inputField.value = '';
+
+            // Scroll automático
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            // 2. Respuesta simulada de la IA adaptativa tras breve pausa
+            setTimeout(() => {
+                const aiDiv = document.createElement('div');
+                aiDiv.className = 'msg system';
+                
+                let lowerText = messageText.toLowerCase();
+                if (lowerText.includes('madrid') || lowerText.includes('parís') || lowerText.includes('paris')) {
+                    aiDiv.innerText = "Excelente elección. Para el eje Madrid — París, recomiendo combinar el tren de Alta Velocidad hasta la conexión aérea VIP, reduciendo tiempos de espera a solo 35 minutos. He preparado los campos de la consola superior para usted.";
+                    autoFill('Madrid', 'París');
+                } else if (lowerText.includes('precio') || lowerText.includes('costo') || lowerText.includes('cuánto')) {
+                    aiDiv.innerText = "Nuestras tarifas se calculan en tiempo real optimizando operadores de primera clase. Si completa el formulario superior, nuestro despacho procesará el presupuesto exacto sin cargos ocultos.";
+                } else {
+                    aiDiv.innerText = `Analizando viabilidad logística para "${messageText}". He transferido los parámetros clave a nuestro sistema de reserva. Presione el botón principal para recibir las opciones disponibles en su canal privado.`;
+                }
+                
+                chatBox.appendChild(aiDiv);
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 800);
+        }
+
+        // Enlace oficial de salida a tu WhatsApp de Gestión
         function sendToWhatsApp() {
             const origin = document.getElementById('origin').value;
             const dest = document.getElementById('destination').value;
-            const departDate = document.getElementById('depart-date').value;
-            const returnDate = document.getElementById('return-date').value;
-            const passengers = document.getElementById('passengers').value;
-            const preference = document.getElementById('preference').value;
+            const depart = document.getElementById('depart-date').value;
+            const ret = document.getElementById('return-date').value;
+            const pref = document.getElementById('preference').value;
             const details = document.getElementById('additional-details').value;
 
             if (!origin || !dest) {
-                alert('Por favor, indique origen y destino para estructurar su propuesta.');
+                alert('Por favor introduzca el origen y destino para activar el despacho de rutas.');
                 return;
             }
 
-            const myPhoneNumber = "34639077423"; 
-            
-            let baseText = `TRAVELYN INTERNATIONAL LOGISTICS\n\nNueva solicitud de diseño de itinerario premium:\n\n`;
-            baseText += `▪ Modos de Transporte: ${selectedTransport}\n`;
-            baseText += `▪ Origen: ${origin}\n`;
-            baseText += `▪ Destino: ${dest}\n`;
-            baseText += `▪ Fecha de Salida: ${departDate || 'A confirmar con el agente'}\n`;
-            if(returnDate) {
-                baseText += `▪ Fecha de Regreso: ${returnDate}\n`;
-            }
-            baseText += `▪ Configuración: ${passengers}\n`;
-            baseText += `▪ Optimización: ${preference}\n`;
-            if (details.trim() !== "") {
-                baseText += `▪ Preferencias Adicionales: ${details}\n`;
-            }
-            
-            const encodedText = encodeURIComponent(baseText);
-            window.open(`https://wa.me/${myPhoneNumber}?text=${encodedText}`, '_blank');
+            const phone = "34639077423";
+            let txt = `TRAVELING | VIAJA SIN LÍMITES\n\nSolicitud de Concierge Multimodal:\n`;
+            txt += `▪ Tipo: ${selectedTransport}\n`;
+            txt += `▪ Origen: ${origin}\n`;
+            txt += `▪ Destino: ${dest}\n`;
+            txt += `▪ Salida: ${depart || 'Pendiente de asignación'}\n`;
+            if (ret) txt += `▪ Regreso: ${ret}\n`;
+            txt += `▪ Preferencia: ${pref}\n`;
+            if (details) txt += `▪ Confort/Notas: ${details}\n`;
+
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(txt)}`, '_blank');
         }
     </script>
-
 </body>
 </html>
