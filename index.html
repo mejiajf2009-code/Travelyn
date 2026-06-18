@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- CÓDIGO DE VERIFICACIÓN DE GOOGLE ACTUALIZADO -->
     <meta name="google-site-verification" content="lIk-JJpYbbHqYfE37FcGlJNOdhHpzldNfZhVJ_zhSI0" />
     
     <title>Travelyn | Viaja sin Límites</title>
     <meta name="description" content="Travelyn - Planificación inteligente de viajes globales. Gestiona tus vuelos, hoteles de lujo, rutas multimodales y tours exclusivos sin límites.">
 
-    <!-- Tipografías: Elegancia Serif para Títulos y Sans para Interfaz -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -56,7 +54,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 2.5rem 5%;
+            padding: 1.5rem 5%;
             max-width: 1400px;
             margin: 0 auto;
             animation: fadeIn 0.8s ease-out;
@@ -68,17 +66,6 @@
             color: var(--text-main);
             text-decoration: none;
             letter-spacing: 2px;
-        }
-
-        .brand-logo span {
-            color: var(--gold);
-            font-weight: 300;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 0.8rem;
-            display: block;
-            letter-spacing: 3px;
-            margin-top: -2px;
-            text-transform: uppercase;
         }
 
         nav a {
@@ -575,9 +562,8 @@
 <body>
 
     <header>
-        <a href="#" class="brand-logo">
-            TRAVELYN
-            <span>Viaja Sin Límites</span>
+        <a href="#" class="brand-logo" style="display: flex; align-items: center; text-decoration: none;">
+            <img src="1000308544_2.png" alt="Travelyn Logo" style="height: 70px; width: auto; object-fit: contain;">
         </a>
         <nav>
             <a href="#reserva">Consola</a>
@@ -587,7 +573,6 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
         <section class="hero-section">
             <div class="hero-text">
                 <h1>Planificación Inteligente de Viajes <span>Globales</span></h1>
@@ -603,7 +588,6 @@
             </div>
         </section>
 
-        <!-- Consola de Reserva Avanzada -->
         <section class="search-area" id="reserva">
             <div class="transport-selector">
                 <button class="type-btn active" onclick="setService('Vuelo Directo / Conexión', this)">Vuelos</button>
@@ -613,7 +597,6 @@
 
             <div class="search-container">
                 
-                <!-- SECCIÓN 1: DATOS PERSONALES -->
                 <div class="form-section-title">1. Información del Pasajero / Cliente</div>
                 <div class="form-grid">
                     <div class="input-group">
@@ -634,7 +617,6 @@
                     </div>
                 </div>
 
-                <!-- SECCIÓN 2: DETALLES LOGÍSTICOS -->
                 <div class="form-section-title">2. Detalles del Destino e Itinerario</div>
                 <div class="form-grid">
                     <div class="input-group">
@@ -655,7 +637,6 @@
                     </div>
                 </div>
 
-                <!-- SECCIÓN 3: PREFERENCIAS DE ALTA GAMA -->
                 <div class="form-section-title">3. Especificaciones de Confort y Categoría</div>
                 <div class="form-grid">
                     <div class="input-group">
@@ -692,14 +673,12 @@
             </div>
         </section>
 
-        <!-- SECCIÓN DE CATÁLOGO PROFESIONAL SEPARADO -->
         <section class="catalog-section" id="catalogo">
             <div class="section-header">
                 <h2>Experiencias de Diseño Exclusivo</h2>
                 <p>Seleccione nuestros bloques de servicios gestionados de manera independiente por especialistas.</p>
             </div>
 
-            <!-- BLOQUE 1: RESERVA DE VUELOS -->
             <div class="catalog-block">
                 <div class="catalog-title">Rutas Aéreas y Conectividad Global</div>
                 <div class="grid-premium">
@@ -712,268 +691,3 @@
                         <div class="card-content">
                             <div class="location">París, Francia</div>
                             <h3>Ruta París Exclusive</h3>
-                            <p>Conexiones premium directas hacia los aeropuertos principales de París con acceso a salas VIP y embarque preferente automatizado.</p>
-                            <div class="card-footer"><span class="action-link">Configurar Vuelo →</span></div>
-                        </div>
-                    </div>
-
-                    <div class="premium-card" onclick="autoFillService('Bogota', 'Roma', 'Vuelo Directo / Conexión')">
-                        <div class="card-img-wrapper">
-                            <span class="badge-tag">Vuelo Transatlántico</span>
-                            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=600&q=80" alt="Roma Italia">
-                        </div>
-                        <div class="card-content">
-                            <div class="location">Roma, Italia</div>
-                            <h3>Conexión Roma Imperial</h3>
-                            <p>Vuelos de largo alcance optimizados en cabinas adaptadas de última generación. Máximo confort sobre el Atlántico.</p>
-                            <div class="card-footer"><span class="action-link">Configurar Vuelo →</span></div>
-                        </div>
-                    </div>
-
-                    <div class="premium-card" onclick="autoFillService('Madrid', 'Nueva York', 'Vuelo Directo / Conexión')">
-                        <div class="card-img-wrapper">
-                            <span class="badge-tag">Vuelo Corporativo</span>
-                            <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=600&q=80" alt="Estados Unidos NY">
-                        </div>
-                        <div class="card-content">
-                            <div class="location">Estados Unidos</div>
-                            <h3>Eje Global New York</h3>
-                            <p>Logística de alta gama destinada al centro financiero global. Itinerarios corporativos con flexibilidad de cambios horaria.</p>
-                            <div class="card-footer"><span class="action-link">Configurar Vuelo →</span></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- BLOQUE 2: RESERVA DE HOTELES -->
-            <div class="catalog-block">
-                <div class="catalog-title">Reserva de Hotelería de Alta Gama</div>
-                <div class="grid-premium">
-                    
-                    <div class="premium-card" onclick="autoFillService('', 'Roma, Italia', 'Estancia en Hotel de Lujo')">
-                        <div class="card-img-wrapper">
-                            <span class="badge-tag">Palazzo 5 Estrellas</span>
-                            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80" alt="Hotel Roma">
-                        </div>
-                        <div class="card-content">
-                            <div class="location">Roma, Italia</div>
-                            <h3>Residenze Palazzo Roma</h3>
-                            <p>Estancias majestuosas en palacios históricos restaurados. Servicio de mayordomía privada y vistas exclusivas a monumentos clásicos.</p>
-                            <div class="card-footer"><span class="action-link">Reservar Hotel →</span></div>
-                        </div>
-                    </div>
-
-                    <div class="premium-card" onclick="autoFillService('', 'Cartagena, Colombia', 'Estancia en Hotel de Lujo')">
-                        <div class="card-img-wrapper">
-                            <span class="badge-tag">Boutique Premium</span>
-                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" alt="Hotel Colombia">
-                        </div>
-                        <div class="card-content">
-                            <div class="location">Cartagena, Colombia</div>
-                            <h3>Resorts del Caribe Colonial</h3>
-                            <p>Hoteles boutique de arquitectura colonial fortificada combinados con villas modernas y atención personalizada del más alto nivel.</p>
-                            <div class="card-footer"><span class="action-link">Reservar Hotel →</span></div>
-                        </div>
-                    </div>
-
-                    <div class="premium-card" onclick="autoFillService('', 'Cancún, México', 'Estancia en Hotel de Lujo')">
-                        <div class="card-img-wrapper">
-                            <span class="badge-tag">Luxury Resort</span>
-                            <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=600&q=80" alt="Hotel México">
-                        </div>
-                        <div class="card-content">
-                            <div class="location">Riviera Maya, México</div>
-                            <h3>Santuarios de la Riviera</h3>
-                            <p>Alojamientos eco-luxury integrados en entornos naturales caribeños con spas de reconocimiento mundial y gastronomía de autor.</p>
-                            <div class="card-footer"><span class="action-link">Reservar Hotel →</span></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- BLOQUE 3: TOURS PRIVADOS -->
-            <div class="catalog-block">
-                <div class="catalog-title">Tours Guiados y Expediciones Exclusivas</div>
-                <div class="grid-premium">
-                    
-                    <div class="premium-card" onclick="autoFillService('', 'Santiago, Chile', 'Tour Guiado Exclusivo')">
-                        <div class="card-img-wrapper">
-                            <span class="badge-tag">Tour de Viñedos</span>
-                            <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=600&q=80" alt="Valle de Casablanca Chile">
-                        </div>
-                        <div class="card-content">
-                            <div class="location">Valle Central, Chile</div>
-                            <h3>Expedición Vitivinícola y Andina</h3>
-                            <p>Degustaciones privadas en las bodegas más exclusivas de Chile, al pie de la majestuosa Cordillera de los Andes con traslados VIP.</p>
-                            <div class="card-footer"><span class="action-link">Reservar Tour →</span></div>
-                        </div>
-                    </div>
-
-                    <div class="premium-card" onclick="autoFillService('', 'CDMX, México', 'Tour Guiado Exclusivo')">
-                        <div class="card-img-wrapper">
-                            <span class="badge-tag">Tour Arqueológico</span>
-                            <img src="https://images.unsplash.com/photo-1512813583145-baaa340ef29f?auto=format&fit=crop&w=600&q=80" alt="Tour México">
-                        </div>
-                        <div class="card-content">
-                            <div class="location">Ciudad de México</div>
-                            <h3>Ruta de Legados Ancestrales</h3>
-                            <p>Excursiones privadas de alta fidelidad hacia zonas arqueológicas prehispánicas históricas con accesos preferentes VIP.</p>
-                            <div class="card-footer"><span class="action-link">Reservar Tour →</span></div>
-                        </div>
-                    </div>
-
-                    <div class="premium-card" onclick="autoFillService('', 'Eje Cafetero, Colombia', 'Tour Guiado Exclusivo')">
-                        <div class="card-img-wrapper">
-                            <span class="badge-tag">Experiencia de Autor</span>
-                            <img src="https://images.unsplash.com/photo-1589909202802-8f4aadce1849?auto=format&fit=crop&w=600&q=80" alt="Tour Colombia">
-                        </div>
-                        <div class="card-content">
-                            <div class="location">Eje Cafetero, Colombia</div>
-                            <h3>Expedición de Paisaje Cultural</h3>
-                            <p>Rutas exclusivas en haciendas cafeteras tradicionales premium. Maridajes gourmet y transporte privado de confort.</p>
-                            <div class="card-footer"><span class="action-link">Reservar Tour →</span></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </section>
-
-        <!-- Chatbot IA Interactivo -->
-        <section class="experience-zone" id="ia-concierge">
-            <div class="experience-layout">
-                <div class="ai-chat-console">
-                    <div class="ai-chat-header">
-                        <div class="ai-avatar"></div>
-                        <div>
-                            <h3>Concierge Inteligente Travelyn</h3>
-                            <p>AI Concierge Agent</p>
-                        </div>
-                    </div>
-                    <div class="ai-messages-box" id="chat-box">
-                        <div class="msg system">
-                            Bienvenido a Travelyn. Soy su asistente de Inteligencia Artificial para la planificación de vuelos de alta gama, estancias hoteleras de lujo y tours exclusivos. ¿Qué destino internacional desea coordinar hoy?
-                        </div>
-                    </div>
-                    <div class="ai-input-area">
-                        <input type="text" id="ai-input" placeholder="Escriba aquí (ej: Necesito un hotel en Roma)..." onkeypress="handleChatKey(event)">
-                        <button class="ai-send-btn" onclick="triggerAiResponse()">Consultar</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <script>
-        let selectedService = "Vuelo Directo / Conexión";
-
-        function setService(type, element) {
-            selectedService = type;
-            document.querySelectorAll('.type-btn').forEach(btn => btn.classList.remove('active'));
-            element.classList.add('active');
-        }
-
-        function autoFillService(origen, destino, servicio) {
-            document.getElementById('origin').value = origen;
-            document.getElementById('destination').value = destino;
-            
-            const buttons = document.querySelectorAll('.type-btn');
-            buttons.forEach(btn => {
-                if(btn.innerText.includes('Vuelos') && servicio.includes('Vuelo')) setService(servicio, btn);
-                if(btn.innerText.includes('Hoteles') && servicio.includes('Hotel')) setService(servicio, btn);
-                if(btn.innerText.includes('Tours') && servicio.includes('Tour')) setService(servicio, btn);
-            });
-
-            document.getElementById('reserva').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function handleChatKey(event) {
-            if (event.key === 'Enter') triggerAiResponse();
-        }
-
-        function triggerAiResponse() {
-            const inputField = document.getElementById('ai-input');
-            const messageText = inputField.value.trim();
-            if (!messageText) return;
-
-            const chatBox = document.getElementById('chat-box');
-
-            const userDiv = document.createElement('div');
-            userDiv.className = 'msg user';
-            userDiv.innerText = messageText;
-            chatBox.appendChild(userDiv);
-            inputField.value = '';
-
-            chatBox.scrollTop = chatBox.scrollHeight;
-
-            setTimeout(() => {
-                const aiDiv = document.createElement('div');
-                aiDiv.className = 'msg system';
-                
-                let lowerText = messageText.toLowerCase();
-                if (lowerText.includes('hotel') || lowerText.includes('alojamiento') || lowerText.includes('quedarme')) {
-                    aiDiv.innerText = "Entendido. He configurado la consola de selección en modo 'Hoteles'. Disponemos de convenios directos con palacios de 5 estrellas en Roma y resorts de lujo en México y Colombia. Rellene los datos arriba y organizaremos su suite.";
-                    autoFillService('', 'Roma, Italia', 'Estancia en Hotel de Lujo');
-                } else if (lowerText.includes('tour') || lowerText.includes('guia') || lowerText.includes('visita') || lowerText.includes('chile')) {
-                    aiDiv.innerText = "Perfecto. He activado los parámetros de 'Tours Guiados Exclusivos' en el formulario. Contamos con accesos VIP prioritarios en las mejores viñas de Chile, rutas en París y el Eje Cafetero. ¿Cuál prefiere?";
-                    autoFillService('', 'Santiago, Chile', 'Tour Guiado Exclusivo');
-                } else if (lowerText.includes('vuelo') || lowerText.includes('viaje') || lowerText.includes('avion')) {
-                    aiDiv.innerText = "Excelente. He seleccionado la opción de 'Vuelos' de alta fidelidad. Por favor, introduzca su origen y destino en la parte superior para cotizar sus billetes comerciales o chárter privados.";
-                    autoFillService('Madrid', 'Nueva York', 'Vuelo Directo / Conexión');
-                } else {
-                    aiDiv.innerText = `Recibido. Estoy procesando los parámetros para "${messageText}". Los detalles han sido sincronizados con el panel de control. Puede pulsar el botón de confirmación superior para agendar la consultoría de viaje.`;
-                }
-                
-                chatBox.appendChild(aiDiv);
-                chatBox.scrollTop = chatBox.scrollHeight;
-            }, 800);
-        }
-
-        function sendToWhatsApp() {
-            const name = document.getElementById('passenger-name').value.trim();
-            const idDoc = document.getElementById('passenger-id').value.trim();
-            const phonePass = document.getElementById('passenger-phone').value.trim();
-            const email = document.getElementById('passenger-email').value.trim();
-
-            const origin = document.getElementById('origin').value.trim();
-            const dest = document.getElementById('destination').value.trim();
-            const depart = document.getElementById('depart-date').value;
-            const ret = document.getElementById('return-date').value;
-            
-            const fClass = document.getElementById('flight-class').value;
-            const seat = document.getElementById('seat-preference').value;
-            const baggage = document.getElementById('baggage-option').value;
-            const details = document.getElementById('additional-details').value.trim();
-
-            if (!name || !idDoc || !phonePass || !dest) {
-                alert('Por favor complete los campos obligatorios del cliente (Nombre, ID, Teléfono y Destino) para procesar su solicitud.');
-                return;
-            }
-
-            const phoneMaster = "34639077423";
-            let txt = `📋 SOLICITUD GLOBAL - TRAVELYN\n`;
-            txt += `=========================\n\n`;
-            txt += `👤 DATOS DEL CLIENTE:\n`;
-            txt += `▪ Nombre: ${name}\n`;
-            txt += `▪ Identificación/Pasaporte: ${idDoc}\n`;
-            txt += `▪ Teléfono: ${phonePass}\n`;
-            txt += `▪ Email: ${email || 'No provisto'}\n\n`;
-            txt += `🛎️ DETALLES DEL SERVICIO:\n`;
-            txt += `▪ Servicio Solicitado: ${selectedService}\n`;
-            if (origin) txt += `▪ Origen: ${origin}\n`;
-            txt += `▪ Destino Solicitado: ${dest}\n`;
-            txt += `▪ Fecha Inicio / Entrada: ${depart || 'Pendiente'}\n`;
-            if (ret) txt += `▪ Fecha Fin / Regreso: ${ret}\n`;
-            txt += `▪ Categoría Elegida: ${fClass}\n`;
-            txt += `▪ Preferencia Física: ${seat}\n`;
-            txt += `▪ Opciones de Régimen: ${baggage}\n`;
-            if (details) txt += `\n📝 ESPECIFICACIONES ADICIONALES:\n"${details}"`;
-
-            window.open(`https://wa.me/${phoneMaster}?text=${encodeURIComponent(txt)}`, '_blank');
-        }
-    </script>
-</body>
-</html>
