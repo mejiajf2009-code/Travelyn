@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- CÓDIGO DE VERIFICACIÓN DE GOOGLE -->
+    <!-- CÓDIGO DE VERIFICACIÓN DE GOOGLE ACTUALIZADO -->
     <meta name="google-site-verification" content="lIk-JJpYbbHqYfE37FcGlJNOdhHpzldNfZhVJ_zhSI0" />
     
-    <!-- LÍNEAS DE CÓDIGO PARA QUE EL LOGO SALGA EN GOOGLE -->
-    <link rel="icon" href="1000308544_2.png" type="image/png">
-    <link rel="apple-touch-icon" href="1000308544_2.png">
+    <!-- LOGO PARA BUSCADOR DE GOOGLE (FAVICON) -->
+    <!-- Nota: He puesto una imagen elegante de viaje de forma temporal, puedes cambiar el enlace por tu logo definitivo cuando lo tengas -->
+    <link rel="icon" href="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=48&h=48&q=80" type="image/png">
+    <link rel="apple-touch-icon" href="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=180&h=180&q=80">
     
     <title>Travelyn | Viaja sin Límites</title>
     <meta name="description" content="Travelyn - Planificación inteligente de viajes globales. Gestiona tus vuelos, hoteles de lujo, rutas multimodales y tours exclusivos sin límites.">
@@ -60,7 +61,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 5%;
+            padding: 2.5rem 5%;
             max-width: 1400px;
             margin: 0 auto;
             animation: fadeIn 0.8s ease-out;
@@ -72,6 +73,17 @@
             color: var(--text-main);
             text-decoration: none;
             letter-spacing: 2px;
+        }
+
+        .brand-logo span {
+            color: var(--gold);
+            font-weight: 300;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.8rem;
+            display: block;
+            letter-spacing: 3px;
+            margin-top: -2px;
+            text-transform: uppercase;
         }
 
         nav a {
@@ -568,7 +580,10 @@
 <body>
 
     <header>
-        <a href="#" class="brand-logo">TRAVELYN</a>
+        <a href="#" class="brand-logo">
+            TRAVELYN
+            <span>Viaja Sin Límites</span>
+        </a>
         <nav>
             <a href="#reserva">Consola</a>
             <a href="#catalogo">Catálogo</a>
@@ -660,7 +675,7 @@
                         <label>Detalle Preferente</label>
                         <select id="seat-preference">
                             <option value="Suite de Lujo / Asiento Ventanilla">Suite Vista Panorámica / Ventanilla</option>
-                            <option value="Habitación Executiva / Asiento Pasillo">Habitación Ejecutiva / Pasillo</option>
+                            <option value="Habitación Ejecutiva / Asiento Pasillo">Habitación Ejecutiva / Pasillo</option>
                             <option value="Sin especificación">Sin preferencia técnica</option>
                         </select>
                     </div>
@@ -674,7 +689,7 @@
                     </div>
                     <div class="input-group full-width">
                         <label>Notas de Personalización o Itinerario del Tour</label>
-                        <textarea id="additional-details" rows="2" placeholder="Describa peticiones especiales, guías privados necesarios, allergies o preferencias alimentarias..."></textarea>
+                        <textarea id="additional-details" rows="2" placeholder="Describa peticiones especiales, guías privados necesarios, alergias o preferencias alimentarias..."></textarea>
                     </div>
                 </div>
 
