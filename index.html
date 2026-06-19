@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panda Specialty Coffee & Bakery - Menú Global Premium</title>
-    <!-- Fuentes de Lujo -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -14,7 +13,7 @@
             --dark-premium: #111111;
             --dark-surface: #1a1a1a;
             --light-bg: #fbfbfa;
-            --text-gray: #666666;
+            --text-gray: #555555;
         }
 
         * {
@@ -27,30 +26,21 @@
         body {
             background-color: var(--light-bg);
             color: var(--dark-premium);
-            padding-bottom: 100px; /* Espacio para la barra de pedido fija */
-            overflow-x: hidden;
+            padding-bottom: 120px;
         }
 
-        .container {
-            max-width: 1250px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* BANNER DE ADVERTENCIA PARA EL CLIENTE */
         .alert-banner {
             background: linear-gradient(135deg, #8a6d3b 0%, #111 100%);
             color: white;
             text-align: center;
             padding: 12px 20px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             letter-spacing: 2px;
             text-transform: uppercase;
             font-weight: 600;
             border-bottom: 2px solid var(--gold);
         }
 
-        /* ENCABEZADO CON LOGO REAL 1000309039_3.png */
         header {
             text-align: center;
             padding: 40px 20px;
@@ -59,183 +49,108 @@
         }
 
         .brand-logo {
-            max-width: 280px;
+            max-width: 260px;
             height: auto;
-            margin-bottom: 15px;
-            filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.5));
+            margin-bottom: 10px;
         }
 
         header .tagline {
-            font-size: 0.85rem;
-            letter-spacing: 5px;
+            font-size: 0.8rem;
+            letter-spacing: 4px;
             color: var(--gold);
             text-transform: uppercase;
             font-weight: 700;
-            margin-top: 10px;
         }
 
-        /* BARRA FIJA DE PEDIDOS - WHATSAPP / TELÉFONO */
-        .order-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(17, 17, 17, 0.95);
-            backdrop-filter: blur(10px);
-            border-top: 3px solid var(--gold);
+        /* PANEL DE CONFIGURACIÓN DE NÚMERO (Súper fácil para el dueño) */
+        .config-panel {
+            background: #f0ecdf;
+            border: 2px dashed var(--gold);
             padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 6px;
             text-align: center;
-            z-index: 999;
-            box-shadow: 0 -10px 30px rgba(0,0,0,0.3);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
         }
 
-        .order-text {
-            color: white;
-            font-size: 0.95rem;
+        .config-panel h4 {
+            font-family: 'Cinzel', serif;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        .config-panel input {
+            padding: 10px;
+            width: 70%;
+            max-width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        .menu-title-section {
+            text-align: center;
+            margin: 40px 0 20px 0;
+        }
+
+        .menu-title-section h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
             letter-spacing: 1px;
         }
 
-        .order-text strong {
-            color: var(--gold-light);
-        }
-
-        .order-btn {
-            background: var(--gold);
-            color: #111;
-            padding: 10px 25px;
-            border: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .order-btn:hover {
-            background: white;
-            box-shadow: 0 0 15px var(--gold);
-            transform: scale(1.05);
-        }
-
-        /* MAPA INTERNACIONAL INTERACTIVO MULTI-PAÍS */
-        .map-section {
-            background: #111111;
-            border: 1px solid var(--gold);
-            padding: 40px 20px;
-            margin: 40px 0;
-            color: white;
-            text-align: center;
-            border-radius: 4px;
-        }
-
-        .map-section h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-            letter-spacing: 3px;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-        }
-
-        .map-nav {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .map-tab {
-            background: #222;
-            border: 1px solid var(--gold);
-            color: white;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: all 0.3s;
-        }
-
-        .map-tab:hover {
-            background: var(--gold);
-            color: #111;
-        }
-
-        /* SECCIONES GEOGRÁFICAS */
-        .region-title {
-            font-family: 'Cinzel', serif;
-            font-size: 2rem;
-            text-align: center;
-            margin: 60px 0 30px 0;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .region-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 2px;
-            background: var(--gold);
-        }
-
-        /* GRIDS Y TARJETAS */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 25px;
             margin-bottom: 40px;
         }
 
         .card {
             background: white;
-            border: 1px solid rgba(0,0,0,0.08);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.1);
             display: flex;
             flex-direction: column;
             overflow: hidden;
             position: relative;
-        }
-
-        .card:hover {
-            box-shadow: 0 15px 35px rgba(197, 160, 89, 0.15);
-            border-color: var(--gold);
+            border-radius: 4px;
         }
 
         .card-image {
             width: 100%;
-            height: 220px;
+            height: 240px;
             background-size: cover;
             background-position: center;
             position: relative;
         }
 
-        /* IDENTIFICADOR DE MASCOTA PANDA ELEGANTE (Muchos Pandas por la página) */
-        .panda-badge {
+        /* EMBLEMA GRANDE DEL PANDA DE LUJO (No es un emoji) */
+        .panda-emblem-box {
             position: absolute;
-            bottom: 15px;
+            bottom: -15px;
             right: 15px;
-            background: rgba(17, 17, 17, 0.9);
-            border: 1px solid var(--gold);
-            color: white;
-            padding: 6px 12px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            background: #111;
+            border: 2px solid var(--gold);
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            gap: 6px;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 2;
+        }
+
+        .panda-emblem-box svg {
+            width: 40px;
+            height: 40px;
         }
 
         .card-flag {
@@ -246,7 +161,7 @@
             color: var(--gold-light);
             font-size: 0.75rem;
             font-weight: 700;
-            padding: 5px 12px;
+            padding: 6px 14px;
             letter-spacing: 1px;
             text-transform: uppercase;
             border-left: 3px solid var(--gold);
@@ -258,481 +173,240 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            background: #fff;
         }
 
         .card-title {
             font-family: 'Cinzel', serif;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             margin-bottom: 15px;
             color: var(--dark-premium);
             border-bottom: 1px solid #f0f0f0;
             padding-bottom: 8px;
         }
 
-        /* BLOQUES DE PRODUCTOS INDIVIDUALES CON SIGNIFICADOS DEL TEXTO */
         .item-row {
             background: #fafafa;
-            padding: 12px 15px;
-            margin-bottom: 10px;
-            border-left: 3px solid #111;
+            padding: 10px 12px;
+            margin-bottom: 8px;
+            border-left: 3px solid var(--gold);
         }
 
         .item-name {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 700;
             color: var(--dark-premium);
-            margin-bottom: 4px;
         }
 
         .item-meaning {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: var(--text-gray);
             line-height: 1.4;
             font-style: italic;
         }
 
-        /* SECCIÓN PASO 1 MENÚS */
-        .menu-title-section {
+        /* BARRA FIJA INFERIOR PARA RESERVAS */
+        .order-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #111111;
+            border-top: 3px solid var(--gold);
+            padding: 15px;
             text-align: center;
-            margin: 40px 0;
+            z-index: 9999;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.4);
         }
-        .menu-title-section h2 {
+
+        .order-btn {
+            background: var(--gold);
+            color: #111;
+            padding: 12px 30px;
+            border: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 4px;
+        }
+
+        .order-btn:hover {
+            background: white;
+        }
+
+        .region-heading {
             font-family: 'Cinzel', serif;
             font-size: 1.8rem;
-            letter-spacing: 2px;
-        }
-
-        /* MODAL INTERACTIVO DEL PANDA */
-        .modal-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.8);
-            backdrop-filter: blur(5px);
-            z-index: 10000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.3s ease;
-        }
-        .modal-overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        .modal-box {
-            background: #111;
-            border: 2px solid var(--gold);
-            padding: 40px;
-            max-width: 460px;
-            width: 90%;
             text-align: center;
-            color: white;
-        }
-        .modal-box h3 { font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 15px; font-size: 1.5rem; }
-        .modal-box p { font-size: 0.9rem; line-height: 1.6; color: #ccc; margin-bottom: 25px; }
-
-        hr {
-            border: none;
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--gold), transparent);
-            margin: 50px 0;
+            margin: 50px 0 25px 0;
+            letter-spacing: 3px;
+            color: #111;
+            text-transform: uppercase;
         }
     </style>
 </head>
 <body>
 
-    <!-- ADVERTENCIA DE SELECCIÓN -->
     <div class="alert-banner">
-        ⚠️ ¡Atención estimado cliente! Escoge bien tu combinación. Cada menú es una experiencia artesanal única e irrepetible.
+        ⚠️ ¡Atención! Escoge bien tu combinación. Cada menú es una experiencia artesanal única.
     </div>
 
-    <!-- LOGO REAL DE LA COMPAÑÍA -->
     <header>
+        <!-- Tu Logotipo oficial en alta resolución -->
         <img src="1000309039_3.png" alt="Panda Specialty Coffee & Bakery" class="brand-logo">
-        <div class="tagline">Menú Internacional de Alta Gama</div>
+        <div class="tagline">Menú Internacional Auténtico</div>
     </header>
+
+    <!-- CONFIGURADOR AUTOMÁTICO DE ENLACE DE WHATSAPP -->
+    <div class="config-panel">
+        <h4>⚙️ Panel de Activación de Enlaces</h4>
+        <p style="font-size:0.8rem; color:#666; margin-bottom:10px;">Escribe tu número con código de país (Ej: 573001234567 para Colombia) para activar las reservas inmediatas:</p>
+        <input type="number" id="phoneInput" placeholder="Ej: 573001234567" oninput="updateWhatsAppLinks()">
+    </div>
 
     <div class="container">
 
-        <!-- PASO 1: SELECCIÓN DE MENÚ -->
-        <div class="menu-title-section">
-            <h2>Paso 1: Selecciona la Estructura de tu Menú</h2>
-            <p style="color: var(--gold); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-top:5px;">Elige con sabiduría para activar la experiencia</p>
-        </div>
-
-        <div class="grid">
-            <!-- MENÚ 1 -->
-            <div class="card" onclick="openModal('Menú Panda Espresso', 'Se activa en el sistema el Panda Barista Master. Diseñado con delantal de alta costura negro mate, este guardián interactivo preparará tu extracción de autor frente a tus ojos mientras emparejas tu café con la alta panadería tradicional.')">
-                <div class="card-content">
-                    <div>
-                        <h3 class="card-title">Opción 1: "Panda Espresso"</h3>
-                        <p style="font-size: 0.85rem; margin-bottom: 15px; color:#555;">Contenido: 1 Café de Especialidad + 1 Pan Tradicional del Mundo a tu libre elección.</p>
-                    </div>
-                    <div class="item-row" style="border-color: var(--gold);">
-                        <div class="item-name">Filosofía de Selección</div>
-                        <div class="item-meaning">El balance perfecto para iniciar el día. Diseñado para quienes aprecian la intensidad pura del grano combinada con un contraste crujiente de primer nivel.</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- MENÚ 2 -->
-            <div class="card" onclick="openModal('Menú Panda Imperial Gold', 'Aparece en la pantalla el majestuoso Panda Imperial luciendo una corona de filigrana de oro y capa de terciopelo. Este avatar custodia el buffet de lujo guiándote a través de las notas de cata de tus jugos y acompañamientos.')">
-                <div class="card-content">
-                    <div>
-                        <h3 class="card-title">Opción 2: "Panda Imperial Gold"</h3>
-                        <p style="font-size: 0.85rem; margin-bottom: 15px; color:#555;">Contenido: 1 Café + 1 Jugo Natural Premium + 1 Pan Tradicional + Acompañamiento Dulce.</p>
-                    </div>
-                    <div class="item-row" style="border-color: var(--gold);">
-                        <div class="item-name">Filosofía de Selección</div>
-                        <div class="item-meaning">Suntuosidad y abundancia para tus sentidos. Un ritual completo de brunch culinario pensado para disfrutarse pausadamente y sin prisas.</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- MENÚ 3 -->
-            <div class="card" onclick="openModal('Menú Ruta del Panda Viajero', 'Se despliega el visor cartográfico y el Panda Explorador con gafas de aviador vintage y brújula de bambú timbrará digitalmente tu pasaporte gourmet, liberando las tres miniaturas de panadería.')">
-                <div class="card-content">
-                    <div>
-                        <h3 class="card-title">Opción 3: "Ruta del Panda Viajero"</h3>
-                        <p style="font-size: 0.85rem; margin-bottom: 15px; color:#555;">Contenido: 1 Bebida Premium (Café o Jugo) + Degustación exclusiva de 3 Mini Panes del Mundo.</p>
-                    </div>
-                    <div class="item-row" style="border-color: var(--gold);">
-                        <div class="item-name">Filosofía de Selección</div>
-                        <div class="item-meaning">Creado específicamente para los paladares más curiosos que desean cruzar continentes y explorar diversas masas y sabores en una sola cata.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- MAPA DE INTERCONEXIÓN MUNDIAL -->
-        <div class="map-section">
-            <h3>— Mapa de Ruta de Navegación Global —</h3>
-            <p style="font-size: 0.8rem; color:#aaa; margin-bottom: 20px; letter-spacing: 1px;">Selecciona una región para trasladarte directamente a su herencia repostera:</p>
-            <div class="map-nav">
-                <div class="map-tab" onclick="scrollToRegion('europa')">Ver Región Europa</div>
-                <div class="map-tab" onclick="scrollToRegion('asia')">Ver Región Asia</div>
-                <div class="map-tab" onclick="scrollToRegion('america')">Ver Región América</div>
-            </div>
-        </div>
-
-        <!-- REGION 1: EUROPA -->
-        <div class="region-title" id="europa">Región Europa</div>
+        <!-- REGION AMÉRICA CORREGIDA -->
+        <div class="region-heading">Región América</div>
+        
         <div class="grid">
             
-            <!-- FRANCIA -->
-            <div class="card" onclick="openModal('Boulangerie Francia', 'El Panda Chef de París con su impecable filipina y gorro blanco te da la bienvenida mientras corta de manera perfecta el hojaldre crujiente de tu orden.')">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=600&auto=format&fit=crop');">
-                    <div class="card-flag">🇫🇷 Francia</div>
-                    <div class="panda-badge">🐼 Panda Gourmet</div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Francia - Técnica Clásica</h3>
-                    <div class="item-row">
-                        <div class="item-name">Baguette</div>
-                        <div class="item-meaning">Significa "Varita" o "Bastón", haciendo referencia directa a su forma alargada y delgada. Corteza crujiente tradicional.</div>
-                    </div>
-                    <div class="item-row">
-                        <div class="item-name">Croissant</div>
-                        <div class="item-meaning">Significa "Creciente" (Luna creciente) por su forma, inspirada históricamente en la bandera otomana. Hojaldre puro de mantequilla.</div>
-                    </div>
-                    <div class="item-row">
-                        <div class="item-name">Brioche</div>
-                        <div class="item-meaning">Proviene del normando antiguo 'brier', que significa "Amasar con rodillo de madera". Masa ligera enriquecida con huevo.</div>
-                    </div>
-                    <div class="item-row">
-                        <div class="item-name">Pain de Campagne</div>
-                        <div class="item-meaning">Significa "Pan de Campo", evocando los grandes panes rústicos redondos horneados ancestralmente para los pueblos.</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ESPAÑA -->
-            <div class="card" onclick="openModal('Horno España', 'El Panda Molinero de Castilla aparece en la interfaz moliendo granos dorados en un molino histórico de viento, garantizando la pureza de las masas madre.')">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop');">
-                    <div class="card-flag">🇪🇸 España</div>
-                    <div class="panda-badge">🐼 Panda Molinero</div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">España - Masas de Autor</h3>
-                    <div class="item-row">
-                        <div class="item-name">Pan Payés</div>
-                        <div class="item-meaning">Significa literalmente "Pan de Campesino" (Pa de Pagès), haciendo honor a su origen rural, aspecto tradicional y gran tamaño.</div>
-                    </div>
-                    <div class="item-row">
-                        <div class="item-name">Pan de Cruz</div>
-                        <div class="item-meaning">Significa "Pan con la Cruz de Calatrava", la cual lleva grabada en su corteza gruesa en honor al símbolo histórico de Ciudad Real.</div>
-                    </div>
-                    <div class="item-row">
-                        <div class="item-name">Pan de Cea</div>
-                        <div class="item-meaning">Significa "Pan de la villa de Cea" (Galicia), elaborado artesanalmente en hornos de piedra circulares de herencia medieval.</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ITALIA -->
-            <div class="card" onclick="openModal('Panadería Italia', 'El Panda Gondolero de Venecia entona una clásica ópera italiana mientras utiliza una crujiente ciabatta dorada a modo de remo tradicional.')">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1608039829572-78524f79c4c7?q=80&w=600&auto=format&fit=crop');">
-                    <div class="card-flag">🇮🇹 Italia</div>
-                    <div class="panda-badge">🐼 Panda Gondolero</div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Italia - Esencia Mediterránea</h3>
-                    <div class="item-row">
-                        <div class="item-name">Ciabatta</div>
-                        <div class="item-meaning">Significa "Zapatilla" debido a su icónica forma plana, alargada y aplastada con un gran alveolado interior.</div>
-                    </div>
-                    <div class="item-row">
-                        <div class="item-name">Focaccia</div>
-                        <div class="item-meaning">Significa "Hecho en el fuego" (del latín focus), dado que originalmente se cocinaba directo sobre las cenizas del hogar.</div>
-                    </div>
-                    <div class="item-row">
-                        <div class="item-name">Pane Carasau</div>
-                        <div class="item-meaning">Significa "Pan Tostado" (del sardo carasare), caracterizado por su doble horneado para conservarse en viajes largos.</div>
-                    </div>
-                    <div class="item-row">
-                        <div class="item-name">Grissini</div>
-                        <div class="item-meaning">Significa "Palitos alargados", cuyo nombre se deriva directamente del pan alargado tradicional piamontés 'gherssa'.</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PORTUGAL -->
-            <div class="card" onclick="openModal('Pastelería Portugal', 'El Panda Navegante de Lisboa alza las velas de su carabela sobre un mar dorado de crema pastelera tostada, buscando nuevas rutas de sabor.')">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1599834562135-b6fc90e74efc?q=80&w=600&auto=format&fit=crop');">
-                    <div class="card-flag">🇵🇹 Portugal</div>
-                    <div class="panda-badge">🐼 Panda Navegante</div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Portugal - Recetas Conventuales</h3>
-                    <div class="item-row">
-                        <div class="item-name">Pão de Deus</div>
-                        <div class="item-meaning">Significa "Pan de Dios", un tierno bollo dulce cubierto de coco rallado consumido tradicionalmente en el Día de Todos los Santos.</div>
-                    </div>
-                    <div class="item-row">
-                        <div class="item-name">Broa de Milho</div>
-                        <div class="item-meaning">Significa "Pan de Maíz". El término "Broa" proviene directamente de la palabra celta 'mrona', pan denso de maíz y centeno.</div>
-                    </div>
-                    <div class="item-row">
-                        <div class="item-name">Carcaça</div>
-                        <div class="item-meaning">Significa "Caparazón" o "Esqueleto" por las marcadas divisiones crujientes que se forman en su lomo exterior al ser horneado.</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ALEMANIA -->
-            <div class="card" onclick="openModal('Baking Alemania', 'El Panda Maestro del Rin aparece vistiendo un traje alpino tradicional de cuero, supervisando el horneado a alta temperatura de los pretzels.')">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=600&auto=format&fit=crop');">
-                    <div class="card-flag">🇩🇪 Alemania</div>
-                    <div class="panda-badge">🐼 Panda Maestro</div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Alemania - Masas Densas</h3>
-                    <div class="item-row">
-                        <div class="item-name">Brezel (Pretzel)</div>
-                        <div class="item-meaning">Significa "Brazos pequeños" (del latín bracellus), entrelazado de forma que imita a unos brazos cruzados en posición de oración.</div>
-                    </div>
-                    <div class="item-row">
-                        <div class="item-name">Pumpernickel</div>
-                        <div class="item-meaning">Significa "Demonio ruidoso" debido a su digestión pesada. Es un pan negro de centeno integral sumamente compacto.</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- REINO UNIDO -->
-            <div class="card" onclick="openModal('Té Reino Unido', 'Un elegantísimo Panda de la Realeza con monóculo y sombrero de copa te sirve el té inglés de la tarde con perfecta etiqueta británica.')">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1587314168485-3236d6710814?q=80&w=600&auto=format&fit=crop');">
-                    <div class="card-flag">🇬🇧 Reino Unido</div>
-                    <div class="panda-badge">🐼 Panda Real</div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Reino Unido - Tradición Monárquica</h3>
-                    <div class="item-row">
-                        <div class="item-name">Scone</div>
-                        <div class="item-meaning">Significa "Pan de la Piedra del Destino" (del gaélico Sgàin), sitio histórico donde eran coronados los antiguos reyes escoceses.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <hr>
-
-        <!-- REGION 2: ASIA -->
-        <div class="region-title" id="asia">Región Asia</div>
-        <div class="grid">
-            
-            <!-- COREA DEL SUR -->
-            <div class="card" onclick="openModal('K-Bakery Corea', 'El Panda Idol de Seúl aparece con un aura de luces de neón brillante, presentándote la vanguardia urbana de la repostería coreana.')">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1620980756854-d33d79e4d412?q=80&w=600&auto=format&fit=crop');">
-                    <div class="card-flag">🇰🇷 Corea del Sur</div>
-                    <div class="panda-badge">🐼 Panda K-Pop</div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Corea del Sur - Fusión Innovadora</h3>
-                    <div class="item-row">
-                        <div class="item-name">Gyeran-ppang</div>
-                        <div class="item-meaning">Significa "Pan de Huevo". Es un panecillo sumamente esponjoso y dulce horneado con un huevo entero en su interior.</div>
-                    </div>
-                    <div class="item-row">
-                        <div class="item-name">Danpat-ppang</div>
-                        <div class="item-meaning">Significa "Pan de Alubias Rojas Dulces", el relleno repostero más clásico de la cultura tradicional coreana.</div>
-                    </div>
-                    <div class="item-row">
-                        <div class="item-name">Yukjjop Maneul-ppang</div>
-                        <div class="item-meaning">Significa "Pan de Ajo de Seis Dientes", llamado así por su forma cortada en seis gajos rebosantes de crema de queso y ajo.</div>
-                    </div>
-                    <div class="item-row">
-                        <div class="item-name">Goguma-ppang</div>
-                        <div class="item-meaning">Significa "Pan de Batata" (camote), elaborado con la forma, color y relleno dulce exactos de este tubérculo.</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- JAPÓN -->
-            <div class="card" onclick="openModal('Zen Japón', 'Un imponente Panda Samurái con armadura de placas de bambú realiza un corte perfecto en el aire para demostrar la ligereza absoluta del pan nube.')">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1607958996333-41aef7caefaa?q=80&w=600&auto=format&fit=crop');">
-                    <div class="card-flag">🇯🇵 Japón</div>
-                    <div class="panda-badge">🐼 Panda Samurái</div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Japón - Esponjosidad Zen</h3>
-                    <div class="item-row">
-                        <div class="item-name">Shokupan</div>
-                        <div class="item-meaning">Significa "Pan para Comer" o "Pan Diario". Es el icónico, tierno y ultra-esponjoso pan de molde blanco de la cultura nipona.</div>
-                    </div>
-                    <div class="item-row">
-                        <div class="item-name">Melonpan</div>
-                        <div class="item-meaning">Significa "Pan Melón" debido a las líneas cruzadas marcadas en su cubierta de galleta crujiente que imitan la piel de la fruta.</div>
-                    </div>
-                    <div class="item-row">
-                        <div class="item-name">Anpan</div>
-                        <div class="item-meaning">Significa "Pan de Anko", un tierno y sedoso bollo dulce relleno de la tradicional pasta dulce de judía azuki.</div>
-                    </div>
-                    <div class="item-row">
-                        <div class="item-name">Kare-pan</div>
-                        <div class="item-meaning">Significa "Pan de Curry", relleno con un estofado espeso de curry, rebozado finamente en panko y frito hasta dorar.</div>
-                    </div>
-                    <div class="item-row">
-                        <div class="item-name">Shio-pan</div>
-                        <div class="item-meaning">Significa "Pan de Sal", un panecillo tierno de mantequilla salada con escamas de sal marina en su superficie.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <hr>
-
-        <!-- REGION 3: AMÉRICA -->
-        <div class="region-title" id="america">Región América</div>
-        <div class="grid">
-            
-            <!-- COLOMBIA -->
-            <div class="card" onclick="openModal('Amasijos Colombia', 'El Panda Cafetero del Valle del Cauca recolecta granos premium en su canasto mientras hornea el queso costeño sobre hojas de yuca.')">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1550617931-e17a7b70dce2?q=80&w=600&auto=format&fit=crop');">
+            <!-- COLOMBIA DEFINITIVA (IMAGEN REAL DE PANDEBONO Y QUESO) -->
+            <div class="card">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1612201142855-7873bc1661b4?q=80&w=600&auto=format&fit=crop');">
                     <div class="card-flag">🇨🇴 Colombia</div>
-                    <div class="panda-badge">🐼 Panda Cafetero</div>
+                    
+                    <!-- Emblema de Oso Panda de Lujo Real en SVG -->
+                    <div class="panda-emblem-box">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="30" cy="30" r="12" fill="#c5a059"/>
+                            <circle cx="70" cy="30" r="12" fill="#c5a059"/>
+                            <circle cx="50" cy="55" r="32" fill="#ffffff"/>
+                            <ellipse cx="38" cy="52" rx="9" ry="12" fill="#111"/>
+                            <ellipse cx="62" cy="52" rx="9" ry="12" fill="#111"/>
+                            <circle cx="38" cy="52" r="3" fill="#fff"/>
+                            <circle cx="62" cy="52" r="3" fill="#fff"/>
+                            <polygon points="46,64 54,64 50,69" fill="#c5a059"/>
+                        </svg>
+                    </div>
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">Colombia - Tradición de Amasijos</h3>
                     <div class="item-row">
                         <div class="item-name">Pandebono</div>
-                        <div class="item-meaning">Significa "Pan de la Hacienda El Bono", lugar histórico documentado en el Valle del Cauca donde nació esta aclamada receta de yuca y queso.</div>
+                        <div class="item-meaning">Significa "Pan de la Hacienda El Bono" (Valle del Cauca). Receta insignia a base de almidón de yuca y queso costeño horneado.</div>
                     </div>
                     <div class="item-row">
                         <div class="item-name">Almojábana</div>
-                        <div class="item-meaning">Proviene del árabe 'al-mujábbana', que significa literalmente "La Quesada" o "Hecha de queso". Panecillo esponjoso de maíz.</div>
+                        <div class="item-meaning">Del árabe 'al-mujábbana' ("Hecha de queso"). Panecillo esponjoso e hidratado de maíz y cuajada fresca.</div>
                     </div>
                     <div class="item-row">
                         <div class="item-name">Pan Aliñado</div>
-                        <div class="item-meaning">Significa "Pan Condimentado", debido a que su masa se enriquece generosamente con extra de mantequilla, leche y queso.</div>
+                        <div class="item-meaning">Significa "Pan Condimentado". Suave masa de molde enriquecida con generosa mantequilla y capas de queso rallado.</div>
                     </div>
                 </div>
             </div>
 
             <!-- CHILE -->
-            <div class="card" onclick="openModal('Horno Chile', 'Un Panda Huaso de la zona central hornea masas firmes en un rústico horno de barro campesino alimentado por leña seleccionada.')">
+            <div class="card">
                 <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop');">
                     <div class="card-flag">🇨🇱 Chile</div>
-                    <div class="panda-badge">🐼 Panda Huaso</div>
+                    <div class="panda-emblem-box">
+                        <svg viewBox="0 0 100 100"><circle cx="30" cy="30" r="12" fill="#c5a059"/><circle cx="70" cy="30" r="12" fill="#c5a059"/><circle cx="50" cy="55" r="32" fill="#ffffff"/><ellipse cx="38" cy="52" rx="9" ry="12" fill="#111"/><ellipse cx="62" cy="52" rx="9" ry="12" fill="#111"/><circle cx="38" cy="52" r="3" fill="#fff"/> <circle cx="62" cy="52" r="3" fill="#fff"/><polygon points="46,64 54,64 50,69" fill="#c5a059"/></svg>
+                    </div>
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Chile - Culinaria del Barro</h3>
+                    <h3 class="card-title">Chile - Masas Crujientes</h3>
                     <div class="item-row">
                         <div class="item-name">Marraqueta</div>
-                        <div class="item-meaning">Significa "Pan de los hermanos Marraquet", panaderos de origen francés que popularizaron esta crujiente receta en Valparaíso.</div>
+                        <div class="item-meaning">Homenaje al apellido de los hermanos Marraquet, panaderos franceses que popularizaron este pan batido de corteza crujiente.</div>
                     </div>
                     <div class="item-row">
                         <div class="item-name">Hallulla</div>
-                        <div class="item-meaning">Su nombre proviene del árabe 'hallún', que se traduce como "Bollo de fiesta". Pan plano, firme y pinchado.</div>
-                    </div>
-                    <div class="item-row">
-                        <div class="item-name">Pan Amasado</div>
-                        <div class="item-meaning">Significa literalmente "Pan Hecho a Mano", receta rústica y campesina horneada tradicionalmente utilizando manteca.</div>
+                        <div class="item-meaning">Del árabe 'hallún' ("Bollo de fiesta"). Pan redondo, plano, firme y laminado con manteca tradicional.</div>
                     </div>
                 </div>
             </div>
 
             <!-- ARGENTINA -->
-            <div class="card" onclick="openModal('Panadería Argentina', 'El Panda Gaucho de las Pampas prepara un mate amargo mientras organiza las medialunas y facturas de la protesta histórica de los panaderos.')">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=600&auto=format&fit=crop');">
+            <div class="card">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=600&auto=format&fit=crop');">
                     <div class="card-flag">🇦🇷 Argentina</div>
-                    <div class="panda-badge">🐼 Panda Gaucho</div>
+                    <div class="panda-emblem-box">
+                        <svg viewBox="0 0 100 100"><circle cx="30" cy="30" r="12" fill="#c5a059"/><circle cx="70" cy="30" r="12" fill="#c5a059"/><circle cx="50" cy="55" r="32" fill="#ffffff"/><ellipse cx="38" cy="52" rx="9" ry="12" fill="#111"/><ellipse cx="62" cy="52" rx="9" ry="12" fill="#111"/><circle cx="38" cy="52" r="3" fill="#fff"/><circle cx="62" cy="52" r="3" fill="#fff"/><polygon points="46,64 54,64 50,69" fill="#c5a059"/></svg>
+                    </div>
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Argentina - Masas Criollas</h3>
+                    <h3 class="card-title">Argentina - Bollería Criolla</h3>
                     <div class="item-row">
                         <div class="item-name">Facturas</div>
-                        <div class="item-meaning">Significa "Cosas hechas" o "Recibo". Nombre puesto por el sindicato anarquista en 1888 como protesta para recordar el valor de su trabajo.</div>
+                        <div class="item-meaning">Significa "Cosas hechas". Bautizadas así por el sindicato anarquista de 1888 para recordar el valor económico del trabajo obrero.</div>
                     </div>
                     <div class="item-row">
                         <div class="item-name">Criollitos</div>
-                        <div class="item-meaning">Significa "Pequeños criollos", haciendo referencia directa a las raíces tradicionales y nativas de la época colonial.</div>
-                    </div>
-                    <div class="item-row">
-                        <div class="item-name">Pan de Campo</div>
-                        <div class="item-meaning">Significa "Pan Rural", una hogaza rústica de corteza sumamente gruesa consumida originalmente por los gauchos.</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ESTADOS UNIDOS -->
-            <div class="card" onclick="openModal('Baking USA', 'Un moderno Panda Hipster de la bahía de San Francisco refresca su masa madre burbujeante en un frasco de cristal artesanal.')">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1585478259715-876acc5be8eb?q=80&w=600&auto=format&fit=crop');">
-                    <div class="card-flag">🇺🇸 Estados Unidos</div>
-                    <div class="panda-badge">🐼 Panda Urban</div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Estados Unidos - Fusión Urbana</h3>
-                    <div class="item-row">
-                        <div class="item-name">Sourdough Bread</div>
-                        <div class="item-meaning">Significa "Pan de Masa Madre" (literalmente "Masa agria") debido al perfil ácido de las levaduras salvajes de San Francisco.</div>
-                    </div>
-                    <div class="item-row">
-                        <div class="item-name">Bagel</div>
-                        <div class="item-meaning">Su nombre proviene del yidis 'beygl', que significa "Anillo" o "Brazalete" debido a su icónica forma circular con orificio.</div>
-                    </div>
-                    <div class="item-row">
-                        <div class="item-name">Cornbread</div>
-                        <div class="item-meaning">Significa "Pan de Maíz", receta ancestral herencia de los nativos americanos, adoptada fuertemente por la cultura sureña.</div>
+                        <div class="item-meaning">Significa "Pequeños criollos". Bizcochos de grasa de vaca hojaldrados tradicionales de las pulperías.</div>
                     </div>
                 </div>
             </div>
 
             <!-- MÉXICO -->
-            <div class="card" onclick="openModal('Tradición México', 'El Panda Catrín con sombrero de charro y decoraciones florales doradas coloca las conchas de azúcar sobre un altar tradicional.')">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1600431521340-491eca880813?q=80&w=600&auto=format&fit=crop');">
+            <div class="card">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1621841957884-1210fe19d66d?q=80&w=600&auto=format&fit=crop');">
                     <div class="card-flag">🇲🇽 México</div>
-                    <div class="panda-badge">🐼 Panda Catrín</div>
+                    <div class="panda-emblem-box">
+                        <svg viewBox="0 0 100 100"><circle cx="30" cy="30" r="12" fill="#c5a059"/><circle cx="70" cy="30" r="12" fill="#c5a059"/><circle cx="50" cy="55" r="32" fill="#ffffff"/><ellipse cx="38" cy="52" rx="9" ry="12" fill="#111"/><ellipse cx="62" cy="52" rx="9" ry="12" fill="#111"/><circle cx="38" cy="52" r="3" fill="#fff"/><circle cx="62" cy="52" r="3" fill="#fff"/><polygon points="46,64 54,64 50,69" fill="#c5a059"/></svg>
+                    </div>
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">México - Panadería Ritual</h3>
+                    <h3 class="card-title">México - Pan Dulce Ritual</h3>
                     <div class="item-row">
                         <div class="item-name">Concha</div>
-                        <div class="item-meaning">Significa "Concha de mar" debido al patrón decorativo estriado de azúcar crujiente que cubre su superficie.</div>
+                        <div class="item-meaning">Significa "Concha de mar" debido a las líneas marcadas sobre la costra crujiente de azúcar y manteca.</div>
                     </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- REGIN EUROPA INTERNACIONAL -->
+        <div class="region-heading">Región Europa</div>
+        <div class="grid">
+            
+            <!-- FRANCIA -->
+            <div class="card">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop');">
+                    <div class="card-flag">🇫🇷 Francia</div>
+                    <div class="panda-emblem-box">
+                        <svg viewBox="0 0 100 100"><circle cx="30" cy="30" r="12" fill="#c5a059"/><circle cx="70" cy="30" r="12" fill="#c5a059"/><circle cx="50" cy="55" r="32" fill="#ffffff"/><ellipse cx="38" cy="52" rx="9" ry="12" fill="#111"/><ellipse cx="62" cy="52" rx="9" ry="12" fill="#111"/><circle cx="38" cy="52" r="3" fill="#fff"/><circle cx="62" cy="52" r="3" fill="#fff"/><polygon points="46,64 54,64 50,69" fill="#c5a059"/></svg>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Francia - Masas Madre Maduras</h3>
                     <div class="item-row">
-                        <div class="item-name">Pan de Muerto</div>
-                        <div class="item-meaning">Significa "Pan para los difuntos", bollo ritual circular con formas de masa que simulan huesos y lágrimas para los altares.</div>
+                        <div class="item-name">Baguette</div>
+                        <div class="item-meaning">Significa "Varita" o "Bastón" haciendo alusión directa a su silueta delgada y horneado de alta corteza.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ITALIA -->
+            <div class="card">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1546549032-9571cd6b27df?q=80&w=600&auto=format&fit=crop');">
+                    <div class="card-flag">🇮🇹 Italia</div>
+                    <div class="panda-emblem-box">
+                        <svg viewBox="0 0 100 100"><circle cx="30" cy="30" r="12" fill="#c5a059"/><circle cx="70" cy="30" r="12" fill="#c5a059"/><circle cx="50" cy="55" r="32" fill="#ffffff"/><ellipse cx="38" cy="52" rx="9" ry="12" fill="#111"/><ellipse cx="62" cy="52" rx="9" ry="12" fill="#111"/><circle cx="38" cy="52" r="3" fill="#fff"/><circle cx="62" cy="52" r="3" fill="#fff"/><polygon points="46,64 54,64 50,69" fill="#c5a059"/></svg>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Italia - Aceite de Oliva y Fuego</h3>
+                    <div class="item-row">
+                        <div class="item-name">Focaccia</div>
+                        <div class="item-meaning">Significa "Hecho en el fuego" (del latín focus), horneado ancestralmente sobre las cenizas del hogar italiano.</div>
                     </div>
                 </div>
             </div>
@@ -741,43 +415,43 @@
 
     </div>
 
-    <!-- BARRA DE PEDIDO COMPLETA -->
+    <!-- BARRA DINÁMICA DE RESERVA -->
     <div class="order-bar">
-        <div class="order-text">
-            ¿Tienes lista tu combinación? 🐼 <strong>¡Haz tu pedido de inmediato!</strong> Llama o escribe al: 
-            <span style="color: var(--gold); font-weight: bold; border-bottom: 1px dashed var(--gold);">[Tu Número de Teléfono Aquí]</span>
-        </div>
-        <!-- Puedes cambiar el '#' por el enlace directo de tu WhatsApp (ej: https://wa.me/tu_numero) -->
-        <a href="#" target="_blank" style="text-decoration: none;">
-            <button class="order-btn">Enviar mi Pedido Panda</button>
+        <a id="whatsappLink" href="#" target="_blank" class="order-btn">
+            🟢 Enviar mi Pedido por WhatsApp
         </a>
     </div>
 
-    <!-- CAPA DEL MODAL INTERACTIVO DE PANDAS -->
-    <div class="modal-overlay" id="pandaOverlay">
-        <div class="modal-box">
-            <div style="font-size: 3rem; margin-bottom: 15px;">🐼</div>
-            <h3 id="modalTitle">Sección</h3>
-            <p id="modalBody">Animación.</p>
-            <button class="order-btn" style="background: transparent; color: white; border: 1px solid var(--gold);" onclick="closeModal()">Cerrar Interfaz</button>
-        </div>
-    </div>
-
     <script>
-        function openModal(title, text) {
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalBody').innerText = text;
-            document.getElementById('pandaOverlay').classList.add('active');
+        // Esta función lee el número que escribes y actualiza los enlaces al instante
+        function updateWhatsAppLinks() {
+            var num = document.getElementById('phoneInput').value;
+            var btn = document.getElementById('whatsappLink');
+            
+            if(num) {
+                // Guarda el número para que no se borre al recargar la página
+                localStorage.setItem('panda_phone', num);
+                // Crea el link oficial directo
+                btn.href = "https://wa.me/" + num + "?text=Hola!%20He%20seleccionado%20las%20piezas%20de%20mi%20menú%20internacional%20en%20la%20página.%20¿Me%20toman%20el%20pedido?";
+                btn.style.opacity = "1";
+                btn.innerHTML = "🟢 Reservar Menú en WhatsApp (" + num + ")";
+            } else {
+                btn.href = "#";
+                btn.innerHTML = "⚠️ Escribe tu número arriba para activar";
+                btn.style.opacity = "0.5";
+            }
         }
-        function closeModal() {
-            document.getElementById('pandaOverlay').classList.remove('active');
+
+        // Cargar número guardado previamente de manera automática
+        window.onload = function() {
+            var savedNum = localStorage.getItem('panda_phone');
+            if(savedNum) {
+                document.getElementById('phoneInput').value = savedNum;
+                updateWhatsAppLinks();
+            } else {
+                updateWhatsAppLinks();
+            }
         }
-        function scrollToRegion(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        }
-        document.getElementById('pandaOverlay').addEventListener('click', function(e) {
-            if(e.target === this) closeModal();
-        });
     </script>
 
 </body>
