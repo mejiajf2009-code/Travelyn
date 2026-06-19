@@ -2,151 +2,106 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PANDA | Specialty Coffee & Bakery</title>
     <style>
-        :root {
-            --primary-dark: #1A1A1A;
-            --gold: #C5A059;
-            --cream: #F4F1EA;
-            --white: #FFFFFF;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Georgia', serif; background-color: #fdfcf9; color: #333; line-height: 1.6; }
 
-        body {
-            font-family: 'Playfair Display', serif;
-            margin: 0;
-            color: var(--primary-dark);
-            background-color: var(--cream);
-        }
+        /* Estilo compacto */
+        .hero { position: relative; height: 400px; overflow: hidden; background: #1a1a1a; display: flex; align-items: center; justify-content: center; }
+        .hero img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
+        .hero-text { position: absolute; z-index: 1; color: white; text-align: center; }
 
-        /* Hero / Mapa */
-        .hero {
-            position: relative;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
-        }
+        section { padding: 3rem 5%; max-width: 1000px; margin: auto; }
+        h2 { text-align: center; margin-bottom: 2rem; color: #2c2c2c; font-weight: normal; letter-spacing: 1px; }
 
-        .hero img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.6);
-        }
+        .curator-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+        .btn-list { display: flex; flex-direction: column; gap: 0.5rem; }
+        button { padding: 1rem; cursor: pointer; border: 1px solid #c5a059; background: white; text-align: left; font-family: inherit; transition: 0.3s; }
+        button:hover { background: #c5a059; color: white; }
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            color: var(--white);
-            max-width: 800px;
-        }
-
-        /* Secciones */
-        section { padding: 4rem 10%; }
+        .catalog { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+        .card { border: 1px solid #e0e0e0; padding: 1.5rem; background: white; }
+        .btn-order { background: #1a1a1a; color: white; border: none; padding: 0.8rem; width: 100%; margin-top: 1rem; cursor: pointer; }
         
-        h2 { text-align: center; color: var(--primary-dark); margin-bottom: 3rem; }
-
-        /* Curaduría Panda */
-        .curaduría-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 10px;
-        }
-
-        .country-selector { display: flex; flex-direction: column; gap: 1rem; }
-        .btn-country { padding: 1rem; cursor: pointer; border: 1px solid var(--gold); background: none; transition: 0.3s; }
-        .btn-country:hover { background: var(--gold); color: white; }
-
-        /* Catálogo */
-        .catalog { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .card { background: white; padding: 2rem; border: 1px solid #ddd; }
-        .btn-add { background: var(--primary-dark); color: white; border: none; padding: 10px 20px; cursor: pointer; width: 100%; }
-
-        /* Orden */
-        .order-summary { background: var(--primary-dark); color: white; padding: 2rem; margin-top: 3rem; }
+        .summary { background: #1a1a1a; color: white; padding: 2rem; text-align: center; }
     </style>
 </head>
 <body>
 
     <header class="hero">
-        <img src="1000309918.png" alt="Mapa del Mundo PANDA">
-        <div class="hero-content">
+        <img src="1000309918.png" alt="Mapa del Mundo PANDA" onerror="this.style.display='none'">
+        <div class="hero-text">
             <h1>PANDA</h1>
             <p>Conectando el mundo a través del sabor</p>
         </div>
     </header>
 
-    <section id="curaduria">
-        <h2>Curaduría del Maestro Panda</h2>
-        <div class="curaduría-container">
-            <div class="country-selector">
-                <button class="btn-country" onclick="showExplanation('colombia')">Colombia: El origen del Pandebono</button>
-                <button class="btn-country" onclick="showExplanation('japon')">Japón: Shokupan y técnica Tangzhong</button>
-                <button class="btn-country" onclick="showExplanation('francia')">Francia: Maestría en hojaldre</button>
+    <section>
+        <h2>Curaduría del Maestro</h2>
+        <div class="curator-grid">
+            <div class="btn-list">
+                <button onclick="showInfo('colombia')">Colombia: El origen del Pandebono</button>
+                <button onclick="showInfo('japon')">Japón: Shokupan y técnica Tangzhong</button>
+                <button onclick="showInfo('francia')">Francia: Maestría en hojaldre</button>
             </div>
-            <div id="explanation-box">
-                <h3>Seleccione un origen para conocer nuestra historia.</h3>
-            </div>
-        </div>
-    </section>
-
-    <section id="menu">
-        <h2>Nuestro Catálogo Selecto</h2>
-        <div class="catalog" id="product-list">
-            <!-- Ejemplo de Producto -->
-            <div class="card">
-                <h3>Pandebono Tradicional</h3>
-                <p>Almidón de yuca y queso costeño.</p>
-                <input type="number" id="qty-1" value="1" min="1">
-                <button class="btn-add" onclick="addToOrder('Pandebono', document.getElementById('qty-1').value)">Añadir a Pedido</button>
-            </div>
-            <div class="card">
-                <h3>Gelato Artesanal (Matcha)</h3>
-                <p>Té premium de Uji.</p>
-                <input type="number" id="qty-2" value="1" min="1">
-                <button class="btn-add" onclick="addToOrder('Gelato Matcha', document.getElementById('qty-2').value)">Añadir a Pedido</button>
+            <div id="info-display">
+                <p>Seleccione un origen para conocer la historia de nuestros productos seleccionados.</p>
             </div>
         </div>
     </section>
 
-    <section class="order-summary">
-        <h2>Su Comanda</h2>
-        <ul id="order-list"></ul>
-        <button class="btn-add" style="background: var(--gold);" onclick="sendOrder()">Enviar Pedido por WhatsApp</button>
+    <section>
+        <h2>Selección Premium</h2>
+        <div class="catalog">
+            <div class="card">
+                <h3>Pandebono Valluno</h3>
+                <p>Tradición colombiana con queso tierno.</p>
+                <button class="btn-order" onclick="addToOrder('Pandebono Valluno')">Añadir al pedido</button>
+            </div>
+            <div class="card">
+                <h3>Gelato Matcha</h3>
+                <p>Té premium de Uji, Japón.</p>
+                <button class="btn-order" onclick="addToOrder('Gelato Matcha')">Añadir al pedido</button>
+            </div>
+            <div class="card">
+                <h3>Croissant Francés</h3>
+                <p>Mantequilla pura y hojaldre técnico.</p>
+                <button class="btn-order" onclick="addToOrder('Croissant Francés')">Añadir al pedido</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="summary">
+        <h3>Tu selección</h3>
+        <ul id="order-list" style="list-style: none; margin: 1rem 0;"></ul>
+        <button class="btn-order" style="background: #c5a059;" onclick="sendWhatsApp()">Finalizar pedido por WhatsApp</button>
     </section>
 
     <script>
-        const explanations = {
-            colombia: "El Pandebono nace en el Valle del Cauca. Su significado es hospitalidad: históricamente, los vales ('bonos') se intercambiaban por este pan artesanal. En PANDA, respetamos la receta original con queso tierno de alta calidad.",
-            japon: "El Shokupan es la culminación de la técnica Tangzhong. Su significado radica en la paciencia: una masa extremadamente hidratada que resulta en una textura de nube, perfecta para la alta repostería moderna.",
-            francia: "La pastelería francesa es técnica pura. Representa el arte de la paciencia y el respeto por el lácteo; es la base sobre la que se asienta toda la panadería de prestigio mundial."
+        const data = {
+            colombia: "El Pandebono nace en el Valle del Cauca. Su nombre proviene de los vales que se intercambiaban por este pan artesanal. En PANDA, respetamos la receta original con almidón de yuca.",
+            japon: "El Shokupan destaca por la técnica Tangzhong. Es una masa extremadamente hidratada que resulta en una textura de nube, ideal para paladares exigentes.",
+            francia: "La pastelería francesa es el arte de la técnica. Representa el respeto por el lácteo y el tiempo de fermentación, base de la panadería de prestigio."
         };
 
-        let currentOrder = [];
+        let pedido = [];
 
-        function showExplanation(country) {
-            document.getElementById('explanation-box').innerHTML = `<h3>Historia de ${country.charAt(0).toUpperCase() + country.slice(1)}</h3><p>${explanations[country]}</p>`;
+        function showInfo(key) {
+            document.getElementById('info-display').innerHTML = `<p>${data[key]}</p>`;
         }
 
-        function addToOrder(item, qty) {
-            currentOrder.push(`${qty}x ${item}`);
-            updateOrderUI();
-        }
-
-        function updateOrderUI() {
+        function addToOrder(item) {
+            pedido.push(item);
             const list = document.getElementById('order-list');
-            list.innerHTML = currentOrder.map(i => `<li>${i}</li>`).join('');
+            list.innerHTML += `<li>${item}</li>`;
         }
 
-        function sendOrder() {
-            const text = `Hola, quiero realizar el siguiente pedido en PANDA: ${currentOrder.join(', ')}`;
-            window.open(`https://wa.me/34639077423?text=${encodeURIComponent(text)}`);
+        function sendWhatsApp() {
+            if(pedido.length === 0) return alert("Seleccione productos primero.");
+            const msg = "Hola, deseo realizar el siguiente pedido: " + pedido.join(", ");
+            window.open(`https://wa.me/34639077423?text=${encodeURIComponent(msg)}`);
         }
     </script>
 </body>
