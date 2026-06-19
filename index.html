@@ -7,14 +7,14 @@
     <!-- CÓDIGO DE VERIFICACIÓN DE GOOGLE -->
     <meta name="google-site-verification" content="lIk-JJpYbbHqYfE37FcGlJNOdhHpzldNfZhVJ_zhSI0" />
     
-    <!-- FAVICON (Utiliza el mismo logo de Panda para la pestaña del navegador) -->
+    <!-- FAVICON -->
     <link rel="icon" href="1000309039.png" type="image/png">
     <link rel="apple-touch-icon" href="1000309039.png">
     
-    <title>PANDA | Specialty Coffee & Bakery Internacional</title>
-    <meta name="description" content="PANDA - Alta panadería artesanal y café de especialidad. Una experiencia culinaria global que conecta los secretos de Francia, Italia, Colombia y Chile.">
+    <title>PANDA | Specialty Coffee & Bakery</title>
+    <meta name="description" content="PANDA - Alta panadería artesanal y café de especialidad de Francia, Italia, Colombia y Chile.">
 
-    <!-- Tipografías: Elegancia Serif para Títulos y Sans para Interfaz -->
+    <!-- Tipografías Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -22,11 +22,11 @@
     <style>
         :root {
             --bg-pure: #ffffff;
-            --bg-surface: #faf8f5; /* Crema suave artesanal */
+            --bg-surface: #faf8f5; 
             --bg-input: #ffffff;
-            --text-main: #0b0b0d; /* Negro premium de la marca */
+            --text-main: #0b0b0d; 
             --text-muted: #6c727a;
-            --gold: #b38f44; /* Dorado del logotipo */
+            --gold: #b38f44; 
             --gold-gradient: linear-gradient(135deg, #dfc48c 0%, #b38f44 100%);
             --shadow-premium: 0 30px 60px rgba(179, 143, 68, 0.05);
             --shadow-chat: 0 10px 30px rgba(11, 11, 13, 0.05);
@@ -56,7 +56,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Cabecera blindada para evitar desconfiguraciones con el Logo */
+        /* Cabecera con Logo Fijo */
         header {
             display: flex;
             justify-content: space-between;
@@ -75,7 +75,7 @@
         }
 
         .brand-logo-file {
-            height: 75px; /* Altura perfecta y fija para el logo 1000309039.png */
+            height: 75px; 
             width: auto;
             object-fit: contain;
         }
@@ -169,39 +169,14 @@
             box-shadow: var(--shadow-premium);
         }
 
-        .floating-badge {
-            position: absolute;
-            bottom: -25px;
-            left: -25px;
-            background: #ffffff;
-            padding: 1.5rem;
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
-            border-left: 4px solid var(--gold);
-            max-width: 260px;
-        }
-
-        .floating-badge p {
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.2rem;
-        }
-
-        .floating-badge span {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        /* Consola de Reserva de Pedidos */
+        /* Consola de Pedidos de la Cafetería */
         .search-area {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 5% 6rem 5%;
         }
 
-        .transport-selector {
+        .menu-selector {
             display: flex;
             justify-content: flex-start;
             flex-wrap: wrap;
@@ -310,7 +285,7 @@
             box-shadow: 0 15px 30px rgba(179, 143, 68, 0.2);
         }
 
-        /* Sección de Catálogo de Productos Internacionales */
+        /* Catálogo */
         .catalog-section {
             max-width: 1400px;
             margin: 0 auto;
@@ -452,26 +427,21 @@
             letter-spacing: 1px;
             color: var(--text-main);
             text-decoration: none;
-            transition: color 0.3s;
         }
 
         .premium-card:hover .action-link {
             color: var(--gold);
         }
 
-        /* Concierge Zone - El Barista Experto de Panda */
+        /* Chat del Barista */
         .experience-zone {
             background: var(--bg-surface);
             padding: 6rem 5%;
-            border-top: 1px solid rgba(0,0,0,0.02);
         }
 
         .experience-layout {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr;
             max-width: 800px;
+            margin: 0 auto;
         }
 
         .ai-chat-console {
@@ -482,7 +452,7 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            height: 520px;
+            height: 480px;
         }
 
         .ai-chat-header {
@@ -499,23 +469,11 @@
             height: 10px;
             background: #b38f44;
             border-radius: 50%;
-            position: relative;
             box-shadow: 0 0 10px #b38f44;
         }
 
-        .ai-chat-header h3 {
-            font-size: 1.1rem;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-            color: #ffffff;
-        }
-
-        .ai-chat-header p {
-            font-size: 0.7rem;
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        .ai-chat-header h3 { font-size: 1.1rem; font-weight: 400; color: #ffffff; }
+        .ai-chat-header p { font-size: 0.7rem; color: var(--gold); text-transform: uppercase; }
 
         .ai-messages-box {
             flex: 1;
@@ -561,7 +519,6 @@
             padding: 0.8rem 1.2rem;
             border-radius: 10px;
             outline: none;
-            font-size: 0.9rem;
         }
 
         .ai-send-btn {
@@ -571,11 +528,7 @@
             padding: 0 1.5rem;
             border-radius: 10px;
             font-weight: 600;
-            font-size: 0.75rem;
-            text-transform: uppercase;
             cursor: pointer;
-            letter-spacing: 1px;
-            transition: background 0.3s;
         }
 
         .ai-send-btn:hover { background: var(--gold); }
@@ -584,265 +537,195 @@
             .hero-section { grid-template-columns: 1fr; text-align: center; }
             .hero-text p { margin-left: auto; margin-right: auto; }
             .hero-gallery { display: none; }
-            .search-container { border-radius: 24px; }
-            .transport-selector { justify-content: center; }
-        }
-
-        @media (max-width: 768px) {
-            .hero-text h1 { font-size: 2.3rem; }
-            header { flex-direction: column; gap: 1.5rem; text-align: center; }
-            nav a { margin: 0 0.8rem; }
-            .search-container { padding: 2rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <!-- Vinculación blindada con la imagen 1000309039.png -->
+        <!-- Logo Oficial Cargado -->
         <a href="#" class="brand-logo-container">
-            <img src="1000309039.png" alt="Panda Specialty Coffee & Bakery Logo" class="brand-logo-file">
+            <img src="1000309039.png" alt="Panda Specialty Coffee & Bakery" class="brand-logo-file">
             <div class="brand-logo-text">
                 <span class="logo-title">PANDA</span>
                 <span class="logo-subtitle">Specialty Coffee & Bakery</span>
             </div>
         </a>
         <nav>
-            <a href="#pedido">Consola de Encargos</a>
-            <a href="#catalogo">Catálogo Global</a>
-            <a href="#maestro-ia">Barista Virtual</a>
+            <a href="#pedido">Hacer Pedido</a>
+            <a href="#catalogo">Nuestras Especialidades</a>
+            <a href="#barista-ia">Asistente Virtual</a>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero Cafetería -->
         <section class="hero-section">
             <div class="hero-text">
-                <h1>Masas Madre de Alta Gama y Cafés de <span>Especialidad</span></h1>
-                <p>Bienvenido a una experiencia de panadería internacional sin precedentes. Fusionamos la precisión repostera de Francia, la tradición artesanal de Italia, la excelencia cafetera de Colombia y el corazón de la panadería tradicional de Chile.</p>
-                <a href="#pedido" class="btn-search" style="text-decoration:none; display:inline-block; width:auto; padding:1.2rem 2.5rem;">Hacer un Pedido Exclusivo</a>
+                <h1>La Alta Cafetería y Panadería de <span>Especialidad</span></h1>
+                <p>Disfruta de las mejores recetas artesanales del mundo en un solo lugar. Traemos para ti la bollería fina de Francia, las focaccias tradicionales de Italia, el café premium de origen de Colombia y la panadería clásica de Chile.</p>
+                <a href="#pedido" class="btn-search" style="text-decoration:none; display:inline-block; width:auto; padding:1.2rem 2.5rem;">Ordenar Ahora</a>
             </div>
             <div class="hero-gallery">
-                <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=800&q=80" alt="Panda Specialty Coffee Experience" class="main-img">
-                <div class="floating-badge">
-                    <p>Granos & Masas Premium</p>
-                    <span>Francia · Italia · Colombia · Chile</span>
-                </div>
+                <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=800&q=80" alt="Panda Café" class="main-img">
             </div>
         </section>
 
-        <!-- Consola de Pedido e Itinerario Gastronómico -->
+        <!-- Consola de Pedidos -->
         <section class="search-area" id="pedido">
-            <div class="transport-selector">
-                <button class="type-btn active" onclick="setService('Cesta de Panadería Internacional', this)">Cestas de Panadería</button>
-                <button class="type-btn" onclick="setService('Cafetería de Especialidad de Origen', this)">Café de Especialidad</button>
-                <button class="type-btn" onclick="setService('Servicio de Catering / Evento Privado', this)">Eventos y Catering</button>
+            <div class="menu-selector">
+                <button class="type-btn active" onclick="setCategory('Repostería y Panadería', this)">Panadería Artesanal</button>
+                <button class="type-btn" onclick="setCategory('Café de Especialidad', this)">Cafetería de Especialidad</button>
             </div>
 
             <div class="search-container">
-                
-                <!-- SECCIÓN 1: CLIENTE -->
-                <div class="form-section-title">1. Datos del Cliente / Solicitante</div>
+                <div class="form-section-title">1. Datos de tu Pedido</div>
                 <div class="form-grid">
                     <div class="input-group">
-                        <label>Nombre Completo</label>
-                        <input type="text" id="customer-name" placeholder="Ej: Carlos Mendoza" required>
+                        <label>Tu Nombre</label>
+                        <input type="text" id="cust-name" placeholder="Ej: Juan Pérez" required>
                     </div>
                     <div class="input-group">
-                        <label>Teléfono de Contacto</label>
-                        <input type="tel" id="customer-phone" placeholder="Ej: +56 9 1234 5678" required>
+                        <label>WhatsApp / Teléfono</label>
+                        <input type="tel" id="cust-phone" placeholder="Ej: +56 9 1234 5678" required>
                     </div>
                     <div class="input-group">
-                        <label>Correo Electrónico</label>
-                        <input type="email" id="customer-email" placeholder="Ej: carlos@example.com">
-                    </div>
-                    <div class="input-group">
-                        <label>Tipo de Retiro / Entrega</label>
-                        <select id="delivery-type">
-                            <option value="Retiro en Tienda Flagship">Retiro Prioritario en Tienda</option>
-                            <option value="Despacho Gourmet a Domicilio">Despacho VIP a Domicilio</option>
+                        <label>Método de Entrega</label>
+                        <select id="cust-delivery">
+                            <option value="Retiro en Local">Retiro en Local</option>
+                            <option value="Despacho a Domicilio">Despacho a Domicilio</option>
                         </select>
                     </div>
                 </div>
 
-                <!-- SECCIÓN 2: SELECCIÓN GLOBAL -->
-                <div class="form-section-title">2. Selección del Destino Culinario</div>
+                <div class="form-section-title">2. Selección del Menú</div>
                 <div class="form-grid">
                     <div class="input-group">
-                        <label>País de Inspiración Principal</label>
-                        <select id="country-origin" onchange="updateProductPlaceholder()">
-                            <option value="Francia">Francia (Viennoiserie & Hojaldres)</option>
-                            <option value="Italia">Italia (Artesanal & Focaccias)</option>
-                            <option value="Colombia">Colombia (Café Especial & Tradición)</option>
-                            <option value="Chile">Chile (Masas Tradicionales & Pastelería)</option>
+                        <label>Origen de la Receta</label>
+                        <select id="prod-country">
+                            <option value="Francia">Francia (Hojaldres y Croissants)</option>
+                            <option value="Italia">Italia (Focaccias y Dulces)</option>
+                            <option value="Colombia">Colombia (Café de Especialidad)</option>
+                            <option value="Chile">Chile (Masas y Pastelería Tradicional)</option>
                         </select>
                     </div>
                     <div class="input-group">
-                        <label>Variedad de Producto o Pack Especial</label>
-                        <input type="text" id="product-choice" placeholder="Ej: Pack Croissants de Normandía o Café del Huila">
+                        <label>¿Qué producto deseas?</label>
+                        <input type="text" id="prod-title" placeholder="Ej: Croissant de Mantequilla">
                     </div>
                     <div class="input-group">
-                        <label>Fecha Requerida</label>
-                        <input type="date" id="order-date">
-                    </div>
-                    <div class="input-group">
-                        <label>Hora de Preferencia</label>
-                        <input type="time" id="order-time">
+                        <label>Fecha de Entrega</label>
+                        <input type="date" id="prod-date">
                     </div>
                 </div>
 
-                <!-- SECCIÓN 3: PREFERENCIAS Y ALÉRGENOS -->
-                <div class="form-section-title">3. Personalización y Preferencias de Alérgenos</div>
+                <div class="form-section-title">3. Detalles y Preferencias</div>
                 <div class="form-grid">
                     <div class="input-group">
-                        <label>Tipo de Molienda (Para Café)</label>
-                        <select id="coffee-grind">
-                            <option value="Grano Entero (Preservado)">Grano Entero (Para Moler en Casa)</option>
-                            <option value="Molienda Fina (Espresso)">Molienda Fina (Espresso)</option>
-                            <option value="Molienda Media (Filtro / V60)">Molienda Media (Filtro / Goteo)</option>
-                            <option value="No aplica (Solo Panadería)">No aplica (Solo Panadería)</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label>Restricciones Alimentarias</label>
-                        <select id="diet-restriction">
-                            <option value="Ninguna (Receta Tradicional)">Ninguna (Receta Tradicional Original)</option>
-                            <option value="Opción Vegana / Sin Lácteos">Opción Vegana / Sin Lácteos</option>
-                            <option value="Bajo en Azúcar / Integral">Alternativa con Harinas Integrales</option>
+                        <label>Preferencia Especial</label>
+                        <select id="prod-diet">
+                            <option value="Receta Tradicional">Receta Tradicional</option>
+                            <option value="Opción sin Lácteos / Vegana">Opción sin Lácteos / Vegana</option>
+                            <option value="Harinas Integrales">Harinas Integrales</option>
                         </select>
                     </div>
                     <div class="input-group full-width">
-                        <label>Notas del Pedido, Dedicatorias o Peticiones al Maestro Panadero</label>
-                        <textarea id="additional-notes" rows="2" placeholder="Indique si es para regalo, notas sobre el punto de tueste, intolerancias o combinaciones personalizadas de panes de los 4 países..."></textarea>
+                        <label>Notas adicionales para el Barista / Panadero</label>
+                        <textarea id="prod-notes" rows="2" placeholder="Especificaciones de molienda de café, alérgenos o detalles de personalización..."></textarea>
                     </div>
                 </div>
 
-                <button class="btn-search" onclick="sendBakeryToWhatsApp()">Enviar Pedido al Obrador Privado por WhatsApp</button>
+                <button class="btn-search" onclick="sendOrderToWhatsApp()">Enviar Pedido Directo a Cocina por WhatsApp</button>
             </div>
         </section>
 
-        <!-- SECCIÓN DE CATÁLOGO INTERNACIONAL POR BLOQUES -->
+        <!-- Especialidades -->
         <section class="catalog-section" id="catalogo">
             <div class="section-header">
-                <h2>El Catálogo de los Cuatro Mundos</h2>
-                <p>Bloques gastronómicos elaborados artesanalmente por maestros nativos de cada región.</p>
+                <h2>Nuestro Menú Internacional</h2>
+                <p>Una cuidada selección de clásicos horneados y preparados diariamente.</p>
             </div>
 
-            <!-- BLOQUE 1: FRANCIA E ITALIA -->
             <div class="catalog-block">
-                <div class="catalog-title">Eje Europeo: Repostería & Masas Madre Clásicas</div>
                 <div class="grid-premium">
-                    
-                    <div class="premium-card" onclick="autoFillBakery('Francia', 'Croissant de Mantequilla de Normandía', 'Cesta de Panadería Internacional')">
+                    <!-- Francia -->
+                    <div class="premium-card" onclick="selectMenu('Francia', 'Croissant de Mantequilla de Normandía', 'Repostería y Panadería')">
                         <div class="card-img-wrapper">
                             <span class="badge-tag">Francia</span>
-                            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80" alt="Croissant Francés">
+                            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80" alt="Croissant">
                         </div>
                         <div class="card-content">
-                            <div class="location">París / Normandía</div>
+                            <div class="location">Panadería Francesa</div>
                             <h3>Croissant de Mantequilla AOC</h3>
-                            <p>Hojaldrado de 24 capas elaborado estrictamente con mantequilla francesa fina fermentada de Normandía. Crujiente de oro puro.</p>
-                            <div class="card-footer"><span class="action-link">Seleccionar Pack →</span></div>
+                            <p>Hojaldrado tradicional crujiente elaborado con mantequilla normanda purísima.</p>
+                            <div class="card-footer"><span class="action-link">Agregar al pedido →</span></div>
                         </div>
                     </div>
 
-                    <div class="premium-card" onclick="autoFillBakery('Italia', 'Focaccia Tradicional de Liguria', 'Cesta de Panadería Internacional')">
+                    <!-- Italia -->
+                    <div class="premium-card" onclick="selectMenu('Italia', 'Focaccia con Romero y Oliva', 'Repostería y Panadería')">
                         <div class="card-img-wrapper">
                             <span class="badge-tag">Italia</span>
-                            <img src="https://images.unsplash.com/photo-1608039755401-742074f0548d?auto=format&fit=crop&w=600&q=80" alt="Focaccia Italiana">
+                            <img src="https://images.unsplash.com/photo-1608039755401-742074f0548d?auto=format&fit=crop&w=600&q=80" alt="Focaccia">
                         </div>
                         <div class="card-content">
-                            <div class="location">Liguria, Italia</div>
+                            <div class="location">Panadería Italiana</div>
                             <h3>Focaccia di Oliva Barese</h3>
-                            <p>Masa madre de alta hidratación con aceite de oliva virgen extra italiano, sal marina de la costa y romero fresco seleccionado.</p>
-                            <div class="card-footer"><span class="action-link">Seleccionar Pack →</span></div>
+                            <p>Masa madre de alta hidratación con aceite de oliva virgen y romero fresco.</p>
+                            <div class="card-footer"><span class="action-link">Agregar al pedido →</span></div>
                         </div>
                     </div>
 
-                    <div class="premium-card" onclick="autoFillBakery('Italia', 'Cannoli Siciliano de Pistacho', 'Cesta de Panadería Internacional')">
-                        <div class="card-img-wrapper">
-                            <span class="badge-tag">Italia</span>
-                            <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=600&q=80" alt="Cannoli Siciliano">
-                        </div>
-                        <div class="card-content">
-                            <div class="location">Sicilia</div>
-                            <h3>Cannoli con Ricotta de Búfala</h3>
-                            <p>Corteza crujiente frita al vino Marsala, rellena al momento con crema de ricotta dulce de búfala y lluvia de pistachos de Bronte.</p>
-                            <div class="card-footer"><span class="action-link">Seleccionar Pack →</span></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- BLOQUE 2: COLOMBIA Y CHILE -->
-            <div class="catalog-block">
-                <div class="catalog-title">Eje Americano: Cafés de Leyenda & Panes Autóctonos</div>
-                <div class="grid-premium">
-                    
-                    <div class="premium-card" onclick="autoFillBakery('Colombia', 'Café Especial de Origen Único - Huila', 'Cafetería de Especialidad de Origen')">
+                    <!-- Colombia -->
+                    <div class="premium-card" onclick="selectMenu('Colombia', 'Café de Especialidad Origen Huila', 'Café de Especialidad')">
                         <div class="card-img-wrapper">
                             <span class="badge-tag">Colombia</span>
-                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80" alt="Café de Colombia">
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80" alt="Café">
                         </div>
                         <div class="card-content">
-                            <div class="location">Huila / Pitalito</div>
-                            <h3>Café de Especialidad Panda Gold</h3>
-                            <p>Grano 100% Arábica de proceso lavado, cultivado a 1.800 metros. Notas catadas de cacao, cítricos dulces y cuerpo de seda untuoso.</p>
-                            <div class="card-footer"><span class="action-link">Seleccionar Grano →</span></div>
+                            <div class="location">Café de Origen</div>
+                            <h3>Café Especial Origen Huila</h3>
+                            <p>Notas equilibradas a cacao y frutos dulces, tueste óptimo para barra de especialidad.</p>
+                            <div class="card-footer"><span class="action-link">Agregar al pedido →</span></div>
                         </div>
                     </div>
 
-                    <div class="premium-card" onclick="autoFillBakery('Colombia', 'Pandebonos Tradicionales de Queso Costeño', 'Cesta de Panadería Internacional')">
-                        <div class="card-img-wrapper">
-                            <span class="badge-tag">Colombia</span>
-                            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="Pandebonos de Queso">
-                        </div>
-                        <div class="card-content">
-                            <div class="location">Valle del Cauca</div>
-                            <h3>Pandebono Premium de Almidón</h3>
-                            <p>Esferas de panecillos horneados a alta temperatura con fécula de maíz, almidón de yuca y generoso queso costeño. Crujientes por fuera, elásticos por dentro.</p>
-                            <div class="card-footer"><span class="action-link">Seleccionar Pack →</span></div>
-                        </div>
-                    </div>
-
-                    <div class="premium-card" onclick="autoFillBakery('Chile', 'Pastel de Hoja con Manjar de Campo', 'Cesta de Panadería Internacional')">
+                    <!-- Chile -->
+                    <div class="premium-card" onclick="selectMenu('Chile', 'Pastel de Hoja con Manjar de Campo', 'Repostería y Panadería')">
                         <div class="card-img-wrapper">
                             <span class="badge-tag">Chile</span>
-                            <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=600&q=80" alt="Pastelería Chilena">
+                            <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=600&q=80" alt="Pastel de Hoja">
                         </div>
                         <div class="card-content">
-                            <div class="location">Valle Central, Chile</div>
-                            <h3>Pastel de Hoja Imperial</h3>
-                            <p>Hojaldre finísimo y crocante al estilo chileno tradicional, intercalado con abundante manjar artesanal de campo cocinado a fuego lento.</p>
-                            <div class="card-footer"><span class="action-link">Seleccionar Pack →</span></div>
+                            <div class="location">Pastelería Chilena</div>
+                            <h3>Pastel de Hoja e Imperial</h3>
+                            <p>Finas capas crujientes intercaladas con delicioso manjar artesanal chileno.</p>
+                            <div class="card-footer"><span class="action-link">Agregar al pedido →</span></div>
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </section>
 
-        <!-- Chatbot Maestro Barista IA -->
-        <section class="experience-zone" id="maestro-ia">
+        <!-- Asistente Barista -->
+        <section class="experience-zone" id="barista-ia">
             <div class="experience-layout">
                 <div class="ai-chat-console">
                     <div class="ai-chat-header">
                         <div class="ai-avatar"></div>
                         <div>
-                            <h3>Maestro Barista Virtual PANDA</h3>
-                            <p>Coffee & Bakery AI Specialist</p>
+                            <h3>Barista Virtual PANDA</h3>
+                            <p>Especialista en Café & Masas</p>
                         </div>
                     </div>
-                    <div class="ai-messages-box" id="bakery-chat-box">
+                    <div class="ai-messages-box" id="chat-box">
                         <div class="msg system">
-                            ¡Hola! Bienvenido a PANDA Specialty Coffee & Bakery. Estoy listo para ayudarte a diseñar el maridaje perfecto. ¿Deseas un espresso de origen colombiano para acompañar un croissant francés, o prefieres explorar las masas tradicionales de Italia y Chile? Cuéntame tus gustos.
+                            ¡Hola! Bienvenido a la cafetería de PANDA. ¿Tienes antojo de café de Colombia, bollería de Francia, especialidades de Italia o repostería de Chile hoy? Dime qué te gusta y te ayudo con tu orden.
                         </div>
                     </div>
                     <div class="ai-input-area">
-                        <input type="text" id="bakery-ai-input" placeholder="Escriba su consulta (ej: Quiero algo dulce de Chile o Colombia)..." onkeypress="handleBakeryChatKey(event)">
-                        <button class="ai-send-btn" onclick="triggerBakeryAiResponse()">Consultar</button>
+                        <input type="text" id="chat-input" placeholder="Pregúntale al Barista o pide una sugerencia..." onkeypress="handleChatKey(event)">
+                        <button class="ai-send-btn" onclick="triggerAiResponse()">Consultar</button>
                     </div>
                 </div>
             </div>
@@ -850,114 +733,101 @@
     </main>
 
     <script>
-        let currentSelectedService = "Cesta de Panadería Internacional";
+        let selectedCategory = "Repostería y Panadería";
 
-        function setService(serviceType, element) {
-            currentSelectedService = serviceType;
+        function setCategory(cat, element) {
+            selectedCategory = cat;
             document.querySelectorAll('.type-btn').forEach(btn => btn.classList.remove('active'));
             element.classList.add('active');
         }
 
-        function autoFillBakery(pais, producto, servicio) {
-            document.getElementById('country-origin').value = pais;
-            document.getElementById('product-choice').value = producto;
+        function selectMenu(pais, producto, categoria) {
+            document.getElementById('prod-country').value = pais;
+            document.getElementById('prod-title').value = producto;
             
             const buttons = document.querySelectorAll('.type-btn');
             buttons.forEach(btn => {
-                if(btn.innerText.includes('Panadería') && servicio.includes('Panadería')) setService(servicio, btn);
-                if(btn.innerText.includes('Café') && servicio.includes('Café')) setService(servicio, btn);
-                if(btn.innerText.includes('Eventos') && servicio.includes('Catering')) setService(servicio, btn);
+                if(btn.innerText.includes('Panadería') && categoria.includes('Panadería')) setCategory(categoria, btn);
+                if(btn.innerText.includes('Café') && categoria.includes('Café')) setCategory(categoria, btn);
             });
 
             document.getElementById('pedido').scrollIntoView({ behavior: 'smooth' });
         }
 
-        function handleBakeryChatKey(event) {
-            if (event.key === 'Enter') triggerBakeryAiResponse();
+        function handleChatKey(event) {
+            if (event.key === 'Enter') triggerAiResponse();
         }
 
-        function triggerBakeryAiResponse() {
-            const inputField = document.getElementById('bakery-ai-input');
-            const text = inputField.value.trim();
+        function triggerAiResponse() {
+            const input = document.getElementById('chat-input');
+            const text = input.value.trim();
             if (!text) return;
 
-            const chatBox = document.getElementById('bakery-chat-box');
-
-            // Mensaje de usuario
+            const chatBox = document.getElementById('chat-box');
             const userDiv = document.createElement('div');
             userDiv.className = 'msg user';
             userDiv.innerText = text;
             chatBox.appendChild(userDiv);
-            inputField.value = '';
+            input.value = '';
             chatBox.scrollTop = chatBox.scrollHeight;
 
-            // Respuesta automatizada refinada inteligente
             setTimeout(() => {
                 const aiDiv = document.createElement('div');
                 aiDiv.className = 'msg system';
-                
                 let lower = text.toLowerCase();
-                if (lower.includes('francia') || lower.includes('croissant') || lower.includes('hojaldre')) {
-                    aiDiv.innerText = "Excelente elección. He configurado la consola de pedidos en Francia. Te sugiero añadir nuestro Croissant de Mantequilla de Normandía a tu cesta. Su textura crujiente marida perfectamente con un café de filtro largo.";
-                    autoFillBakery('Francia', 'Croissant de Mantequilla de Normandía', 'Cesta de Panadería Internacional');
-                } else if (lower.includes('colombia') || lower.includes('café') || lower.includes('cafe') || lower.includes('pandebono')) {
-                    aiDiv.innerText = "¡Sensacional! He cargado los parámetros de Colombia en la consola. Nuestro Café Especial de Origen Huila tiene notas a cacao espectaculares, ideales para disfrutar junto a un Pandebono de queso recién horneado.";
-                    autoFillBakery('Colombia', 'Café Especial de Origen Único - Huila', 'Cafetería de Especialidad de Origen');
-                } else if (lower.includes('chile') || lower.includes('manjar') || lower.includes('dulce')) {
-                    aiDiv.innerText = "Perfecto. He modificado el formulario hacia Chile. Te va a encantar nuestro Pastel de Hoja Imperial relleno con auténtico manjar de campo cocinado lentamente a leña.";
-                    autoFillBakery('Chile', 'Pastel de Hoja con Manjar de Campo', 'Cesta de Panadería Internacional');
-                } else if (lower.includes('italia') || lower.includes('focaccia') || lower.includes('cannoli')) {
-                    aiDiv.innerText = "Magnífico. Configuré la orden para Italia. Te recomiendo la Focaccia de Romero y Aceite de Oliva para tus desayunos salados, o un pack de Cannolis sicilianos crujientes.";
-                    autoFillBakery('Italia', 'Focaccia Tradicional de Liguria', 'Cesta de Panadería Internacional');
+                
+                if (lower.includes('francia') || lower.includes('croissant')) {
+                    aiDiv.innerText = "¡Listo! He cargado el Croissant Francés de Mantequilla en tu formulario. Es una delicia recién horneada.";
+                    selectMenu('Francia', 'Croissant de Mantequilla de Normandía', 'Repostería y Panadería');
+                } else if (lower.includes('colombia') || lower.includes('café') || lower.includes('cafe')) {
+                    aiDiv.innerText = "¡Excelente! Preparando la molienda del Café de Especialidad de Colombia Origen Huila en tu orden.";
+                    selectMenu('Colombia', 'Café de Especialidad Origen Huila', 'Café de Especialidad');
+                } else if (lower.includes('chile') || lower.includes('manjar')) {
+                    aiDiv.innerText = "Perfecto, agregué el Pastel de Hoja con Manjar Chileno Tradicional a la sección de pedido.";
+                    selectMenu('Chile', 'Pastel de Hoja con Manjar de Campo', 'Repostería y Panadería');
+                } else if (lower.includes('italia') || lower.includes('focaccia')) {
+                    aiDiv.innerText = "Entendido. He seleccionado la Focaccia con Aceite de Oliva y Romero al estilo italiano.";
+                    selectMenu('Italia', 'Focaccia con Romero y Oliva', 'Repostería y Panadería');
                 } else {
-                    aiDiv.innerText = `He sincronizado tus preferencias sobre "${text}" con la Consola de Encargos. Por favor, revisa y completa los campos arriba para procesar tu orden directa con el maestro panadero en cocina.`;
+                    aiDiv.innerText = "Me parece una gran idea. He actualizado el formulario para que puedas detallar tu pedido de cafetería justo arriba.";
                 }
                 
                 chatBox.appendChild(aiDiv);
                 chatBox.scrollTop = chatBox.scrollHeight;
-            }, 800);
+            }, 600);
         }
 
-        function sendBakeryToWhatsApp() {
-            const name = document.getElementById('customer-name').value.trim();
-            const phone = document.getElementById('customer-phone').value.trim();
-            const email = document.getElementById('customer-email').value.trim();
-            const delivery = document.getElementById('delivery-type').value;
-
-            const country = document.getElementById('country-origin').value;
-            const product = document.getElementById('product-choice').value.trim();
-            const date = document.getElementById('order-date').value;
-            const time = document.getElementById('order-time').value;
-            
-            const grind = document.getElementById('coffee-grind').value;
-            const diet = document.getElementById('diet-restriction').value;
-            const notes = document.getElementById('additional-notes').value.trim();
+        function sendOrderToWhatsApp() {
+            const name = document.getElementById('cust-name').value.trim();
+            const phone = document.getElementById('cust-phone').value.trim();
+            const delivery = document.getElementById('cust-delivery').value;
+            const country = document.getElementById('prod-country').value;
+            const product = document.getElementById('prod-title').value.trim();
+            const date = document.getElementById('prod-date').value;
+            const diet = document.getElementById('prod-diet').value;
+            const notes = document.getElementById('prod-notes').value.trim();
 
             if (!name || !phone || !product) {
-                alert('Por favor, ingrese sus datos de contacto y el producto deseado para poder agendar el pedido en el obrador.');
+                alert('Por favor completa tu nombre, teléfono y el producto que deseas pedir.');
                 return;
             }
 
-            const phoneMaster = "34639077423"; // Tu número maestro de WhatsApp intacto
-            let txt = `🐼 ENCARGO PREMIUM - PANDA BAKERY\n`;
-            txt += `==================================\n\n`;
-            txt += `👤 DATOS DEL CLIENTE:\n`;
-            txt += `▪ Nombre: ${name}\n`;
-            txt += `▪ Teléfono: ${phone}\n`;
-            txt += `▪ Email: ${email || 'No especificado'}\n`;
-            txt += `▪ Modalidad: ${delivery}\n\n`;
-            txt += `🥐 LOGÍSTICA DEL PEDIDO:\n`;
-            txt += `▪ Línea de Servicio: ${currentSelectedService}\n`;
-            txt += `▪ Eje Internacional: ${country}\n`;
-            txt += `▪ Producto Solicitado: ${product}\n`;
-            txt += `▪ Fecha de Entrega: ${date || 'Inmediata / Próxima tanda'}\n`;
-            if (time) txt += `▪ Hora Estimada: ${time}\n`;
-            txt += `\n☕ CONFIGURACIÓN ARTESANAL:\n`;
-            txt += `▪ Preparación/Molienda: ${grind}\n`;
-            txt += `▪ Preferencia Alimentaria: ${diet}\n`;
-            if (notes) txt += `\n📝 ESPECIFICACIONES ADICIONALES:\n"${notes}"`;
+            const whatsappNumber = "34639077423"; 
+            let message = `🐼 NUEVO PEDIDO - PANDA CAFETERÍA\n`;
+            message += `==================================\n\n`;
+            message += `👤 CLIENTE:\n`;
+            message += `▪ Nombre: ${name}\n`;
+            message += `▪ Teléfono: ${phone}\n`;
+            message += `▪ Entrega: ${delivery}\n\n`;
+            message += `🥐 DETALLES DEL PRODUCTO:\n`;
+            message += `▪ Categoría: ${selectedCategory}\n`;
+            message += `▪ Receta/Origen: ${country}\n`;
+            message += `▪ Producto: ${product}\n`;
+            message += `▪ Fecha: ${date || 'Lo antes posible'}\n`;
+            message += `▪ Tipo: ${diet}\n`;
+            if (notes) message += `\n📝 NOTAS ADICIONALES:\n"${notes}"`;
 
-            window.open(`https://wa.me/${phoneMaster}?text=${encodeURIComponent(txt)}`, '_blank');
+            window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
         }
     </script>
 </body>
