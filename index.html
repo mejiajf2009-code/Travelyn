@@ -184,20 +184,44 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        /* CONTENEDOR DEL PANDA GRANDE EN LA TARJETA */
-        .card-panda-hero {
-            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
-            height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* IMAGEN DE PAN REAL CON COBERTURA OSCURA */
+        .card-image-hero {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
             position: relative;
             border-bottom: 3px solid var(--gold);
         }
 
-        .big-panda-svg {
-            width: 110px;
-            height: 110px;
+        .card-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+        }
+
+        /* SELLO PANDA DISCRETO SOBRE LA IMAGEN DEL PAN */
+        .panda-seal {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: rgba(17, 17, 17, 0.9);
+            border: 2px solid var(--gold);
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+            z-index: 2;
+        }
+
+        .panda-seal svg {
+            width: 35px;
+            height: 35px;
         }
 
         .card-flag {
@@ -213,6 +237,7 @@
             text-transform: uppercase;
             border-left: 3px solid var(--gold);
             border-radius: 2px;
+            z-index: 2;
         }
 
         .card-content {
@@ -231,7 +256,7 @@
             font-weight: 800;
         }
 
-        /* FILAS DE PRODUCTO CON SELECTOR DE CANTIDAD */
+        /* FILAS DE PRODUCTO CON SELECTOR */
         .item-row {
             background: #fafafa;
             padding: 15px;
@@ -262,7 +287,6 @@
             font-style: italic;
         }
 
-        /* CONTROLADORES DE CANTIDAD MAS SEGUROS Y VISUALES */
         .quantity-control {
             display: flex;
             align-items: center;
@@ -383,19 +407,15 @@
             
             <!-- COLOMBIA -->
             <div class="card" id="colombia">
-                <div class="card-panda-hero">
+                <!-- Imagen Real de Pandebonos Dorados Horneados -->
+                <div class="card-image-hero" style="background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop');">
+                    <div class="card-image-overlay"></div>
                     <div class="card-flag">🇨🇴 Colombia</div>
-                    <!-- PANDA GRANDE VECTORIAL -->
-                    <svg class="big-panda-svg" viewBox="0 0 100 100">
-                        <circle cx="30" cy="35" r="14" fill="#c5a059"/>
-                        <circle cx="70" cy="35" r="14" fill="#c5a059"/>
-                        <circle cx="50" cy="60" r="34" fill="#ffffff"/>
-                        <ellipse cx="36" cy="56" rx="10" ry="13" fill="#111"/>
-                        <ellipse cx="64" cy="56" rx="10" ry="13" fill="#111"/>
-                        <circle cx="36" cy="54" r="3" fill="#fff"/>
-                        <circle cx="64" cy="54" r="3" fill="#fff"/>
-                        <polygon points="46,68 54,68 50,73" fill="#c5a059"/>
-                    </svg>
+                    <div class="panda-seal">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="30" cy="35" r="14" fill="#c5a059"/><circle cx="70" cy="35" r="14" fill="#c5a059"/><circle cx="50" cy="60" r="34" fill="#ffffff"/><ellipse cx="36" cy="56" rx="10" ry="13" fill="#111"/><ellipse cx="64" cy="56" rx="10" ry="13" fill="#111"/><circle cx="36" cy="54" r="3" fill="#fff"/><circle cx="64" cy="54" r="3" fill="#fff"/><polygon points="46,68 54,68 50,73" fill="#c5a059"/>
+                        </svg>
+                    </div>
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">Tradición de Amasijos Colombianos</h3>
@@ -440,11 +460,15 @@
 
             <!-- CHILE -->
             <div class="card" id="chile">
-                <div class="card-panda-hero">
+                <!-- Imagen Real de Panes de Molde Redondos Crujientes (Estilo Hallulla/Marraqueta) -->
+                <div class="card-image-hero" style="background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop');">
+                    <div class="card-image-overlay"></div>
                     <div class="card-flag">🇨🇱 Chile</div>
-                    <svg class="big-panda-svg" viewBox="0 0 100 100">
-                        <circle cx="30" cy="35" r="14" fill="#c5a059"/><circle cx="70" cy="35" r="14" fill="#c5a059"/><circle cx="50" cy="60" r="34" fill="#ffffff"/><ellipse cx="36" cy="56" rx="10" ry="13" fill="#111"/><ellipse cx="64" cy="56" rx="10" ry="13" fill="#111"/><circle cx="36" cy="54" r="3" fill="#fff"/><circle cx="64" cy="54" r="3" fill="#fff"/><polygon points="46,68 54,68 50,73" fill="#c5a059"/>
-                    </svg>
+                    <div class="panda-seal">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="30" cy="35" r="14" fill="#c5a059"/><circle cx="70" cy="35" r="14" fill="#c5a059"/><circle cx="50" cy="60" r="34" fill="#ffffff"/><ellipse cx="36" cy="56" rx="10" ry="13" fill="#111"/><ellipse cx="64" cy="56" rx="10" ry="13" fill="#111"/><circle cx="36" cy="54" r="3" fill="#fff"/><circle cx="64" cy="54" r="3" fill="#fff"/><polygon points="46,68 54,68 50,73" fill="#c5a059"/>
+                        </svg>
+                    </div>
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">Masas Crujientes Chilenas</h3>
@@ -477,11 +501,15 @@
 
             <!-- ARGENTINA -->
             <div class="card" id="argentina">
-                <div class="card-panda-hero">
+                <!-- Imagen Real de Facturas y Masas de Hojaldre Dulce -->
+                <div class="card-image-hero" style="background-image: url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=600&auto=format&fit=crop');">
+                    <div class="card-image-overlay"></div>
                     <div class="card-flag">🇦🇷 Argentina</div>
-                    <svg class="big-panda-svg" viewBox="0 0 100 100">
-                        <circle cx="30" cy="35" r="14" fill="#c5a059"/><circle cx="70" cy="35" r="14" fill="#c5a059"/><circle cx="50" cy="60" r="34" fill="#ffffff"/><ellipse cx="36" cy="56" rx="10" ry="13" fill="#111"/><ellipse cx="64" cy="56" rx="10" ry="13" fill="#111"/><circle cx="36" cy="54" r="3" fill="#fff"/><circle cx="64" cy="54" r="3" fill="#fff"/><polygon points="46,68 54,68 50,73" fill="#c5a059"/>
-                    </svg>
+                    <div class="panda-seal">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="30" cy="35" r="14" fill="#c5a059"/><circle cx="70" cy="35" r="14" fill="#c5a059"/><circle cx="50" cy="60" r="34" fill="#ffffff"/><ellipse cx="36" cy="56" rx="10" ry="13" fill="#111"/><ellipse cx="64" cy="56" rx="10" ry="13" fill="#111"/><circle cx="36" cy="54" r="3" fill="#fff"/><circle cx="64" cy="54" r="3" fill="#fff"/><polygon points="46,68 54,68 50,73" fill="#c5a059"/>
+                        </svg>
+                    </div>
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">Bollería Criolla Argentina</h3>
@@ -514,11 +542,15 @@
 
             <!-- MÉXICO -->
             <div class="card" id="mexico">
-                <div class="card-panda-hero">
+                <!-- Imagen Real de Pan Dulce Esponjoso de Azúcar Tradicional -->
+                <div class="card-image-hero" style="background-image: url('https://images.unsplash.com/photo-1608686207856-001b95cf60ca?q=80&w=600&auto=format&fit=crop');">
+                    <div class="card-image-overlay"></div>
                     <div class="card-flag">🇲🇽 México</div>
-                    <svg class="big-panda-svg" viewBox="0 0 100 100">
-                        <circle cx="30" cy="35" r="14" fill="#c5a059"/><circle cx="70" cy="35" r="14" fill="#c5a059"/><circle cx="50" cy="60" r="34" fill="#ffffff"/><ellipse cx="36" cy="56" rx="10" ry="13" fill="#111"/><ellipse cx="64" cy="56" rx="10" ry="13" fill="#111"/><circle cx="36" cy="54" r="3" fill="#fff"/><circle cx="64" cy="54" r="3" fill="#fff"/><polygon points="46,68 54,68 50,73" fill="#c5a059"/>
-                    </svg>
+                    <div class="panda-seal">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="30" cy="35" r="14" fill="#c5a059"/><circle cx="70" cy="35" r="14" fill="#c5a059"/><circle cx="50" cy="60" r="34" fill="#ffffff"/><ellipse cx="36" cy="56" rx="10" ry="13" fill="#111"/><ellipse cx="64" cy="56" rx="10" ry="13" fill="#111"/><circle cx="36" cy="54" r="3" fill="#fff"/><circle cx="64" cy="54" r="3" fill="#fff"/><polygon points="46,68 54,68 50,73" fill="#c5a059"/>
+                        </svg>
+                    </div>
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">Pan Dulce Ritual Mexicano</h3>
@@ -545,11 +577,15 @@
             
             <!-- FRANCIA -->
             <div class="card" id="francia">
-                <div class="card-panda-hero">
+                <!-- Imagen Real de Baguettes Crujientes Recién Horneadas -->
+                <div class="card-image-hero" style="background-image: url('https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=600&auto=format&fit=crop');">
+                    <div class="card-image-overlay"></div>
                     <div class="card-flag">🇫🇷 Francia</div>
-                    <svg class="big-panda-svg" viewBox="0 0 100 100">
-                        <circle cx="30" cy="35" r="14" fill="#c5a059"/><circle cx="70" cy="35" r="14" fill="#c5a059"/><circle cx="50" cy="60" r="34" fill="#ffffff"/><ellipse cx="36" cy="56" rx="10" ry="13" fill="#111"/><ellipse cx="64" cy="56" rx="10" ry="13" fill="#111"/><circle cx="36" cy="54" r="3" fill="#fff"/><circle cx="64" cy="54" r="3" fill="#fff"/><polygon points="46,68 54,68 50,73" fill="#c5a059"/>
-                    </svg>
+                    <div class="panda-seal">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="30" cy="35" r="14" fill="#c5a059"/><circle cx="70" cy="35" r="14" fill="#c5a059"/><circle cx="50" cy="60" r="34" fill="#ffffff"/><ellipse cx="36" cy="56" rx="10" ry="13" fill="#111"/><ellipse cx="64" cy="56" rx="10" ry="13" fill="#111"/><circle cx="36" cy="54" r="3" fill="#fff"/><circle cx="64" cy="54" r="3" fill="#fff"/><polygon points="46,68 54,68 50,73" fill="#c5a059"/>
+                        </svg>
+                    </div>
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">Masas Madre Clásicas</h3>
@@ -570,11 +606,15 @@
 
             <!-- ITALIA -->
             <div class="card" id="italia">
-                <div class="card-panda-hero">
+                <!-- Imagen Real de Focaccia Italiana Tradicional con Romero -->
+                <div class="card-image-hero" style="background-image: url('https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?q=80&w=600&auto=format&fit=crop');">
+                    <div class="card-image-overlay"></div>
                     <div class="card-flag">🇮🇹 Italia</div>
-                    <svg class="big-panda-svg" viewBox="0 0 100 100">
-                        <circle cx="30" cy="35" r="14" fill="#c5a059"/><circle cx="70" cy="35" r="14" fill="#c5a059"/><circle cx="50" cy="60" r="34" fill="#ffffff"/><ellipse cx="36" cy="56" rx="10" ry="13" fill="#111"/><ellipse cx="64" cy="56" rx="10" ry="13" fill="#111"/><circle cx="36" cy="54" r="3" fill="#fff"/><circle cx="64" cy="54" r="3" fill="#fff"/><polygon points="46,68 54,68 50,73" fill="#c5a059"/>
-                    </svg>
+                    <div class="panda-seal">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="30" cy="35" r="14" fill="#c5a059"/><circle cx="70" cy="35" r="14" fill="#c5a059"/><circle cx="50" cy="60" r="34" fill="#ffffff"/><ellipse cx="36" cy="56" rx="10" ry="13" fill="#111"/><ellipse cx="64" cy="56" rx="10" ry="13" fill="#111"/><circle cx="36" cy="54" r="3" fill="#fff"/><circle cx="64" cy="54" r="3" fill="#fff"/><polygon points="46,68 54,68 50,73" fill="#c5a059"/>
+                        </svg>
+                    </div>
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">Aceite de Oliva e Historia</h3>
@@ -605,7 +645,6 @@
     </div>
 
     <script>
-        // Mapeo amigable de IDs a nombres legibles para el dueño
         const productNames = {
             pandebono: "Pandebono(s)",
             almojabana: "Almojábana(s)",
@@ -619,7 +658,6 @@
             focaccia: "Focaccia(s)"
         };
 
-        // Función para cambiar cantidades
         function changeQty(id, change) {
             let input = document.getElementById(id);
             let current = parseInt(input.value) || 0;
@@ -630,12 +668,10 @@
             }
         }
 
-        // Calcula el pedido y actualiza el botón de WhatsApp
         function updateWhatsAppLinks() {
             var num = document.getElementById('phoneInput').value;
             var btn = document.getElementById('whatsappLink');
             
-            // Construir lista de productos elegidos
             var orderList = [];
             var totalItems = 0;
 
@@ -647,7 +683,6 @@
                 }
             }
             
-            // Mensaje final personalizado
             var message = "¡Hola Panda Specialty Coffee & Bakery! 🐼 He revisado el menú internacional. ";
             if(orderList.length > 0) {
                 message += "Me gustaría reservar el siguiente pedido:\n\n" + orderList.join('\n') + "\n\n¿Me confirman la disponibilidad?";
@@ -674,7 +709,6 @@
             }
         }
 
-        // Cargar número guardado automáticamente
         window.onload = function() {
             var savedNum = localStorage.getItem('panda_phone');
             if(savedNum) {
