@@ -26,7 +26,7 @@
         body {
             background-color: var(--light-bg);
             color: var(--dark-premium);
-            padding-bottom: 120px;
+            padding-bottom: 140px;
         }
 
         .alert-banner {
@@ -43,26 +43,91 @@
 
         header {
             text-align: center;
-            padding: 40px 20px;
+            padding: 30px 20px;
             background: #111111;
             border-bottom: 4px solid var(--gold);
         }
 
         .brand-logo {
-            max-width: 260px;
+            max-width: 280px;
             height: auto;
             margin-bottom: 10px;
         }
 
         header .tagline {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             letter-spacing: 4px;
             color: var(--gold);
             text-transform: uppercase;
             font-weight: 700;
+            margin-top: 5px;
         }
 
-        /* PANEL DE CONFIGURACIÓN DE NÚMERO */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* MAPA INTERNACIONAL VISUAL */
+        .map-section {
+            background: #1a1a1a;
+            border: 3px solid var(--gold);
+            border-radius: 8px;
+            padding: 30px;
+            margin: 30px 0;
+            color: white;
+            text-align: center;
+            position: relative;
+            background-image: radial-gradient(rgba(197, 160, 89, 0.1) 2px, transparent 0);
+            background-size: 30px 30px;
+        }
+
+        .map-section h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+        }
+
+        .map-section p {
+            font-size: 0.9rem;
+            color: #ccc;
+            margin-bottom: 25px;
+        }
+
+        .world-navigation {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .map-btn {
+            background: #222;
+            color: white;
+            border: 1px solid var(--gold);
+            padding: 10px 18px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .map-btn:hover {
+            background: var(--gold);
+            color: #111;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(197, 160, 89, 0.3);
+        }
+
+        /* PANEL DE CONFIGURACIÓN DE NÚMERO (DUEÑO) */
         .config-panel {
             background: #f0ecdf;
             border: 2px dashed var(--gold);
@@ -75,30 +140,37 @@
 
         .config-panel h4 {
             font-family: 'Cinzel', serif;
-            margin-bottom: 10px;
-            color: #444;
+            margin-bottom: 5px;
+            color: #333;
         }
 
         .config-panel input {
             padding: 10px;
-            width: 70%;
+            width: 80%;
             max-width: 300px;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 1rem;
             text-align: center;
+            margin-top: 10px;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 10px;
+        .region-heading {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            text-align: center;
+            margin: 50px 0 25px 0;
+            letter-spacing: 3px;
+            color: #111;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
             margin-bottom: 40px;
         }
 
@@ -108,37 +180,24 @@
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            position: relative;
-            border-radius: 4px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        .card-image {
-            width: 100%;
-            height: 240px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .panda-emblem-box {
-            position: absolute;
-            bottom: -15px;
-            right: 15px;
-            background: #111;
-            border: 2px solid var(--gold);
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
+        /* CONTENEDOR DEL PANDA GRANDE EN LA TARJETA */
+        .card-panda-hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            height: 180px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 2;
+            position: relative;
+            border-bottom: 3px solid var(--gold);
         }
 
-        .panda-emblem-box svg {
-            width: 40px;
-            height: 40px;
+        .big-panda-svg {
+            width: 110px;
+            height: 110px;
         }
 
         .card-flag {
@@ -147,12 +206,13 @@
             left: 15px;
             background: #111;
             color: var(--gold-light);
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             font-weight: 700;
             padding: 6px 14px;
             letter-spacing: 1px;
             text-transform: uppercase;
             border-left: 3px solid var(--gold);
+            border-radius: 2px;
         }
 
         .card-content {
@@ -161,122 +221,159 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            background: #fff;
         }
 
         .card-title {
             font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             margin-bottom: 15px;
             color: var(--dark-premium);
-            border-bottom: 1px solid #f0f0f0;
-            padding-bottom: 8px;
+            font-weight: 800;
         }
 
-        /* FILAS DE PRODUCTO MEJORADAS CON CHECKBOX */
+        /* FILAS DE PRODUCTO CON SELECTOR DE CANTIDAD */
         .item-row {
             background: #fafafa;
-            padding: 12px;
-            margin-bottom: 8px;
-            border-left: 3px solid var(--gold);
+            padding: 15px;
+            margin-bottom: 12px;
+            border-left: 4px solid var(--gold);
+            border-radius: 0 6px 6px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: background 0.2s;
-        }
-
-        .item-row:hover {
-            background: #f4f1ea;
+            gap: 10px;
         }
 
         .item-info {
             flex-grow: 1;
-            padding-right: 15px;
         }
 
         .item-name {
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             font-weight: 700;
             color: var(--dark-premium);
+            margin-bottom: 4px;
         }
 
         .item-meaning {
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             color: var(--text-gray);
             line-height: 1.4;
             font-style: italic;
         }
 
-        .item-selector {
-            accent-color: var(--gold);
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
+        /* CONTROLADORES DE CANTIDAD MAS SEGUROS Y VISUALES */
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            background: #111;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--gold);
         }
 
-        /* BARRA FIJA INFERIOR */
+        .qty-btn {
+            background: transparent;
+            color: var(--gold);
+            border: none;
+            width: 32px;
+            height: 32px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .qty-btn:hover {
+            background: var(--gold);
+            color: #111;
+        }
+
+        .qty-input {
+            width: 35px;
+            text-align: center;
+            border: none;
+            background: white;
+            color: #111;
+            font-weight: 700;
+            font-size: 0.9rem;
+            height: 32px;
+        }
+
+        /* BARRA DE COMPRA FIJA */
         .order-bar {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
             background: #111111;
-            border-top: 3px solid var(--gold);
-            padding: 15px;
+            border-top: 4px solid var(--gold);
+            padding: 20px 15px;
             text-align: center;
             z-index: 9999;
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 -5px 25px rgba(0,0,0,0.5);
         }
 
         .order-btn {
             background: var(--gold);
             color: #111;
-            padding: 12px 30px;
+            padding: 15px 40px;
             border: none;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
             border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.2);
         }
 
         .order-btn:hover {
             background: white;
-            transform: scale(1.02);
-        }
-
-        .region-heading {
-            font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
-            text-align: center;
-            margin: 50px 0 25px 0;
-            letter-spacing: 3px;
             color: #111;
-            text-transform: uppercase;
+            transform: scale(1.03);
         }
     </style>
 </head>
 <body>
 
     <div class="alert-banner">
-        ⚠️ ¡Atención! Escoge bien tu combinación. Cada menú es una experiencia artesanal única.
+        🥐 SELECCIONA TUS PIEZAS ARTESANALES ABAJO Y RESERVA AL INSTANTE POR WHATSAPP
     </div>
 
     <header>
-        <img src="1000309039_3.png" alt="Panda Specialty Coffee & Bakery" class="brand-logo">
-        <div class="tagline">Menú Internacional Auténtico</div>
+        <!-- Tu Logotipo Real Oficial -->
+        <img src="1000309039.png" alt="Panda Specialty Coffee & Bakery" class="brand-logo">
+        <div class="tagline">Menú Internacional Auténtico de Panadería</div>
     </header>
 
+    <!-- MAPA DEL MUNDO INTERACTIVO -->
+    <div class="container">
+        <div class="map-section">
+            <h2>🗺️ MAPA INTERNACIONAL DEL PAN PANDA</h2>
+            <p>Explora las culturas panaderas del mundo. Haz clic en cualquier país para ir a sus piezas artesanales:</p>
+            <div class="world-navigation">
+                <a href="#colombia" class="map-btn">🇨🇴 Colombia</a>
+                <a href="#chile" class="map-btn">🇨🇱 Chile</a>
+                <a href="#argentina" class="map-btn">🇦🇷 Argentina</a>
+                <a href="#mexico" class="map-btn">🇲🇽 México</a>
+                <a href="#francia" class="map-btn">🇫🇷 Francia</a>
+                <a href="#italia" class="map-btn">🇮🇹 Italia</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONFIGURADOR DE NÚMERO CELULAR -->
     <div class="config-panel">
-        <h4>⚙️ Panel de Activación de Enlaces</h4>
-        <p style="font-size:0.8rem; color:#666; margin-bottom:10px;">Escribe tu número con código de país (Ej: 573001234567) para activar las reservas inmediatas:</p>
+        <h4>⚙️ Activación del WhatsApp de la Panadería</h4>
+        <p style="font-size:0.8rem; color:#666;">Ingresa tu número con código de país (Ej: 573001234567) para recibir los pedidos directamente:</p>
         <input type="tel" id="phoneInput" placeholder="Ej: 573001234567" oninput="updateWhatsAppLinks()">
     </div>
 
+    <!-- CONTENIDO GENERAL -->
     <div class="container">
 
         <!-- REGION AMÉRICA -->
@@ -285,118 +382,157 @@
         <div class="grid">
             
             <!-- COLOMBIA -->
-            <div class="card">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1612201142855-7873bc1661b4?q=80&w=600&auto=format&fit=crop');">
+            <div class="card" id="colombia">
+                <div class="card-panda-hero">
                     <div class="card-flag">🇨🇴 Colombia</div>
-                    <div class="panda-emblem-box">
-                        <svg viewBox="0 0 100 100">
-                            <circle cx="30" cy="30" r="12" fill="#c5a059"/>
-                            <circle cx="70" cy="30" r="12" fill="#c5a059"/>
-                            <circle cx="50" cy="55" r="32" fill="#ffffff"/>
-                            <ellipse cx="38" cy="52" rx="9" ry="12" fill="#111"/>
-                            <ellipse cx="62" cy="52" rx="9" ry="12" fill="#111"/>
-                            <circle cx="38" cy="52" r="3" fill="#fff"/>
-                            <circle cx="62" cy="52" r="3" fill="#fff"/>
-                            <polygon points="46,64 54,64 50,69" fill="#c5a059"/>
-                        </svg>
-                    </div>
+                    <!-- PANDA GRANDE VECTORIAL -->
+                    <svg class="big-panda-svg" viewBox="0 0 100 100">
+                        <circle cx="30" cy="35" r="14" fill="#c5a059"/>
+                        <circle cx="70" cy="35" r="14" fill="#c5a059"/>
+                        <circle cx="50" cy="60" r="34" fill="#ffffff"/>
+                        <ellipse cx="36" cy="56" rx="10" ry="13" fill="#111"/>
+                        <ellipse cx="64" cy="56" rx="10" ry="13" fill="#111"/>
+                        <circle cx="36" cy="54" r="3" fill="#fff"/>
+                        <circle cx="64" cy="54" r="3" fill="#fff"/>
+                        <polygon points="46,68 54,68 50,73" fill="#c5a059"/>
+                    </svg>
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Colombia - Tradición de Amasijos</h3>
+                    <h3 class="card-title">Tradición de Amasijos Colombianos</h3>
+                    
                     <div class="item-row">
                         <div class="item-info">
                             <div class="item-name">Pandebono</div>
-                            <div class="item-meaning">Significa "Pan de la Hacienda El Bono". A base de almidón de yuca y queso costeño.</div>
+                            <div class="item-meaning">Significa "Pan de la Hacienda El Bono" (Valle del Cauca). Almidón de yuca y queso costeño horneado.</div>
                         </div>
-                        <input type="checkbox" class="item-selector" data-name="Pandebono" onchange="updateWhatsAppLinks()">
+                        <div class="quantity-control">
+                            <button class="qty-btn" onclick="changeQty('pandebono', -1)">-</button>
+                            <input type="text" id="pandebono" class="qty-input" value="0" readonly>
+                            <button class="qty-btn" onclick="changeQty('pandebono', 1)">+</button>
+                        </div>
                     </div>
+
                     <div class="item-row">
                         <div class="item-info">
                             <div class="item-name">Almojábana</div>
-                            <div class="item-meaning">Del árabe 'al-mujábbana' ("Hecha de queso"). Esponjoso e hidratado de maíz.</div>
+                            <div class="item-meaning">Del árabe 'al-mujábbana' ("Hecha de queso"). Esponjoso e hidratado de maíz y cuajada fresca.</div>
                         </div>
-                        <input type="checkbox" class="item-selector" data-name="Almojábana" onchange="updateWhatsAppLinks()">
+                        <div class="quantity-control">
+                            <button class="qty-btn" onclick="changeQty('almojabana', -1)">-</button>
+                            <input type="text" id="almojabana" class="qty-input" value="0" readonly>
+                            <button class="qty-btn" onclick="changeQty('almojabana', 1)">+</button>
+                        </div>
                     </div>
+
                     <div class="item-row">
                         <div class="item-info">
                             <div class="item-name">Pan Aliñado</div>
-                            <div class="item-meaning">Masa de molde enriquecida con generosa mantequilla y capas de queso rallado.</div>
+                            <div class="item-meaning">Significa "Pan Condimentado". Suave masa de molde con generosa mantequilla y capas de queso rallado.</div>
                         </div>
-                        <input type="checkbox" class="item-selector" data-name="Pan Aliñado" onchange="updateWhatsAppLinks()">
+                        <div class="quantity-control">
+                            <button class="qty-btn" onclick="changeQty('panalinado', -1)">-</button>
+                            <input type="text" id="panalinado" class="qty-input" value="0" readonly>
+                            <button class="qty-btn" onclick="changeQty('panalinado', 1)">+</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- CHILE -->
-            <div class="card">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop');">
+            <div class="card" id="chile">
+                <div class="card-panda-hero">
                     <div class="card-flag">🇨🇱 Chile</div>
-                    <div class="panda-emblem-box">
-                        <svg viewBox="0 0 100 100"><circle cx="30" cy="30" r="12" fill="#c5a059"/><circle cx="70" cy="30" r="12" fill="#c5a059"/><circle cx="50" cy="55" r="32" fill="#ffffff"/><ellipse cx="38" cy="52" rx="9" ry="12" fill="#111"/><ellipse cx="62" cy="52" rx="9" ry="12" fill="#111"/><circle cx="38" cy="52" r="3" fill="#fff"/> <circle cx="62" cy="52" r="3" fill="#fff"/><polygon points="46,64 54,64 50,69" fill="#c5a059"/></svg>
-                    </div>
+                    <svg class="big-panda-svg" viewBox="0 0 100 100">
+                        <circle cx="30" cy="35" r="14" fill="#c5a059"/><circle cx="70" cy="35" r="14" fill="#c5a059"/><circle cx="50" cy="60" r="34" fill="#ffffff"/><ellipse cx="36" cy="56" rx="10" ry="13" fill="#111"/><ellipse cx="64" cy="56" rx="10" ry="13" fill="#111"/><circle cx="36" cy="54" r="3" fill="#fff"/><circle cx="64" cy="54" r="3" fill="#fff"/><polygon points="46,68 54,68 50,73" fill="#c5a059"/>
+                    </svg>
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Chile - Masas Crujientes</h3>
+                    <h3 class="card-title">Masas Crujientes Chilenas</h3>
+                    
                     <div class="item-row">
                         <div class="item-info">
                             <div class="item-name">Marraqueta</div>
-                            <div class="item-meaning">Pan batido de corteza crujiente tradicional.</div>
+                            <div class="item-meaning">Homenaje a los hermanos Marraquet, panaderos franceses. Pan batido de excelente corteza crujiente.</div>
                         </div>
-                        <input type="checkbox" class="item-selector" data-name="Marraqueta" onchange="updateWhatsAppLinks()">
+                        <div class="quantity-control">
+                            <button class="qty-btn" onclick="changeQty('marraqueta', -1)">-</button>
+                            <input type="text" id="marraqueta" class="qty-input" value="0" readonly>
+                            <button class="qty-btn" onclick="changeQty('marraqueta', 1)">+</button>
+                        </div>
                     </div>
+
                     <div class="item-row">
                         <div class="item-info">
                             <div class="item-name">Hallulla</div>
-                            <div class="item-meaning">Del árabe 'hallún'. Pan redondo, plano y laminado con manteca.</div>
+                            <div class="item-meaning">Del árabe 'hallún' ("Bollo de fiesta"). Pan redondo, firme, plano y laminado con manteca tradicional.</div>
                         </div>
-                        <input type="checkbox" class="item-selector" data-name="Hallulla" onchange="updateWhatsAppLinks()">
+                        <div class="quantity-control">
+                            <button class="qty-btn" onclick="changeQty('hallulla', -1)">-</button>
+                            <input type="text" id="hallulla" class="qty-input" value="0" readonly>
+                            <button class="qty-btn" onclick="changeQty('hallulla', 1)">+</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- ARGENTINA -->
-            <div class="card">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=600&auto=format&fit=crop');">
+            <div class="card" id="argentina">
+                <div class="card-panda-hero">
                     <div class="card-flag">🇦🇷 Argentina</div>
-                    <div class="panda-emblem-box">
-                        <svg viewBox="0 0 100 100"><circle cx="30" cy="30" r="12" fill="#c5a059"/><circle cx="70" cy="30" r="12" fill="#c5a059"/><circle cx="50" cy="55" r="32" fill="#ffffff"/><ellipse cx="38" cy="52" rx="9" ry="12" fill="#111"/><ellipse cx="62" cy="52" rx="9" ry="12" fill="#111"/><circle cx="38" cy="52" r="3" fill="#fff"/><circle cx="62" cy="52" r="3" fill="#fff"/><polygon points="46,64 54,64 50,69" fill="#c5a059"/></svg>
-                    </div>
+                    <svg class="big-panda-svg" viewBox="0 0 100 100">
+                        <circle cx="30" cy="35" r="14" fill="#c5a059"/><circle cx="70" cy="35" r="14" fill="#c5a059"/><circle cx="50" cy="60" r="34" fill="#ffffff"/><ellipse cx="36" cy="56" rx="10" ry="13" fill="#111"/><ellipse cx="64" cy="56" rx="10" ry="13" fill="#111"/><circle cx="36" cy="54" r="3" fill="#fff"/><circle cx="64" cy="54" r="3" fill="#fff"/><polygon points="46,68 54,68 50,73" fill="#c5a059"/>
+                    </svg>
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Argentina - Bollería Criolla</h3>
+                    <h3 class="card-title">Bollería Criolla Argentina</h3>
+                    
                     <div class="item-row">
                         <div class="item-info">
                             <div class="item-name">Facturas</div>
-                            <div class="item-meaning">Bautizadas así históricamente para recordar el valor del trabajo obrero.</div>
+                            <div class="item-meaning">Significa "Cosas hechas". Nombradas así por sindicatos antiguos para valorar el trabajo artesanal diario.</div>
                         </div>
-                        <input type="checkbox" class="item-selector" data-name="Facturas" onchange="updateWhatsAppLinks()">
+                        <div class="quantity-control">
+                            <button class="qty-btn" onclick="changeQty('facturas', -1)">-</button>
+                            <input type="text" id="facturas" class="qty-input" value="0" readonly>
+                            <button class="qty-btn" onclick="changeQty('facturas', 1)">+</button>
+                        </div>
                     </div>
+
                     <div class="item-row">
                         <div class="item-info">
                             <div class="item-name">Criollitos</div>
-                            <div class="item-meaning">Bizcochos de grasa de vaca hojaldrados tradicionales.</div>
+                            <div class="item-meaning">Significa "Pequeños criollos". Legendarios bizcochitos de grasa vacuna hojaldrada.</div>
                         </div>
-                        <input type="checkbox" class="item-selector" data-name="Criollitos" onchange="updateWhatsAppLinks()">
+                        <div class="quantity-control">
+                            <button class="qty-btn" onclick="changeQty('criollitos', -1)">-</button>
+                            <input type="text" id="criollitos" class="qty-input" value="0" readonly>
+                            <button class="qty-btn" onclick="changeQty('criollitos', 1)">+</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- MÉXICO -->
-            <div class="card">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1621841957884-1210fe19d66d?q=80&w=600&auto=format&fit=crop');">
+            <div class="card" id="mexico">
+                <div class="card-panda-hero">
                     <div class="card-flag">🇲🇽 México</div>
-                    <div class="panda-emblem-box">
-                        <svg viewBox="0 0 100 100"><circle cx="30" cy="30" r="12" fill="#c5a059"/><circle cx="70" cy="30" r="12" fill="#c5a059"/><circle cx="50" cy="55" r="32" fill="#ffffff"/><ellipse cx="38" cy="52" rx="9" ry="12" fill="#111"/><ellipse cx="62" cy="52" rx="9" ry="12" fill="#111"/><circle cx="38" cy="52" r="3" fill="#fff"/><circle cx="62" cy="52" r="3" fill="#fff"/><polygon points="46,64 54,64 50,69" fill="#c5a059"/></svg>
-                    </div>
+                    <svg class="big-panda-svg" viewBox="0 0 100 100">
+                        <circle cx="30" cy="35" r="14" fill="#c5a059"/><circle cx="70" cy="35" r="14" fill="#c5a059"/><circle cx="50" cy="60" r="34" fill="#ffffff"/><ellipse cx="36" cy="56" rx="10" ry="13" fill="#111"/><ellipse cx="64" cy="56" rx="10" ry="13" fill="#111"/><circle cx="36" cy="54" r="3" fill="#fff"/><circle cx="64" cy="54" r="3" fill="#fff"/><polygon points="46,68 54,68 50,73" fill="#c5a059"/>
+                    </svg>
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">México - Pan Dulce Ritual</h3>
+                    <h3 class="card-title">Pan Dulce Ritual Mexicano</h3>
+                    
                     <div class="item-row">
                         <div class="item-info">
                             <div class="item-name">Concha</div>
-                            <div class="item-meaning">Costra crujiente de azúcar y manteca con líneas que emulan una concha de mar.</div>
+                            <div class="item-meaning">Significa "Concha de mar" debido a su icónica costra azucarada marcada artesanalmente.</div>
                         </div>
-                        <input type="checkbox" class="item-selector" data-name="Concha" onchange="updateWhatsAppLinks()">
+                        <div class="quantity-control">
+                            <button class="qty-btn" onclick="changeQty('concha', -1)">-</button>
+                            <input type="text" id="concha" class="qty-input" value="0" readonly>
+                            <button class="qty-btn" onclick="changeQty('concha', 1)">+</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -408,41 +544,51 @@
         <div class="grid">
             
             <!-- FRANCIA -->
-            <div class="card">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop');">
+            <div class="card" id="francia">
+                <div class="card-panda-hero">
                     <div class="card-flag">🇫🇷 Francia</div>
-                    <div class="panda-emblem-box">
-                        <svg viewBox="0 0 100 100"><circle cx="30" cy="30" r="12" fill="#c5a059"/><circle cx="70" cy="30" r="12" fill="#c5a059"/><circle cx="50" cy="55" r="32" fill="#ffffff"/><ellipse cx="38" cy="52" rx="9" ry="12" fill="#111"/><ellipse cx="62" cy="52" rx="9" ry="12" fill="#111"/><circle cx="38" cy="52" r="3" fill="#fff"/><circle cx="62" cy="52" r="3" fill="#fff"/><polygon points="46,64 54,64 50,69" fill="#c5a059"/></svg>
-                    </div>
+                    <svg class="big-panda-svg" viewBox="0 0 100 100">
+                        <circle cx="30" cy="35" r="14" fill="#c5a059"/><circle cx="70" cy="35" r="14" fill="#c5a059"/><circle cx="50" cy="60" r="34" fill="#ffffff"/><ellipse cx="36" cy="56" rx="10" ry="13" fill="#111"/><ellipse cx="64" cy="56" rx="10" ry="13" fill="#111"/><circle cx="36" cy="54" r="3" fill="#fff"/><circle cx="64" cy="54" r="3" fill="#fff"/><polygon points="46,68 54,68 50,73" fill="#c5a059"/>
+                    </svg>
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Francia - Masas Madre Maduras</h3>
+                    <h3 class="card-title">Masas Madre Clásicas</h3>
+                    
                     <div class="item-row">
                         <div class="item-info">
                             <div class="item-name">Baguette</div>
-                            <div class="item-meaning">Significa "Varita". Silueta delgada y horneado de alta corteza.</div>
+                            <div class="item-meaning">Significa "Varita" o "Bastón" en francés. Pan de fermentación lenta con alveolado perfecto.</div>
                         </div>
-                        <input type="checkbox" class="item-selector" data-name="Baguette" onchange="updateWhatsAppLinks()">
+                        <div class="quantity-control">
+                            <button class="qty-btn" onclick="changeQty('baguette', -1)">-</button>
+                            <input type="text" id="baguette" class="qty-input" value="0" readonly>
+                            <button class="qty-btn" onclick="changeQty('baguette', 1)">+</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- ITALIA -->
-            <div class="card">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1546549032-9571cd6b27df?q=80&w=600&auto=format&fit=crop');">
+            <div class="card" id="italia">
+                <div class="card-panda-hero">
                     <div class="card-flag">🇮🇹 Italia</div>
-                    <div class="panda-emblem-box">
-                        <svg viewBox="0 0 100 100"><circle cx="30" cy="30" r="12" fill="#c5a059"/><circle cx="70" cy="30" r="12" fill="#c5a059"/><circle cx="50" cy="55" r="32" fill="#ffffff"/><ellipse cx="38" cy="52" rx="9" ry="12" fill="#111"/><ellipse cx="62" cy="52" rx="9" ry="12" fill="#111"/><circle cx="38" cy="52" r="3" fill="#fff"/><circle cx="62" cy="52" r="3" fill="#fff"/><polygon points="46,64 54,64 50,69" fill="#c5a059"/></svg>
-                    </div>
+                    <svg class="big-panda-svg" viewBox="0 0 100 100">
+                        <circle cx="30" cy="35" r="14" fill="#c5a059"/><circle cx="70" cy="35" r="14" fill="#c5a059"/><circle cx="50" cy="60" r="34" fill="#ffffff"/><ellipse cx="36" cy="56" rx="10" ry="13" fill="#111"/><ellipse cx="64" cy="56" rx="10" ry="13" fill="#111"/><circle cx="36" cy="54" r="3" fill="#fff"/><circle cx="64" cy="54" r="3" fill="#fff"/><polygon points="46,68 54,68 50,73" fill="#c5a059"/>
+                    </svg>
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Italia - Aceite de Oliva y Fuego</h3>
+                    <h3 class="card-title">Aceite de Oliva e Historia</h3>
+                    
                     <div class="item-row">
                         <div class="item-info">
                             <div class="item-name">Focaccia</div>
-                            <div class="item-meaning">Significa "Hecho en el fuego". Horneado ancestral sobre cenizas.</div>
+                            <div class="item-meaning">Significa "Hecho en el fuego" (del latín focus). Masa plana aireada con sal marina y romero.</div>
                         </div>
-                        <input type="checkbox" class="item-selector" data-name="Focaccia" onchange="updateWhatsAppLinks()">
+                        <div class="quantity-control">
+                            <button class="qty-btn" onclick="changeQty('focaccia', -1)">-</button>
+                            <input type="text" id="focaccia" class="qty-input" value="0" readonly>
+                            <button class="qty-btn" onclick="changeQty('focaccia', 1)">+</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -451,41 +597,73 @@
 
     </div>
 
-    <!-- BARRA DINÁMICA DE RESERVA -->
+    <!-- BARRA DINÁMICA DE ENVIAR PEDIDO -->
     <div class="order-bar">
         <a id="whatsappLink" href="#" target="_blank" class="order-btn">
-            ⚠️ Escribe tu número arriba para activar
+            ⚠️ Escribe el número arriba para activar reservas
         </a>
     </div>
 
     <script>
+        // Mapeo amigable de IDs a nombres legibles para el dueño
+        const productNames = {
+            pandebono: "Pandebono(s)",
+            almojabana: "Almojábana(s)",
+            panalinado: "Pan Aliñado(s)",
+            marraqueta: "Marraqueta(s)",
+            hallulla: "Hallulla(s)",
+            facturas: "Factura(s)",
+            criollitos: "Criollito(s)",
+            concha: "Concha(s)",
+            baguette: "Baguette(s)",
+            focaccia: "Focaccia(s)"
+        };
+
+        // Función para cambiar cantidades
+        function changeQty(id, change) {
+            let input = document.getElementById(id);
+            let current = parseInt(input.value) || 0;
+            let newVal = current + change;
+            if (newVal >= 0) {
+                input.value = newVal;
+                updateWhatsAppLinks();
+            }
+        }
+
+        // Calcula el pedido y actualiza el botón de WhatsApp
         function updateWhatsAppLinks() {
             var num = document.getElementById('phoneInput').value;
             var btn = document.getElementById('whatsappLink');
             
-            // Capturar elementos seleccionados
-            var selectedItems = [];
-            var checkboxes = document.querySelectorAll('.item-selector:checked');
-            checkboxes.forEach(function(cb) {
-                selectedItems.push(cb.getAttribute('data-name'));
-            });
-            
-            // Construir el mensaje dinámico
-            var baseMessage = "¡Hola! He seleccionado las piezas de mi menú internacional en la página. ";
-            if(selectedItems.length > 0) {
-                baseMessage += "Me gustaría reservar: *" + selectedItems.join(', ') + "*. ";
+            // Construir lista de productos elegidos
+            var orderList = [];
+            var totalItems = 0;
+
+            for (const [id, label] of Object.entries(productNames)) {
+                var qty = parseInt(document.getElementById(id).value) || 0;
+                if (qty > 0) {
+                    orderList.push(qty + "x " + label);
+                    totalItems += qty;
+                }
             }
-            baseMessage += "¿Me toman el pedido?";
             
-            var encodedText = encodeURIComponent(baseMessage);
+            // Mensaje final personalizado
+            var message = "¡Hola Panda Specialty Coffee & Bakery! 🐼 He revisado el menú internacional. ";
+            if(orderList.length > 0) {
+                message += "Me gustaría reservar el siguiente pedido:\n\n" + orderList.join('\n') + "\n\n¿Me confirman la disponibilidad?";
+            } else {
+                message += "Quiero consultar disponibilidad del menú de hoy.";
+            }
+            
+            var encodedText = encodeURIComponent(message);
             
             if(num) {
                 localStorage.setItem('panda_phone', num);
                 btn.href = "https://wa.me/" + num + "?text=" + encodedText;
                 btn.style.opacity = "1";
                 
-                if(selectedItems.length > 0) {
-                    btn.innerHTML = "🟢 Reservar (" + selectedItems.length + ") piezas por WhatsApp";
+                if(totalItems > 0) {
+                    btn.innerHTML = "🟢 Reservar " + totalItems + " panes por WhatsApp";
                 } else {
                     btn.innerHTML = "🟢 Enviar mi Pedido por WhatsApp";
                 }
@@ -496,6 +674,7 @@
             }
         }
 
+        // Cargar número guardado automáticamente
         window.onload = function() {
             var savedNum = localStorage.getItem('panda_phone');
             if(savedNum) {
