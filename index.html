@@ -5,103 +5,639 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PANDA | Specialty Coffee & Bakery</title>
     <style>
+        /* Tipografías y Base Premium */
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Georgia', serif; background-color: #fdfcf9; color: #333; line-height: 1.6; }
+        body { 
+            font-family: 'Playfair Display', 'Georgia', serif; 
+            background-color: #FAF8F5; 
+            color: #1C1C1E; 
+            -webkit-font-smoothing: antialiased; 
+        }
 
-        /* Estilo compacto */
-        .hero { position: relative; height: 400px; overflow: hidden; background: #1a1a1a; display: flex; align-items: center; justify-content: center; }
-        .hero img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
-        .hero-text { position: absolute; z-index: 1; color: white; text-align: center; }
+        /* Portada Corporativa - Blindada contra errores de carga */
+        .brand-cover {
+            background-color: #0A0A0B;
+            color: #FFFFFF;
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            border-bottom: 3px solid #C5A059;
+        }
 
-        section { padding: 3rem 5%; max-width: 1000px; margin: auto; }
-        h2 { text-align: center; margin-bottom: 2rem; color: #2c2c2c; font-weight: normal; letter-spacing: 1px; }
+        /* Mapa de red global vectorial (reemplaza fotos externas para máxima compatibilidad) */
+        .vector-map-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0.08;
+            pointer-events: none;
+        }
 
-        .curator-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
-        .btn-list { display: flex; flex-direction: column; gap: 0.5rem; }
-        button { padding: 1rem; cursor: pointer; border: 1px solid #c5a059; background: white; text-align: left; font-family: inherit; transition: 0.3s; }
-        button:hover { background: #c5a059; color: white; }
+        .brand-title {
+            font-size: 3.2rem;
+            letter-spacing: 8px;
+            color: #FFFFFF;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
 
-        .catalog { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-        .card { border: 1px solid #e0e0e0; padding: 1.5rem; background: white; }
-        .btn-order { background: #1a1a1a; color: white; border: none; padding: 0.8rem; width: 100%; margin-top: 1rem; cursor: pointer; }
-        
-        .summary { background: #1a1a1a; color: white; padding: 2rem; text-align: center; }
+        .brand-subtitle {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: #C5A059;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .brand-slogan {
+            font-family: 'Sans-Serif', system-ui, sans-serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #E5E5E5;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .main-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        .section-header {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #0A0A0B;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 60px; height: 2px;
+            background-color: #C5A059;
+        }
+
+        /* Curaduría e Historia de Origen */
+        .curatorial-module {
+            background-color: #FFFFFF;
+            border: 1px solid #EAE5DC;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 5rem;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.02);
+        }
+
+        .curatorial-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .tab-node {
+            background-color: #F4F1EA;
+            border: 1px solid #EAE5DC;
+            color: #1C1C1E;
+            padding: 0.8rem 1.4rem;
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            border-radius: 6px;
+        }
+
+        .tab-node.active-node, .tab-node:hover {
+            background-color: #0A0A0B;
+            color: #FFFFFF;
+            border-color: #0A0A0B;
+        }
+
+        .history-viewer {
+            border-left: 3px solid #C5A059;
+            padding-left: 2rem;
+            min-height: 120px;
+        }
+
+        .history-title {
+            font-size: 1.4rem;
+            color: #0A0A0B;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .history-text {
+            font-size: 1.05rem;
+            color: #4A4A4F;
+            line-height: 1.7;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        /* Vitrina de Productos Premium */
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 5rem;
+        }
+
+        .product-item-card {
+            background-color: #FFFFFF;
+            border: 1px solid #EAE5DC;
+            border-radius: 12px;
+            padding: 2.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+            transition: all 0.3s ease;
+        }
+
+        .product-item-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(197, 160, 89, 0.1);
+            border-color: #C5A059;
+        }
+
+        .tag-region {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #C5A059;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+        }
+
+        .item-headline {
+            font-size: 1.45rem;
+            color: #0A0A0B;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .item-paragraph {
+            font-size: 0.95rem;
+            color: #66666A;
+            line-height: 1.6;
+            margin-bottom: 1.8rem;
+            font-family: system-ui, sans-serif;
+        }
+
+        .interactive-controls {
+            margin-top: auto;
+            background-color: #FAF8F5;
+            padding: 1.2rem;
+            border-radius: 8px;
+            border: 1px solid #EAE5DC;
+        }
+
+        .control-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #1C1C1E;
+            display: block;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .dropdown-select {
+            width: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: #0A0A0B;
+            cursor: pointer;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Selector de Cantidad Dinámico (Permite escoger múltiples piezas) */
+        .quantity-shifter {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 0.8rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid #EAE5DC;
+        }
+
+        .shifter-label {
+            font-family: system-ui, sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #4A4A4F;
+        }
+
+        .shifter-actions {
+            display: flex;
+            align-items: center;
+            border: 1px solid #EAE5DC;
+            border-radius: 6px;
+            background: #FFFFFF;
+            overflow: hidden;
+        }
+
+        .btn-qty {
+            background: #F4F1EA;
+            border: none;
+            width: 32px; height: 32px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            font-family: monospace;
+            transition: background 0.2s;
+        }
+
+        .btn-qty:hover { background: #EAE5DC; }
+
+        .display-qty {
+            width: 35px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border: none;
+            outline: none;
+            color: #0A0A0B;
+        }
+
+        .btn-add-basket {
+            background-color: #0A0A0B;
+            color: #FFFFFF;
+            border: none;
+            padding: 1rem;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: all 0.25s ease;
+        }
+
+        .btn-add-basket:hover {
+            background-color: #C5A059;
+        }
+
+        /* Panel de Comanda en Tiempo Real */
+        .comanda-box {
+            background-color: #0A0A0B;
+            color: #FFFFFF;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .comanda-box h2 {
+            font-size: 1.8rem;
+            color: #FFFFFF;
+            border-bottom: 1px solid #2C2C30;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .basket-list {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .basket-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #2C2C30;
+            font-family: system-ui, sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .btn-remove-node {
+            background: transparent;
+            border: none;
+            color: #FF6B6B;
+            cursor: pointer;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .basket-empty {
+            color: #8E8E93;
+            font-style: italic;
+            text-align: center;
+            padding: 2.5rem 0;
+            font-family: system-ui, sans-serif;
+        }
+
+        .btn-dispatch-whatsapp {
+            background-color: #C5A059;
+            color: #FFFFFF;
+            border: none;
+            padding: 1.3rem;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-dispatch-whatsapp:hover {
+            background-color: #B38F44;
+        }
     </style>
 </head>
 <body>
 
-    <header class="hero">
-        <img src="1000309918.png" alt="Mapa del Mundo PANDA" onerror="this.style.display='none'">
-        <div class="hero-text">
-            <h1>PANDA</h1>
-            <p>Conectando el mundo a través del sabor</p>
-        </div>
+    <!-- Portada con Red Global NAtiva (SVG) -->
+    <header class="brand-cover">
+        <svg class="vector-map-bg" viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="150" r="4" fill="#C5A059"/>
+            <circle cx="450" cy="120" r="4" fill="#C5A059"/>
+            <circle cx="520" cy="140" r="4" fill="#C5A059"/>
+            <circle cx="800" cy="160" r="4" fill="#C5A059"/>
+            <path d="M200 150 Q 325 80 450 120" stroke="#C5A059" stroke-width="1" fill="none"/>
+            <path d="M450 120 Q 485 130 520 140" stroke="#C5A059" stroke-width="1" fill="none"/>
+            <path d="M520 140 Q 660 100 800 160" stroke="#C5A059" stroke-width="1" fill="none"/>
+        </svg>
+        <h1 class="brand-title">PANDA</h1>
+        <p class="brand-subtitle">Specialty Coffee & Bakery</p>
+        <p class="brand-slogan">Conectando el mundo a través del sabor. Una selecta travesía por los métodos, texturas e historias de la panadería internacional real.</p>
     </header>
 
-    <section>
-        <h2>Curaduría del Maestro</h2>
-        <div class="curator-grid">
-            <div class="btn-list">
-                <button onclick="showInfo('colombia')">Colombia: El origen del Pandebono</button>
-                <button onclick="showInfo('japon')">Japón: Shokupan y técnica Tangzhong</button>
-                <button onclick="showInfo('francia')">Francia: Maestría en hojaldre</button>
-            </div>
-            <div id="info-display">
-                <p>Seleccione un origen para conocer la historia de nuestros productos seleccionados.</p>
-            </div>
-        </div>
-    </section>
+    <main class="main-wrapper">
 
-    <section>
-        <h2>Selección Premium</h2>
-        <div class="catalog">
-            <div class="card">
-                <h3>Pandebono Valluno</h3>
-                <p>Tradición colombiana con queso tierno.</p>
-                <button class="btn-order" onclick="addToOrder('Pandebono Valluno')">Añadir al pedido</button>
+        <!-- Módulo de Curaduría Histórica -->
+        <section class="curatorial-module">
+            <h2 class="section-header">Curaduría de la Panadería Ancestral</h2>
+            <div class="curatorial-tabs">
+                <button class="tab-node active-node" onclick="triggerOriginView('colombia', this)">Colombia</button>
+                <button class="tab-node" onclick="triggerOriginView('chile', this)">Chile</button>
+                <button class="tab-node" onclick="triggerOriginView('japon', this)">Japón</button>
+                <button class="tab-node" onclick="triggerOriginView('corea', this)">Corea del Sur</button>
+                <button class="tab-node" onclick="triggerOriginView('francia', this)">Francia</button>
+                <button class="tab-node" onclick="triggerOriginView('alemania', this)">Alemania</button>
+                <button class="tab-node" onclick="triggerOriginView('italia', this)">Italia</button>
+                <button class="tab-node" onclick="triggerOriginView('india', this)">India</button>
             </div>
-            <div class="card">
-                <h3>Gelato Matcha</h3>
-                <p>Té premium de Uji, Japón.</p>
-                <button class="btn-order" onclick="addToOrder('Gelato Matcha')">Añadir al pedido</button>
+            <div class="history-viewer" id="history-viewer-box">
+                <h3 class="history-title" id="origin-title">Colombia: El Legado del Pandebono</h3>
+                <p class="history-text" id="origin-desc">Surgido a finales del siglo XIX en el Valle del Cauca, su receta combina almidón de yuca fermentado y queso costeño tierno para alimentar originalmente a los jornaleros del campo. Su significado trasciende como un símbolo de hospitalidad y arraigo cultural.</p>
             </div>
-            <div class="card">
-                <h3>Croissant Francés</h3>
-                <p>Mantequilla pura y hojaldre técnico.</p>
-                <button class="btn-order" onclick="addToOrder('Croissant Francés')">Añadir al pedido</button>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="summary">
-        <h3>Tu selección</h3>
-        <ul id="order-list" style="list-style: none; margin: 1rem 0;"></ul>
-        <button class="btn-order" style="background: #c5a059;" onclick="sendWhatsApp()">Finalizar pedido por WhatsApp</button>
-    </section>
+        <!-- Vitrina Selecta de Productos -->
+        <h2 class="section-header">Vitrina Internacional & Heladería</h2>
+        <div class="catalog-grid">
+            
+            <!-- Colombia -->
+            <div class="product-item-card">
+                <div>
+                    <div class="tag-region">Colombia</div>
+                    <h3 class="item-headline">Pandebono Valluno</h3>
+                    <p class="item-paragraph">Textura externa delicadamente crujiente con un interior esponjoso de alta elasticidad basado en almidón de yuca seleccionado.</p>
+                </div>
+                <div class="interactive-controls">
+                    <label class="control-label">Variedad</label>
+                    <select class="dropdown-select" id="sel-colombia">
+                        <option value="Clásico Tradicional 100% Queso">Clásico Tradicional 100% Queso</option>
+                        <option value="Relleno con Jalea de Guayaba">Relleno con Jalea de Guayaba</option>
+                    </select>
+                    <div class="quantity-shifter">
+                        <span class="shifter-label">Cantidad</span>
+                        <div class="shifter-actions">
+                            <button class="btn-qty" onclick="shiftQty('qty-colombia', -1)">-</button>
+                            <input type="text" class="display-qty" id="qty-colombia" value="1" readonly>
+                            <button class="btn-qty" onclick="shiftQty('qty-colombia', 1)">+</button>
+                        </div>
+                    </div>
+                    <button class="btn-add-basket" onclick="commitToBasket('Pandebono Valluno', 'sel-colombia', 'qty-colombia', 'Colombia')">Añadir a la Comanda</button>
+                </div>
+            </div>
+
+            <!-- Japón -->
+            <div class="product-item-card">
+                <div>
+                    <div class="tag-region">Japón</div>
+                    <h3 class="item-headline">Melonpan Imperial</h3>
+                    <p class="item-paragraph">Bollo brioche dulce de extrema suavidad, envuelto en una capa externa de galleta crujiente con su tradicional patrón tallado.</p>
+                </div>
+                <div class="interactive-controls">
+                    <label class="control-label">Variedad</label>
+                    <select class="dropdown-select" id="sel-japon">
+                        <option value="Extracto de Vainilla Madurada">Extracto de Vainilla Madurada</option>
+                        <option value="Té Matcha Ceremonial de Uji">Té Matcha Ceremonial de Uji</option>
+                    </select>
+                    <div class="quantity-shifter">
+                        <span class="shifter-label">Cantidad</span>
+                        <div class="shifter-actions">
+                            <button class="btn-qty" onclick="shiftQty('qty-japon', -1)">-</button>
+                            <input type="text" class="display-qty" id="qty-japon" value="1" readonly>
+                            <button class="btn-qty" onclick="shiftQty('qty-japon', 1)">+</button>
+                        </div>
+                    </div>
+                    <button class="btn-add-basket" onclick="commitToBasket('Melonpan Imperial', 'sel-japon', 'qty-japon', 'Japón')">Añadir a la Comanda</button>
+                </div>
+            </div>
+
+            <!-- Corea del Sur -->
+            <div class="product-item-card">
+                <div>
+                    <div class="tag-region">Corea del Sur</div>
+                    <h3 class="item-headline">Pan de Ajo & Crema</h3>
+                    <p class="item-paragraph">El icónico pan de Seúl. Masa brioche suave sumergida en mantequilla de ajo y perejil, rellena de crema de queso crema ligeramente dulce.</p>
+                </div>
+                <div class="interactive-controls">
+                    <label class="control-label">Variedad</label>
+                    <select class="dropdown-select" id="sel-corea">
+                        <option value="Fusión Agridulce de Seúl">Fusión Agridulce de Seúl</option>
+                        <option value="Con Cobertura de Parmesano">Con Cobertura de Parmesano</option>
+                    </select>
+                    <div class="quantity-shifter">
+                        <span class="shifter-label">Cantidad</span>
+                        <div class="shifter-actions">
+                            <button class="btn-qty" onclick="shiftQty('qty-corea', -1)">-</button>
+                            <input type="text" class="display-qty" id="qty-corea" value="1" readonly>
+                            <button class="btn-qty" onclick="shiftQty('qty-corea', 1)">+</button>
+                        </div>
+                    </div>
+                    <button class="btn-add-basket" onclick="commitToBasket('Pan de Ajo & Crema', 'sel-corea', 'qty-corea', 'Corea del Sur')">Añadir a la Comanda</button>
+                </div>
+            </div>
+
+            <!-- Heladería de Especialidad -->
+            <div class="product-item-card">
+                <div>
+                    <div class="tag-region">Heladería Selecta</div>
+                    <h3 class="item-headline">Raspados & Gelatos</h3>
+                    <p class="item-paragraph">Nuestra exclusiva propuesta helada gourmet formulada con bases naturales y adiciones de autor premium de la casa.</p>
+                </div>
+                <div class="interactive-controls">
+                    <label class="control-label">Variedad</label>
+                    <select class="dropdown-select" id="sel-helados">
+                        <option value="Raspado Nieve de Frutos Rojos">Raspado Nieve de Frutos Rojos</option>
+                        <option value="Gelato Cremoso de Matcha Uji">Gelato Cremoso de Matcha Uji</option>
+                        <option value="Raspado Exótico Mango-Maracuyá">Raspado Exótico Mango-Maracuyá</option>
+                    </select>
+                    <div class="quantity-shifter">
+                        <span class="shifter-label">Cantidad</span>
+                        <div class="shifter-actions">
+                            <button class="btn-qty" onclick="shiftQty('qty-helados', -1)">-</button>
+                            <input type="text" class="display-qty" id="qty-helados" value="1" readonly>
+                            <button class="btn-qty" onclick="shiftQty('qty-helados', 1)">+</button>
+                        </div>
+                    </div>
+                    <button class="btn-add-basket" onclick="commitToBasket('Raspados & Gelatos', 'sel-helados', 'qty-helados', 'Línea Helada')">Añadir a la Comanda</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Seccion Comanda / Carrito Integrado -->
+        <section class="comanda-box">
+            <h2>Su Comanda al Obrador</h2>
+            <ul class="basket-list" id="basket-display-node">
+                <div class="basket-empty">No se ha añadido ningún elemento a la selección. Su lista aparecerá estructurada aquí.</div>
+            </ul>
+            <button class="btn-dispatch-whatsapp" onclick="sendOrderViaWhatsApp()">Enviar Comanda Oficial por WhatsApp</button>
+        </section>
+
+    </main>
 
     <script>
-        const data = {
-            colombia: "El Pandebono nace en el Valle del Cauca. Su nombre proviene de los vales que se intercambiaban por este pan artesanal. En PANDA, respetamos la receta original con almidón de yuca.",
-            japon: "El Shokupan destaca por la técnica Tangzhong. Es una masa extremadamente hidratada que resulta en una textura de nube, ideal para paladares exigentes.",
-            francia: "La pastelería francesa es el arte de la técnica. Representa el respeto por el lácteo y el tiempo de fermentación, base de la panadería de prestigio."
+        const historicalDatabase = {
+            colombia: {
+                title: "Colombia: El Legado del Pandebono",
+                text: "Surgido a finales del siglo XIX en el Valle del Cauca, su receta combina almidón de yuca fermentado y queso costeño tierno para alimentar originalmente a los jornaleros del campo. Su significado trasciende como un símbolo de hospitalidad y arraigo cultural."
+            },
+            chile: {
+                title: "Chile: La Tradición de la Marraqueta",
+                text: "Conocido históricamente como pan batido, su origen se atribuye a panaderos de herencia europea en el puerto de Valparaíso. Destaca por su proceso de doble fermentación lenta y un horneado con vapor que le otorga su icónica corteza crocante libre de grasas."
+            },
+            japon: {
+                title: "Japón: La Miga Nube y el Melonpan",
+                text: "La panadería moderna japonesa perfeccionó el método Tangzhong (pre-cocción de harina y agua) para asegurar panes de molde asombrosamente húmedos. El Melonpan hereda este desarrollo técnico, destacando por su costra azucarada crocante tallada a mano."
+            },
+            corea: {
+                title: "Corea del Sur: Fusión e Innovación Urbana",
+                text: "Consolidada como una potencia en alta panadería tras triunfos en copas del mundo del sector, la escena de Seúl destaca por transformar la bollería clásica mediante rellenos sofisticados y contrastes de notas dulces y saladas en mercados tradicionales."
+            },
+            francia: {
+                title: "Francia: La Maestría Absoluta del Hojaldre",
+                text: "Referente global de la técnica panadera. La estricta regulación de la Baguette tradicional y el desarrollo milimétrico de las vueltas de mantequilla en el Croissant reflejan el respeto histórico por los tiempos de reposo y la fermentación biológica."
+            },
+            alemania: {
+                title: "Alemania: Diversidad de Cereales Complejos",
+                text: "El país con mayor variedad de tipos de pan catalogados. Su cultura se define por masas densas elaboradas a base de harinas integrales de centeno, masa madre acídula y semillas, representadas por panes de altísima longevidad como el Pumpernickel."
+            },
+            italia: {
+                title: "Italia: Rústicos de Alta Hidratación",
+                text: "Masas tradicionales marcadas por el uso de pre-fermentos como la biga, altos porcentajes de agua y la incorporación de aceite de oliva virgen extra. La Focaccia y la Ciabatta son los máximos exponentes del horneado tradicional sobre piedra."
+            },
+            india: {
+                title: "India: El Dominio de los Panes Planos",
+                text: "Representada en guías gastronómicas globales por la complejidad de sus panes planos artesanales. El Naan, horneado a temperaturas extremas en el tandoor de arcilla tradicional, es el pilar de acompañamiento culinario e identidad histórica del sur de Asia."
+            }
         };
 
-        let pedido = [];
+        let activeBasket = [];
 
-        function showInfo(key) {
-            document.getElementById('info-display').innerHTML = `<p>${data[key]}</p>`;
+        function triggerOriginView(key, element) {
+            document.querySelectorAll('.tab-node').forEach(btn => btn.classList.remove('active-node'));
+            element.classList.add('active-node');
+            
+            document.getElementById('origin-title').innerText = historicalDatabase[key].title;
+            document.getElementById('origin-desc').innerText = historicalDatabase[key].text;
         }
 
-        function addToOrder(item) {
-            pedido.push(item);
-            const list = document.getElementById('order-list');
-            list.innerHTML += `<li>${item}</li>`;
+        function shiftQty(idInput, shift) {
+            let inputElement = document.getElementById(idInput);
+            let currentVal = parseInt(inputElement.value);
+            let nextVal = currentVal + shift;
+            if (nextVal < 1) nextVal = 1;
+            inputElement.value = nextVal;
         }
 
-        function sendWhatsApp() {
-            if(pedido.length === 0) return alert("Seleccione productos primero.");
-            const msg = "Hola, deseo realizar el siguiente pedido: " + pedido.join(", ");
-            window.open(`https://wa.me/34639077423?text=${encodeURIComponent(msg)}`);
+        function commitToBasket(name, selectId, qtyId, origin) {
+            const variant = document.getElementById(selectId).value;
+            const qty = parseInt(document.getElementById(qtyId).value);
+
+            // Buscar si ya existe un elemento idéntico para agruparlo
+            let matchingRecord = activeBasket.find(x => x.name === name && x.variant === variant);
+            
+            if(matchingRecord) {
+                matchingRecord.qty += qty;
+            } else {
+                activeBasket.push({
+                    origin: origin,
+                    name: name,
+                    variant: variant,
+                    qty: qty
+                });
+            }
+
+            renderBasketUI();
+            document.getElementById(qtyId).value = 1; // resetear selector
+        }
+
+        function removeBasketNode(index) {
+            activeBasket.splice(index, 1);
+            renderBasketUI();
+        }
+
+        function renderBasketUI() {
+            const listContainer = document.getElementById('basket-display-node');
+            
+            if(activeBasket.length === 0) {
+                listContainer.innerHTML = '<div class="basket-empty">No se ha añadido ningún elemento a la selección. Su lista aparecerá estructurada aquí.</div>';
+                return;
+            }
+
+            listContainer.innerHTML = activeBasket.map((item, index) => `
+                <li class="basket-row">
+                    <div>
+                        <strong>${item.qty}x</strong> ${item.name} 
+                        <span style="color: #C5A059; font-size: 0.85rem; font-family: system-ui;">[${item.variant}]</span>
+                        <br><span style="color: #8E8E93; font-size: 0.75rem; text-transform: uppercase; font-family: system-ui;">${item.origin}</span>
+                    </div>
+                    <button class="btn-remove-node" onclick="removeBasketNode(${index})">Quitar</button>
+                </li>
+            `).join('');
+        }
+
+        function sendOrderViaWhatsApp() {
+            if(activeBasket.length === 0) {
+                alert("La comanda está vacía. Seleccione productos y cantidades antes de realizar el envío.");
+                return;
+            }
+
+            let textTemplate = `PANDA SPECIALTY COFFEE & BAKERY\n`;
+            textTemplate += `Comanda Oficial de Productos Internacionales\n`;
+            textTemplate += `=========================================\n\n`;
+
+            activeBasket.forEach(item => {
+                textTemplate += `• ${item.qty}x ${item.name}\n  Variedad: ${item.variant}\n  Origen: ${item.origin}\n\n`;
+            });
+
+            textTemplate += `=========================================\n`;
+            textTemplate += `Deseo marchar este pedido en obrador y barra.`;
+
+            const cleanPhone = "34639077423";
+            window.open(`https://wa.me/${cleanPhone}?text=${encodeURIComponent(textTemplate)}`, '_blank');
         }
     </script>
 </body>
