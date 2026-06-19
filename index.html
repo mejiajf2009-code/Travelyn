@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- CÓDIGO DE VERIFICACIÓN DE GOOGLE -->
     <meta name="google-site-verification" content="lIk-JJpYbbHqYfE37FcGlJNOdhHpzldNfZhVJ_zhSI0" />
     
+    <!-- FAVICONS -->
     <link rel="icon" href="1000309039.png" type="image/png">
     <link rel="apple-touch-icon" href="1000309039.png">
     
     <title>PANDA | Panadería Ancestral & Specialty Coffee</title>
     
+    <!-- Fuentes Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -19,7 +22,7 @@
         :root {
             --bg-pure: #ffffff;
             --bg-surface: #faf7f2; 
-            --bg-dark: #111113; /* El elegante negro mate de tu tienda */
+            --bg-dark: #111113; 
             --gold: #b38f44; 
             --gold-light: #f3edd2;
             --text-main: #1c1c1f; 
@@ -45,7 +48,6 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* Navbar Principal con tu Logo 1000309039.png */
         header {
             display: flex;
             justify-content: space-between;
@@ -100,7 +102,6 @@
 
         nav a:hover { color: var(--gold); }
 
-        /* Portada de Bienvenida Oficial */
         .hero-welcome {
             background: linear-gradient(rgba(17, 17, 19, 0.4), rgba(17, 17, 19, 0.85)), url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
@@ -136,7 +137,6 @@
             font-weight: 300;
         }
 
-        /* Sección Mapa Internacional Interactivo del Panda 🗾 */
         .interactive-map-section {
             background-color: var(--bg-dark);
             color: #ffffff;
@@ -162,7 +162,6 @@
             font-size: 0.85rem;
         }
 
-        /* Grid de Países (Ruta del Mapa) */
         .map-countries-grid {
             display: flex;
             justify-content: center;
@@ -194,7 +193,6 @@
             box-shadow: 0 10px 20px rgba(179, 143, 68, 0.2);
         }
 
-        /* Pizarra del Panda Explicando el Significado */
         .panda-speech-board {
             max-width: 850px;
             margin: 0 auto;
@@ -234,7 +232,6 @@
             color: #2c313a;
         }
 
-        /* Vitrina de Productos Reales */
         .showcase-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -293,4 +290,500 @@
             padding: 0.4rem 1.2rem;
             border-radius: 30px;
             font-size: 0.75rem;
-            font-weight:
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid var(--gold);
+        }
+
+        .item-info {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .item-info h3 {
+            font-size: 1.45rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+
+        .item-category-label {
+            font-size: 0.75rem;
+            color: var(--gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .item-info p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .variety-box {
+            margin-bottom: 1.5rem;
+            background-color: var(--bg-surface);
+            padding: 0.9rem;
+            border-radius: 14px;
+            border: 1px solid rgba(179, 143, 68, 0.1);
+        }
+
+        .variety-box label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.4rem;
+            color: var(--text-main);
+            letter-spacing: 0.5px;
+        }
+
+        .variety-box select {
+            width: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--bg-dark);
+            cursor: pointer;
+        }
+
+        .action-select-btn {
+            background: var(--bg-surface);
+            color: var(--text-main);
+            border: 1px solid rgba(0,0,0,0.06);
+            padding: 1rem;
+            border-radius: 14px;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .bakery-item-card:hover .action-select-btn {
+            background: var(--bg-dark);
+            color: #ffffff;
+            border-color: var(--bg-dark);
+        }
+
+        .checkout-container {
+            background: var(--bg-surface);
+            padding: 5rem 5%;
+            border-top: 1px solid rgba(179, 143, 68, 0.1);
+        }
+
+        .checkout-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 3.5rem;
+            border-radius: var(--radius-premium);
+            box-shadow: 0 30px 60px rgba(179, 143, 68, 0.04);
+            border: 1px solid rgba(179, 143, 68, 0.12);
+        }
+
+        .checkout-title-box {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .checkout-title-box h2 { font-size: 2.2rem; font-weight: 500; }
+        .checkout-title-box p { color: var(--text-muted); font-size: 0.95rem; margin-top: 0.4rem; }
+
+        .checkout-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .input-wrapper { display: flex; flex-direction: column; }
+        .input-wrapper.full-width { grid-column: 1 / -1; }
+
+        .input-wrapper label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .input-wrapper input, .input-wrapper textarea {
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0,0,0,0.1);
+            font-size: 0.95rem;
+            outline: none;
+            background: #ffffff;
+        }
+
+        .input-wrapper input:focus, .input-wrapper textarea:focus {
+            border-color: var(--gold);
+        }
+
+        .whatsapp-dispatch-btn {
+            grid-column: 1 / -1;
+            background: var(--bg-dark);
+            color: #ffffff;
+            border: none;
+            padding: 1.2rem;
+            border-radius: 14px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+
+        .whatsapp-dispatch-btn:hover {
+            background: var(--gold);
+            box-shadow: 0 10px 25px rgba(179, 143, 68, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 1rem; }
+            nav a { margin: 0 0.5rem; }
+            .hero-content h1 { font-size: 2.4rem; }
+            .checkout-form { grid-template-columns: 1fr; }
+            .checkout-card { padding: 2rem; }
+            .panda-speech-board { flex-direction: column; text-align: center; padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="brand-logo-container">
+            <img src="1000309039.png" alt="Panda Specialty Coffee & Bakery" class="brand-logo-file">
+            <div class="brand-logo-text">
+                <span class="logo-title">PANDA</span>
+                <span class="logo-subtitle">Specialty Coffee & Bakery</span>
+            </div>
+        </a>
+        <nav>
+            <a href="#mapa-interactivo">Ruta del Panda</a>
+            <a href="#vitrina-panes">Nuestra Panadería</a>
+            <a href="#comanda-formulario">Hacer Pedido</a>
+        </nav>
+    </header>
+
+    <section class="hero-welcome">
+        <div class="hero-content">
+            <h1>Bienvenidos a <span>Panda Specialty Coffee & Bakery</span></h1>
+            <p>Descubre el verdadero arte del horno mundial. Seleccionamos las recetas tradicionales más icónicas de cada cultura para servirlas frescas junto al mejor café de especialidad.</p>
+        </div>
+    </section>
+
+    <section class="interactive-map-section" id="mapa-interactivo">
+        <div class="map-header">
+            <h2>El Panda te señala el Origen Histórico 🗾</h2>
+            <p>Pulsa sobre cada país para ver al panda explicar el significado de su panadería ancestral</p>
+        </div>
+
+        <div class="map-countries-grid">
+            <button class="country-tab-btn active-country" onclick="triggerPandaMap('colombia', this)">
+                <span>🇨🇴</span> Colombia
+            </button>
+            <button class="country-tab-btn" onclick="triggerPandaMap('chile', this)">
+                <span>🇨🇱</span> Chile
+            </button>
+            <button class="country-tab-btn" onclick="triggerPandaMap('japon', this)">
+                <span>🇯🇵</span> Japón
+            </button>
+            <button class="country-tab-btn" onclick="triggerPandaMap('corea', this)">
+                <span>🇰🇷</span> Corea del Sur
+            </button>
+            <button class="country-tab-btn" onclick="triggerPandaMap('francia', this)">
+                <span>🇫🇷</span> Francia
+            </button>
+        </div>
+
+        <div class="panda-speech-board">
+            <div class="panda-animation-placeholder" id="panda-emoji">🐼👉🏽🇨🇴</div>
+            <div class="speech-content">
+                <h4 id="speech-country-title">Colombia: El Significado del Pandebono</h4>
+                <p id="speech-country-text">¡Hola! Te presento el Pandebono. Esta delicia tradicional nació a finales del siglo XIX en el Valle del Cauca, específicamente en la Hacienda "San Bono". Se creó originalmente combinando almidón de yuca fermentado, maíz capio y abundante queso costeño tierno para alimentar a los jornaleros. Su significado histórico es sinónimo de hospitalidad, y su nombre proviene de los vales que se daban para adquirir este delicioso y esponjoso "pan de bono". ¡Una delicia total!</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="showcase-container" id="vitrina-panes">
+        <div class="showcase-title">
+            <h2>Nuestra Vitrina de Panadería Real</h2>
+            <p>Selecciona tu producto favorito, escoge su variedad y añádelo a tu comanda</p>
+        </div>
+
+        <div class="bakery-grid">
+            
+            <!-- COLOMBIA: PANDEBONO -->
+            <div class="bakery-item-card">
+                <div class="item-image-holder">
+                    <span class="item-country-tag">Colombia</span>
+                    <img src="https://images.unsplash.com/photo-1629959606204-33e448651871?auto=format&fit=crop&w=600&q=80" alt="Pandebono Real">
+                </div>
+                <div class="item-info">
+                    <div>
+                        <div class="item-category-label">Panadería Fiel de Origen</div>
+                        <h3>Pandebono Valluno</h3>
+                        <p>Textura crujiente por fuera y una nube elástica y quesuda en su interior. Preparado artesanalmente con almidón de yuca seleccionado.</p>
+                        
+                        <div class="variety-box">
+                            <label>Selecciona tu Variedad:</label>
+                            <select id="sel-colombia">
+                                <option value="Clásico 100% Queso Costeño">Clásico 100% Queso Costeño</option>
+                                <option value="Relleno de Bocadillo de Guayaba Real">Relleno de Bocadillo de Guayaba Real</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="action-select-btn" onclick="bindProductToForm('Colombia', 'Pandebono Valluno', 'sel-colombia')">Elegir Variedad</button>
+                </div>
+            </div>
+
+            <!-- CHILE: MARRAQUETA -->
+            <div class="bakery-item-card">
+                <div class="item-image-holder">
+                    <span class="item-country-tag">Chile</span>
+                    <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=600&q=80" alt="Marraqueta Crujiente">
+                </div>
+                <div class="item-info">
+                    <div>
+                        <div class="item-category-label">Panadería Fiel de Origen</div>
+                        <h3>Marraqueta Tradicional</h3>
+                        <p>También conocido como pan batido. Elaborado con doble fermentación lenta para lograr esa corteza dorada súper crocante y miga ligera libre de grasas.</p>
+                        
+                        <div class="variety-box">
+                            <label>Selecciona tu Variedad:</label>
+                            <select id="sel-chile">
+                                <option value="Marraqueta Clásica de Doble Marque">Marraqueta Clásica de Doble Marque</option>
+                                <option value="Con Mantequilla de Campo">Con Mantequilla de Campo</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="action-select-btn" onclick="bindProductToForm('Chile', 'Marraqueta Tradicional', 'sel-chile')">Elegir Variedad</button>
+                </div>
+            </div>
+
+            <!-- JAPÓN: MELONPAN -->
+            <div class="bakery-item-card">
+                <div class="item-image-holder">
+                    <span class="item-country-tag">Japón</span>
+                    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80" alt="Melonpan de Tokio">
+                </div>
+                <div class="item-info">
+                    <div>
+                        <div class="item-category-label">Panadería Verdadera de Tokio</div>
+                        <h3>Melonpan Imperial</h3>
+                        <p>Exquisito bollo brioche tierno envuelto en una capa de masa de galleta azucarada con su icónico patrón cuadriculado crujiente tallado a mano.</p>
+                        
+                        <div class="variety-box">
+                            <label>Selecciona tu Variedad:</label>
+                            <select id="sel-japon">
+                                <option value="Clásico de Vainilla Natural">Clásico de Vainilla Natural</option>
+                                <option value="Matcha Ceremonial Premium de Uji">Matcha Ceremonial Premium de Uji</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="action-select-btn" onclick="bindProductToForm('Japón', 'Melonpan Imperial', 'sel-japon')">Elegir Variedad</button>
+                </div>
+            </div>
+
+            <!-- COREA DEL SUR: PAN DE AJO -->
+            <div class="bakery-item-card">
+                <div class="item-image-holder">
+                    <span class="item-country-tag">Corea del Sur</span>
+                    <img src="https://images.unsplash.com/photo-1601247447472-ba00938a4f91?auto=format&fit=crop&w=600&q=80" alt="Pan de ajo coreano">
+                </div>
+                <div class="item-info">
+                    <div>
+                        <div class="item-category-label">Tendencia de Seúl</div>
+                        <h3>Pan de Ajo & Crema de Queso</h3>
+                        <p>El famoso pan callejero coreano. Un bollo brioche bañado enteramente en mantequilla de ajo y perejil, relleno de una crema de queso suave y ligeramente dulce.</p>
+                        
+                        <div class="variety-box">
+                            <label>Selecciona tu Variedad:</label>
+                            <select id="sel-corea">
+                                <option value="Original agridulce de Seúl">Original agridulce de Seúl</option>
+                                <option value="Con costra de Parmesano Crocante">Con costra de Parmesano Crocante</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="action-select-btn" onclick="bindProductToForm('Corea del Sur', 'Pan de Ajo Coreano', 'sel-corea')">Elegir Variedad</button>
+                </div>
+            </div>
+
+            <!-- FRANCIA: MACARONS -->
+            <div class="bakery-item-card">
+                <div class="item-image-holder">
+                    <span class="item-country-tag">Francia</span>
+                    <img src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?auto=format&fit=crop&w=600&q=80" alt="Macarons franceses">
+                </div>
+                <div class="item-info">
+                    <div>
+                        <div class="item-category-label">Alta Repostería Fina</div>
+                        <h3>Macarons de París</h3>
+                        <p>Sofisticadas y delicadas galletas de harina de almendras con su textura crujiente exterior y rellenos cremosos ganache de autor.</p>
+                        
+                        <div class="variety-box">
+                            <label>Selecciona tu Variedad:</label>
+                            <select id="sel-francia">
+                                <option value="Pistacho de Sicilia">Pistacho de Sicilia</option>
+                                <option value="Chocolate de Origen 70%">Chocolate de Origen 70%</option>
+                                <option value="Frambuesa Ácida Artesanal">Frambuesa Ácida Artesanal</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="action-select-btn" onclick="bindProductToForm('Francia', 'Macarons de París', 'sel-francia')">Elegir Variedad</button>
+                </div>
+            </div>
+
+            <!-- EXCLUSIVOS PANDA: RASPADOS & HELADOS -->
+            <div class="bakery-item-card">
+                <div class="item-image-holder">
+                    <span class="item-country-tag">Exclusivos Panda</span>
+                    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80" alt="Raspados e Helados">
+                </div>
+                <div class="item-info">
+                    <div>
+                        <div class="item-category-label">Línea Helada de la Casa</div>
+                        <h3>Raspados & Helados Artesanales</h3>
+                        <p>Nuestra exclusiva barra refrescante premium elaborada con pulpas e ingredientes naturales de alta gama.</p>
+                        
+                        <div class="variety-box">
+                            <label>Selecciona tu Variedad:</label>
+                            <select id="sel-helados">
+                                <option value="Raspado de Nieve Frutos Rojos con Crema Condensada">Raspado Nieve Frutos Rojos</option>
+                                <option value="Gelato de Té Matcha Ceremonial Premium">Gelato Cremoso Matcha</option>
+                                <option value="Raspado Exótico Mango-Maracuyá">Raspado Exótico Mango-Maracuyá</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="action-select-btn" onclick="bindProductToForm('Exclusivos Panda', 'Raspado / Helado', 'sel-helados')">Elegir Variedad</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <section class="checkout-container" id="comanda-formulario">
+        <div class="checkout-card">
+            <div class="checkout-title-box">
+                <h2>Tu Comanda al Obrador</h2>
+                <p>Tu selección de panadería real se enviará directamente a nuestra cocina de especialidad</p>
+            </div>
+            
+            <div class="checkout-form">
+                <div class="input-wrapper">
+                    <label>Tu Nombre completo</label>
+                    <input type="text" id="form-name" placeholder="Ej: Marcela Benavides" required>
+                </div>
+                <div class="input-wrapper">
+                    <label>WhatsApp</label>
+                    <input type="tel" id="form-phone" placeholder="Ej: +34 600 000 000" required>
+                </div>
+                <div class="input-wrapper">
+                    <label>País Seleccionado</label>
+                    <input type="text" id="form-country" readonly style="background-color: var(--bg-surface); font-weight: 700;">
+                </div>
+                <div class="input-wrapper">
+                    <label>Variedad Escogida</label>
+                    <input type="text" id="form-product" readonly style="background-color: var(--bg-surface); color: var(--gold); font-weight: 700;">
+                </div>
+                <div class="input-wrapper full-width">
+                    <label>Notas especiales para el Maestro Panadero o Barista</label>
+                    <textarea id="form-notes" rows="3" placeholder="Indica especificaciones de entrega, alérgenos o adiciones..."></textarea>
+                </div>
+                
+                <button class="whatsapp-dispatch-btn" onclick="dispatchOrder()">Enviar Comanda Oficial por WhatsApp</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const pandaSpeechMap = {
+            colombia: {
+                emoji: "🐼👉🏽🇨🇴",
+                title: "Colombia: El Significado del Pandebono",
+                desc: "¡Hola! Te presento el Pandebono. Esta delicia tradicional nació a finales del siglo XIX en el Valle del Cauca, específicamente en la Hacienda 'San Bono'. Se creó originalmente combinando almidón de yuca fermentado, maíz capio y abundante queso costeño tierno para alimentar a los jornaleros. Su significado histórico es sinónimo de hospitalidad, y su nombre proviene de los vales que se daban para adquirir este delicioso y esponjoso 'pan de bono'. ¡Una delicia total!"
+            },
+            chile: {
+                emoji: "🐼👉🏽🇨🇱",
+                title: "Chile: El Legado Histórico de la Marraqueta",
+                desc: "¡Hola! Te señalo la Marraqueta, conocida también como pan batido. Su historia se remonta al siglo XIX en Valparaíso, creada por unos hermanos panaderos franceses de apellido Marraquet. Destaca por su icónica forma de cuatro cuartos unificados listos para desprender, una fermentación muy prolongada y un horneado con vapor de agua que le confiere esa costra dorada tan crujiente sin usar grasas animales. ¡Es el pan más icónico de Chile!"
+            },
+            japon: {
+                emoji: "🐼👉🏽🇯🇵",
+                title: "Japón: La Dulzura Tradicional del Melonpan",
+                desc: "¡Konichiwa! Cruzamos el océano hacia Tokio para ver el auténtico Melonpan, una obra maestra de la panadería japonesa moderna nacida a mediados del siglo XX. Aunque originalmente no lleva melón en sus ingredientes, su nombre e historia provienen de los surcos en rombo tallados sobre su masa exterior de galleta, idénticos a un melón cantalupo. Combina la esponjosidad extrema de un pan dulce lácteo con la textura crujiente de una fina galleta."
+            },
+            corea: {
+                emoji: "🐼👉🏽🇰🇷",
+                title: "Corea del Sur: El Increíble Pan de Ajo de Seúl",
+                desc: "¡Annyeonghaseyo! Te presento el famoso 'Korean Cream Cheese Garlic Bread', surgido como un fenómeno culinario masivo en los mercados tradicionales de Gangneung. Consiste en un pan brioche redondo cortado en seis gajos, inyectado con abundante crema de queso endulzada y sumergido completamente en una marinada líquida de mantequilla fundida, ajo picado y perejil antes de su horneado final crujiente."
+            },
+            francia: {
+                emoji: "🐼👉🏽🇫🇷",
+                title: "Francia: La Perfección del Macaron de París",
+                desc: "¡Bonjour! Te presento las legendarias galletas Macaron, un emblema de la alta repostería francesa perfeccionado en París durante el siglo XX por la casa Ladurée. Se componen de dos delicados discos horneados a base de harina de almendras finas y clara de huevo merengada, caracterizados por su 'pie' o base rugosa perfecta y rellenos con ganaches untuosos. Su significado representa la máxima precisión técnica pastelera francesa."
+            }
+        };
+
+        function triggerPandaMap(countryKey, element) {
+            document.querySelectorAll('.country-tab-btn').forEach(btn => btn.classList.remove('active-country'));
+            element.classList.add('active-country');
+            
+            document.getElementById('panda-emoji').innerText = pandaSpeechMap[countryKey].emoji;
+            document.getElementById('speech-country-title').innerText = pandaSpeechMap[countryKey].title;
+            document.getElementById('speech-country-text').innerText = pandaSpeechMap[countryKey].desc;
+        }
+
+        function bindProductToForm(pais, producto, idSelect) {
+            const variedad = document.getElementById(idSelect).value;
+            document.getElementById('form-country').value = pais;
+            document.getElementById('form-product').value = `${producto} - [Variedad: ${variedad}]`;
+            document.getElementById('comanda-formulario').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function dispatchOrder() {
+            const name = document.getElementById('form-name').value.trim();
+            const phone = document.getElementById('form-phone').value.trim();
+            const country = document.getElementById('form-country').value;
+            const product = document.getElementById('form-product').value;
+            const notes = document.getElementById('form-notes').value.trim();
+
+            if (!name || !phone || !product) {
+                alert('Por favor, ingresa tu Nombre, Teléfono y escoge tu producto en la vitrina usando "Elegir Variedad".');
+                return;
+            }
+
+            const centralWhatsApp = "34639077423"; 
+            
+            let template = `🐼 *PANDA SPECIALTY COFFEE & BAKERY* 🐼\n`;
+            template += `✨ *Comanda de Panadería Internacional Real* ✨\n`;
+            template += `===================================\n\n`;
+            template += `👤 *CLIENTE:* ${name}\n`;
+            template += `📱 *CONTACTO:* ${phone}\n\n`;
+            template += `🗺️ *ORIGEN CULTURAL:* ${country}\n`;
+            template += `🥖 *PRODUCTO Y VARIEDAD:* \n👉 _${product}_\n\n`;
+            if (notes) {
+                template += `📝 *NOTAS DE PREPARACIÓN:* \n"${notes}"\n`;
+            }
+            template += `===================================\n`;
+            template += `☕ _Comanda lista para marchar en barra y hornos._`;
+
+            window.open(`https://wa.me/${centralWhatsApp}?text=${encodeURIComponent(template)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
