@@ -62,7 +62,7 @@
             font-weight: 700;
         }
 
-        /* PANEL DE CONFIGURACIÓN DE NÚMERO (Súper fácil para el dueño) */
+        /* PANEL DE CONFIGURACIÓN DE NÚMERO */
         .config-panel {
             background: #f0ecdf;
             border: 2px dashed var(--gold);
@@ -95,17 +95,6 @@
             padding: 10px;
         }
 
-        .menu-title-section {
-            text-align: center;
-            margin: 40px 0 20px 0;
-        }
-
-        .menu-title-section h2 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
-            letter-spacing: 1px;
-        }
-
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -131,7 +120,6 @@
             position: relative;
         }
 
-        /* EMBLEMA GRANDE DEL PANDA DE LUJO (No es un emoji) */
         .panda-emblem-box {
             position: absolute;
             bottom: -15px;
@@ -185,11 +173,25 @@
             padding-bottom: 8px;
         }
 
+        /* FILAS DE PRODUCTO MEJORADAS CON CHECKBOX */
         .item-row {
             background: #fafafa;
-            padding: 10px 12px;
+            padding: 12px;
             margin-bottom: 8px;
             border-left: 3px solid var(--gold);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+
+        .item-row:hover {
+            background: #f4f1ea;
+        }
+
+        .item-info {
+            flex-grow: 1;
+            padding-right: 15px;
         }
 
         .item-name {
@@ -205,7 +207,14 @@
             font-style: italic;
         }
 
-        /* BARRA FIJA INFERIOR PARA RESERVAS */
+        .item-selector {
+            accent-color: var(--gold);
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        /* BARRA FIJA INFERIOR */
         .order-bar {
             position: fixed;
             bottom: 0;
@@ -229,7 +238,7 @@
             letter-spacing: 2px;
             font-size: 0.85rem;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s;
             text-decoration: none;
             display: inline-block;
             border-radius: 4px;
@@ -237,6 +246,7 @@
 
         .order-btn:hover {
             background: white;
+            transform: scale(1.02);
         }
 
         .region-heading {
@@ -257,31 +267,27 @@
     </div>
 
     <header>
-        <!-- Tu Logotipo oficial en alta resolución -->
         <img src="1000309039_3.png" alt="Panda Specialty Coffee & Bakery" class="brand-logo">
         <div class="tagline">Menú Internacional Auténtico</div>
     </header>
 
-    <!-- CONFIGURADOR AUTOMÁTICO DE ENLACE DE WHATSAPP -->
     <div class="config-panel">
         <h4>⚙️ Panel de Activación de Enlaces</h4>
-        <p style="font-size:0.8rem; color:#666; margin-bottom:10px;">Escribe tu número con código de país (Ej: 573001234567 para Colombia) para activar las reservas inmediatas:</p>
-        <input type="number" id="phoneInput" placeholder="Ej: 573001234567" oninput="updateWhatsAppLinks()">
+        <p style="font-size:0.8rem; color:#666; margin-bottom:10px;">Escribe tu número con código de país (Ej: 573001234567) para activar las reservas inmediatas:</p>
+        <input type="tel" id="phoneInput" placeholder="Ej: 573001234567" oninput="updateWhatsAppLinks()">
     </div>
 
     <div class="container">
 
-        <!-- REGION AMÉRICA CORREGIDA -->
+        <!-- REGION AMÉRICA -->
         <div class="region-heading">Región América</div>
         
         <div class="grid">
             
-            <!-- COLOMBIA DEFINITIVA (IMAGEN REAL DE PANDEBONO Y QUESO) -->
+            <!-- COLOMBIA -->
             <div class="card">
                 <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1612201142855-7873bc1661b4?q=80&w=600&auto=format&fit=crop');">
                     <div class="card-flag">🇨🇴 Colombia</div>
-                    
-                    <!-- Emblema de Oso Panda de Lujo Real en SVG -->
                     <div class="panda-emblem-box">
                         <svg viewBox="0 0 100 100">
                             <circle cx="30" cy="30" r="12" fill="#c5a059"/>
@@ -298,16 +304,25 @@
                 <div class="card-content">
                     <h3 class="card-title">Colombia - Tradición de Amasijos</h3>
                     <div class="item-row">
-                        <div class="item-name">Pandebono</div>
-                        <div class="item-meaning">Significa "Pan de la Hacienda El Bono" (Valle del Cauca). Receta insignia a base de almidón de yuca y queso costeño horneado.</div>
+                        <div class="item-info">
+                            <div class="item-name">Pandebono</div>
+                            <div class="item-meaning">Significa "Pan de la Hacienda El Bono". A base de almidón de yuca y queso costeño.</div>
+                        </div>
+                        <input type="checkbox" class="item-selector" data-name="Pandebono" onchange="updateWhatsAppLinks()">
                     </div>
                     <div class="item-row">
-                        <div class="item-name">Almojábana</div>
-                        <div class="item-meaning">Del árabe 'al-mujábbana' ("Hecha de queso"). Panecillo esponjoso e hidratado de maíz y cuajada fresca.</div>
+                        <div class="item-info">
+                            <div class="item-name">Almojábana</div>
+                            <div class="item-meaning">Del árabe 'al-mujábbana' ("Hecha de queso"). Esponjoso e hidratado de maíz.</div>
+                        </div>
+                        <input type="checkbox" class="item-selector" data-name="Almojábana" onchange="updateWhatsAppLinks()">
                     </div>
                     <div class="item-row">
-                        <div class="item-name">Pan Aliñado</div>
-                        <div class="item-meaning">Significa "Pan Condimentado". Suave masa de molde enriquecida con generosa mantequilla y capas de queso rallado.</div>
+                        <div class="item-info">
+                            <div class="item-name">Pan Aliñado</div>
+                            <div class="item-meaning">Masa de molde enriquecida con generosa mantequilla y capas de queso rallado.</div>
+                        </div>
+                        <input type="checkbox" class="item-selector" data-name="Pan Aliñado" onchange="updateWhatsAppLinks()">
                     </div>
                 </div>
             </div>
@@ -323,12 +338,18 @@
                 <div class="card-content">
                     <h3 class="card-title">Chile - Masas Crujientes</h3>
                     <div class="item-row">
-                        <div class="item-name">Marraqueta</div>
-                        <div class="item-meaning">Homenaje al apellido de los hermanos Marraquet, panaderos franceses que popularizaron este pan batido de corteza crujiente.</div>
+                        <div class="item-info">
+                            <div class="item-name">Marraqueta</div>
+                            <div class="item-meaning">Pan batido de corteza crujiente tradicional.</div>
+                        </div>
+                        <input type="checkbox" class="item-selector" data-name="Marraqueta" onchange="updateWhatsAppLinks()">
                     </div>
                     <div class="item-row">
-                        <div class="item-name">Hallulla</div>
-                        <div class="item-meaning">Del árabe 'hallún' ("Bollo de fiesta"). Pan redondo, plano, firme y laminado con manteca tradicional.</div>
+                        <div class="item-info">
+                            <div class="item-name">Hallulla</div>
+                            <div class="item-meaning">Del árabe 'hallún'. Pan redondo, plano y laminado con manteca.</div>
+                        </div>
+                        <input type="checkbox" class="item-selector" data-name="Hallulla" onchange="updateWhatsAppLinks()">
                     </div>
                 </div>
             </div>
@@ -344,12 +365,18 @@
                 <div class="card-content">
                     <h3 class="card-title">Argentina - Bollería Criolla</h3>
                     <div class="item-row">
-                        <div class="item-name">Facturas</div>
-                        <div class="item-meaning">Significa "Cosas hechas". Bautizadas así por el sindicato anarquista de 1888 para recordar el valor económico del trabajo obrero.</div>
+                        <div class="item-info">
+                            <div class="item-name">Facturas</div>
+                            <div class="item-meaning">Bautizadas así históricamente para recordar el valor del trabajo obrero.</div>
+                        </div>
+                        <input type="checkbox" class="item-selector" data-name="Facturas" onchange="updateWhatsAppLinks()">
                     </div>
                     <div class="item-row">
-                        <div class="item-name">Criollitos</div>
-                        <div class="item-meaning">Significa "Pequeños criollos". Bizcochos de grasa de vaca hojaldrados tradicionales de las pulperías.</div>
+                        <div class="item-info">
+                            <div class="item-name">Criollitos</div>
+                            <div class="item-meaning">Bizcochos de grasa de vaca hojaldrados tradicionales.</div>
+                        </div>
+                        <input type="checkbox" class="item-selector" data-name="Criollitos" onchange="updateWhatsAppLinks()">
                     </div>
                 </div>
             </div>
@@ -365,15 +392,18 @@
                 <div class="card-content">
                     <h3 class="card-title">México - Pan Dulce Ritual</h3>
                     <div class="item-row">
-                        <div class="item-name">Concha</div>
-                        <div class="item-meaning">Significa "Concha de mar" debido a las líneas marcadas sobre la costra crujiente de azúcar y manteca.</div>
+                        <div class="item-info">
+                            <div class="item-name">Concha</div>
+                            <div class="item-meaning">Costra crujiente de azúcar y manteca con líneas que emulan una concha de mar.</div>
+                        </div>
+                        <input type="checkbox" class="item-selector" data-name="Concha" onchange="updateWhatsAppLinks()">
                     </div>
                 </div>
             </div>
 
         </div>
 
-        <!-- REGIN EUROPA INTERNACIONAL -->
+        <!-- REGION EUROPA -->
         <div class="region-heading">Región Europa</div>
         <div class="grid">
             
@@ -388,8 +418,11 @@
                 <div class="card-content">
                     <h3 class="card-title">Francia - Masas Madre Maduras</h3>
                     <div class="item-row">
-                        <div class="item-name">Baguette</div>
-                        <div class="item-meaning">Significa "Varita" o "Bastón" haciendo alusión directa a su silueta delgada y horneado de alta corteza.</div>
+                        <div class="item-info">
+                            <div class="item-name">Baguette</div>
+                            <div class="item-meaning">Significa "Varita". Silueta delgada y horneado de alta corteza.</div>
+                        </div>
+                        <input type="checkbox" class="item-selector" data-name="Baguette" onchange="updateWhatsAppLinks()">
                     </div>
                 </div>
             </div>
@@ -405,8 +438,11 @@
                 <div class="card-content">
                     <h3 class="card-title">Italia - Aceite de Oliva y Fuego</h3>
                     <div class="item-row">
-                        <div class="item-name">Focaccia</div>
-                        <div class="item-meaning">Significa "Hecho en el fuego" (del latín focus), horneado ancestralmente sobre las cenizas del hogar italiano.</div>
+                        <div class="item-info">
+                            <div class="item-name">Focaccia</div>
+                            <div class="item-meaning">Significa "Hecho en el fuego". Horneado ancestral sobre cenizas.</div>
+                        </div>
+                        <input type="checkbox" class="item-selector" data-name="Focaccia" onchange="updateWhatsAppLinks()">
                     </div>
                 </div>
             </div>
@@ -418,23 +454,41 @@
     <!-- BARRA DINÁMICA DE RESERVA -->
     <div class="order-bar">
         <a id="whatsappLink" href="#" target="_blank" class="order-btn">
-            🟢 Enviar mi Pedido por WhatsApp
+            ⚠️ Escribe tu número arriba para activar
         </a>
     </div>
 
     <script>
-        // Esta función lee el número que escribes y actualiza los enlaces al instante
         function updateWhatsAppLinks() {
             var num = document.getElementById('phoneInput').value;
             var btn = document.getElementById('whatsappLink');
             
+            // Capturar elementos seleccionados
+            var selectedItems = [];
+            var checkboxes = document.querySelectorAll('.item-selector:checked');
+            checkboxes.forEach(function(cb) {
+                selectedItems.push(cb.getAttribute('data-name'));
+            });
+            
+            // Construir el mensaje dinámico
+            var baseMessage = "¡Hola! He seleccionado las piezas de mi menú internacional en la página. ";
+            if(selectedItems.length > 0) {
+                baseMessage += "Me gustaría reservar: *" + selectedItems.join(', ') + "*. ";
+            }
+            baseMessage += "¿Me toman el pedido?";
+            
+            var encodedText = encodeURIComponent(baseMessage);
+            
             if(num) {
-                // Guarda el número para que no se borre al recargar la página
                 localStorage.setItem('panda_phone', num);
-                // Crea el link oficial directo
-                btn.href = "https://wa.me/" + num + "?text=Hola!%20He%20seleccionado%20las%20piezas%20de%20mi%20menú%20internacional%20en%20la%20página.%20¿Me%20toman%20el%20pedido?";
+                btn.href = "https://wa.me/" + num + "?text=" + encodedText;
                 btn.style.opacity = "1";
-                btn.innerHTML = "🟢 Reservar Menú en WhatsApp (" + num + ")";
+                
+                if(selectedItems.length > 0) {
+                    btn.innerHTML = "🟢 Reservar (" + selectedItems.length + ") piezas por WhatsApp";
+                } else {
+                    btn.innerHTML = "🟢 Enviar mi Pedido por WhatsApp";
+                }
             } else {
                 btn.href = "#";
                 btn.innerHTML = "⚠️ Escribe tu número arriba para activar";
@@ -442,15 +496,12 @@
             }
         }
 
-        // Cargar número guardado previamente de manera automática
         window.onload = function() {
             var savedNum = localStorage.getItem('panda_phone');
             if(savedNum) {
                 document.getElementById('phoneInput').value = savedNum;
-                updateWhatsAppLinks();
-            } else {
-                updateWhatsAppLinks();
             }
+            updateWhatsAppLinks();
         }
     </script>
 
