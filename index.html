@@ -7,14 +7,14 @@
     <!-- CÓDIGO DE VERIFICACIÓN DE GOOGLE -->
     <meta name="google-site-verification" content="lIk-JJpYbbHqYfE37FcGlJNOdhHpzldNfZhVJ_zhSI0" />
     
-    <!-- FAVICON -->
+    <!-- FAVICONS (Usando tu logo de Panda) -->
     <link rel="icon" href="1000309039.png" type="image/png">
     <link rel="apple-touch-icon" href="1000309039.png">
     
-    <title>PANDA | Specialty Coffee & Bakery</title>
-    <meta name="description" content="PANDA - Alta panadería artesanal y café de especialidad de Francia, Italia, Colombia y Chile.">
+    <title>PANDA | Specialty Coffee & Bakery - Menú Global</title>
+    <meta name="description" content="PANDA - Conectando el mundo a través del sabor. Disfruta de nuestra alta bollería, cafés de especialidad, helados y raspados de 8 países.">
 
-    <!-- Tipografías Premium -->
+    <!-- Fuentes elegantes y modernas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -23,6 +23,7 @@
         :root {
             --bg-pure: #ffffff;
             --bg-surface: #faf8f5; 
+            --bg-dark: #0b0b0d; /* El elegante negro mate de la tienda física 1000309913.png */
             --bg-input: #ffffff;
             --text-main: #0b0b0d; 
             --text-muted: #6c727a;
@@ -47,16 +48,11 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        h1, h2, h3, h4, .logo-title {
+        h1, h2, h3, h4, .logo-title, .map-banner h2 {
             font-family: 'Playfair Display', serif;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Cabecera con Logo Fijo */
+        /* Cabecera con Logo 1000309039.png */
         header {
             display: flex;
             justify-content: space-between;
@@ -64,7 +60,6 @@
             padding: 1.5rem 5%;
             max-width: 1400px;
             margin: 0 auto;
-            animation: fadeIn 0.8s ease-out;
         }
 
         .brand-logo-container {
@@ -96,7 +91,6 @@
         .logo-subtitle {
             color: var(--gold);
             font-weight: 500;
-            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 0.65rem;
             letter-spacing: 2.5px;
             text-transform: uppercase;
@@ -116,434 +110,301 @@
 
         nav a:hover { color: var(--gold); }
 
-        /* Hero Section */
-        .hero-section {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 3rem 5% 5rem 5%;
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-text {
-            animation: fadeIn 1s ease-out;
-        }
-
-        .hero-text h1 {
-            font-size: 3.6rem;
-            font-weight: 400;
-            line-height: 1.15;
-            margin-bottom: 1.5rem;
-            letter-spacing: -1px;
-        }
-
-        .hero-text h1 span {
-            font-style: italic;
-            background: var(--gold-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-text p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            font-weight: 300;
-            line-height: 1.6;
-            max-width: 580px;
-        }
-
-        .hero-gallery {
+        /* Banner del Mapa - Inspirado fielmente en la foto de la tienda 1000309913.png */
+        .map-banner {
+            background: var(--bg-dark);
+            color: #ffffff;
+            padding: 5rem 5%;
+            text-align: center;
             position: relative;
-            height: 520px;
-            animation: fadeIn 1.2s ease-out;
+            overflow: hidden;
+            border-bottom: 4px solid var(--gold);
         }
 
-        .main-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 24px;
-            box-shadow: var(--shadow-premium);
-        }
-
-        /* Consola de Pedidos de la Cafetería */
-        .search-area {
-            max-width: 1400px;
+        .map-banner-content {
+            max-width: 800px;
             margin: 0 auto;
-            padding: 0 5% 6rem 5%;
+            position: relative;
+            z-index: 2;
         }
 
-        .menu-selector {
-            display: flex;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            max-width: 1100px;
-            margin-bottom: -1px;
-        }
-
-        .type-btn {
-            background: #ffffff;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            padding: 1rem 2rem;
-            font-size: 0.75rem;
-            font-weight: 700;
-            border-radius: 14px 14px 0 0;
-            cursor: pointer;
-            color: var(--text-muted);
-            transition: all 0.3s;
+        .map-banner h2 {
+            font-size: 2.8rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
             letter-spacing: 1px;
+        }
+
+        .map-banner h2 span {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .map-banner p {
+            color: #dfc48c;
+            font-size: 1rem;
             text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
         }
 
-        .type-btn.active {
+        /* Selectores de Categorías Grandes */
+        .category-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 3rem 5% 1rem 5%;
+            flex-wrap: wrap;
+        }
+
+        .cat-tab-btn {
             background: var(--bg-surface);
-            color: var(--text-main);
-            border-bottom: 1px solid var(--bg-surface);
-            border-top: 2px solid var(--gold);
-        }
-
-        .search-container {
-            background: var(--bg-surface);
-            padding: 3.5rem;
-            border-radius: 0 24px 24px 24px;
-            border: 1px solid rgba(179, 143, 68, 0.1);
-            max-width: 1100px;
-            width: 100%;
-            box-shadow: var(--shadow-premium);
-        }
-
-        .form-section-title {
+            border: 1px solid rgba(179, 143, 68, 0.2);
+            padding: 1rem 2rem;
             font-size: 0.8rem;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--gold);
-            margin: 2rem 0 1rem 0;
-            border-bottom: 1px solid rgba(179, 143, 68, 0.2);
-            padding-bottom: 0.5rem;
-        }
-        .form-section-title:first-child { margin-top: 0; }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .input-group { display: flex; flex-direction: column; }
-
-        .input-group label {
-            font-size: 0.65rem;
-            font-weight: 700;
-            color: var(--text-main);
-            text-transform: uppercase;
-            margin-bottom: 0.6rem;
-            letter-spacing: 1.5px;
-        }
-
-        .input-group input, .input-group select, .input-group textarea {
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            outline: none;
-            font-size: 0.9rem;
-            color: var(--text-main);
-            background: var(--bg-input);
-            padding: 1rem 1.2rem;
-            border-radius: 12px;
-            transition: all 0.3s;
-        }
-
-        .input-group input:focus, .input-group select:focus, .input-group textarea:focus {
-            border-color: var(--gold);
-            box-shadow: 0 0 12px rgba(179, 143, 68, 0.12);
-        }
-
-        .full-width { grid-column: 1 / -1; }
-
-        .btn-search {
-            background: var(--text-main);
-            color: #ffffff;
-            border: none;
-            padding: 1.3rem;
-            border-radius: 12px;
-            font-size: 0.85rem;
-            font-weight: 700;
+            border-radius: 30px;
             cursor: pointer;
-            width: 100%;
-            letter-spacing: 2px;
+            color: var(--text-main);
+            transition: all 0.3s ease;
             text-transform: uppercase;
-            transition: all 0.3s;
-            margin-top: 1.5rem;
+            letter-spacing: 1px;
         }
 
-        .btn-search:hover {
-            background: var(--gold);
-            box-shadow: 0 15px 30px rgba(179, 143, 68, 0.2);
+        .cat-tab-btn.active, .cat-tab-btn:hover {
+            background: var(--bg-dark);
+            color: #ffffff;
+            border-color: var(--bg-dark);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        /* Catálogo */
-        .catalog-section {
+        /* Sección de Catálogo dinámico */
+        .menu-section {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 5rem 5%;
+            padding: 2rem 5% 5rem 5%;
         }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.8rem;
-            font-weight: 400;
-            margin-bottom: 1rem;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            font-weight: 300;
-            font-size: 1.1rem;
-        }
-
-        .catalog-block {
-            margin-bottom: 5rem;
-        }
-
-        .catalog-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-main);
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .catalog-title::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: rgba(179, 143, 68, 0.2);
-        }
-
-        .grid-premium {
+        .grid-products {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
         }
 
-        .premium-card {
+        .product-card {
             background: #ffffff;
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.01);
-            border: 1px solid rgba(0,0,0,0.04);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            cursor: pointer;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+            border: 1px solid rgba(179, 143, 68, 0.1);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
         }
 
-        .premium-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(179, 143, 68, 0.08);
-            border-color: rgba(179, 143, 68, 0.3);
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(179, 143, 68, 0.1);
+            border-color: var(--gold);
         }
 
-        .card-img-wrapper {
+        .product-img-holder {
             position: relative;
-            height: 240px;
+            height: 250px;
+            background-color: #f0ebe4;
             overflow: hidden;
         }
 
-        .card-img-wrapper img {
+        .product-img-holder img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s ease;
+            transition: transform 0.5s ease;
         }
 
-        .premium-card:hover .card-img-wrapper img {
-            transform: scale(1.08);
+        .product-card:hover .product-img-holder img {
+            transform: scale(1.05);
         }
 
-        .badge-tag {
+        .country-badge {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: rgba(11, 11, 13, 0.85);
+            top: 1.2rem;
+            left: 1.2rem;
+            background: var(--bg-dark);
             color: #ffffff;
-            backdrop-filter: blur(4px);
-            padding: 0.4rem 1rem;
+            padding: 0.4rem 1.2rem;
             border-radius: 30px;
             font-size: 0.7rem;
             font-weight: 700;
-            text-transform: uppercase;
             letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 1px solid var(--gold);
         }
 
-        .card-content {
-            padding: 1.8rem;
+        .panda-icon-tag {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            font-size: 1.2rem;
         }
 
-        .card-content h3 {
+        .product-info {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-info h3 {
             font-size: 1.4rem;
-            font-weight: 400;
+            font-weight: 600;
             margin-bottom: 0.5rem;
             color: var(--text-main);
         }
 
-        .card-content .location {
+        .product-type {
             font-size: 0.75rem;
             color: var(--gold);
-            text-transform: uppercase;
             font-weight: 700;
+            text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 1rem;
         }
 
-        .card-content p {
+        .product-info p {
             font-size: 0.9rem;
             color: var(--text-muted);
-            line-height: 1.5;
-            font-weight: 300;
+            line-height: 1.6;
             margin-bottom: 1.5rem;
+            font-weight: 300;
         }
 
-        .card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid rgba(0,0,0,0.04);
-            padding-top: 1.2rem;
-        }
-
-        .action-link {
+        .card-action-btn {
+            background: var(--bg-surface);
+            color: var(--text-main);
+            border: 1px solid rgba(0,0,0,0.05);
+            padding: 0.8rem;
+            border-radius: 12px;
+            text-align: center;
             font-size: 0.8rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--text-main);
+            cursor: pointer;
+            transition: all 0.3s ease;
             text-decoration: none;
         }
 
-        .premium-card:hover .action-link {
-            color: var(--gold);
+        .product-card:hover .card-action-btn {
+            background: var(--bg-dark);
+            color: #ffffff;
+            border-color: var(--bg-dark);
         }
 
-        /* Chat del Barista */
-        .experience-zone {
+        /* Consola de Formulario Simplificada */
+        .order-section {
             background: var(--bg-surface);
-            padding: 6rem 5%;
+            padding: 5rem 5%;
+            border-top: 1px solid rgba(179, 143, 68, 0.1);
         }
 
-        .experience-layout {
-            max-width: 800px;
+        .order-box {
+            max-width: 900px;
             margin: 0 auto;
-        }
-
-        .ai-chat-console {
             background: #ffffff;
+            padding: 3.5rem;
             border-radius: 24px;
+            box-shadow: var(--shadow-premium);
             border: 1px solid rgba(179, 143, 68, 0.15);
-            box-shadow: var(--shadow-chat);
-            overflow: hidden;
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .form-title h2 { font-size: 2.2rem; font-weight: 400; margin-bottom: 0.5rem; }
+        .form-title p { color: var(--text-muted); font-size: 0.95rem; }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .field-group {
             display: flex;
             flex-direction: column;
-            height: 480px;
         }
 
-        .ai-chat-header {
-            background: var(--text-main);
-            color: #ffffff;
-            padding: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .ai-avatar {
-            width: 10px;
-            height: 10px;
-            background: #b38f44;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #b38f44;
-        }
-
-        .ai-chat-header h3 { font-size: 1.1rem; font-weight: 400; color: #ffffff; }
-        .ai-chat-header p { font-size: 0.7rem; color: var(--gold); text-transform: uppercase; }
-
-        .ai-messages-box {
-            flex: 1;
-            padding: 1.5rem;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .msg {
-            max-width: 80%;
-            padding: 1rem 1.2rem;
-            border-radius: 14px;
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-
-        .msg.system {
-            background: var(--bg-surface);
+        .field-group label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
             color: var(--text-main);
-            align-self: flex-start;
-            border-left: 3px solid var(--gold);
         }
 
-        .msg.user {
-            background: var(--gold-gradient);
-            color: #ffffff;
-            align-self: flex-end;
-        }
-
-        .ai-input-area {
-            padding: 1rem 1.5rem;
-            border-top: 1px solid rgba(0,0,0,0.05);
-            display: flex;
-            gap: 0.8rem;
-            background: #ffffff;
-        }
-
-        .ai-input-area input {
-            flex: 1;
+        .field-group input, .field-group select, .field-group textarea {
             border: 1px solid rgba(0,0,0,0.08);
-            padding: 0.8rem 1.2rem;
-            border-radius: 10px;
+            padding: 1rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
             outline: none;
+            background: #ffffff;
+            transition: all 0.3s;
         }
 
-        .ai-send-btn {
-            background: var(--text-main);
+        .field-group input:focus, .field-group select:focus, .field-group textarea:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 10px rgba(179, 143, 68, 0.1);
+        }
+
+        .full-width { grid-column: 1 / -1; }
+
+        .submit-order-btn {
+            background: var(--bg-dark);
             color: #ffffff;
             border: none;
-            padding: 0 1.5rem;
-            border-radius: 10px;
-            font-weight: 600;
+            padding: 1.2rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            width: 100%;
             cursor: pointer;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
         }
 
-        .ai-send-btn:hover { background: var(--gold); }
+        .submit-order-btn:hover {
+            background: var(--gold);
+            box-shadow: 0 10px 25px rgba(179, 143, 68, 0.2);
+        }
 
-        @media (max-width: 1024px) {
-            .hero-section { grid-template-columns: 1fr; text-align: center; }
-            .hero-text p { margin-left: auto; margin-right: auto; }
-            .hero-gallery { display: none; }
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 1rem; text-align: center; }
+            nav a { margin: 0 0.5rem; }
+            .map-banner h2 { font-size: 2rem; }
+            .order-box { padding: 2rem; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Cabecera Blindada con Logo Original 1000309039.png -->
     <header>
-        <!-- Logo Oficial Cargado -->
         <a href="#" class="brand-logo-container">
             <img src="1000309039.png" alt="Panda Specialty Coffee & Bakery" class="brand-logo-file">
             <div class="brand-logo-text">
@@ -552,282 +413,306 @@
             </div>
         </a>
         <nav>
-            <a href="#pedido">Hacer Pedido</a>
-            <a href="#catalogo">Nuestras Especialidades</a>
-            <a href="#barista-ia">Asistente Virtual</a>
+            <a href="#menu-global">Nuestro Menú</a>
+            <a href="#ordenar">Hacer Pedido VIP</a>
         </nav>
     </header>
 
-    <main>
-        <!-- Hero Cafetería -->
-        <section class="hero-section">
-            <div class="hero-text">
-                <h1>La Alta Cafetería y Panadería de <span>Especialidad</span></h1>
-                <p>Disfruta de las mejores recetas artesanales del mundo en un solo lugar. Traemos para ti la bollería fina de Francia, las focaccias tradicionales de Italia, el café premium de origen de Colombia y la panadería clásica de Chile.</p>
-                <a href="#pedido" class="btn-search" style="text-decoration:none; display:inline-block; width:auto; padding:1.2rem 2.5rem;">Ordenar Ahora</a>
-            </div>
-            <div class="hero-gallery">
-                <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=800&q=80" alt="Panda Café" class="main-img">
-            </div>
-        </section>
+    <!-- Banner de Mapa inspirado en el mural real de la tienda 1000309913.png -->
+    <section class="map-banner">
+        <div class="map-banner-content">
+            <h2>CONECTANDO EL MUNDO A TRAVÉS DEL <span>SABOR</span></h2>
+            <p>La Panadería & Cafetería Global de Panda</p>
+        </div>
+    </section>
 
-        <!-- Consola de Pedidos -->
-        <section class="search-area" id="pedido">
-            <div class="menu-selector">
-                <button class="type-btn active" onclick="setCategory('Repostería y Panadería', this)">Panadería Artesanal</button>
-                <button class="type-btn" onclick="setCategory('Café de Especialidad', this)">Cafetería de Especialidad</button>
-            </div>
+    <!-- Filtros de Categorías de Menú -->
+    <div class="category-nav" id="menu-global">
+        <button class="cat-tab-btn active" onclick="filterCategory('all', this)">Todo el Menú</button>
+        <button class="cat-tab-btn" onclick="filterCategory('bolleria', this)">Exclusiva Bollería mundial</button>
+        <button class="cat-tab-btn" onclick="filterCategory('cafe', this)">Cafetería de Especialidad</button>
+        <button class="cat-tab-btn" onclick="filterCategory('reposteria', this)">Especialidades & Postres</button>
+        <button class="cat-tab-btn" onclick="filterCategory('helados', this)">Raspados & Helados Panda</button>
+    </div>
 
-            <div class="search-container">
-                <div class="form-section-title">1. Datos de tu Pedido</div>
-                <div class="form-grid">
-                    <div class="input-group">
-                        <label>Tu Nombre</label>
-                        <input type="text" id="cust-name" placeholder="Ej: Juan Pérez" required>
-                    </div>
-                    <div class="input-group">
-                        <label>WhatsApp / Teléfono</label>
-                        <input type="tel" id="cust-phone" placeholder="Ej: +56 9 1234 5678" required>
-                    </div>
-                    <div class="input-group">
-                        <label>Método de Entrega</label>
-                        <select id="cust-delivery">
-                            <option value="Retiro en Local">Retiro en Local</option>
-                            <option value="Despacho a Domicilio">Despacho a Domicilio</option>
-                        </select>
-                    </div>
+    <!-- Sección de Productos -->
+    <main class="menu-section">
+        <div class="grid-products" id="product-grid">
+            
+            <!-- FRANCIA - BOLLERÍA -->
+            <div class="product-card" data-cat="bolleria">
+                <div class="product-img-holder">
+                    <span class="country-badge">Francia</span>
+                    <div class="panda-icon-tag">🐼</div>
+                    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80" alt="Croissant Hojaldre">
                 </div>
-
-                <div class="form-section-title">2. Selección del Menú</div>
-                <div class="form-grid">
-                    <div class="input-group">
-                        <label>Origen de la Receta</label>
-                        <select id="prod-country">
-                            <option value="Francia">Francia (Hojaldres y Croissants)</option>
-                            <option value="Italia">Italia (Focaccias y Dulces)</option>
-                            <option value="Colombia">Colombia (Café de Especialidad)</option>
-                            <option value="Chile">Chile (Masas y Pastelería Tradicional)</option>
-                        </select>
+                <div class="product-info">
+                    <div>
+                        <div class="product-type">Alta Bollería Exclusiva</div>
+                        <h3>Croissant Crujiente de París</h3>
+                        <p>Hojaldrado artesanal de altísima precisión elaborado con láminas de mantequilla pura fermentada.</p>
                     </div>
-                    <div class="input-group">
-                        <label>¿Qué producto deseas?</label>
-                        <input type="text" id="prod-title" placeholder="Ej: Croissant de Mantequilla">
-                    </div>
-                    <div class="input-group">
-                        <label>Fecha de Entrega</label>
-                        <input type="date" id="prod-date">
-                    </div>
-                </div>
-
-                <div class="form-section-title">3. Detalles y Preferencias</div>
-                <div class="form-grid">
-                    <div class="input-group">
-                        <label>Preferencia Especial</label>
-                        <select id="prod-diet">
-                            <option value="Receta Tradicional">Receta Tradicional</option>
-                            <option value="Opción sin Lácteos / Vegana">Opción sin Lácteos / Vegana</option>
-                            <option value="Harinas Integrales">Harinas Integrales</option>
-                        </select>
-                    </div>
-                    <div class="input-group full-width">
-                        <label>Notas adicionales para el Barista / Panadero</label>
-                        <textarea id="prod-notes" rows="2" placeholder="Especificaciones de molienda de café, alérgenos o detalles de personalización..."></textarea>
-                    </div>
-                </div>
-
-                <button class="btn-search" onclick="sendOrderToWhatsApp()">Enviar Pedido Directo a Cocina por WhatsApp</button>
-            </div>
-        </section>
-
-        <!-- Especialidades -->
-        <section class="catalog-section" id="catalogo">
-            <div class="section-header">
-                <h2>Nuestro Menú Internacional</h2>
-                <p>Una cuidada selección de clásicos horneados y preparados diariamente.</p>
-            </div>
-
-            <div class="catalog-block">
-                <div class="grid-premium">
-                    <!-- Francia -->
-                    <div class="premium-card" onclick="selectMenu('Francia', 'Croissant de Mantequilla de Normandía', 'Repostería y Panadería')">
-                        <div class="card-img-wrapper">
-                            <span class="badge-tag">Francia</span>
-                            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80" alt="Croissant">
-                        </div>
-                        <div class="card-content">
-                            <div class="location">Panadería Francesa</div>
-                            <h3>Croissant de Mantequilla AOC</h3>
-                            <p>Hojaldrado tradicional crujiente elaborado con mantequilla normanda purísima.</p>
-                            <div class="card-footer"><span class="action-link">Agregar al pedido →</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Italia -->
-                    <div class="premium-card" onclick="selectMenu('Italia', 'Focaccia con Romero y Oliva', 'Repostería y Panadería')">
-                        <div class="card-img-wrapper">
-                            <span class="badge-tag">Italia</span>
-                            <img src="https://images.unsplash.com/photo-1608039755401-742074f0548d?auto=format&fit=crop&w=600&q=80" alt="Focaccia">
-                        </div>
-                        <div class="card-content">
-                            <div class="location">Panadería Italiana</div>
-                            <h3>Focaccia di Oliva Barese</h3>
-                            <p>Masa madre de alta hidratación con aceite de oliva virgen y romero fresco.</p>
-                            <div class="card-footer"><span class="action-link">Agregar al pedido →</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Colombia -->
-                    <div class="premium-card" onclick="selectMenu('Colombia', 'Café de Especialidad Origen Huila', 'Café de Especialidad')">
-                        <div class="card-img-wrapper">
-                            <span class="badge-tag">Colombia</span>
-                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80" alt="Café">
-                        </div>
-                        <div class="card-content">
-                            <div class="location">Café de Origen</div>
-                            <h3>Café Especial Origen Huila</h3>
-                            <p>Notas equilibradas a cacao y frutos dulces, tueste óptimo para barra de especialidad.</p>
-                            <div class="card-footer"><span class="action-link">Agregar al pedido →</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Chile -->
-                    <div class="premium-card" onclick="selectMenu('Chile', 'Pastel de Hoja con Manjar de Campo', 'Repostería y Panadería')">
-                        <div class="card-img-wrapper">
-                            <span class="badge-tag">Chile</span>
-                            <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=600&q=80" alt="Pastel de Hoja">
-                        </div>
-                        <div class="card-content">
-                            <div class="location">Pastelería Chilena</div>
-                            <h3>Pastel de Hoja e Imperial</h3>
-                            <p>Finas capas crujientes intercaladas con delicioso manjar artesanal chileno.</p>
-                            <div class="card-footer"><span class="action-link">Agregar al pedido →</span></div>
-                        </div>
-                    </div>
+                    <button class="card-action-btn" onclick="selectItem('Francia', 'Croissant Crujiente de París', 'Exclusiva Bollería')">Seleccionar</button>
                 </div>
             </div>
-        </section>
 
-        <!-- Asistente Barista -->
-        <section class="experience-zone" id="barista-ia">
-            <div class="experience-layout">
-                <div class="ai-chat-console">
-                    <div class="ai-chat-header">
-                        <div class="ai-avatar"></div>
-                        <div>
-                            <h3>Barista Virtual PANDA</h3>
-                            <p>Especialista en Café & Masas</p>
-                        </div>
+            <!-- ALEMANIA - BOLLERÍA -->
+            <div class="product-card" data-cat="bolleria">
+                <div class="product-img-holder">
+                    <span class="country-badge">Alemania</span>
+                    <div class="panda-icon-tag">🐼</div>
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80" alt="Brezel Alemán">
+                </div>
+                <div class="product-info">
+                    <div>
+                        <div class="product-type">Alta Bollería Exclusiva</div>
+                        <h3>Brezel Tradicional Bávaro</h3>
+                        <p>Lazo de pan salado con corteza glaseada crujiente e interior tierno, espolvoreado con cristales de sal premium.</p>
                     </div>
-                    <div class="ai-messages-box" id="chat-box">
-                        <div class="msg system">
-                            ¡Hola! Bienvenido a la cafetería de PANDA. ¿Tienes antojo de café de Colombia, bollería de Francia, especialidades de Italia o repostería de Chile hoy? Dime qué te gusta y te ayudo con tu orden.
-                        </div>
-                    </div>
-                    <div class="ai-input-area">
-                        <input type="text" id="chat-input" placeholder="Pregúntale al Barista o pide una sugerencia..." onkeypress="handleChatKey(event)">
-                        <button class="ai-send-btn" onclick="triggerAiResponse()">Consultar</button>
-                    </div>
+                    <button class="card-action-btn" onclick="selectItem('Alemania', 'Brezel Tradicional Bávaro', 'Exclusiva Bollería')">Seleccionar</button>
                 </div>
             </div>
-        </section>
+
+            <!-- SUIZA - BOLLERÍA -->
+            <div class="product-card" data-cat="bolleria">
+                <div class="product-img-holder">
+                    <span class="country-badge">Suiza</span>
+                    <div class="panda-icon-tag">🐼</div>
+                    <img src="https://images.unsplash.com/photo-1608039755401-742074f0548d?auto=format&fit=crop&w=600&q=80" alt="Zopf Suizo">
+                </div>
+                <div class="product-info">
+                    <div>
+                        <div class="product-type">Alta Bollería Exclusiva</div>
+                        <h3>Trenza Suiza de Mantequilla (Zopf)</h3>
+                        <p>Masa brioche trenzada a mano tradicional, de miga extremadamente algodonada y aroma a leche fresca alpina.</p>
+                    </div>
+                    <button class="card-action-btn" onclick="selectItem('Suiza', 'Trenza Suiza de Mantequilla', 'Exclusiva Bollería')">Seleccionar</button>
+                </div>
+            </div>
+
+            <!-- ESTADOS UNIDOS - BOLLERÍA -->
+            <div class="product-card" data-cat="bolleria">
+                <div class="product-img-holder">
+                    <span class="country-badge">Estados Unidos</span>
+                    <div class="panda-icon-tag">🐼</div>
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="Cinnamon Roll">
+                </div>
+                <div class="product-info">
+                    <div>
+                        <div class="product-type">Alta Bollería Exclusiva</div>
+                        <h3>Cinnamon Roll Glass</h3>
+                        <p>Roles gigantes horneados con canela de Korintje, cubiertos por un aterciopelado glaseado de queso crema.</p>
+                    </div>
+                    <button class="card-action-btn" onclick="selectItem('Estados Unidos', 'Cinnamon Roll Glass', 'Exclusiva Bollería')">Seleccionar</button>
+                </div>
+            </div>
+
+            <!-- COLOMBIA - CAFÉ -->
+            <div class="product-card" data-cat="cafe">
+                <div class="product-img-holder">
+                    <span class="country-badge">Colombia</span>
+                    <div class="panda-icon-tag">🐼</div>
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80" alt="Café Colombia">
+                </div>
+                <div class="product-info">
+                    <div>
+                        <div class="product-type">Cafetería de Especialidad</div>
+                        <h3>Panda Espresso Huila Excelso</h3>
+                        <p>Granos arábica seleccionados con perfil de taza limpio, notas dulces a panela, cacao artesanal y acidez cítrica ligera.</p>
+                    </div>
+                    <button class="card-action-btn" onclick="selectItem('Colombia', 'Panda Espresso Huila Excelso', 'Cafetería de Especialidad')">Seleccionar</button>
+                </div>
+            </div>
+
+            <!-- CHILE - REPOSTERÍA -->
+            <div class="product-card" data-cat="reposteria">
+                <div class="product-img-holder">
+                    <span class="country-badge">Chile</span>
+                    <div class="panda-icon-tag">🐼</div>
+                    <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=600&q=80" alt="Pastel Chileno">
+                </div>
+                <div class="product-info">
+                    <div>
+                        <div class="product-type">Especialidades & Postres</div>
+                        <h3>Pastel de Hoja con Manjar de Campo</h3>
+                        <p>Milhojas crujientes y finas estructuradas con abundante manjar casero tradicional sureño.</p>
+                    </div>
+                    <button class="card-action-btn" onclick="selectItem('Chile', 'Pastel de Hoja con Manjar', 'Especialidades & Postres')">Seleccionar</button>
+                </div>
+            </div>
+
+            <!-- PERÚ - REPOSTERÍA -->
+            <div class="product-card" data-cat="reposteria">
+                <div class="product-img-holder">
+                    <span class="country-badge">Perú</span>
+                    <div class="panda-icon-tag">🐼</div>
+                    <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=600&q=80" alt="Suspiro Limeño">
+                </div>
+                <div class="product-info">
+                    <div>
+                        <div class="product-type">Especialidades & Postres</div>
+                        <h3>Suspiro Cremosísimo a la Limeña</h3>
+                        <p>Manjar blanco de yemas coronado con un delicado merengue italiano perfumado al oporto y canela.</p>
+                    </div>
+                    <button class="card-action-btn" onclick="selectItem('Perú', 'Suspiro Cremosísimo a la Limeña', 'Especialidades & Postres')">Seleccionar</button>
+                </div>
+            </div>
+
+            <!-- ITALIA - REPOSTERÍA / PANADERÍA -->
+            <div class="product-card" data-cat="reposteria">
+                <div class="product-img-holder">
+                    <span class="country-badge">Italia</span>
+                    <div class="panda-icon-tag">🐼</div>
+                    <img src="https://images.unsplash.com/photo-1608039755401-742074f0548d?auto=format&fit=crop&w=600&q=80" alt="Focaccia">
+                </div>
+                <div class="product-info">
+                    <div>
+                        <div class="product-type">Especialidades & Postres</div>
+                        <h3>Focaccia Romántica de Romero</h3>
+                        <p>Receta de masa madre con generoso aceite de oliva virgen extra italiano y sal marina gruesa escamada.</p>
+                    </div>
+                    <button class="card-action-btn" onclick="selectItem('Italia', 'Focaccia Romántica de Romero', 'Especialidades & Postres')">Seleccionar</button>
+                </div>
+            </div>
+
+            <!-- RASPADO PANDA -->
+            <div class="product-card" data-cat="helados">
+                <div class="product-img-holder">
+                    <span class="country-badge">Especial Panda</span>
+                    <div class="panda-icon-tag">🐼</div>
+                    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80" alt="Raspado Panda">
+                </div>
+                <div class="product-info">
+                    <div>
+                        <div class="product-type">Raspados & Helados</div>
+                        <h3>Raspado Nieve Imperial Panda</h3>
+                        <p>Hielo finamente granizado bañado en jarabes artesanales de frutos rojos y un toque secreto de crema condensada.</p>
+                    </div>
+                    <button class="card-action-btn" onclick="selectItem('Especial Panda', 'Raspado Nieve Imperial Panda', 'Raspados & Helados')">Seleccionar</button>
+                </div>
+            </div>
+
+            <!-- HELADO PANDA MATCHA -->
+            <div class="product-card" data-cat="helados">
+                <div class="product-img-holder">
+                    <span class="country-badge">Especial Panda</span>
+                    <div class="panda-icon-tag">🐼</div>
+                    <img src="https://images.unsplash.com/photo-1505394033221-4027c0ef4365?auto=format&fit=crop&w=600&q=80" alt="Helado Matcha Panda">
+                </div>
+                <div class="product-info">
+                    <div>
+                        <div class="product-type">Raspados & Helados</div>
+                        <h3>Gelato Panda Cremoso Matcha</h3>
+                        <p>Helado artesanal premium de textura sedosa elaborado con té matcha de alta calidad y base de crema láctea.</p>
+                    </div>
+                    <button class="card-action-btn" onclick="selectItem('Especial Panda', 'Gelato Panda Cremoso Matcha', 'Raspados & Helados')">Seleccionar</button>
+                </div>
+            </div>
+
+        </div>
     </main>
 
-    <script>
-        let selectedCategory = "Repostería y Panadería";
-
-        function setCategory(cat, element) {
-            selectedCategory = cat;
-            document.querySelectorAll('.type-btn').forEach(btn => btn.classList.remove('active'));
-            element.classList.add('active');
-        }
-
-        function selectMenu(pais, producto, categoria) {
-            document.getElementById('prod-country').value = pais;
-            document.getElementById('prod-title').value = producto;
+    <!-- Formulario Exclusivo de Envío Directo a Cocina -->
+    <section class="order-section" id="ordenar">
+        <div class="order-box">
+            <div class="form-title">
+                <h2>Crea tu Orden Personalizada</h2>
+                <p>Tu selección se enviará instantáneamente a nuestro obrador y barra de especialidad</p>
+            </div>
             
-            const buttons = document.querySelectorAll('.type-btn');
-            buttons.forEach(btn => {
-                if(btn.innerText.includes('Panadería') && categoria.includes('Panadería')) setCategory(categoria, btn);
-                if(btn.innerText.includes('Café') && categoria.includes('Café')) setCategory(categoria, btn);
-            });
+            <div class="form-grid">
+                <div class="field-group">
+                    <label>Tu Nombre</label>
+                    <input type="text" id="order-name" placeholder="Ej: Alejandra Silva" required>
+                </div>
+                <div class="field-group">
+                    <label>WhatsApp de Contacto</label>
+                    <input type="tel" id="order-phone" placeholder="Ej: +56 9 8765 4321" required>
+                </div>
+                <div class="field-group">
+                    <label>País / Línea del Menú</label>
+                    <select id="order-country">
+                        <option value="Francia">Francia (Alta Bollería)</option>
+                        <option value="Alemania">Alemania (Brezel Tradicional)</option>
+                        <option value="Suiza">Suiza (Trenza Artesanal)</option>
+                        <option value="Estados Unidos">Estados Unidos (Roles Especiales)</option>
+                        <option value="Colombia">Colombia (Café de Especialidad)</option>
+                        <option value="Chile">Chile (Pastelería Tradicional)</option>
+                        <option value="Perú">Perú (Suspiros Tradicionales)</option>
+                        <option value="Italia">Italia (Focaccias)</option>
+                        <option value="Especial Panda">Especial Panda (Raspados & Helados)</option>
+                    </select>
+                </div>
+                <div class="field-group">
+                    <label>Producto Elegido</label>
+                    <input type="text" id="order-product" placeholder="Selecciona desde el catálogo o escribe el tuyo">
+                </div>
+                <div class="field-group full-width">
+                    <label>Instrucciones especiales para el Maestro Panadero o Barista</label>
+                    <textarea id="order-notes" rows="3" placeholder="Detalles de alérgenos, adición de helado extra a tu postre, empaque para regalo o combinaciones..."></textarea>
+                </div>
+            </div>
 
-            document.getElementById('pedido').scrollIntoView({ behavior: 'smooth' });
-        }
+            <button class="submit-order-btn" onclick="executeWhatsAppSend()">Enviar Orden al WhatsApp de Panda</button>
+        </div>
+    </section>
 
-        function handleChatKey(event) {
-            if (event.key === 'Enter') triggerAiResponse();
-        }
+    <script>
+        // Filtrar productos del menú interactivo
+        function filterCategory(category, button) {
+            document.querySelectorAll('.cat-tab-btn').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
 
-        function triggerAiResponse() {
-            const input = document.getElementById('chat-input');
-            const text = input.value.trim();
-            if (!text) return;
-
-            const chatBox = document.getElementById('chat-box');
-            const userDiv = document.createElement('div');
-            userDiv.className = 'msg user';
-            userDiv.innerText = text;
-            chatBox.appendChild(userDiv);
-            input.value = '';
-            chatBox.scrollTop = chatBox.scrollHeight;
-
-            setTimeout(() => {
-                const aiDiv = document.createElement('div');
-                aiDiv.className = 'msg system';
-                let lower = text.toLowerCase();
-                
-                if (lower.includes('francia') || lower.includes('croissant')) {
-                    aiDiv.innerText = "¡Listo! He cargado el Croissant Francés de Mantequilla en tu formulario. Es una delicia recién horneada.";
-                    selectMenu('Francia', 'Croissant de Mantequilla de Normandía', 'Repostería y Panadería');
-                } else if (lower.includes('colombia') || lower.includes('café') || lower.includes('cafe')) {
-                    aiDiv.innerText = "¡Excelente! Preparando la molienda del Café de Especialidad de Colombia Origen Huila en tu orden.";
-                    selectMenu('Colombia', 'Café de Especialidad Origen Huila', 'Café de Especialidad');
-                } else if (lower.includes('chile') || lower.includes('manjar')) {
-                    aiDiv.innerText = "Perfecto, agregué el Pastel de Hoja con Manjar Chileno Tradicional a la sección de pedido.";
-                    selectMenu('Chile', 'Pastel de Hoja con Manjar de Campo', 'Repostería y Panadería');
-                } else if (lower.includes('italia') || lower.includes('focaccia')) {
-                    aiDiv.innerText = "Entendido. He seleccionado la Focaccia con Aceite de Oliva y Romero al estilo italiano.";
-                    selectMenu('Italia', 'Focaccia con Romero y Oliva', 'Repostería y Panadería');
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-cat') === category) {
+                    card.style.display = 'flex';
                 } else {
-                    aiDiv.innerText = "Me parece una gran idea. He actualizado el formulario para que puedas detallar tu pedido de cafetería justo arriba.";
+                    card.style.display = 'none';
                 }
-                
-                chatBox.appendChild(aiDiv);
-                chatBox.scrollTop = chatBox.scrollHeight;
-            }, 600);
+            });
         }
 
-        function sendOrderToWhatsApp() {
-            const name = document.getElementById('cust-name').value.trim();
-            const phone = document.getElementById('cust-phone').value.trim();
-            const delivery = document.getElementById('cust-delivery').value;
-            const country = document.getElementById('prod-country').value;
-            const product = document.getElementById('prod-title').value.trim();
-            const date = document.getElementById('prod-date').value;
-            const diet = document.getElementById('prod-diet').value;
-            const notes = document.getElementById('prod-notes').value.trim();
+        // Selección automática del catálogo
+        function selectItem(pais, producto, tipo) {
+            document.getElementById('order-country').value = pais;
+            document.getElementById('order-product').value = producto;
+            
+            // Hacer scroll suave hacia el formulario
+            document.getElementById('ordenar').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Despachar el mensaje formateado al número maestro de WhatsApp
+        function executeWhatsAppSend() {
+            const name = document.getElementById('order-name').value.trim();
+            const phone = document.getElementById('order-phone').value.trim();
+            const country = document.getElementById('order-country').value;
+            const product = document.getElementById('order-product').value.trim();
+            const notes = document.getElementById('order-notes').value.trim();
 
             if (!name || !phone || !product) {
-                alert('Por favor completa tu nombre, teléfono y el producto que deseas pedir.');
+                alert('Por favor complete su nombre, WhatsApp y producto para registrar su orden.');
                 return;
             }
 
-            const whatsappNumber = "34639077423"; 
-            let message = `🐼 NUEVO PEDIDO - PANDA CAFETERÍA\n`;
-            message += `==================================\n\n`;
-            message += `👤 CLIENTE:\n`;
-            message += `▪ Nombre: ${name}\n`;
-            message += `▪ Teléfono: ${phone}\n`;
-            message += `▪ Entrega: ${delivery}\n\n`;
-            message += `🥐 DETALLES DEL PRODUCTO:\n`;
-            message += `▪ Categoría: ${selectedCategory}\n`;
-            message += `▪ Receta/Origen: ${country}\n`;
-            message += `▪ Producto: ${product}\n`;
-            message += `▪ Fecha: ${date || 'Lo antes posible'}\n`;
-            message += `▪ Tipo: ${diet}\n`;
-            if (notes) message += `\n📝 NOTAS ADICIONALES:\n"${notes}"`;
+            const masterWhatsApp = "34639077423"; // Mantenemos tu número de contacto intacto
+            
+            let msg = `🐼 PANDA SPECIALTY COFFEE & BAKERY\n`;
+            msg += `✨ Primera Versión - Orden de Compra ✨\n`;
+            msg += `========================================\n\n`;
+            msg += `👤 CLIENTE:\n`;
+            msg += `▪ Nombre: ${name}\n`;
+            msg += `▪ WhatsApp: ${phone}\n\n`;
+            msg += `🗺️ MAPA INTERNACIONAL DE SABOR:\n`;
+            msg += `▪ Origen Selección: ${country}\n`;
+            msg += `▪ Variedad Solicitada: ${product}\n\n`;
+            if (notes) {
+                msg += `📝 REQUERIMIENTOS ESPECIALES:\n"${notes}"\n`;
+            }
+            msg += `========================================\n`;
+            msg += `☕ ¡Listo para preparar en Barra y Horno!`;
 
-            window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
+            window.open(`https://wa.me/${masterWhatsApp}?text=${encodeURIComponent(msg)}`, '_blank');
         }
     </script>
 </body>
