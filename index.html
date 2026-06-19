@@ -3,117 +3,426 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PANDA | Specialty Coffee & Bakery</title>
+    <title>Panda Specialty Coffee & Bakery - Menú Interactivo</title>
+    <!-- Fuentes Elegantes -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
     <style>
-        :root { --negro: #1A1A1A; --dorado: #C5A059; --crema: #F9F7F2; }
-        body { font-family: 'Playfair Display', serif; background-color: var(--crema); margin: 0; color: var(--negro); }
+        :root {
+            --gold: #d4af37;
+            --dark: #111111;
+            --cream: #faf9f6;
+            --gray: #666666;
+        }
 
-        /* Portada */
-        .hero { position: relative; height: 60vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        .hero img { width: 100%; height: 100%; object-fit: cover; }
-        .hero-overlay { position: absolute; background: rgba(0,0,0,0.5); width: 100%; height: 100%; }
-        .hero-text { position: absolute; color: white; text-align: center; }
-        .hero-text h1 { font-size: 4rem; margin: 0; letter-spacing: 5px; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
 
-        /* Mapa Interactivo */
-        .map-section { padding: 4rem 10%; text-align: center; }
-        .map-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; margin-top: 2rem; }
-        .btn-country { background: white; border: 1px solid var(--dorado); padding: 15px; cursor: pointer; transition: 0.4s; font-weight: 600; }
-        .btn-country:hover { background: var(--dorado); color: white; }
+        body {
+            background-color: var(--cream);
+            color: var(--dark);
+            padding: 40px 20px;
+        }
 
-        /* Catálogo */
-        .catalog { padding: 4rem 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .product-card { background: white; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #eee; }
-        .product-card img { width: 100%; height: 200px; object-fit: cover; }
-        .qty-control { display: flex; gap: 10px; margin: 15px 0; align-items: center; justify-content: center; }
-        button.add-btn { background: var(--negro); color: white; border: none; padding: 10px 20px; cursor: pointer; width: 100%; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-        /* Footer Pedido */
-        .order-bar { position: sticky; bottom: 0; background: var(--negro); color: white; padding: 20px; text-align: center; }
+        /* Encabezado inspirado en el Logo 1000309039_2.png */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 40px;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            letter-spacing: 6px;
+            font-weight: 400;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        header .subtitle {
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            color: var(--gold);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            text-align: center;
+            margin: 5px 0 40px 0;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '🐼';
+            display: block;
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        /* Grid de Menús Combinados (Paso 1) */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            color: var(--gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .meaning {
+            font-style: italic;
+            border-left: 2px solid var(--gold);
+            padding-left: 10px;
+            font-size: 0.8rem !important;
+            color: #888 !important;
+        }
+
+        /* Imágenes de Panaderías y Jugos */
+        .image-placeholder {
+            width: 100%;
+            height: 180px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        /* Colores específicos de jugos inspirados en 1000309931.jpg */
+        .juice-green { background-image: linear-gradient(to bottom, rgba(76,175,80,0.3), rgba(76,175,80,0.7)); }
+        .juice-pink { background-image: linear-gradient(to bottom, rgba(233,30,99,0.3), rgba(233,30,99,0.7)); }
+        .juice-orange { background-image: linear-gradient(to bottom, rgba(255,152,0,0.3), rgba(255,152,0,0.7)); }
+
+        /* Fotos Conceptuales de Panaderías */
+        .bakery-pt { background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1599834562135-b6fc90e74efc?q=80&w=600&auto=format&fit=crop'); }
+        .bakery-fr { background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=600&auto=format&fit=crop'); }
+        .bakery-jp { background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1607958996333-41aef7caefaa?q=80&w=600&auto=format&fit=crop'); }
+        .bakery-it { background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop'); }
+
+        .image-placeholder span {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: rgba(0,0,0,0.4);
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        /* Sistema de Alerta/Modal para la aparición del Panda */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .panda-modal {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            border: 2px solid var(--gold);
+            transform: scale(0.8);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .modal-overlay.active .panda-modal {
+            transform: scale(1);
+        }
+
+        .panda-animation-space {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px auto;
+            background: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+            box-shadow: 0 0 0 8px rgba(212, 175, 55, 0.2);
+            border: 2px solid var(--gold);
+        }
+
+        .panda-modal h2 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+            font-size: 1.6rem;
+        }
+
+        .panda-modal p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .close-btn {
+            background: var(--dark);
+            color: white;
+            border: 1px solid var(--gold);
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        /* Separadores Decorativos */
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            margin: 50px 0;
+        }
     </style>
 </head>
 <body>
 
-    <header class="hero">
-        <img src="1000309919.jpg" alt="Portada Panda">
-        <div class="hero-overlay"></div>
-        <div class="hero-text">
-            <h1>PANDA</h1>
-            <p>Conectando el mundo a través del sabor</p>
-        </div>
+<div class="container">
+    <header>
+        <h1>Panda</h1>
+        <div class="subtitle">Specialty Coffee & Bakery</div>
     </header>
 
-    <section class="map-section">
-        <h2>El Viaje del Panda</h2>
-        <p>Selecciona un país y el Maestro Panda te explicará su especialidad.</p>
-        <div class="map-grid" id="mapa"></div>
-        <div id="curador-box" style="margin-top:2rem; padding:2rem; border-top: 1px solid var(--dorado);">
-            <h3>Seleccione una región en el mapa.</h3>
+    <!-- SECCIÓN 1: MENÚS INDIVIDUALE PRE-ESTABLECIDOS -->
+    <h2 class="section-title">Elige tu Menú Exclusivo</h2>
+    <div class="menu-grid">
+        <div class="card" onclick="selectItem('Menú 1: Panda Espresso', 'Combinación ágil de café de especialidad + un pan tradicional del mundo a tu elección.', 'Diseñado para un inicio de día rápido pero sumamente sofisticado.', '☕🐼', '¡PANDA BARISTA EXCLUSIVO!<br><br>Un panda de alta etiqueta con delantal negro y detalles dorados aparece en tu pantalla guiñando un ojo y preparando tu taza de autor.')">
+            <span class="card-tag">Recomendado</span>
+            <h3>Menú 1: "Panda Espresso"</h3>
+            <p>1 Café de Especialidad a tu elección + 1 Pan Tradicional.</p>
+            <p class="meaning">Significado: El balance ideal entre la energía matutina y la alta repostería artesanal sin perder tiempo.</p>
         </div>
-    </section>
 
-    <div class="catalog" id="catalogo">
-        <!-- Productos se cargan aquí -->
+        <div class="card" onclick="selectItem('Menú 2: Panda Imperial Gold', 'El brunch definitivo que incluye café de especialidad, jugo natural, pan tradicional y acompañamiento.', 'La máxima opulencia y confort en la mesa.', '👑🐼', '¡PANDA IMPERIAL GOLD EXCLUSIVO!<br><br>Un panda con corona dorada y capa de terciopelo aparece saboreando alegremente un croissant hojaldrado sobre un trono negro.')">
+            <span class="card-tag">Gourmet Luxury</span>
+            <h3>Menú 2: "Panda Imperial Gold"</h3>
+            <p>1 Café + 1 Jugo Natural + 1 Pan Tradicional + Acompañamiento.</p>
+            <p class="meaning">Significado: Inspirado en la abundancia imperial. Una experiencia sin prisas para festejar los sabores de la vida.</p>
+        </div>
+
+        <div class="card" onclick="selectItem('Menú 3: Ruta del Panda Viajero', 'Explora una bebida premium de la carta junto a una degustación de 3 variedades de panes en formato mini.', 'Aventura gastronómica internacional.', '✈️🐼', '¡PANDA VIAJERO EXCLUSIVO!<br><br>Un panda aventurero con una maleta de cuero vintage y mapa estelar aparece guiándote por los mapas de Europa y Asia.')">
+            <span class="card-tag">Degustación</span>
+            <h3>Menú 3: "Ruta del Panda Viajero"</h3>
+            <p>1 Bebida Premium a elección + Degustación de 3 Mini Panes del Mundo.</p>
+            <p class="meaning">Significado: Diseñado meticulosamente para los paladares más curiosos que desean recorrer el mundo en un solo bocado.</p>
+        </div>
     </div>
 
-    <div class="order-bar">
-        <h3>Tu selección</h3>
-        <ul id="lista-pedido" style="list-style:none; padding:0;"></ul>
-        <button class="add-btn" style="background:var(--dorado);" onclick="enviarPedido()">Enviar Pedido por WhatsApp</button>
+    <hr>
+
+    <!-- SECCIÓN 2: PANADERÍAS DEL MUNDO -->
+    <h2 class="section-title">Panaderías Tradicionales del Mundo</h2>
+    <div class="menu-grid">
+        <div class="card" onclick="selectItem('Pastel de Nata & Pão de Deus', 'Pastelería tradicional portuguesa crujiente y esponjosa.', 'Raíces conventuales e históricas de Portugal.', '⛵🐼', '¡PANDA MARINERO DE PORTUGAL!<br><br>Aparece un tierno panda capitán con uniforme naval navegando sobre un gigantesco Pastel de Nata crujiente en medio del océano dorado.')">
+            <div class="image-placeholder bakery-pt"><span>🇵🇹 Portugal</span></div>
+            <h3>Recetas de Portugal</h3>
+            <p><strong>Especialidades:</strong> Pastel de Nata y Pão de Deus (Pan de Dios con costra fina de coco).</p>
+            <p class="meaning">Significado: El Pastel de Nata rinde tributo a la historia del siglo XIX, crocante por fuera y cremoso por dentro. El Pão de Deus simboliza la generosidad y el cielo en un bocado dulce.</p>
+        </div>
+
+        <div class="card" onclick="selectItem('Croissant & Baguette de Masa Madre', 'Alta panadería francesa horneada al momento con mantequilla pura.', 'Símbolo absoluto de la finura parisina.', '🎨🐼', '¡PANDA ARTISTA DE FRANCIA!<br><br>Un panda bohemio con boina negra y bigote clásico aparece pintando un lienzo donde el pincel es una crujiente baguette dorada.')">
+            <div class="image-placeholder bakery-fr"><span>🇫🇷 Francia</span></div>
+            <h3>Recetas de Francia</h3>
+            <p><strong>Especialidades:</strong> Croissant de Mantequilla e impecable Baguette Tradicional.</p>
+            <p class="meaning">Significado: El Croissant representa el dominio técnico del hojaldrado perfecto. La Baguette encarna el balance entre una corteza rústica y un centro sutilmente aireado.</p>
+        </div>
+
+        <div class="card" onclick="selectItem('Shokupan & Melonpan', 'Panadería suave japonesa basada en la delicadeza de las texturas.', 'La perfección y vanguardia de Tokio.', '⚔️🐼', '¡PANDA SAMURÁI DE JAPÓN!<br><br>Aparece un panda samurái con armadura tradicional dividiendo de manera milimétrica un pan Shokupan usando una katana de bambú brillante.')">
+            <div class="image-placeholder bakery-jp"><span>🇯🇵 Japón</span></div>
+            <h3>Recetas de Japón</h3>
+            <p><strong>Especialidades:</strong> Shokupan (Pan de molde nube) y Melonpan (Cubierta crujiente de galleta).</p>
+            <p class="meaning">Significado: El Shokupan representa la incansable búsqueda asiática por la textura ultra-esponjosa "fuwa-fuwa". El Melonpan denota la creatividad de la repostería contemporánea.</p>
+        </div>
+
+        <div class="card" onclick="selectItem('Focaccia & Ciabatta', 'Panes rústicos mediterráneos con aceite de oliva virgen extra.', 'La calidez artesanal de la cocina toscana.', '🛶🐼', '¡PANDA GONDOLERO DE ITALIA!<br><br>Un panda con camisa a rayas te saluda cantando ópera mientras rema en Venecia arriba de una crujiente Ciabatta rústica.')">
+            <div class="image-placeholder bakery-it"><span>🇮🇹 Italia</span></div>
+            <h3>Recetas de Italia</h3>
+            <p><strong>Especialidades:</strong> Focaccia de Romero/Aceite de Oliva y Pan Ciabatta tradicional.</p>
+            <p class="meaning">Significado: La Focaccia celebra los frutos de la tierra mediterránea y la pureza del aceite de oliva. La Ciabatta es el pilar rústico perfecto para emparedados de alta gama.</p>
+        </div>
     </div>
 
-    <script>
-        const store = {
-            "Colombia": { info: "El Panda recomienda: El Pandebono, símbolo de hospitalidad.", prods: ["Pandebono", "Almojábana"] },
-            "Francia": { info: "El Panda recomienda: Técnica pura en el Croissant.", prods: ["Croissant", "Pain au Chocolat"] },
-            "Japón": { info: "El Panda recomienda: Shokupan (textura de nube).", prods: ["Shokupan", "Melonpan"] }
-        };
+    <hr>
 
-        // Renderizar mapa
-        const mapa = document.getElementById('mapa');
-        Object.keys(store).forEach(pais => {
-            let btn = document.createElement('button');
-            btn.className = 'btn-country';
-            btn.innerText = pais;
-            btn.onclick = () => {
-                document.getElementById('curador-box').innerHTML = `<h3>${pais}</h3><p>${store[pais].info}</p>`;
-                renderProductos(store[pais].prods);
-            };
-            mapa.appendChild(btn);
-        });
+    <!-- SECCIÓN 3: CAFETERÍA DE ESPECIALIDAD -->
+    <h2 class="section-title">Cafés de Especialidad</h2>
+    <div class="menu-grid">
+        <div class="card" onclick="selectItem('Espresso Imperial', 'Extracción pura y concentrada de grano seleccionado.', 'La verdad del grano sin alteraciones.', '🧘‍♂️🐼', '¡PANDA ZEN DEL CAFÉ!<br><br>Un panda sabio aparece meditando en perfecta paz, flotando sobre un grano de café tostado rodeado de un aura dorada.')">
+            <span class="card-tag">Intenso</span>
+            <h3>Espresso Imperial</h3>
+            <p>Esencia de café con una crema densa y atigrada.</p>
+            <p class="meaning">Significado: Representa la pureza absoluta y la potencia del origen cafetalero.</p>
+        </div>
 
-        function renderProductos(prods) {
-            const cat = document.getElementById('catalogo');
-            cat.innerHTML = prods.map(p => `
-                <div class="product-card">
-                    <div style="background:#ddd; height:200px; display:flex; align-items:center; justify-content:center;">Foto de ${p}</div>
-                    <h3>${p}</h3>
-                    <div class="qty-control">
-                        <button onclick="changeQty('${p}', -1)">-</button>
-                        <span id="qty-${p}">1</span>
-                        <button onclick="changeQty('${p}', 1)">+</button>
-                    </div>
-                    <button class="add-btn" onclick="agregar('${p}')">Añadir al pedido</button>
-                </div>
-            `).join('');
+        <div class="card" onclick="selectItem('Cappuccino Panda', 'Balance clásico de espresso, leche vaporizada y sedosa espuma.', 'La armonía líquida tradicional.', '☕🐼', '¡PANDA BARISTA MASTER!<br><br>El panda del logotipo cobra vida en tu pantalla, soplando un corazón de arte latte tridimensional directo hacia tu menú.')">
+            <span class="card-tag">Equilibrado</span>
+            <h3>Cappuccino Panda</h3>
+            <p>Servido con arte latte exclusivo de la silueta del panda.</p>
+            <p class="meaning">Significado: El balance idílico entre la fuerza del tostado y la cremosidad láctea.</p>
+        </div>
+
+        <div class="card" onclick="selectItem('Café Latte Premium', 'Shot de espresso cubierto de abundante leche sedosa.', 'Suavidad y confort prolongado.', '☁️🐼', '¡PANDA NUBE DE LECHE!<br><br>Un tierno y pachoncito panda aparece durmiendo plácidamente boca arriba encima de una densa y esponjosa nube de leche vaporizada.')">
+            <span class="card-tag">Suave</span>
+            <h3>Café Latte Premium</h3>
+            <p>Textura sutil, ligera y aterciopelada.</p>
+            <p class="meaning">Significado: Diseñado para extender la sobremesa con un trago ligero y reconfortante.</p>
+        </div>
+
+        <div class="card" onclick="selectItem('Flat White Gold', 'Doble shot de espresso corto con microespuma fina.', 'Intensidad gourmet contemporánea.', '🕶️🐼', '¡PANDA VIP EXECUTIVE!<br><br>Aparece un panda vanguardista con gafas oscuras de diseñador y un traje entallado, sosteniendo una taza de Flat White con destellos dorados.')">
+            <span class="card-tag">Tendencia</span>
+            <h3>Flat White Gold</h3>
+            <p>Mayor concentración de café con una capa láctea milimétrica.</p>
+            <p class="meaning">Significado: La opción moderna preferida por los amantes del café con carácter pero textura sedosa.</p>
+        </div>
+
+        <div class="card" onclick="selectItem('Americano de Origen', 'Espresso estirado con agua caliente a temperatura ideal.', 'Claridad de notas frutales y florales.', '🧭🐼', '¡PANDA EXPLORADOR!<br><br>Un panda aventurero con sombrero de safari aparece observando a través de unos binoculares hechos de cañas de bambú.')">
+            <span class="card-tag">Ligero</span>
+            <h3>Americano de Origen</h3>
+            <p>Limpio, ligero y perfecto para percibir matices.</p>
+            <p class="meaning">Significado: Permite limpiar el paladar y apreciar las sutiles notas ácidas y dulces del grano de origen.</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- SECCIÓN 4: JUGOS NATURALES INDIVIDUALES -->
+    <h2 class="section-title">Jugos Naturales Premium</h2>
+    <div class="menu-grid">
+        <div class="card" onclick="selectItem('Jugo Verde Panda Kiwi-Menta', 'Manzana verde, kiwi fresco, hojas de espinaca y menta.', 'Frescura viva del bosque de bambú.', '🤸‍♂️🐼', '¡PANDA ENERGÍA VERDE!<br><br>Un panda hiperactivo aparece dando volteretas de felicidad por la pantalla mientras sostiene ramitas de menta fresca.')">
+            <div class="image-placeholder juice-green"><span>Fresh Green Bottle</span></div>
+            <h3>Jugo Verde "Panda Kiwi-Menta"</h3>
+            <p>Presentado de forma individual en botella de vidrio vintage con pajita verde a rayas, rodeado de rodajas de kiwi fresco.</p>
+            <p class="meaning">Significado: Un elixir detox que evoca el alma refrescante y la vitalidad del bosque nativo de pandas.</p>
+        </div>
+
+        <div class="card" onclick="selectItem('Jugo Rosa Berry Panda Sweet', 'Fresas seleccionadas, arándanos silvestres y agua de coco.', 'Romance y notas dulces silvestres.', '💖🐼', '¡PANDA ENAMORADO!<br><br>Un panda adorable con ojos llenos de corazones mágicos aparece flotando bajo una lluvia de fresas y frutos del bosque.')">
+            <div class="image-placeholder juice-pink"><span>Pink Berries Bottle</span></div>
+            <h3>Jugo Rosa "Berry Panda Sweet"</h3>
+            <p>Servido en botella de vidrio individual con pajita morada a rayas y decorado con fresas naturales cortadas en la base.</p>
+            <p class="meaning">Significado: Celebra el lado más dulce, frutal y sofisticado de los frutos rojos madurados bajo el sol.</p>
+        </div>
+
+        <div class="card" onclick="selectItem('Jugo Naranja Vitamina Panda Splash', 'Naranja premium exprimidia, mango maduro y mandarina.', 'Inyección de luz y energía cítrica.', '🤹‍♂️🐼', '¡PANDA MALABARISTA!<br><br>Un enérgico panda de circo aparece haciendo malabares perfectos en el aire con naranjas brillantes y mangos maduros.')">
+            <div class="image-placeholder juice-orange"><span>Orange Tropical Bottle</span></div>
+            <h3>Jugo Naranja "Vitamina Panda Splash"</h3>
+            <p>Embotellado individualmente en cristal con pajita amarilla a rayas, acompañado de trozos de mango cortados en cubos.</p>
+            <p class="meaning">Significado: Un torrente tropical cargado de vitaminas, ideal para despertar todos tus sentidos de inmediato.</p>
+        </div>
+    </div>
+</div>
+
+<!-- VENTANA EMERGENTE INTERACTIVA (MODAL PANDA) -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="panda-modal">
+        <div class="panda-animation-space" id="modalEmoji">🐼</div>
+        <h2 id="modalTitle">Producto Seleccionado</h2>
+        <p id="modalPandaDescription">Aquí va la animación del panda.</p>
+        <button class="close-btn" onclick="closeModal()">Confirmar Selección</button>
+    </div>
+</div>
+
+<script>
+    function selectItem(title, text, meaning, emoji, pandaAnimationHtml) {
+        document.getElementById('modalTitle').innerText = title;
+        document.getElementById('modalEmoji').innerText = emoji.substring(0,2) || '🐼';
+        document.getElementById('modalPandaDescription').innerHTML = pandaAnimationHtml;
+        document.getElementById('modalOverlay').classList.add('active');
+    }
+
+    function closeModal() {
+        document.getElementById('modalOverlay').classList.remove('active');
+    }
+
+    // Cerrar ventana si se hace clic fuera del recuadro
+    document.getElementById('modalOverlay').addEventListener('click', function(e) {
+        if(e.target === this) {
+            closeModal();
         }
+    });
+</script>
 
-        let pedido = [];
-        function agregar(item) {
-            let qty = document.getElementById('qty-'+item).innerText;
-            pedido.push(`${qty}x ${item}`);
-            document.getElementById('lista-pedido').innerHTML = pedido.map(p => `<li>${p}</li>`).join('');
-        }
-
-        function changeQty(item, val) {
-            let el = document.getElementById('qty-'+item);
-            let n = parseInt(el.innerText) + val;
-            if(n >= 1) el.innerText = n;
-        }
-
-        function enviarPedido() {
-            window.open("https://wa.me/34639077423?text=Hola, quiero pedir: " + pedido.join(", "));
-        }
-    </script>
 </body>
 </html>
