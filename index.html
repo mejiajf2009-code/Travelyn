@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- CÓDIGO DE VERIFICACIÓN DE GOOGLE ACTUALIZADO -->
+    <!-- CÓDIGO DE VERIFICACIÓN DE GOOGLE -->
     <meta name="google-site-verification" content="lIk-JJpYbbHqYfE37FcGlJNOdhHpzldNfZhVJ_zhSI0" />
     
-    <!-- LOGO PARA BUSCADOR DE GOOGLE (FAVICON) -->
-    <!-- Nota: He puesto una imagen elegante de viaje de forma temporal, puedes cambiar el enlace por tu logo definitivo cuando lo tengas -->
-    <link rel="icon" href="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=48&h=48&q=80" type="image/png">
-    <link rel="apple-touch-icon" href="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=180&h=180&q=80">
+    <!-- FAVICON (Utiliza el mismo logo de Panda para la pestaña del navegador) -->
+    <link rel="icon" href="1000309039.png" type="image/png">
+    <link rel="apple-touch-icon" href="1000309039.png">
     
-    <title>Travelyn | Viaja sin Límites</title>
-    <meta name="description" content="Travelyn - Planificación inteligente de viajes globales. Gestiona tus vuelos, hoteles de lujo, rutas multimodales y tours exclusivos sin límites.">
+    <title>PANDA | Specialty Coffee & Bakery Internacional</title>
+    <meta name="description" content="PANDA - Alta panadería artesanal y café de especialidad. Una experiencia culinaria global que conecta los secretos de Francia, Italia, Colombia y Chile.">
 
     <!-- Tipografías: Elegancia Serif para Títulos y Sans para Interfaz -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,14 +22,14 @@
     <style>
         :root {
             --bg-pure: #ffffff;
-            --bg-surface: #f9fbfd;
+            --bg-surface: #faf8f5; /* Crema suave artesanal */
             --bg-input: #ffffff;
-            --text-main: #0b0b0d;
-            --text-muted: #64748b;
-            --gold: #b38f44;
+            --text-main: #0b0b0d; /* Negro premium de la marca */
+            --text-muted: #6c727a;
+            --gold: #b38f44; /* Dorado del logotipo */
             --gold-gradient: linear-gradient(135deg, #dfc48c 0%, #b38f44 100%);
-            --shadow-premium: 0 30px 60px rgba(0, 0, 0, 0.04);
-            --shadow-chat: 0 10px 30px rgba(179, 143, 68, 0.1);
+            --shadow-premium: 0 30px 60px rgba(179, 143, 68, 0.05);
+            --shadow-chat: 0 10px 30px rgba(11, 11, 13, 0.05);
         }
 
         * {
@@ -48,7 +47,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        h1, h2, h3, h4, .brand-logo {
+        h1, h2, h3, h4, .logo-title {
             font-family: 'Playfair Display', serif;
         }
 
@@ -57,33 +56,51 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Cabecera blindada para evitar desconfiguraciones con el Logo */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 2.5rem 5%;
+            padding: 1.5rem 5%;
             max-width: 1400px;
             margin: 0 auto;
             animation: fadeIn 0.8s ease-out;
         }
 
-        .brand-logo {
+        .brand-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .brand-logo-file {
+            height: 75px; /* Altura perfecta y fija para el logo 1000309039.png */
+            width: auto;
+            object-fit: contain;
+        }
+
+        .brand-logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
             font-size: 1.8rem;
             font-weight: 600;
             color: var(--text-main);
-            text-decoration: none;
             letter-spacing: 2px;
+            line-height: 1;
         }
 
-        .brand-logo span {
+        .logo-subtitle {
             color: var(--gold);
-            font-weight: 300;
+            font-weight: 500;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 0.8rem;
-            display: block;
-            letter-spacing: 3px;
-            margin-top: -2px;
+            font-size: 0.65rem;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
+            margin-top: 4px;
         }
 
         nav a {
@@ -97,12 +114,13 @@
             transition: color 0.3s;
         }
 
-        nav a:hover { color: var(--text-main); }
+        nav a:hover { color: var(--gold); }
 
+        /* Hero Section */
         .hero-section {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 2rem 5% 5rem 5%;
+            padding: 3rem 5% 5rem 5%;
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
             gap: 4rem;
@@ -114,7 +132,7 @@
         }
 
         .hero-text h1 {
-            font-size: 3.8rem;
+            font-size: 3.6rem;
             font-weight: 400;
             line-height: 1.15;
             margin-bottom: 1.5rem;
@@ -133,12 +151,13 @@
             color: var(--text-muted);
             margin-bottom: 2.5rem;
             font-weight: 300;
+            line-height: 1.6;
             max-width: 580px;
         }
 
         .hero-gallery {
             position: relative;
-            height: 550px;
+            height: 520px;
             animation: fadeIn 1.2s ease-out;
         }
 
@@ -157,9 +176,9 @@
             background: #ffffff;
             padding: 1.5rem;
             border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
             border-left: 4px solid var(--gold);
-            max-width: 240px;
+            max-width: 260px;
         }
 
         .floating-badge p {
@@ -175,7 +194,7 @@
             color: var(--text-muted);
         }
 
-        /* Consola de Reserva */
+        /* Consola de Reserva de Pedidos */
         .search-area {
             max-width: 1400px;
             margin: 0 auto;
@@ -193,7 +212,7 @@
 
         .type-btn {
             background: #ffffff;
-            border: 1px solid rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.05);
             padding: 1rem 2rem;
             font-size: 0.75rem;
             font-weight: 700;
@@ -216,7 +235,7 @@
             background: var(--bg-surface);
             padding: 3.5rem;
             border-radius: 0 24px 24px 24px;
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(179, 143, 68, 0.1);
             max-width: 1100px;
             width: 100%;
             box-shadow: var(--shadow-premium);
@@ -291,7 +310,7 @@
             box-shadow: 0 15px 30px rgba(179, 143, 68, 0.2);
         }
 
-        /* Sección de Catálogo Profesional Separado */
+        /* Sección de Catálogo de Productos Internacionales */
         .catalog-section {
             max-width: 1400px;
             margin: 0 auto;
@@ -346,7 +365,7 @@
             background: #ffffff;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.01);
             border: 1px solid rgba(0,0,0,0.04);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
             cursor: pointer;
@@ -440,7 +459,7 @@
             color: var(--gold);
         }
 
-        /* Concierge Zone */
+        /* Concierge Zone - El Barista Experto de Panda */
         .experience-zone {
             background: var(--bg-surface);
             padding: 6rem 5%;
@@ -478,10 +497,10 @@
         .ai-avatar {
             width: 10px;
             height: 10px;
-            background: #10b981;
+            background: #b38f44;
             border-radius: 50%;
             position: relative;
-            box-shadow: 0 0 10px #10b981;
+            box-shadow: 0 0 10px #b38f44;
         }
 
         .ai-chat-header h3 {
@@ -570,7 +589,7 @@
         }
 
         @media (max-width: 768px) {
-            .hero-text h1 { font-size: 2.5rem; }
+            .hero-text h1 { font-size: 2.3rem; }
             header { flex-direction: column; gap: 1.5rem; text-align: center; }
             nav a { margin: 0 0.8rem; }
             .search-container { padding: 2rem; }
@@ -580,14 +599,18 @@
 <body>
 
     <header>
-        <a href="#" class="brand-logo">
-            TRAVELYN
-            <span>Viaja Sin Límites</span>
+        <!-- Vinculación blindada con la imagen 1000309039.png -->
+        <a href="#" class="brand-logo-container">
+            <img src="1000309039.png" alt="Panda Specialty Coffee & Bakery Logo" class="brand-logo-file">
+            <div class="brand-logo-text">
+                <span class="logo-title">PANDA</span>
+                <span class="logo-subtitle">Specialty Coffee & Bakery</span>
+            </div>
         </a>
         <nav>
-            <a href="#reserva">Consola</a>
-            <a href="#catalogo">Catálogo</a>
-            <a href="#ia-concierge">Asistente IA</a>
+            <a href="#pedido">Consola de Encargos</a>
+            <a href="#catalogo">Catálogo Global</a>
+            <a href="#maestro-ia">Barista Virtual</a>
         </nav>
     </header>
 
@@ -595,250 +618,204 @@
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="hero-text">
-                <h1>Planificación Inteligente de Viajes <span>Globales</span></h1>
-                <p>Acceda de forma centralizada a redes ferroviarias de alta velocidad, líneas continentales de autobús, reservas de hotelería premium y operaciones de vuelo mundiales mediante una arquitectura refinada.</p>
-                <a href="#reserva" class="btn-search" style="text-decoration:none; display:inline-block; width:auto; padding:1.2rem 2.5rem;">Diseñar Itinerario</a>
+                <h1>Masas Madre de Alta Gama y Cafés de <span>Especialidad</span></h1>
+                <p>Bienvenido a una experiencia de panadería internacional sin precedentes. Fusionamos la precisión repostera de Francia, la tradición artesanal de Italia, la excelencia cafetera de Colombia y el corazón de la panadería tradicional de Chile.</p>
+                <a href="#pedido" class="btn-search" style="text-decoration:none; display:inline-block; width:auto; padding:1.2rem 2.5rem;">Hacer un Pedido Exclusivo</a>
             </div>
             <div class="hero-gallery">
-                <img src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=800&q=80" alt="Travelyn Experience" class="main-img">
+                <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=800&q=80" alt="Panda Specialty Coffee Experience" class="main-img">
                 <div class="floating-badge">
-                    <p>Travelyn Luxury</p>
-                    <span>Soporte de Conserjería Global 24/7</span>
+                    <p>Granos & Masas Premium</p>
+                    <span>Francia · Italia · Colombia · Chile</span>
                 </div>
             </div>
         </section>
 
-        <!-- Consola de Reserva Avanzada -->
-        <section class="search-area" id="reserva">
+        <!-- Consola de Pedido e Itinerario Gastronómico -->
+        <section class="search-area" id="pedido">
             <div class="transport-selector">
-                <button class="type-btn active" onclick="setService('Vuelo Directo / Conexión', this)">Vuelos</button>
-                <button class="type-btn" onclick="setService('Estancia en Hotel de Lujo', this)">Hoteles</button>
-                <button class="type-btn" onclick="setService('Tour Guiado Exclusivo', this)">Tours y Experiencias</button>
+                <button class="type-btn active" onclick="setService('Cesta de Panadería Internacional', this)">Cestas de Panadería</button>
+                <button class="type-btn" onclick="setService('Cafetería de Especialidad de Origen', this)">Café de Especialidad</button>
+                <button class="type-btn" onclick="setService('Servicio de Catering / Evento Privado', this)">Eventos y Catering</button>
             </div>
 
             <div class="search-container">
                 
-                <!-- SECCIÓN 1: DATOS PERSONALES -->
-                <div class="form-section-title">1. Información del Pasajero / Cliente</div>
+                <!-- SECCIÓN 1: CLIENTE -->
+                <div class="form-section-title">1. Datos del Cliente / Solicitante</div>
                 <div class="form-grid">
                     <div class="input-group">
-                        <label>Nombre y Apellidos</label>
-                        <input type="text" id="passenger-name" placeholder="Ej: Juan Pérez García" required>
+                        <label>Nombre Completo</label>
+                        <input type="text" id="customer-name" placeholder="Ej: Carlos Mendoza" required>
                     </div>
                     <div class="input-group">
-                        <label>Documento de Identidad / Pasaporte</label>
-                        <input type="text" id="passenger-id" placeholder="Ej: Pasaporte o DNI" required>
-                    </div>
-                    <div class="input-group">
-                        <label>Teléfono Móvil</label>
-                        <input type="tel" id="passenger-phone" placeholder="Ej: +34 600 000 000" required>
+                        <label>Teléfono de Contacto</label>
+                        <input type="tel" id="customer-phone" placeholder="Ej: +56 9 1234 5678" required>
                     </div>
                     <div class="input-group">
                         <label>Correo Electrónico</label>
-                        <input type="email" id="passenger-email" placeholder="Ej: juan@example.com" required>
+                        <input type="email" id="customer-email" placeholder="Ej: carlos@example.com">
+                    </div>
+                    <div class="input-group">
+                        <label>Tipo de Retiro / Entrega</label>
+                        <select id="delivery-type">
+                            <option value="Retiro en Tienda Flagship">Retiro Prioritario en Tienda</option>
+                            <option value="Despacho Gourmet a Domicilio">Despacho VIP a Domicilio</option>
+                        </select>
                     </div>
                 </div>
 
-                <!-- SECCIÓN 2: DETALLES LOGÍSTICOS -->
-                <div class="form-section-title">2. Detalles del Destino e Itinerario</div>
+                <!-- SECCIÓN 2: SELECCIÓN GLOBAL -->
+                <div class="form-section-title">2. Selección del Destino Culinario</div>
                 <div class="form-grid">
                     <div class="input-group">
-                        <label>Origen (Para Vuelos/Viajes)</label>
-                        <input type="text" id="origin" placeholder="Ciudad o terminal de salida...">
+                        <label>País de Inspiración Principal</label>
+                        <select id="country-origin" onchange="updateProductPlaceholder()">
+                            <option value="Francia">Francia (Viennoiserie & Hojaldres)</option>
+                            <option value="Italia">Italia (Artesanal & Focaccias)</option>
+                            <option value="Colombia">Colombia (Café Especial & Tradición)</option>
+                            <option value="Chile">Chile (Masas Tradicionales & Pastelería)</option>
+                        </select>
                     </div>
                     <div class="input-group">
-                        <label>Destino / Ciudad Solicitada</label>
-                        <input type="text" id="destination" placeholder="Ej: París, Roma, México...">
+                        <label>Variedad de Producto o Pack Especial</label>
+                        <input type="text" id="product-choice" placeholder="Ej: Pack Croissants de Normandía o Café del Huila">
                     </div>
                     <div class="input-group">
-                        <label>Fecha de Entrada / Salida</label>
-                        <input type="date" id="depart-date">
+                        <label>Fecha Requerida</label>
+                        <input type="date" id="order-date">
                     </div>
                     <div class="input-group">
-                        <label>Fecha de Salida / Regreso</label>
-                        <input type="date" id="return-date">
+                        <label>Hora de Preferencia</label>
+                        <input type="time" id="order-time">
                     </div>
                 </div>
 
-                <!-- SECCIÓN 3: PREFERENCIAS DE ALTA GAMA -->
-                <div class="form-section-title">3. Especificaciones de Confort y Categoría</div>
+                <!-- SECCIÓN 3: PREFERENCIAS Y ALÉRGENOS -->
+                <div class="form-section-title">3. Personalización y Preferencias de Alérgenos</div>
                 <div class="form-grid">
                     <div class="input-group">
-                        <label>Tipo de Alojamiento / Cabina</label>
-                        <select id="flight-class">
-                            <option value="Clase Premium / Hotel 5 Estrellas">Lujo (Primera Clase / 5 Estrellas)</option>
-                            <option value="Clase Business / Hotel Boutique">Business (Boutique / Preferente)</option>
-                            <option value="Estándar Confort Superior">Confort Estándar Elegante</option>
+                        <label>Tipo de Molienda (Para Café)</label>
+                        <select id="coffee-grind">
+                            <option value="Grano Entero (Preservado)">Grano Entero (Para Moler en Casa)</option>
+                            <option value="Molienda Fina (Espresso)">Molienda Fina (Espresso)</option>
+                            <option value="Molienda Media (Filtro / V60)">Molienda Media (Filtro / Goteo)</option>
+                            <option value="No aplica (Solo Panadería)">No aplica (Solo Panadería)</option>
                         </select>
                     </div>
                     <div class="input-group">
-                        <label>Detalle Preferente</label>
-                        <select id="seat-preference">
-                            <option value="Suite de Lujo / Asiento Ventanilla">Suite Vista Panorámica / Ventanilla</option>
-                            <option value="Habitación Ejecutiva / Asiento Pasillo">Habitación Ejecutiva / Pasillo</option>
-                            <option value="Sin especificación">Sin preferencia técnica</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label>Opciones Incluidas</label>
-                        <select id="baggage-option">
-                            <option value="Todo Incluido con Equipaje">Régimen Completo / Equipaje Facturado</option>
-                            <option value="Desayuno / Equipaje de Mano">Desayuno Incluido / Solo Cabina</option>
-                            <option value="Básico Flexible">Tarifa Flexible Básica</option>
+                        <label>Restricciones Alimentarias</label>
+                        <select id="diet-restriction">
+                            <option value="Ninguna (Receta Tradicional)">Ninguna (Receta Tradicional Original)</option>
+                            <option value="Opción Vegana / Sin Lácteos">Opción Vegana / Sin Lácteos</option>
+                            <option value="Bajo en Azúcar / Integral">Alternativa con Harinas Integrales</option>
                         </select>
                     </div>
                     <div class="input-group full-width">
-                        <label>Notas de Personalización o Itinerario del Tour</label>
-                        <textarea id="additional-details" rows="2" placeholder="Describa peticiones especiales, guías privados necesarios, alergias o preferencias alimentarias..."></textarea>
+                        <label>Notas del Pedido, Dedicatorias o Peticiones al Maestro Panadero</label>
+                        <textarea id="additional-notes" rows="2" placeholder="Indique si es para regalo, notas sobre el punto de tueste, intolerancias o combinaciones personalizadas de panes de los 4 países..."></textarea>
                     </div>
                 </div>
 
-                <button class="btn-search" onclick="sendToWhatsApp()">Procesar Solicitud en Canal Privado</button>
+                <button class="btn-search" onclick="sendBakeryToWhatsApp()">Enviar Pedido al Obrador Privado por WhatsApp</button>
             </div>
         </section>
 
-        <!-- SECCIÓN DE CATÁLOGO PROFESIONAL SEPARADO -->
+        <!-- SECCIÓN DE CATÁLOGO INTERNACIONAL POR BLOQUES -->
         <section class="catalog-section" id="catalogo">
             <div class="section-header">
-                <h2>Experiencias de Diseño Exclusivo</h2>
-                <p>Seleccione nuestros bloques de servicios gestionados de manera independiente por especialistas.</p>
+                <h2>El Catálogo de los Cuatro Mundos</h2>
+                <p>Bloques gastronómicos elaborados artesanalmente por maestros nativos de cada región.</p>
             </div>
 
-            <!-- BLOQUE 1: RESERVA DE VUELOS -->
+            <!-- BLOQUE 1: FRANCIA E ITALIA -->
             <div class="catalog-block">
-                <div class="catalog-title">Rutas Aéreas y Conectividad Global</div>
+                <div class="catalog-title">Eje Europeo: Repostería & Masas Madre Clásicas</div>
                 <div class="grid-premium">
                     
-                    <div class="premium-card" onclick="autoFillService('Madrid', 'París', 'Vuelo Directo / Conexión')">
+                    <div class="premium-card" onclick="autoFillBakery('Francia', 'Croissant de Mantequilla de Normandía', 'Cesta de Panadería Internacional')">
                         <div class="card-img-wrapper">
-                            <span class="badge-tag">Vuelo Clase Business</span>
-                            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80" alt="París Francia">
+                            <span class="badge-tag">Francia</span>
+                            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80" alt="Croissant Francés">
                         </div>
                         <div class="card-content">
-                            <div class="location">París, Francia</div>
-                            <h3>Ruta París Exclusive</h3>
-                            <p>Conexiones premium directas hacia los aeropuertos principales de París con acceso a salas VIP y embarque preferente automatizado.</p>
-                            <div class="card-footer"><span class="action-link">Configurar Vuelo →</span></div>
+                            <div class="location">París / Normandía</div>
+                            <h3>Croissant de Mantequilla AOC</h3>
+                            <p>Hojaldrado de 24 capas elaborado estrictamente con mantequilla francesa fina fermentada de Normandía. Crujiente de oro puro.</p>
+                            <div class="card-footer"><span class="action-link">Seleccionar Pack →</span></div>
                         </div>
                     </div>
 
-                    <div class="premium-card" onclick="autoFillService('Bogota', 'Roma', 'Vuelo Directo / Conexión')">
+                    <div class="premium-card" onclick="autoFillBakery('Italia', 'Focaccia Tradicional de Liguria', 'Cesta de Panadería Internacional')">
                         <div class="card-img-wrapper">
-                            <span class="badge-tag">Vuelo Transatlántico</span>
-                            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=600&q=80" alt="Roma Italia">
+                            <span class="badge-tag">Italia</span>
+                            <img src="https://images.unsplash.com/photo-1608039755401-742074f0548d?auto=format&fit=crop&w=600&q=80" alt="Focaccia Italiana">
                         </div>
                         <div class="card-content">
-                            <div class="location">Roma, Italia</div>
-                            <h3>Conexión Roma Imperial</h3>
-                            <p>Vuelos de largo alcance optimizados en cabinas adaptadas de última generación. Máximo confort sobre el Atlántico.</p>
-                            <div class="card-footer"><span class="action-link">Configurar Vuelo →</span></div>
+                            <div class="location">Liguria, Italia</div>
+                            <h3>Focaccia di Oliva Barese</h3>
+                            <p>Masa madre de alta hidratación con aceite de oliva virgen extra italiano, sal marina de la costa y romero fresco seleccionado.</p>
+                            <div class="card-footer"><span class="action-link">Seleccionar Pack →</span></div>
                         </div>
                     </div>
 
-                    <div class="premium-card" onclick="autoFillService('Madrid', 'Nueva York', 'Vuelo Directo / Conexión')">
+                    <div class="premium-card" onclick="autoFillBakery('Italia', 'Cannoli Siciliano de Pistacho', 'Cesta de Panadería Internacional')">
                         <div class="card-img-wrapper">
-                            <span class="badge-tag">Vuelo Corporativo</span>
-                            <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=600&q=80" alt="Estados Unidos NY">
+                            <span class="badge-tag">Italia</span>
+                            <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=600&q=80" alt="Cannoli Siciliano">
                         </div>
                         <div class="card-content">
-                            <div class="location">Estados Unidos</div>
-                            <h3>Eje Global New York</h3>
-                            <p>Logística de alta gama destinada al centro financiero global. Itinerarios corporativos con flexibilidad de cambios horaria.</p>
-                            <div class="card-footer"><span class="action-link">Configurar Vuelo →</span></div>
+                            <div class="location">Sicilia</div>
+                            <h3>Cannoli con Ricotta de Búfala</h3>
+                            <p>Corteza crujiente frita al vino Marsala, rellena al momento con crema de ricotta dulce de búfala y lluvia de pistachos de Bronte.</p>
+                            <div class="card-footer"><span class="action-link">Seleccionar Pack →</span></div>
                         </div>
                     </div>
 
                 </div>
             </div>
 
-            <!-- BLOQUE 2: RESERVA DE HOTELES -->
+            <!-- BLOQUE 2: COLOMBIA Y CHILE -->
             <div class="catalog-block">
-                <div class="catalog-title">Reserva de Hotelería de Alta Gama</div>
+                <div class="catalog-title">Eje Americano: Cafés de Leyenda & Panes Autóctonos</div>
                 <div class="grid-premium">
                     
-                    <div class="premium-card" onclick="autoFillService('', 'Roma, Italia', 'Estancia en Hotel de Lujo')">
+                    <div class="premium-card" onclick="autoFillBakery('Colombia', 'Café Especial de Origen Único - Huila', 'Cafetería de Especialidad de Origen')">
                         <div class="card-img-wrapper">
-                            <span class="badge-tag">Palazzo 5 Estrellas</span>
-                            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80" alt="Hotel Roma">
+                            <span class="badge-tag">Colombia</span>
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80" alt="Café de Colombia">
                         </div>
                         <div class="card-content">
-                            <div class="location">Roma, Italia</div>
-                            <h3>Residenze Palazzo Roma</h3>
-                            <p>Estancias majestuosas en palacios históricos restaurados. Servicio de mayordomía privada y vistas exclusivas a monumentos clásicos.</p>
-                            <div class="card-footer"><span class="action-link">Reservar Hotel →</span></div>
+                            <div class="location">Huila / Pitalito</div>
+                            <h3>Café de Especialidad Panda Gold</h3>
+                            <p>Grano 100% Arábica de proceso lavado, cultivado a 1.800 metros. Notas catadas de cacao, cítricos dulces y cuerpo de seda untuoso.</p>
+                            <div class="card-footer"><span class="action-link">Seleccionar Grano →</span></div>
                         </div>
                     </div>
 
-                    <div class="premium-card" onclick="autoFillService('', 'Cartagena, Colombia', 'Estancia en Hotel de Lujo')">
+                    <div class="premium-card" onclick="autoFillBakery('Colombia', 'Pandebonos Tradicionales de Queso Costeño', 'Cesta de Panadería Internacional')">
                         <div class="card-img-wrapper">
-                            <span class="badge-tag">Boutique Premium</span>
-                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" alt="Hotel Colombia">
+                            <span class="badge-tag">Colombia</span>
+                            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="Pandebonos de Queso">
                         </div>
                         <div class="card-content">
-                            <div class="location">Cartagena, Colombia</div>
-                            <h3>Resorts del Caribe Colonial</h3>
-                            <p>Hoteles boutique de arquitectura colonial fortificada combinados con villas modernas y atención personalizada del más alto nivel.</p>
-                            <div class="card-footer"><span class="action-link">Reservar Hotel →</span></div>
+                            <div class="location">Valle del Cauca</div>
+                            <h3>Pandebono Premium de Almidón</h3>
+                            <p>Esferas de panecillos horneados a alta temperatura con fécula de maíz, almidón de yuca y generoso queso costeño. Crujientes por fuera, elásticos por dentro.</p>
+                            <div class="card-footer"><span class="action-link">Seleccionar Pack →</span></div>
                         </div>
                     </div>
 
-                    <div class="premium-card" onclick="autoFillService('', 'Cancún, México', 'Estancia en Hotel de Lujo')">
+                    <div class="premium-card" onclick="autoFillBakery('Chile', 'Pastel de Hoja con Manjar de Campo', 'Cesta de Panadería Internacional')">
                         <div class="card-img-wrapper">
-                            <span class="badge-tag">Luxury Resort</span>
-                            <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=600&q=80" alt="Hotel México">
-                        </div>
-                        <div class="card-content">
-                            <div class="location">Riviera Maya, México</div>
-                            <h3>Santuarios de la Riviera</h3>
-                            <p>Alojamientos eco-luxury integrados en entornos naturales caribeños con spas de reconocimiento mundial y gastronomía de autor.</p>
-                            <div class="card-footer"><span class="action-link">Reservar Hotel →</span></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- BLOQUE 3: TOURS PRIVADOS -->
-            <div class="catalog-block">
-                <div class="catalog-title">Tours Guiados y Expediciones Exclusivas</div>
-                <div class="grid-premium">
-                    
-                    <div class="premium-card" onclick="autoFillService('', 'Santiago, Chile', 'Tour Guiado Exclusivo')">
-                        <div class="card-img-wrapper">
-                            <span class="badge-tag">Tour de Viñedos</span>
-                            <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=600&q=80" alt="Valle de Casablanca Chile">
+                            <span class="badge-tag">Chile</span>
+                            <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=600&q=80" alt="Pastelería Chilena">
                         </div>
                         <div class="card-content">
                             <div class="location">Valle Central, Chile</div>
-                            <h3>Expedición Vitivinícola y Andina</h3>
-                            <p>Degustaciones privadas en las bodegas más exclusivas de Chile, al pie de la majestuosa Cordillera de los Andes con traslados VIP.</p>
-                            <div class="card-footer"><span class="action-link">Reservar Tour →</span></div>
-                        </div>
-                    </div>
-
-                    <div class="premium-card" onclick="autoFillService('', 'CDMX, México', 'Tour Guiado Exclusivo')">
-                        <div class="card-img-wrapper">
-                            <span class="badge-tag">Tour Arqueológico</span>
-                            <img src="https://images.unsplash.com/photo-1512813583145-baaa340ef29f?auto=format&fit=crop&w=600&q=80" alt="Tour México">
-                        </div>
-                        <div class="card-content">
-                            <div class="location">Ciudad de México</div>
-                            <h3>Ruta de Legados Ancestrales</h3>
-                            <p>Excursiones privadas de alta fidelidad hacia zonas arqueológicas prehispánicas históricas con accesos preferentes VIP.</p>
-                            <div class="card-footer"><span class="action-link">Reservar Tour →</span></div>
-                        </div>
-                    </div>
-
-                    <div class="premium-card" onclick="autoFillService('', 'Eje Cafetero, Colombia', 'Tour Guiado Exclusivo')">
-                        <div class="card-img-wrapper">
-                            <span class="badge-tag">Experiencia de Autor</span>
-                            <img src="https://images.unsplash.com/photo-1589909202802-8f4aadce1849?auto=format&fit=crop&w=600&q=80" alt="Tour Colombia">
-                        </div>
-                        <div class="card-content">
-                            <div class="location">Eje Cafetero, Colombia</div>
-                            <h3>Expedición de Paisaje Cultural</h3>
-                            <p>Rutas exclusivas en haciendas cafeteras tradicionales premium. Maridajes gourmet y transporte privado de confort.</p>
-                            <div class="card-footer"><span class="action-link">Reservar Tour →</span></div>
+                            <h3>Pastel de Hoja Imperial</h3>
+                            <p>Hojaldre finísimo y crocante al estilo chileno tradicional, intercalado con abundante manjar artesanal de campo cocinado a fuego lento.</p>
+                            <div class="card-footer"><span class="action-link">Seleccionar Pack →</span></div>
                         </div>
                     </div>
 
@@ -847,25 +824,25 @@
 
         </section>
 
-        <!-- Chatbot IA Interactivo -->
-        <section class="experience-zone" id="ia-concierge">
+        <!-- Chatbot Maestro Barista IA -->
+        <section class="experience-zone" id="maestro-ia">
             <div class="experience-layout">
                 <div class="ai-chat-console">
                     <div class="ai-chat-header">
                         <div class="ai-avatar"></div>
                         <div>
-                            <h3>Concierge Inteligente Travelyn</h3>
-                            <p>AI Concierge Agent</p>
+                            <h3>Maestro Barista Virtual PANDA</h3>
+                            <p>Coffee & Bakery AI Specialist</p>
                         </div>
                     </div>
-                    <div class="ai-messages-box" id="chat-box">
+                    <div class="ai-messages-box" id="bakery-chat-box">
                         <div class="msg system">
-                            Bienvenido a Travelyn. Soy su asistente de Inteligencia Artificial para la planificación de vuelos de alta gama, estancias hoteleras de lujo y tours exclusivos. ¿Qué destino internacional desea coordinar hoy?
+                            ¡Hola! Bienvenido a PANDA Specialty Coffee & Bakery. Estoy listo para ayudarte a diseñar el maridaje perfecto. ¿Deseas un espresso de origen colombiano para acompañar un croissant francés, o prefieres explorar las masas tradicionales de Italia y Chile? Cuéntame tus gustos.
                         </div>
                     </div>
                     <div class="ai-input-area">
-                        <input type="text" id="ai-input" placeholder="Escriba aquí (ej: Necesito un hotel en Roma)..." onkeypress="handleChatKey(event)">
-                        <button class="ai-send-btn" onclick="triggerAiResponse()">Consultar</button>
+                        <input type="text" id="bakery-ai-input" placeholder="Escriba su consulta (ej: Quiero algo dulce de Chile o Colombia)..." onkeypress="handleBakeryChatKey(event)">
+                        <button class="ai-send-btn" onclick="triggerBakeryAiResponse()">Consultar</button>
                     </div>
                 </div>
             </div>
@@ -873,63 +850,67 @@
     </main>
 
     <script>
-        let selectedService = "Vuelo Directo / Conexión";
+        let currentSelectedService = "Cesta de Panadería Internacional";
 
-        function setService(type, element) {
-            selectedService = type;
+        function setService(serviceType, element) {
+            currentSelectedService = serviceType;
             document.querySelectorAll('.type-btn').forEach(btn => btn.classList.remove('active'));
             element.classList.add('active');
         }
 
-        function autoFillService(origen, destino, servicio) {
-            document.getElementById('origin').value = origen;
-            document.getElementById('destination').value = destino;
+        function autoFillBakery(pais, producto, servicio) {
+            document.getElementById('country-origin').value = pais;
+            document.getElementById('product-choice').value = producto;
             
             const buttons = document.querySelectorAll('.type-btn');
             buttons.forEach(btn => {
-                if(btn.innerText.includes('Vuelos') && servicio.includes('Vuelo')) setService(servicio, btn);
-                if(btn.innerText.includes('Hoteles') && servicio.includes('Hotel')) setService(servicio, btn);
-                if(btn.innerText.includes('Tours') && servicio.includes('Tour')) setService(servicio, btn);
+                if(btn.innerText.includes('Panadería') && servicio.includes('Panadería')) setService(servicio, btn);
+                if(btn.innerText.includes('Café') && servicio.includes('Café')) setService(servicio, btn);
+                if(btn.innerText.includes('Eventos') && servicio.includes('Catering')) setService(servicio, btn);
             });
 
-            document.getElementById('reserva').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('pedido').scrollIntoView({ behavior: 'smooth' });
         }
 
-        function handleChatKey(event) {
-            if (event.key === 'Enter') triggerAiResponse();
+        function handleBakeryChatKey(event) {
+            if (event.key === 'Enter') triggerBakeryAiResponse();
         }
 
-        function triggerAiResponse() {
-            const inputField = document.getElementById('ai-input');
-            const messageText = inputField.value.trim();
-            if (!messageText) return;
+        function triggerBakeryAiResponse() {
+            const inputField = document.getElementById('bakery-ai-input');
+            const text = inputField.value.trim();
+            if (!text) return;
 
-            const chatBox = document.getElementById('chat-box');
+            const chatBox = document.getElementById('bakery-chat-box');
 
+            // Mensaje de usuario
             const userDiv = document.createElement('div');
             userDiv.className = 'msg user';
-            userDiv.innerText = messageText;
+            userDiv.innerText = text;
             chatBox.appendChild(userDiv);
             inputField.value = '';
-
             chatBox.scrollTop = chatBox.scrollHeight;
 
+            // Respuesta automatizada refinada inteligente
             setTimeout(() => {
                 const aiDiv = document.createElement('div');
                 aiDiv.className = 'msg system';
                 
-                let lowerText = messageText.toLowerCase();
-                if (lowerText.includes('hotel') || lowerText.includes('alojamiento') || lowerText.includes('quedarme')) {
-                    aiDiv.innerText = "Entendido. He configurado la consola de selección en modo 'Hoteles'. Disponemos de convenios directos con palacios de 5 estrellas en Roma y resorts de lujo en México y Colombia. Rellene los datos arriba y organizaremos su suite.";
-                    autoFillService('', 'Roma, Italia', 'Estancia en Hotel de Lujo');
-                } else if (lowerText.includes('tour') || lowerText.includes('guia') || lowerText.includes('visita') || lowerText.includes('chile')) {
-                    aiDiv.innerText = "Perfecto. He activado los parámetros de 'Tours Guiados Exclusivos' en el formulario. Contamos con accesos VIP prioritarios en las mejores viñas de Chile, rutas en París y el Eje Cafetero. ¿Cuál prefiere?";
-                    autoFillService('', 'Santiago, Chile', 'Tour Guiado Exclusivo');
-                } else if (lowerText.includes('vuelo') || lowerText.includes('viaje') || lowerText.includes('avion')) {
-                    aiDiv.innerText = "Excelente. He seleccionado la opción de 'Vuelos' de alta fidelidad. Por favor, introduzca su origen y destino en la parte superior para cotizar sus billetes comerciales o chárter privados.";
-                    autoFillService('Madrid', 'Nueva York', 'Vuelo Directo / Conexión');
+                let lower = text.toLowerCase();
+                if (lower.includes('francia') || lower.includes('croissant') || lower.includes('hojaldre')) {
+                    aiDiv.innerText = "Excelente elección. He configurado la consola de pedidos en Francia. Te sugiero añadir nuestro Croissant de Mantequilla de Normandía a tu cesta. Su textura crujiente marida perfectamente con un café de filtro largo.";
+                    autoFillBakery('Francia', 'Croissant de Mantequilla de Normandía', 'Cesta de Panadería Internacional');
+                } else if (lower.includes('colombia') || lower.includes('café') || lower.includes('cafe') || lower.includes('pandebono')) {
+                    aiDiv.innerText = "¡Sensacional! He cargado los parámetros de Colombia en la consola. Nuestro Café Especial de Origen Huila tiene notas a cacao espectaculares, ideales para disfrutar junto a un Pandebono de queso recién horneado.";
+                    autoFillBakery('Colombia', 'Café Especial de Origen Único - Huila', 'Cafetería de Especialidad de Origen');
+                } else if (lower.includes('chile') || lower.includes('manjar') || lower.includes('dulce')) {
+                    aiDiv.innerText = "Perfecto. He modificado el formulario hacia Chile. Te va a encantar nuestro Pastel de Hoja Imperial relleno con auténtico manjar de campo cocinado lentamente a leña.";
+                    autoFillBakery('Chile', 'Pastel de Hoja con Manjar de Campo', 'Cesta de Panadería Internacional');
+                } else if (lower.includes('italia') || lower.includes('focaccia') || lower.includes('cannoli')) {
+                    aiDiv.innerText = "Magnífico. Configuré la orden para Italia. Te recomiendo la Focaccia de Romero y Aceite de Oliva para tus desayunos salados, o un pack de Cannolis sicilianos crujientes.";
+                    autoFillBakery('Italia', 'Focaccia Tradicional de Liguria', 'Cesta de Panadería Internacional');
                 } else {
-                    aiDiv.innerText = `Recibido. Estoy procesando los parámetros para "${messageText}". Los detalles han sido sincronizados con el panel de control. Puede pulsar el botón de confirmación superior para agendar la consultoría de viaje.`;
+                    aiDiv.innerText = `He sincronizado tus preferencias sobre "${text}" con la Consola de Encargos. Por favor, revisa y completa los campos arriba para procesar tu orden directa con el maestro panadero en cocina.`;
                 }
                 
                 chatBox.appendChild(aiDiv);
@@ -937,45 +918,44 @@
             }, 800);
         }
 
-        function sendToWhatsApp() {
-            const name = document.getElementById('passenger-name').value.trim();
-            const idDoc = document.getElementById('passenger-id').value.trim();
-            const phonePass = document.getElementById('passenger-phone').value.trim();
-            const email = document.getElementById('passenger-email').value.trim();
+        function sendBakeryToWhatsApp() {
+            const name = document.getElementById('customer-name').value.trim();
+            const phone = document.getElementById('customer-phone').value.trim();
+            const email = document.getElementById('customer-email').value.trim();
+            const delivery = document.getElementById('delivery-type').value;
 
-            const origin = document.getElementById('origin').value.trim();
-            const dest = document.getElementById('destination').value.trim();
-            const depart = document.getElementById('depart-date').value;
-            const ret = document.getElementById('return-date').value;
+            const country = document.getElementById('country-origin').value;
+            const product = document.getElementById('product-choice').value.trim();
+            const date = document.getElementById('order-date').value;
+            const time = document.getElementById('order-time').value;
             
-            const fClass = document.getElementById('flight-class').value;
-            const seat = document.getElementById('seat-preference').value;
-            const baggage = document.getElementById('baggage-option').value;
-            const details = document.getElementById('additional-details').value.trim();
+            const grind = document.getElementById('coffee-grind').value;
+            const diet = document.getElementById('diet-restriction').value;
+            const notes = document.getElementById('additional-notes').value.trim();
 
-            if (!name || !idDoc || !phonePass || !dest) {
-                alert('Por favor complete los campos obligatorios del cliente (Nombre, ID, Teléfono y Destino) para procesar su solicitud.');
+            if (!name || !phone || !product) {
+                alert('Por favor, ingrese sus datos de contacto y el producto deseado para poder agendar el pedido en el obrador.');
                 return;
             }
 
-            const phoneMaster = "34639077423";
-            let txt = `📋 SOLICITUD GLOBAL - TRAVELYN\n`;
-            txt += `=========================\n\n`;
+            const phoneMaster = "34639077423"; // Tu número maestro de WhatsApp intacto
+            let txt = `🐼 ENCARGO PREMIUM - PANDA BAKERY\n`;
+            txt += `==================================\n\n`;
             txt += `👤 DATOS DEL CLIENTE:\n`;
             txt += `▪ Nombre: ${name}\n`;
-            txt += `▪ Identificación/Pasaporte: ${idDoc}\n`;
-            txt += `▪ Teléfono: ${phonePass}\n`;
-            txt += `▪ Email: ${email || 'No provisto'}\n\n`;
-            txt += `🛎️ DETALLES DEL SERVICIO:\n`;
-            txt += `▪ Servicio Solicitado: ${selectedService}\n`;
-            if (origin) txt += `▪ Origen: ${origin}\n`;
-            txt += `▪ Destino Solicitado: ${dest}\n`;
-            txt += `▪ Fecha Inicio / Entrada: ${depart || 'Pendiente'}\n`;
-            if (ret) txt += `▪ Fecha Fin / Regreso: ${ret}\n`;
-            txt += `▪ Categoría Elegida: ${fClass}\n`;
-            txt += `▪ Preferencia Física: ${seat}\n`;
-            txt += `▪ Opciones de Régimen: ${baggage}\n`;
-            if (details) txt += `\n📝 ESPECIFICACIONES ADICIONALES:\n"${details}"`;
+            txt += `▪ Teléfono: ${phone}\n`;
+            txt += `▪ Email: ${email || 'No especificado'}\n`;
+            txt += `▪ Modalidad: ${delivery}\n\n`;
+            txt += `🥐 LOGÍSTICA DEL PEDIDO:\n`;
+            txt += `▪ Línea de Servicio: ${currentSelectedService}\n`;
+            txt += `▪ Eje Internacional: ${country}\n`;
+            txt += `▪ Producto Solicitado: ${product}\n`;
+            txt += `▪ Fecha de Entrega: ${date || 'Inmediata / Próxima tanda'}\n`;
+            if (time) txt += `▪ Hora Estimada: ${time}\n`;
+            txt += `\n☕ CONFIGURACIÓN ARTESANAL:\n`;
+            txt += `▪ Preparación/Molienda: ${grind}\n`;
+            txt += `▪ Preferencia Alimentaria: ${diet}\n`;
+            if (notes) txt += `\n📝 ESPECIFICACIONES ADICIONALES:\n"${notes}"`;
 
             window.open(`https://wa.me/${phoneMaster}?text=${encodeURIComponent(txt)}`, '_blank');
         }
