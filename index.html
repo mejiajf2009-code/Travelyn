@@ -184,44 +184,30 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        /* IMAGEN DE PAN REAL CON COBERTURA OSCURA */
-        .card-image-hero {
-            height: 220px;
-            background-size: cover;
-            background-position: center;
+        /* VITRINA DE PANADERÍA DE LUJO EN LUGAR DE IMÁGENES EXTERNAS */
+        .bakery-showcase {
+            background: linear-gradient(135deg, #111 0%, #252525 100%);
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             position: relative;
             border-bottom: 3px solid var(--gold);
         }
 
-        .card-image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+        .showcase-icon {
+            font-size: 3rem;
+            margin-bottom: 5px;
+            filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.3));
         }
 
-        /* SELLO PANDA DISCRETO SOBRE LA IMAGEN DEL PAN */
-        .panda-seal {
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            background: rgba(17, 17, 17, 0.9);
-            border: 2px solid var(--gold);
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-            z-index: 2;
-        }
-
-        .panda-seal svg {
-            width: 35px;
-            height: 35px;
+        .showcase-label {
+            color: var(--gold-light);
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .card-flag {
@@ -240,12 +226,36 @@
             z-index: 2;
         }
 
+        /* PANDA PANADERITO EN LA ESQUINA DE LA VITRINA */
+        .corner-panda {
+            position: absolute;
+            bottom: -15px;
+            right: 15px;
+            background: #111;
+            border: 2px solid var(--gold);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            z-index: 5;
+        }
+
+        .corner-panda svg {
+            width: 38px;
+            height: 38px;
+        }
+
         .card-content {
             padding: 25px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            background: #fff;
+            padding-top: 30px;
         }
 
         .card-title {
@@ -365,11 +375,11 @@
 <body>
 
     <div class="alert-banner">
-        🥐 SELECCIONA TUS PIEZAS ARTESANALES ABAJO Y RESERVA AL INSTANTE POR WHATSAPP
+        🥖 MENÚ EXCLUSIVO DE PANADERÍA ARTESANAL - SELECCIONA TUS PIEZAS Y RESERVA POR WHATSAPP
     </div>
 
     <header>
-        <!-- Tu Logotipo Real Oficial -->
+        <!-- Tu Logotipo Oficial Referenciado -->
         <img src="1000309039.png" alt="Panda Specialty Coffee & Bakery" class="brand-logo">
         <div class="tagline">Menú Internacional Auténtico de Panadería</div>
     </header>
@@ -378,7 +388,7 @@
     <div class="container">
         <div class="map-section">
             <h2>🗺️ MAPA INTERNACIONAL DEL PAN PANDA</h2>
-            <p>Explora las culturas panaderas del mundo. Haz clic en cualquier país para ir a sus piezas artesanales:</p>
+            <p>Explora las culturas del trigo y el grano. Haz clic en cualquier país para saltar a sus panes tradicionales:</p>
             <div class="world-navigation">
                 <a href="#colombia" class="map-btn">🇨🇴 Colombia</a>
                 <a href="#chile" class="map-btn">🇨🇱 Chile</a>
@@ -392,8 +402,8 @@
 
     <!-- CONFIGURADOR DE NÚMERO CELULAR -->
     <div class="config-panel">
-        <h4>⚙️ Activación del WhatsApp de la Panadería</h4>
-        <p style="font-size:0.8rem; color:#666;">Ingresa tu número con código de país (Ej: 573001234567) para recibir los pedidos directamente:</p>
+        <h4>⚙️ Panel de Control de WhatsApp</h4>
+        <p style="font-size:0.8rem; color:#666;">Ingresa tu número con código de país (Ej: 573001234567) para recibir los pedidos de pan de tus clientes:</p>
         <input type="tel" id="phoneInput" placeholder="Ej: 573001234567" oninput="updateWhatsAppLinks()">
     </div>
 
@@ -407,23 +417,23 @@
             
             <!-- COLOMBIA -->
             <div class="card" id="colombia">
-                <!-- Imagen Real de Pandebonos Dorados Horneados -->
-                <div class="card-image-hero" style="background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop');">
-                    <div class="card-image-overlay"></div>
+                <div class="bakery-showcase">
                     <div class="card-flag">🇨🇴 Colombia</div>
-                    <div class="panda-seal">
+                    <div class="showcase-icon">🥯</div>
+                    <div class="showcase-label">Amasijos de Queso</div>
+                    <div class="corner-panda">
                         <svg viewBox="0 0 100 100">
                             <circle cx="30" cy="35" r="14" fill="#c5a059"/><circle cx="70" cy="35" r="14" fill="#c5a059"/><circle cx="50" cy="60" r="34" fill="#ffffff"/><ellipse cx="36" cy="56" rx="10" ry="13" fill="#111"/><ellipse cx="64" cy="56" rx="10" ry="13" fill="#111"/><circle cx="36" cy="54" r="3" fill="#fff"/><circle cx="64" cy="54" r="3" fill="#fff"/><polygon points="46,68 54,68 50,73" fill="#c5a059"/>
                         </svg>
                     </div>
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Tradición de Amasijos Colombianos</h3>
+                    <h3 class="card-title">Tradición de Horneado Colombiano</h3>
                     
                     <div class="item-row">
                         <div class="item-info">
                             <div class="item-name">Pandebono</div>
-                            <div class="item-meaning">Significa "Pan de la Hacienda El Bono" (Valle del Cauca). Almidón de yuca y queso costeño horneado.</div>
+                            <div class="item-meaning">Receta insignia a base de almidón de yuca y queso costeño curado.</div>
                         </div>
                         <div class="quantity-control">
                             <button class="qty-btn" onclick="changeQty('pandebono', -1)">-</button>
@@ -435,7 +445,7 @@
                     <div class="item-row">
                         <div class="item-info">
                             <div class="item-name">Almojábana</div>
-                            <div class="item-meaning">Del árabe 'al-mujábbana' ("Hecha de queso"). Esponjoso e hidratado de maíz y cuajada fresca.</div>
+                            <div class="item-meaning">Del árabe 'al-mujábbana' ("Hecha de queso"). Panecillo esponjoso de maíz y cuajada fresca.</div>
                         </div>
                         <div class="quantity-control">
                             <button class="qty-btn" onclick="changeQty('almojabana', -1)">-</button>
@@ -447,7 +457,7 @@
                     <div class="item-row">
                         <div class="item-info">
                             <div class="item-name">Pan Aliñado</div>
-                            <div class="item-meaning">Significa "Pan Condimentado". Suave masa de molde con generosa mantequilla y capas de queso rallado.</div>
+                            <div class="item-meaning">Masa suave enriquecida con abundante mantequilla artesanal y capas de queso fundido.</div>
                         </div>
                         <div class="quantity-control">
                             <button class="qty-btn" onclick="changeQty('panalinado', -1)">-</button>
@@ -460,23 +470,23 @@
 
             <!-- CHILE -->
             <div class="card" id="chile">
-                <!-- Imagen Real de Panes de Molde Redondos Crujientes (Estilo Hallulla/Marraqueta) -->
-                <div class="card-image-hero" style="background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop');">
-                    <div class="card-image-overlay"></div>
+                <div class="bakery-showcase">
                     <div class="card-flag">🇨🇱 Chile</div>
-                    <div class="panda-seal">
+                    <div class="showcase-icon">🍞</div>
+                    <div class="showcase-label">Masas Batidas</div>
+                    <div class="corner-panda">
                         <svg viewBox="0 0 100 100">
                             <circle cx="30" cy="35" r="14" fill="#c5a059"/><circle cx="70" cy="35" r="14" fill="#c5a059"/><circle cx="50" cy="60" r="34" fill="#ffffff"/><ellipse cx="36" cy="56" rx="10" ry="13" fill="#111"/><ellipse cx="64" cy="56" rx="10" ry="13" fill="#111"/><circle cx="36" cy="54" r="3" fill="#fff"/><circle cx="64" cy="54" r="3" fill="#fff"/><polygon points="46,68 54,68 50,73" fill="#c5a059"/>
                         </svg>
                     </div>
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Masas Crujientes Chilenas</h3>
+                    <h3 class="card-title">Cortesas Crujientes Chilenas</h3>
                     
                     <div class="item-row">
                         <div class="item-info">
                             <div class="item-name">Marraqueta</div>
-                            <div class="item-meaning">Homenaje a los hermanos Marraquet, panaderos franceses. Pan batido de excelente corteza crujiente.</div>
+                            <div class="item-meaning">Pan tradicional batido de doble pliegue con una corteza sumamente crujiente.</div>
                         </div>
                         <div class="quantity-control">
                             <button class="qty-btn" onclick="changeQty('marraqueta', -1)">-</button>
@@ -488,7 +498,7 @@
                     <div class="item-row">
                         <div class="item-info">
                             <div class="item-name">Hallulla</div>
-                            <div class="item-meaning">Del árabe 'hallún' ("Bollo de fiesta"). Pan redondo, firme, plano y laminado con manteca tradicional.</div>
+                            <div class="item-meaning">Del árabe 'hallún'. Pan firme, redondo y laminado minuciosamente con manteca fina.</div>
                         </div>
                         <div class="quantity-control">
                             <button class="qty-btn" onclick="changeQty('hallulla', -1)">-</button>
@@ -501,23 +511,23 @@
 
             <!-- ARGENTINA -->
             <div class="card" id="argentina">
-                <!-- Imagen Real de Facturas y Masas de Hojaldre Dulce -->
-                <div class="card-image-hero" style="background-image: url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=600&auto=format&fit=crop');">
-                    <div class="card-image-overlay"></div>
+                <div class="bakery-showcase">
                     <div class="card-flag">🇦🇷 Argentina</div>
-                    <div class="panda-seal">
+                    <div class="showcase-icon">🥐</div>
+                    <div class="showcase-label">Hojaldres Criollos</div>
+                    <div class="corner-panda">
                         <svg viewBox="0 0 100 100">
                             <circle cx="30" cy="35" r="14" fill="#c5a059"/><circle cx="70" cy="35" r="14" fill="#c5a059"/><circle cx="50" cy="60" r="34" fill="#ffffff"/><ellipse cx="36" cy="56" rx="10" ry="13" fill="#111"/><ellipse cx="64" cy="56" rx="10" ry="13" fill="#111"/><circle cx="36" cy="54" r="3" fill="#fff"/><circle cx="64" cy="54" r="3" fill="#fff"/><polygon points="46,68 54,68 50,73" fill="#c5a059"/>
                         </svg>
                     </div>
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Bollería Criolla Argentina</h3>
+                    <h3 class="card-title">Bollería Artesanal Argentina</h3>
                     
                     <div class="item-row">
                         <div class="item-info">
                             <div class="item-name">Facturas</div>
-                            <div class="item-meaning">Significa "Cosas hechas". Nombradas así por sindicatos antiguos para valorar el trabajo artesanal diario.</div>
+                            <div class="item-meaning">Masas dulces horneadas que celebran el valor histórico del gremio panadero.</div>
                         </div>
                         <div class="quantity-control">
                             <button class="qty-btn" onclick="changeQty('facturas', -1)">-</button>
@@ -529,7 +539,7 @@
                     <div class="item-row">
                         <div class="item-info">
                             <div class="item-name">Criollitos</div>
-                            <div class="item-meaning">Significa "Pequeños criollos". Legendarios bizcochitos de grasa vacuna hojaldrada.</div>
+                            <div class="item-meaning">Bizcochitos hojaldrados preparados tradicionalmente con grasa vacuna seleccionada.</div>
                         </div>
                         <div class="quantity-control">
                             <button class="qty-btn" onclick="changeQty('criollitos', -1)">-</button>
@@ -542,23 +552,23 @@
 
             <!-- MÉXICO -->
             <div class="card" id="mexico">
-                <!-- Imagen Real de Pan Dulce Esponjoso de Azúcar Tradicional -->
-                <div class="card-image-hero" style="background-image: url('https://images.unsplash.com/photo-1608686207856-001b95cf60ca?q=80&w=600&auto=format&fit=crop');">
-                    <div class="card-image-overlay"></div>
+                <div class="bakery-showcase">
                     <div class="card-flag">🇲🇽 México</div>
-                    <div class="panda-seal">
+                    <div class="showcase-icon">🍩</div>
+                    <div class="showcase-label">Pan de Dulce</div>
+                    <div class="corner-panda">
                         <svg viewBox="0 0 100 100">
                             <circle cx="30" cy="35" r="14" fill="#c5a059"/><circle cx="70" cy="35" r="14" fill="#c5a059"/><circle cx="50" cy="60" r="34" fill="#ffffff"/><ellipse cx="36" cy="56" rx="10" ry="13" fill="#111"/><ellipse cx="64" cy="56" rx="10" ry="13" fill="#111"/><circle cx="36" cy="54" r="3" fill="#fff"/><circle cx="64" cy="54" r="3" fill="#fff"/><polygon points="46,68 54,68 50,73" fill="#c5a059"/>
                         </svg>
                     </div>
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Pan Dulce Ritual Mexicano</h3>
+                    <h3 class="card-title">Panadería Ritual Mexicana</h3>
                     
                     <div class="item-row">
                         <div class="item-info">
                             <div class="item-name">Concha</div>
-                            <div class="item-meaning">Significa "Concha de mar" debido a su icónica costra azucarada marcada artesanalmente.</div>
+                            <div class="item-meaning">Pan dulce esponjoso cubierto con una delicada costra de azúcar que imita una concha marina.</div>
                         </div>
                         <div class="quantity-control">
                             <button class="qty-btn" onclick="changeQty('concha', -1)">-</button>
@@ -577,23 +587,23 @@
             
             <!-- FRANCIA -->
             <div class="card" id="francia">
-                <!-- Imagen Real de Baguettes Crujientes Recién Horneadas -->
-                <div class="card-image-hero" style="background-image: url('https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=600&auto=format&fit=crop');">
-                    <div class="card-image-overlay"></div>
+                <div class="bakery-showcase">
                     <div class="card-flag">🇫🇷 Francia</div>
-                    <div class="panda-seal">
+                    <div class="showcase-icon">🥖</div>
+                    <div class="showcase-label">Masa Madre</div>
+                    <div class="corner-panda">
                         <svg viewBox="0 0 100 100">
                             <circle cx="30" cy="35" r="14" fill="#c5a059"/><circle cx="70" cy="35" r="14" fill="#c5a059"/><circle cx="50" cy="60" r="34" fill="#ffffff"/><ellipse cx="36" cy="56" rx="10" ry="13" fill="#111"/><ellipse cx="64" cy="56" rx="10" ry="13" fill="#111"/><circle cx="36" cy="54" r="3" fill="#fff"/><circle cx="64" cy="54" r="3" fill="#fff"/><polygon points="46,68 54,68 50,73" fill="#c5a059"/>
                         </svg>
                     </div>
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Masas Madre Clásicas</h3>
+                    <h3 class="card-title">Clásicos del Horno Francés</h3>
                     
                     <div class="item-row">
                         <div class="item-info">
                             <div class="item-name">Baguette</div>
-                            <div class="item-meaning">Significa "Varita" o "Bastón" en francés. Pan de fermentación lenta con alveolado perfecto.</div>
+                            <div class="item-meaning">El bastón rústico por excelencia. Harina, agua, masa madre y un horneado crujiente perfecto.</div>
                         </div>
                         <div class="quantity-control">
                             <button class="qty-btn" onclick="changeQty('baguette', -1)">-</button>
@@ -606,23 +616,23 @@
 
             <!-- ITALIA -->
             <div class="card" id="italia">
-                <!-- Imagen Real de Focaccia Italiana Tradicional con Romero -->
-                <div class="card-image-hero" style="background-image: url('https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?q=80&w=600&auto=format&fit=crop');">
-                    <div class="card-image-overlay"></div>
+                <div class="bakery-showcase">
                     <div class="card-flag">🇮🇹 Italia</div>
-                    <div class="panda-seal">
+                    <div class="showcase-icon">🫓</div>
+                    <div class="showcase-label">Aceites & Trigo</div>
+                    <div class="corner-panda">
                         <svg viewBox="0 0 100 100">
                             <circle cx="30" cy="35" r="14" fill="#c5a059"/><circle cx="70" cy="35" r="14" fill="#c5a059"/><circle cx="50" cy="60" r="34" fill="#ffffff"/><ellipse cx="36" cy="56" rx="10" ry="13" fill="#111"/><ellipse cx="64" cy="56" rx="10" ry="13" fill="#111"/><circle cx="36" cy="54" r="3" fill="#fff"/><circle cx="64" cy="54" r="3" fill="#fff"/><polygon points="46,68 54,68 50,73" fill="#c5a059"/>
                         </svg>
                     </div>
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Aceite de Oliva e Historia</h3>
+                    <h3 class="card-title">Tradición Panadera Italiana</h3>
                     
                     <div class="item-row">
                         <div class="item-info">
                             <div class="item-name">Focaccia</div>
-                            <div class="item-meaning">Significa "Hecho en el fuego" (del latín focus). Masa plana aireada con sal marina y romero.</div>
+                            <div class="item-meaning">Masa plana e intensamente alveolada con aceite de oliva extra virgen, sal marina y romero fresco.</div>
                         </div>
                         <div class="quantity-control">
                             <button class="qty-btn" onclick="changeQty('focaccia', -1)">-</button>
@@ -685,9 +695,9 @@
             
             var message = "¡Hola Panda Specialty Coffee & Bakery! 🐼 He revisado el menú internacional. ";
             if(orderList.length > 0) {
-                message += "Me gustaría reservar el siguiente pedido:\n\n" + orderList.join('\n') + "\n\n¿Me confirman la disponibilidad?";
+                message += "Me gustaría reservar las siguientes piezas artesanales de pan:\n\n" + orderList.join('\n') + "\n\n¿Me confirman el pedido?";
             } else {
-                message += "Quiero consultar disponibilidad del menú de hoy.";
+                message += "Quiero consultar qué panes tienen disponibles para hoy.";
             }
             
             var encodedText = encodeURIComponent(message);
